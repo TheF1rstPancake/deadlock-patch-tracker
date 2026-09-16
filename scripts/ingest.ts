@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { classifyLine, netSentiment } from '../src/lib/classify.ts'
+import { autoClarify } from '../src/lib/clarify.ts'
 import {
   extractSection,
   groupLinesByHero,
@@ -10,7 +11,7 @@ import {
   steamNewsUrl,
   stripSteamMarkup,
 } from '../src/lib/parseNews.ts'
-import type { HeroPatch, Patch } from '../src/types.ts'
+import type { HeroChange, HeroPatch, Patch } from '../src/types.ts'
 
 const APP_ID = 1422450
 const NEWS_ENDPOINT =
@@ -89,17 +90,26 @@ function buildHeroes(
   for (const [name, texts] of grouped) {
     const prev = preserve ? prevByName.get(name) : undefined
     const prevChanges = new Map(
-      (prev?.changes ?? [])
-        .filter((c) => c.override)
-        .map((c) => [c.text, c] as const),
+      (prev?.changes ?? []).map((c) => [c.raw, c] as const),
     )
 
-    const changes = texts.map((text) => {
-      const overridden = prevChanges.get(text)
-      if (overridden) {
-        return { text, tag: overridden.tag, override: true as const }
+    const changes: HeroChange[] = texts.map((text) => {
+      const prior = prevChanges.get(text)
+      const auto = autoClarify(text)
+      const change: HeroChange = {
+        raw: text,
+        tag:
+          preserve && prior?.override && prior.tag
+            ? prior.tag
+            : classifyLine(text),
       }
-      return { text, tag: classifyLine(text) }
+      if (preserve && prior?.override) change.override = true
+      const display = prior?.display ?? auto.display
+      if (display && display !== text) {
+        change.display = display
+        change.clarified = true
+      }
+      return change
     })
 
     const sentiment =

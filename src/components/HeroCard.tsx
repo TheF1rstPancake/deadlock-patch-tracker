@@ -1,4 +1,5 @@
 import type { HeroPatch } from '../types.ts'
+import { changeDisplay, changeRaw } from '../types.ts'
 import { SENTIMENT_LABEL, LINE_GLYPH, LINE_LABEL, heroInitials } from '../lib/labels.ts'
 
 interface HeroCardProps {
@@ -25,17 +26,26 @@ export function HeroCard({ hero }: HeroCardProps) {
         </span>
       </header>
       <ul className="change-list">
-        {hero.changes.map((change) => (
-          <li key={change.text} className={`change change-${change.tag}`}>
-            <span className="glyph" aria-hidden="true">
-              {LINE_GLYPH[change.tag]}
-            </span>
-            <span className="change-text">
-              <span className="sr-only">{LINE_LABEL[change.tag]}: </span>
-              {change.text}
-            </span>
-          </li>
-        ))}
+        {hero.changes.map((change) => {
+          const raw = changeRaw(change)
+          return (
+            <li key={raw} className={`change change-${change.tag}`}>
+              <span className="glyph" aria-hidden="true">
+                {LINE_GLYPH[change.tag]}
+              </span>
+              <span className="change-text">
+                <span className="sr-only">{LINE_LABEL[change.tag]}: </span>
+                {changeDisplay(change)}
+                {change.clarified ? (
+                  <details className="clarified">
+                    <summary>Clarified</summary>
+                    <p>Steam: {raw}</p>
+                  </details>
+                ) : null}
+              </span>
+            </li>
+          )
+        })}
       </ul>
     </article>
   )

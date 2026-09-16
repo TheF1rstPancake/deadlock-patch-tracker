@@ -91,15 +91,22 @@ After ingest, commit the JSON. The UI does not call Steam at runtime.
   "appid": 1422450,
   "heroes": [
     {
-      "name": "Viscous",
-      "sentiment": "mixed",
+      "name": "Paige",
+      "sentiment": "buff",
       "changes": [
-        { "text": "Alt fire damage growth reduced by 10%", "tag": "nerf" }
+        {
+          "raw": "Captivating Read T1 increased from -11s Cooldown to -14s",
+          "display": "Captivating Read T1: cooldown reduction −11s → −14s (stronger CDR)",
+          "clarified": true,
+          "tag": "buff"
+        }
       ]
     }
   ]
 }
 ```
+
+`raw` is Valve’s wording. `display` is our paraphrase when `clarified` is true; the UI shows a **Clarified** chip that expands to the Steam line. If `display` is omitted, the board shows `raw`.
 
 ### Overrides
 
@@ -118,7 +125,7 @@ Applied per line (the text after `Hero:`), first match wins:
 2. **Neutral** — reworks with `instead of`.
 3. **Nerf** — `can only` (targeting / usage restrictions).
 4. **`no longer`** — removing a downside (`no longer pause/restart/get caught`) is a **buff**; otherwise a **nerf**.
-5. **Cooldown (and similar inverted stats)** — if `cooldown` / `charge time` / `delay` appears *before* increased/reduced, the duration itself changed: increased → nerf, reduced → buff. Talent wording like `increased from -11s Cooldown` is **not** inverted (the verb comes first) → buff.
+5. **Cooldown (and similar inverted stats)** — if `cooldown` / `charge time` / `delay` appears *before* increased/reduced, the **absolute duration** changed: increased → nerf, reduced → buff. **Signed cooldown reduction** (`from -11s Cooldown to -14s`) is the opposite: more negative = stronger CDR = **buff**. Talent wording like Paige Captivating Read T1 stays a buff; `Dazzling Trick cooldown increased from 34s to 38s` is a nerf.
 6. **`increased` / `raised`** → buff; **`reduced` / `decreased` / `lowered`** → nerf.
 7. **Bare `from X to Y`** — if the number went up, buff; down, nerf (covers notes that omit a verb).
 8. **New upside** — `now also`, `now works`, `can now`, `now scales`, `now grants`, `now increases`, `now deals` → buff.

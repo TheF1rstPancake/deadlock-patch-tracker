@@ -11,12 +11,14 @@
       "sentiment": "mixed",
       "changes": [
         {
-          "text": "Infernal Resilience T3 increased from +8% to +9%",
+          "raw": "Infernal Resilience T3 increased from +8% to +9%",
           "tag": "buff"
         },
         {
-          "text": "Seismic Impact T3 reduced from 6s Unstoppable to 5s",
-          "tag": "nerf"
+          "raw": "Seismic Impact T3 reduced from 6s Unstoppable to 5s",
+          "tag": "nerf",
+          "display": "Seismic Impact T3 Unstoppable 6s → 5s",
+          "clarified": true
         }
       ]
     },
@@ -25,31 +27,31 @@
       "sentiment": "nerf",
       "changes": [
         {
-          "text": "Stamina cooldown increased from 5 to 5.3",
+          "raw": "Stamina cooldown increased from 5 to 5.3",
           "tag": "nerf"
         },
         {
-          "text": "Light Eater spirit lifesteal reduced from 20% to 18%",
+          "raw": "Light Eater spirit lifesteal reduced from 20% to 18%",
           "tag": "nerf"
         },
         {
-          "text": "Light Eater T3 decreased from +25 to +22",
+          "raw": "Light Eater T3 decreased from +25 to +22",
           "tag": "nerf"
         },
         {
-          "text": "Dazzling Trick cooldown increased from 34s to 38s",
+          "raw": "Dazzling Trick cooldown increased from 34s to 38s",
           "tag": "nerf"
         },
         {
-          "text": "Radiant Daggers T2 reduced from +80 to +70",
+          "raw": "Radiant Daggers T2 reduced from +80 to +70",
           "tag": "nerf"
         },
         {
-          "text": "Shining Wonder radius reduced from 16.5m to 15.5m",
+          "raw": "Shining Wonder radius reduced from 16.5m to 15.5m",
           "tag": "nerf"
         },
         {
-          "text": "Shining Wonder T3 Max Bounces reduced from +8 to +6",
+          "raw": "Shining Wonder T3 Max Bounces reduced from +8 to +6",
           "tag": "nerf"
         }
       ]
@@ -59,7 +61,7 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Health per boon increased from 33 to 35",
+          "raw": "Health per boon increased from 33 to 35",
           "tag": "buff"
         }
       ]
@@ -69,11 +71,11 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Fixation headshot stack count increased from +2 to +3",
+          "raw": "Fixation headshot stack count increased from +2 to +3",
           "tag": "buff"
         },
         {
-          "text": "Fixation T3 weapon scaling increased from 0.0003 to 0.00035",
+          "raw": "Fixation T3 weapon scaling increased from 0.0003 to 0.00035",
           "tag": "buff"
         }
       ]
@@ -83,15 +85,17 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Health per boon increased from 41 to 43",
+          "raw": "Health per boon increased from 41 to 43",
           "tag": "buff"
         },
         {
-          "text": "Crackshot T2 now also applies -6% Bullet Resistance for 5s",
-          "tag": "buff"
+          "raw": "Crackshot T2 now also applies -6% Bullet Resistance for 5s",
+          "tag": "buff",
+          "display": "Crackshot T2 also shreds 6% Bullet Resistance for 5s (on the target)",
+          "clarified": true
         },
         {
-          "text": "Lasso duration extention by Bounce Pad increased from +1s to +1.25s",
+          "raw": "Lasso duration extention by Bounce Pad increased from +1s to +1.25s",
           "tag": "buff"
         }
       ]
@@ -101,11 +105,11 @@
       "sentiment": "nerf",
       "changes": [
         {
-          "text": "Stone Form radius reduced from 6m to 5.75m",
+          "raw": "Stone Form radius reduced from 6m to 5.75m",
           "tag": "nerf"
         },
         {
-          "text": "Stone Form T1 max health heal reduced from 7% to 6%",
+          "raw": "Stone Form T1 max health heal reduced from 7% to 6%",
           "tag": "nerf"
         }
       ]
@@ -115,7 +119,7 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Frozen Shelter base ability health regen now scales with spirit power (0.2)",
+          "raw": "Frozen Shelter base ability health regen now scales with spirit power (0.2)",
           "tag": "buff"
         }
       ]
@@ -125,11 +129,11 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Life Drain T3 spirit scaling increased from +0.3 to +0.45",
+          "raw": "Life Drain T3 spirit scaling increased from +0.3 to +0.45",
           "tag": "buff"
         },
         {
-          "text": "Essence Bomb T3 damage increased from 26% to 30%",
+          "raw": "Essence Bomb T3 damage increased from 26% to 30%",
           "tag": "buff"
         }
       ]
@@ -139,35 +143,35 @@
       "sentiment": "mixed",
       "changes": [
         {
-          "text": "Gun falloff range reduced from 18m->54m to 16m->48m",
+          "raw": "Gun falloff range reduced from 18m->54m to 16m->48m",
           "tag": "nerf"
         },
         {
-          "text": "Ground Strike T3 spirit scaling increased from +0.03 to +0.04",
+          "raw": "Ground Strike T3 spirit scaling increased from +0.03 to +0.04",
           "tag": "buff"
         },
         {
-          "text": "Ground Strike T3 damage per meter scaling increased from 110% to 120%",
+          "raw": "Ground Strike T3 damage per meter scaling increased from 110% to 120%",
           "tag": "buff"
         },
         {
-          "text": "Grapple T2 Weapon Damage buff duration reduced from 10s to 6s",
+          "raw": "Grapple T2 Weapon Damage buff duration reduced from 10s to 6s",
           "tag": "nerf"
         },
         {
-          "text": "Flog heal reduced from 50% to 40%",
+          "raw": "Flog heal reduced from 50% to 40%",
           "tag": "nerf"
         },
         {
-          "text": "Flog angle increased from 38 to 40",
+          "raw": "Flog angle increased from 38 to 40",
           "tag": "buff"
         },
         {
-          "text": "Flog T3 reduced from +40 degrees angle to +25",
+          "raw": "Flog T3 reduced from +40 degrees angle to +25",
           "tag": "nerf"
         },
         {
-          "text": "Flog T3 reduced from +20% heal to +15%",
+          "raw": "Flog T3 reduced from +20% heal to +15%",
           "tag": "nerf"
         }
       ]
@@ -177,19 +181,21 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Heavy Melee spirit scaling increased from 0.3 to 0.45",
+          "raw": "Heavy Melee spirit scaling increased from 0.3 to 0.45",
           "tag": "buff"
         },
         {
-          "text": "Captivating Read T1 increased from -11s Cooldown to -14s",
+          "raw": "Captivating Read T1 increased from -11s Cooldown to -14s",
+          "tag": "buff",
+          "display": "Captivating Read T1: cooldown reduction −11s → −14s (stronger CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Captivating Read T3 increased from +1m to +2m",
           "tag": "buff"
         },
         {
-          "text": "Captivating Read T3 increased from +1m to +2m",
-          "tag": "buff"
-        },
-        {
-          "text": "Fixed some collision issues with Rallying Charge",
+          "raw": "Fixed some collision issues with Rallying Charge",
           "tag": "fix"
         }
       ]
@@ -199,12 +205,14 @@
       "sentiment": "nerf",
       "changes": [
         {
-          "text": "Kinetic Carbine min damage multiplier reduced from 25% to 10% (max damage multiplier unaffected)",
+          "raw": "Kinetic Carbine min damage multiplier reduced from 25% to 10% (max damage multiplier unaffected)",
           "tag": "nerf"
         },
         {
-          "text": "Kinetic Carbine min damage multiplier no longer gets increased by the T3",
-          "tag": "nerf"
+          "raw": "Kinetic Carbine min damage multiplier no longer gets increased by the T3",
+          "tag": "nerf",
+          "display": "Kinetic Carbine T3 no longer boosts the min-damage multiplier (close-range floor is weaker)",
+          "clarified": true
         }
       ]
     },
@@ -213,11 +221,11 @@
       "sentiment": "fix",
       "changes": [
         {
-          "text": "Fixed a bug where multiple helpers could be sent to follow a single player for no effect",
+          "raw": "Fixed a bug where multiple helpers could be sent to follow a single player for no effect",
           "tag": "fix"
         },
         {
-          "text": "Lil Helpers now have a target UI when instant cast mode is selected",
+          "raw": "Lil Helpers now have a target UI when instant cast mode is selected",
           "tag": "fix"
         }
       ]
@@ -227,16 +235,18 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Alt fire base damage increased by 4%",
+          "raw": "Alt fire base damage increased by 4%",
           "tag": "buff"
         },
         {
-          "text": "Alt fire damage per boon increased from +0.2 to +0.24",
+          "raw": "Alt fire damage per boon increased from +0.2 to +0.24",
           "tag": "buff"
         },
         {
-          "text": "Serrated Knives while rage is full now deals 3.5% current HP damage on impact instead of ricocheting (0.01 spirit scaling)",
-          "tag": "neutral"
+          "raw": "Serrated Knives while rage is full now deals 3.5% current HP damage on impact instead of ricocheting (0.01 spirit scaling)",
+          "tag": "neutral",
+          "display": "Serrated Knives at full rage: 3.5% current HP on hit instead of ricochet (0.01 spirit scaling)",
+          "clarified": true
         }
       ]
     },
@@ -245,27 +255,27 @@
       "sentiment": "mixed",
       "changes": [
         {
-          "text": "Health per boon increased from 28 to 31",
+          "raw": "Health per boon increased from 28 to 31",
           "tag": "buff"
         },
         {
-          "text": "Sprint speed increased from 1.5 to 2.5",
+          "raw": "Sprint speed increased from 1.5 to 2.5",
           "tag": "buff"
         },
         {
-          "text": "Dashes and light melee's no longer pause your gun's cycle time",
+          "raw": "Dashes and light melee's no longer pause your gun's cycle time",
           "tag": "buff"
         },
         {
-          "text": "Boot Kick can only target heroes and objectives now",
+          "raw": "Boot Kick can only target heroes and objectives now",
           "tag": "nerf"
         },
         {
-          "text": "Entangling Bola can only target heroes now",
+          "raw": "Entangling Bola can only target heroes now",
           "tag": "nerf"
         },
         {
-          "text": "Weighted Bola now increases gravity during the debuff duration, and interrupts flying abilities (same rules as Phantom Strike)",
+          "raw": "Weighted Bola now increases gravity during the debuff duration, and interrupts flying abilities (same rules as Phantom Strike)",
           "tag": "buff"
         }
       ]
@@ -275,11 +285,11 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Ira Domini now works with Ricochet, all the shots will bounce",
+          "raw": "Ira Domini now works with Ricochet, all the shots will bounce",
           "tag": "buff"
         },
         {
-          "text": "Ira Domini can now split shot (releases 1 extra bolt on each side, 3 total)",
+          "raw": "Ira Domini can now split shot (releases 1 extra bolt on each side, 3 total)",
           "tag": "buff"
         }
       ]
@@ -289,27 +299,27 @@
       "sentiment": "mixed",
       "changes": [
         {
-          "text": "Alt fire damage growth reduced by 10%",
+          "raw": "Alt fire damage growth reduced by 10%",
           "tag": "nerf"
         },
         {
-          "text": "Splatter detonation cooldown reduced from 0.15 to 0.12",
+          "raw": "Splatter detonation cooldown reduced from 0.15 to 0.12",
           "tag": "buff"
         },
         {
-          "text": "Splatter T1 reduced from +2m to +1.5m",
+          "raw": "Splatter T1 reduced from +2m to +1.5m",
           "tag": "nerf"
         },
         {
-          "text": "The Cube cast range reduced from 26m to 20m",
+          "raw": "The Cube cast range reduced from 26m to 20m",
           "tag": "nerf"
         },
         {
-          "text": "Puddle Punch cooldown increased from 21s to 24s",
+          "raw": "Puddle Punch cooldown increased from 21s to 24s",
           "tag": "nerf"
         },
         {
-          "text": "Goo Ball T3 now also increases spirit scaling by 0.2",
+          "raw": "Goo Ball T3 now also increases spirit scaling by 0.2",
           "tag": "buff"
         }
       ]
@@ -319,11 +329,11 @@
       "sentiment": "nerf",
       "changes": [
         {
-          "text": "Slither T3 barrier duration reduced from 5s to 4s",
+          "raw": "Slither T3 barrier duration reduced from 5s to 4s",
           "tag": "nerf"
         },
         {
-          "text": "Petrifying Bola cooldown increased from 105s to 115s",
+          "raw": "Petrifying Bola cooldown increased from 105s to 115s",
           "tag": "nerf"
         }
       ]
@@ -333,23 +343,23 @@
       "sentiment": "nerf",
       "changes": [
         {
-          "text": "Bullet damage per boon reduced from 0.28 to 0.25",
+          "raw": "Bullet damage per boon reduced from 0.28 to 0.25",
           "tag": "nerf"
         },
         {
-          "text": "Fire Rate spirit scaling reduced from 0.25 to 0.21",
+          "raw": "Fire Rate spirit scaling reduced from 0.25 to 0.21",
           "tag": "nerf"
         },
         {
-          "text": "Alchemical Flask projectile range and speed reduced by 30%",
+          "raw": "Alchemical Flask projectile range and speed reduced by 30%",
           "tag": "nerf"
         },
         {
-          "text": "Willpower T3 spirit scaling reduced from +2.7 to +2.1",
+          "raw": "Willpower T3 spirit scaling reduced from +2.7 to +2.1",
           "tag": "nerf"
         },
         {
-          "text": "Willpower T3 debuff resistance reduced from 40% to 30%",
+          "raw": "Willpower T3 debuff resistance reduced from 40% to 30%",
           "tag": "nerf"
         }
       ]
@@ -359,31 +369,37 @@
       "sentiment": "mixed",
       "changes": [
         {
-          "text": "Card Trick heart heal reduced from 75 to 60",
+          "raw": "Card Trick heart heal reduced from 75 to 60",
           "tag": "nerf"
         },
         {
-          "text": "Card Trick heart heal spirit scaling reduced from 0.75 to 0.5",
+          "raw": "Card Trick heart heal spirit scaling reduced from 0.75 to 0.5",
           "tag": "nerf"
         },
         {
-          "text": "Card Trick Diamond Bullet and Spirit Resist reduction reduced from -8% to -7%",
-          "tag": "nerf"
+          "raw": "Card Trick Diamond Bullet and Spirit Resist reduction reduced from -8% to -7%",
+          "tag": "nerf",
+          "display": "Card Trick Diamond Bullet / Spirit Resist shred weaker: −8% → −7%",
+          "clarified": true
         },
         {
-          "text": "Card Trick T3 Diamond Bullet and Spirit Resist reduction reduced from -5% to -4%",
-          "tag": "nerf"
+          "raw": "Card Trick T3 Diamond Bullet and Spirit Resist reduction reduced from -5% to -4%",
+          "tag": "nerf",
+          "display": "Card Trick T3 Diamond Bullet / Spirit Resist shred weaker: −5% → −4%",
+          "clarified": true
         },
         {
-          "text": "Card Trick T3 Clubs slow from +20% to +15%",
-          "tag": "nerf"
+          "raw": "Card Trick T3 Clubs slow from +20% to +15%",
+          "tag": "nerf",
+          "display": "Card Trick T3 Clubs slow weaker: +20% → +15%",
+          "clarified": true
         },
         {
-          "text": "Fixed Project Mind getting caught on edges/corners when aiming past it",
+          "raw": "Fixed Project Mind getting caught on edges/corners when aiming past it",
           "tag": "fix"
         },
         {
-          "text": "Full Auto spirit damage per bullet scaling increased from 0.03 to 0.045",
+          "raw": "Full Auto spirit damage per bullet scaling increased from 0.03 to 0.045",
           "tag": "buff"
         }
       ]
@@ -393,11 +409,11 @@
       "sentiment": "buff",
       "changes": [
         {
-          "text": "Crimson Slash T3 now also increases the heal spirit scaling by +0.4",
+          "raw": "Crimson Slash T3 now also increases the heal spirit scaling by +0.4",
           "tag": "buff"
         },
         {
-          "text": "Flying Slash light melee scaling increased from 1.0 to 1.2",
+          "raw": "Flying Slash light melee scaling increased from 1.0 to 1.2",
           "tag": "buff"
         }
       ]

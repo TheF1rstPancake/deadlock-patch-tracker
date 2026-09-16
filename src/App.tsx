@@ -68,6 +68,9 @@ export default function App() {
             <span className="legend-nerf">− nerf</span>
             <span className="legend-neutral">~ rework / unclear</span>
             <span className="legend-fix">✓ fix</span>
+            <span className="legend-note">
+              Clarified = we rephrased for clarity; tap to see the Steam line.
+            </span>
           </p>
         )}
       </main>

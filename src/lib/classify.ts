@@ -7,7 +7,7 @@ const UI_QOL_RE =
   /\b(?:target ui|ui when|hud|indicator|tooltip|visual(?:s)? cue)\b/i
 
 const INVERTED_STAT_BEFORE_VERB =
-  /\b(?:stamina\s+)?cooldown(?:\s+reduction)?\b|\bcharge time\b|\bdelay\b|\bcost\b/i
+  /\b(?:stamina\s+)?cooldown\b(?!\s+reduction)|\bcharge time\b|\bdelay\b|\bcost\b/i
 
 /**
  * Classify a single changelog line (the text after `Hero:`).
@@ -37,6 +37,9 @@ export function classifyLine(text: string): LineTag {
     }
     return 'nerf'
   }
+
+  const signedCdr = matchSignedCooldownReduction(t)
+  if (signedCdr) return signedCdr
 
   const cooldownVerb = matchInvertedStatVerb(t)
   if (cooldownVerb) return cooldownVerb
@@ -73,8 +76,26 @@ export function classifyLine(text: string): LineTag {
 }
 
 /**
+ * Signed talent CDR: −11s → −14s is a stronger reduction (buff).
+ * Absolute ability CD (positive seconds) is handled by matchInvertedStatVerb.
+ */
+function matchSignedCooldownReduction(text: string): LineTag | null {
+  if (!/\bcooldown\b/i.test(text)) return null
+  const m = text.match(
+    /from\s+(-[\d.]+)\s*s?\s+.*?to\s+(-[\d.]+)\s*s?/i,
+  )
+  if (!m) return null
+  const from = Number.parseFloat(m[1])
+  const to = Number.parseFloat(m[2])
+  if (Number.isNaN(from) || Number.isNaN(to) || from >= 0 || to >= 0) {
+    return null
+  }
+  return to < from ? 'buff' : 'nerf'
+}
+
+/**
  * "Dazzling Trick cooldown increased" → the cooldown itself changed (inverted).
- * "Captivating Read T1 increased from -11s Cooldown" → the talent changed (not inverted).
+ * "Captivating Read T1 increased from -11s Cooldown" → signed CDR (handled above).
  */
 function matchInvertedStatVerb(text: string): LineTag | null {
   const increased = /\bincreased\b/i
