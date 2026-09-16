@@ -10,7 +10,7 @@ export function PatchHeader({ patch, heroCount }: PatchHeaderProps) {
 
   return (
     <header className="masthead">
-      <p className="kicker">Deadlock patch tracker</p>
+      <p className="kicker">Hero roster · latest patch</p>
       <div className="masthead-row">
         <div>
           <h1>{patch.title}</h1>

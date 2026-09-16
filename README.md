@@ -25,6 +25,39 @@ npm test          # classifier + parser tests
 
 The UI reads checked-in JSON from `data/patches/*.json` and shows the **latest `date`**. Sep 16, 2026 is preloaded.
 
+The Vite config uses `base: './'` so a relative `dist/` copy works on GitHub project Pages, Meg, or any static host that is not at the domain root.
+
+## Host it
+
+### Meg (Tailscale / static folder)
+
+Build, then copy `dist/` onto the box and serve it:
+
+```bash
+npm run build
+scp -r dist/ meg:~/public/deadlock-patch-tracker
+# on Meg:
+cd ~/public/deadlock-patch-tracker
+python3 -m http.server 4397
+```
+
+Open the Tailnet URL on port `4397`. Because `base` is relative, it does not need to sit at `/`.
+
+### GitHub Pages
+
+`.github/workflows/pages.yml` builds `dist` and deploys with `actions/deploy-pages`.
+
+**Private repo Pages** needs GitHub Pro (or an org with Pages enabled). Enabling Pages from a default private-repo token often fails with `Resource not accessible by integration`. Either:
+
+- make the repo public, or
+- turn on Pages in the repo settings once (Settings → Pages → GitHub Actions) with an account that can, then let the workflow deploy.
+
+Until Pages is enabled, the workflow file is enough.
+
+### Vercel
+
+`vercel.json` sets `buildCommand` to `npm run build` and `outputDirectory` to `dist`. Import the repo; no extra project-root config.
+
 ## Refresh from Steam
 
 Pull the newest community patch notes (feed `steam_community_announcements`), parse `[ Heroes ]`, classify each line, and write `data/patches/YYYY-MM-DD.json`:

@@ -1,22 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Outfit:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=Cinzel:wght@600;700&display=swap');
 
 :root {
   color-scheme: dark;
-  --bg: #100d0b;
-  --bg-elev: #1a1512;
-  --ink: #f4ece3;
-  --muted: #b7a99a;
-  --line: rgba(232, 195, 106, 0.22);
-  --gold: #e8c36a;
-  --buff: #4fd2b3;
-  --nerf: #ef6b6b;
-  --mixed: #e8c36a;
-  --fix: #7eb0ff;
-  --neutral: #c2b8ac;
-  --radius: 18px;
-  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  font-family: Outfit, 'Avenir Next', 'Segoe UI', sans-serif;
-  line-height: 1.45;
+  --bg: #060e00;
+  --panel: #28281f;
+  --ink: #f4e5ce;
+  --muted: #cbb89a;
+  --gold: #e1a655;
+  --gold-hot: #fcac4d;
+  --line: #795221;
+  --weapon: #3a2b08;
+  --weapon-light: #f0c685;
+  --buff: #c7ee8e;
+  --buff-deep: #74b01c;
+  --buff-void: #1d3100;
+  --nerf: #d85a3a;
+  --mixed: #fcac4d;
+  --fix: #c58bf4;
+  --fix-void: #372248;
+  --neutral: #f0c685;
+  font-family: Barlow, 'Trebuchet MS', sans-serif;
+  line-height: 1.42;
   font-weight: 400;
   color: var(--ink);
   background: var(--bg);
@@ -38,10 +42,17 @@ body {
 }
 
 body {
-  background:
-    radial-gradient(1200px 500px at 10% -10%, rgba(232, 195, 106, 0.12), transparent 55%),
-    radial-gradient(900px 420px at 110% 0%, rgba(79, 210, 179, 0.08), transparent 50%),
-    var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(900px 420px at 8% -8%, rgba(225, 166, 85, 0.1), transparent 55%),
+    radial-gradient(700px 380px at 100% 0%, rgba(52, 81, 9, 0.45), transparent 50%),
+    repeating-linear-gradient(
+      -32deg,
+      transparent,
+      transparent 13px,
+      rgba(225, 166, 85, 0.035) 13px,
+      rgba(225, 166, 85, 0.035) 14px
+    );
 }
 
 #root {
@@ -63,21 +74,31 @@ body {
 .shell {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 64px;
+  padding: 28px 0 72px;
 }
 
 .masthead {
-  padding-bottom: 22px;
+  position: relative;
+  padding: 4px 0 24px;
   border-bottom: 1px solid var(--line);
 }
 
+.masthead::before {
+  content: '';
+  display: block;
+  height: 3px;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, var(--gold-hot), transparent 70%);
+}
+
 .kicker {
-  margin: 0 0 10px;
-  letter-spacing: 0.18em;
+  margin: 0 0 8px;
+  font-family: 'Barlow Condensed', Impact, sans-serif;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--gold);
+  font-size: 0.78rem;
   font-weight: 600;
+  color: var(--gold);
 }
 
 .masthead-row {
@@ -90,40 +111,47 @@ body {
 
 h1,
 h2 {
-  font-family: Fraunces, 'Iowan Old Style', Palatino, serif;
-  font-weight: 640;
-  letter-spacing: -0.03em;
+  font-family: Cinzel, 'Times New Roman', serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   margin: 0;
 }
 
 h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.1;
+  font-size: clamp(1.7rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  color: var(--ink);
+  text-shadow: 0 0 24px rgba(225, 166, 85, 0.18);
 }
 
 .lede {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.02rem;
 }
 
 .steam-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  color: var(--ink);
+  padding: 9px 14px;
+  border: 1px solid var(--gold);
+  color: var(--gold-hot);
   text-decoration: none;
-  background: rgba(232, 195, 106, 0.08);
-  font-weight: 500;
+  background: var(--weapon);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
   white-space: nowrap;
 }
 
 .steam-link:hover,
 .steam-link:focus-visible {
-  border-color: var(--gold);
+  background: #3a2b08;
+  color: var(--ink);
   outline: none;
 }
 
@@ -133,101 +161,111 @@ h1 {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 22px 0 20px;
+  margin: 20px 0 18px;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .chip {
   appearance: none;
-  border: 1px solid var(--line);
+  border: 1px solid #3a2b08;
   background: transparent;
   color: var(--muted);
-  border-radius: 999px;
-  padding: 7px 11px;
+  border-radius: 0;
+  padding: 6px 10px 5px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font: inherit;
-  font-size: 0.92rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
 .chip[aria-selected='true'] {
   color: var(--ink);
-  background: var(--bg-elev);
-  border-color: rgba(244, 236, 227, 0.28);
+  background: var(--panel);
+  border-color: var(--gold);
 }
 
 .chip-buff[aria-selected='true'] {
-  border-color: color-mix(in srgb, var(--buff) 55%, transparent);
+  border-color: var(--buff-deep);
   color: var(--buff);
+  background: var(--buff-void);
 }
 .chip-nerf[aria-selected='true'] {
-  border-color: color-mix(in srgb, var(--nerf) 55%, transparent);
-  color: var(--nerf);
+  border-color: var(--nerf);
+  color: #f4c4b4;
 }
 .chip-mixed[aria-selected='true'] {
-  border-color: color-mix(in srgb, var(--mixed) 55%, transparent);
-  color: var(--mixed);
+  border-color: var(--gold-hot);
+  color: var(--gold-hot);
 }
 .chip-fix[aria-selected='true'] {
-  border-color: color-mix(in srgb, var(--fix) 55%, transparent);
+  border-color: var(--fix);
   color: var(--fix);
+  background: var(--fix-void);
 }
 
 .chip-count {
-  min-width: 1.4em;
+  min-width: 1.2em;
   text-align: center;
   font-variant-numeric: tabular-nums;
-  font-size: 0.82rem;
-  opacity: 0.8;
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
 .search input {
   width: min(100%, 220px);
   border: 1px solid var(--line);
-  background: var(--bg-elev);
+  background: var(--weapon);
   color: var(--ink);
-  border-radius: 999px;
-  padding: 9px 14px;
+  border-radius: 0;
+  padding: 8px 12px;
   font: inherit;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+.search input::placeholder {
+  color: #a89474;
 }
 
 .search input:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 1px solid var(--gold-hot);
   outline-offset: 2px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 20.5rem), 1fr));
-  gap: 14px;
+  gap: 12px;
   align-items: start;
 }
 
 .hero-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%),
-    var(--bg-elev);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius);
-  padding: 16px 16px 12px;
-  box-shadow: var(--shadow);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 14px 14px 10px;
+  box-shadow: none;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
   border-top: 3px solid var(--neutral);
 }
 
 .hero-card.sentiment-buff {
-  border-top-color: var(--buff);
+  border-top-color: var(--buff-deep);
 }
 .hero-card.sentiment-nerf {
   border-top-color: var(--nerf);
 }
 .hero-card.sentiment-mixed {
-  border-top-color: var(--mixed);
+  border-top-color: var(--gold-hot);
 }
 .hero-card.sentiment-fix {
   border-top-color: var(--fix);
@@ -244,84 +282,94 @@ h1 {
 .monogram {
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: 0;
   display: grid;
   place-items: center;
-  font-family: Fraunces, serif;
-  font-weight: 640;
-  letter-spacing: -0.04em;
-  background: rgba(232, 195, 106, 0.12);
-  color: var(--gold);
+  font-family: Cinzel, serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--weapon);
+  color: var(--gold-hot);
   border: 1px solid var(--line);
 }
 
 .hero-card-titles h2 {
-  font-size: 1.28rem;
+  font-size: 1.22rem;
   line-height: 1.15;
 }
 
 .hero-meta {
-  margin: 2px 0 0;
+  margin: 3px 0 0;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
 }
 
 .badge {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 5px 8px;
-  border-radius: 999px;
+  padding: 4px 8px 3px;
   border: 1px solid transparent;
 }
 
 .badge-buff {
   color: var(--buff);
-  background: color-mix(in srgb, var(--buff) 14%, transparent);
+  background: var(--buff-void);
+  border-color: var(--buff-deep);
 }
 .badge-nerf {
-  color: var(--nerf);
-  background: color-mix(in srgb, var(--nerf) 14%, transparent);
+  color: #f4c4b4;
+  background: #3a120c;
+  border-color: var(--nerf);
 }
 .badge-mixed {
-  color: var(--mixed);
-  background: color-mix(in srgb, var(--mixed) 14%, transparent);
+  color: var(--gold-hot);
+  background: var(--weapon);
+  border-color: var(--gold);
 }
 .badge-fix {
   color: var(--fix);
-  background: color-mix(in srgb, var(--fix) 14%, transparent);
+  background: var(--fix-void);
+  border-color: var(--fix);
 }
 .badge-neutral {
-  color: var(--neutral);
-  background: color-mix(in srgb, var(--neutral) 12%, transparent);
+  color: var(--weapon-light);
+  background: var(--weapon);
+  border-color: var(--line);
 }
 
 .change-list {
   list-style: none;
   margin: 0;
   padding: 8px 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #3a2b08;
 }
 
 .change {
   display: grid;
   grid-template-columns: 1.1rem 1fr;
   gap: 8px;
-  padding: 8px 0;
+  padding: 7px 0;
   font-size: 0.92rem;
 }
 
 .change + .change {
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(121, 82, 33, 0.35);
 }
 
 .glyph {
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
 }
 
-.change-buff .glyph,
+.change-buff .glyph {
+  color: var(--buff-deep);
+}
 .change-buff .change-text {
   color: var(--buff);
 }
@@ -338,10 +386,6 @@ h1 {
   color: var(--neutral);
 }
 
-.change-text {
-  color: var(--ink);
-}
-
 .empty {
   padding: 48px 8px;
   text-align: center;
@@ -354,6 +398,9 @@ h1 {
   gap: 8px 16px;
   margin: 28px 0 0;
   color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   font-size: 0.85rem;
 }
 
@@ -373,7 +420,7 @@ h1 {
 @media (max-width: 640px) {
   .shell {
     width: min(100% - 20px, 1180px);
-    padding-top: 20px;
+    padding-top: 18px;
   }
 
   .hero-card-head {
