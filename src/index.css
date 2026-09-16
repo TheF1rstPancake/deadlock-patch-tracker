@@ -2,23 +2,32 @@
 
 :root {
   color-scheme: dark;
+  /* Valve-sampled Deadlock UI palette */
   --bg: #060e00;
   --panel: #28281f;
   --ink: #f4e5ce;
-  --muted: #cbb89a;
   --gold: #e1a655;
   --gold-hot: #fcac4d;
-  --line: #795221;
-  --weapon: #3a2b08;
+  --vitality: #74b01c;
+  --vitality-bright: #c7ee8e;
+  --vitality-deep: #345109;
+  --vitality-void: #1d3100;
+  --weapon: #795221;
+  --weapon-dark: #3a2b08;
   --weapon-light: #f0c685;
-  --buff: #c7ee8e;
-  --buff-deep: #74b01c;
-  --buff-void: #1d3100;
-  --nerf: #d85a3a;
-  --mixed: #fcac4d;
-  --fix: #c58bf4;
-  --fix-void: #372248;
-  --neutral: #f0c685;
+  --spirit: #c58bf4;
+  --spirit-void: #372248;
+
+  --muted: #cbb89a;
+  --line: var(--weapon);
+  --buff: var(--vitality-bright);
+  --buff-deep: var(--vitality);
+  --buff-void: var(--vitality-void);
+  --nerf: #c45a28;
+  --mixed: var(--gold-hot);
+  --fix: var(--spirit);
+  --fix-void: var(--spirit-void);
+  --neutral: var(--weapon-light);
   font-family: Barlow, 'Trebuchet MS', sans-serif;
   line-height: 1.42;
   font-weight: 400;
@@ -138,7 +147,7 @@ h1 {
   border: 1px solid var(--gold);
   color: var(--gold-hot);
   text-decoration: none;
-  background: var(--weapon);
+  background: var(--weapon-dark);
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -150,7 +159,7 @@ h1 {
 
 .steam-link:hover,
 .steam-link:focus-visible {
-  background: #3a2b08;
+  background: var(--weapon);
   color: var(--ink);
   outline: none;
 }
@@ -172,7 +181,7 @@ h1 {
 
 .chip {
   appearance: none;
-  border: 1px solid #3a2b08;
+  border: 1px solid var(--weapon-dark);
   background: transparent;
   color: var(--muted);
   border-radius: 0;
@@ -201,7 +210,8 @@ h1 {
 }
 .chip-nerf[aria-selected='true'] {
   border-color: var(--nerf);
-  color: #f4c4b4;
+  color: var(--weapon-light);
+  background: var(--weapon-dark);
 }
 .chip-mixed[aria-selected='true'] {
   border-color: var(--gold-hot);
@@ -224,7 +234,7 @@ h1 {
 .search input {
   width: min(100%, 220px);
   border: 1px solid var(--line);
-  background: var(--weapon);
+  background: var(--weapon-dark);
   color: var(--ink);
   border-radius: 0;
   padding: 8px 12px;
@@ -233,7 +243,7 @@ h1 {
 }
 
 .search input::placeholder {
-  color: #a89474;
+  color: var(--muted);
 }
 
 .search input:focus-visible {
@@ -259,7 +269,7 @@ h1 {
 }
 
 .hero-card.sentiment-buff {
-  border-top-color: var(--buff-deep);
+  border-top-color: var(--vitality-deep);
 }
 .hero-card.sentiment-nerf {
   border-top-color: var(--nerf);
@@ -288,7 +298,7 @@ h1 {
   font-family: Cinzel, serif;
   font-weight: 700;
   letter-spacing: 0.02em;
-  background: var(--weapon);
+  background: var(--weapon-dark);
   color: var(--gold-hot);
   border: 1px solid var(--line);
 }
@@ -324,13 +334,13 @@ h1 {
   border-color: var(--buff-deep);
 }
 .badge-nerf {
-  color: #f4c4b4;
-  background: #3a120c;
+  color: var(--weapon-light);
+  background: var(--weapon-dark);
   border-color: var(--nerf);
 }
 .badge-mixed {
   color: var(--gold-hot);
-  background: var(--weapon);
+  background: var(--weapon-dark);
   border-color: var(--gold);
 }
 .badge-fix {
@@ -340,7 +350,7 @@ h1 {
 }
 .badge-neutral {
   color: var(--weapon-light);
-  background: var(--weapon);
+  background: var(--weapon-dark);
   border-color: var(--line);
 }
 
@@ -348,7 +358,7 @@ h1 {
   list-style: none;
   margin: 0;
   padding: 8px 0 0;
-  border-top: 1px solid #3a2b08;
+  border-top: 1px solid var(--weapon-dark);
 }
 
 .change {
