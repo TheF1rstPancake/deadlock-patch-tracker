@@ -38,6 +38,7 @@ export function classifyLine(text: string): LineTag {
     return 'nerf'
   }
 
+  // Talent CDR (−11s → −14s Cooldown) before absolute "cooldown increased".
   const signedCdr = matchSignedCooldownReduction(t)
   if (signedCdr) return signedCdr
 

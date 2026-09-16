@@ -13,17 +13,26 @@ describe('classifyLine', () => {
       'nerf',
     )
     expect(
+      classifyLine('Splatter detonation cooldown reduced from 0.15 to 0.12'),
+    ).toBe('buff')
+  })
+
+  it('treats signed talent CDR as buff/nerf by magnitude, not the word increased', () => {
+    expect(
       classifyLine('Captivating Read T1 increased from -11s Cooldown to -14s'),
     ).toBe('buff')
     expect(
       classifyLine('Captivating Read T1 Cooldown increased from -11s to -14s'),
     ).toBe('buff')
     expect(
+      classifyLine('Captivating Read T1 reduced from -14s Cooldown to -11s'),
+    ).toBe('nerf')
+  })
+
+  it('treats absolute ability cooldown increases as nerfs', () => {
+    expect(
       classifyLine('Dazzling Trick cooldown increased from 34s to 38s'),
     ).toBe('nerf')
-    expect(
-      classifyLine('Splatter detonation cooldown reduced from 0.15 to 0.12'),
-    ).toBe('buff')
   })
 
   it('tags bugfixes as fix, not buff', () => {

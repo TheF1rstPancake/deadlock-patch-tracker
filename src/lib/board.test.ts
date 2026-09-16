@@ -36,6 +36,16 @@ describe('Sep 16 board', () => {
     expect(t1?.tag).toBe('buff')
     expect(t1?.clarified).toBe(true)
     expect(t1?.display).toMatch(/cooldown reduction/)
+    expect(t1?.display).toMatch(/stronger CDR/)
+  })
+
+  it('keeps Celeste Dazzling Trick as an absolute cooldown nerf', () => {
+    const celeste = patch.heroes.find((hero) => hero.name === 'Celeste')
+    const trick = celeste?.changes.find((change) =>
+      change.raw.includes('Dazzling Trick'),
+    )
+    expect(trick?.tag).toBe('nerf')
+    expect(celeste?.sentiment).toBe('nerf')
   })
 
   it('uses raw/display provenance on clarified lines', () => {
