@@ -59,4 +59,15 @@ describe('Sep 16 board', () => {
       expect(change.display).not.toBe(change.raw)
     }
   })
+
+  it('clarifies Shiv Serrated Knives rework without inventing numbers', () => {
+    const shiv = patch.heroes.find((hero) => hero.name === 'Shiv')
+    const knives = shiv?.changes.find((change) =>
+      change.raw.includes('Serrated Knives'),
+    )
+    expect(knives?.clarified).toBe(true)
+    expect(knives?.display).toMatch(/3\.5% current HP/)
+    expect(knives?.display).toMatch(/ricochet/)
+    expect(knives?.raw).toMatch(/ricocheting/)
+  })
 })

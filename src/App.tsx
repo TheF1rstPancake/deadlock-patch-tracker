@@ -52,6 +52,9 @@ export default function App() {
         onQuery={setQuery}
         counts={counts}
       />
+      <p className="provenance">
+        Clarified = we rephrased for clarity; tap to see the Steam line.
+      </p>
       <main>
         {heroes.length === 0 ? (
           <p className="empty">No heroes match that filter.</p>

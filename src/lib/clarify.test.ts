@@ -17,4 +17,15 @@ describe('autoClarify', () => {
       autoClarify('Dazzling Trick cooldown increased from 34s to 38s'),
     ).toEqual({})
   })
+
+  it('clarifies falloff-range and rage reworks', () => {
+    expect(
+      autoClarify('Gun falloff range reduced from 18m->54m to 16m->48m').display,
+    ).toMatch(/shorter/)
+    expect(
+      autoClarify(
+        'Serrated Knives while rage is full now deals 3.5% current HP damage on impact instead of ricocheting (0.01 spirit scaling)',
+      ).clarified,
+    ).toBe(true)
+  })
 })

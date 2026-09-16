@@ -144,7 +144,9 @@
       "changes": [
         {
           "raw": "Gun falloff range reduced from 18m->54m to 16m->48m",
-          "tag": "nerf"
+          "tag": "nerf",
+          "display": "Gun falloff range shorter: 18m→54m becomes 16m→48m",
+          "clarified": true
         },
         {
           "raw": "Ground Strike T3 spirit scaling increased from +0.03 to +0.04",
@@ -192,7 +194,9 @@
         },
         {
           "raw": "Captivating Read T3 increased from +1m to +2m",
-          "tag": "buff"
+          "tag": "buff",
+          "display": "Captivating Read T3 bonus +1m → +2m",
+          "clarified": true
         },
         {
           "raw": "Fixed some collision issues with Rallying Charge",
@@ -206,7 +210,9 @@
       "changes": [
         {
           "raw": "Kinetic Carbine min damage multiplier reduced from 25% to 10% (max damage multiplier unaffected)",
-          "tag": "nerf"
+          "tag": "nerf",
+          "display": "Kinetic Carbine min-damage floor 25% → 10% (max unchanged)",
+          "clarified": true
         },
         {
           "raw": "Kinetic Carbine min damage multiplier no longer gets increased by the T3",
@@ -264,7 +270,9 @@
         },
         {
           "raw": "Dashes and light melee's no longer pause your gun's cycle time",
-          "tag": "buff"
+          "tag": "buff",
+          "display": "Dashes and light melee no longer pause gun cycle time",
+          "clarified": true
         },
         {
           "raw": "Boot Kick can only target heroes and objectives now",
@@ -276,7 +284,9 @@
         },
         {
           "raw": "Weighted Bola now increases gravity during the debuff duration, and interrupts flying abilities (same rules as Phantom Strike)",
-          "tag": "buff"
+          "tag": "buff",
+          "display": "Weighted Bola now adds gravity and interrupts flight (same rules as Phantom Strike)",
+          "clarified": true
         }
       ]
     },
@@ -308,7 +318,9 @@
         },
         {
           "raw": "Splatter T1 reduced from +2m to +1.5m",
-          "tag": "nerf"
+          "tag": "nerf",
+          "display": "Splatter T1 bonus +2m → +1.5m",
+          "clarified": true
         },
         {
           "raw": "The Cube cast range reduced from 26m to 20m",

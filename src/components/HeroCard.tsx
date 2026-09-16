@@ -38,7 +38,7 @@ export function HeroCard({ hero }: HeroCardProps) {
                 {changeDisplay(change)}
                 {change.clarified ? (
                   <details className="clarified">
-                    <summary>Clarified</summary>
+                    <summary title={`Steam: ${raw}`}>Clarified</summary>
                     <p>Steam: {raw}</p>
                   </details>
                 ) : null}

@@ -43,6 +43,8 @@ export function autoClarify(
 export const MANUAL_CLARIFICATIONS: Record<string, string> = {
   'Crackshot T2 now also applies -6% Bullet Resistance for 5s':
     'Crackshot T2 also shreds 6% Bullet Resistance for 5s (on the target)',
+  'Kinetic Carbine min damage multiplier reduced from 25% to 10% (max damage multiplier unaffected)':
+    'Kinetic Carbine min-damage floor 25% → 10% (max unchanged)',
   'Kinetic Carbine min damage multiplier no longer gets increased by the T3':
     'Kinetic Carbine T3 no longer boosts the min-damage multiplier (close-range floor is weaker)',
   'Serrated Knives while rage is full now deals 3.5% current HP damage on impact instead of ricocheting (0.01 spirit scaling)':
@@ -55,4 +57,14 @@ export const MANUAL_CLARIFICATIONS: Record<string, string> = {
     'Card Trick T3 Clubs slow weaker: +20% → +15%',
   'Seismic Impact T3 reduced from 6s Unstoppable to 5s':
     'Seismic Impact T3 Unstoppable 6s → 5s',
+  'Gun falloff range reduced from 18m->54m to 16m->48m':
+    'Gun falloff range shorter: 18m→54m becomes 16m→48m',
+  'Splatter T1 reduced from +2m to +1.5m':
+    'Splatter T1 bonus +2m → +1.5m',
+  'Captivating Read T3 increased from +1m to +2m':
+    'Captivating Read T3 bonus +1m → +2m',
+  "Dashes and light melee's no longer pause your gun's cycle time":
+    'Dashes and light melee no longer pause gun cycle time',
+  'Weighted Bola now increases gravity during the debuff duration, and interrupts flying abilities (same rules as Phantom Strike)':
+    'Weighted Bola now adds gravity and interrupts flight (same rules as Phantom Strike)',
 }
