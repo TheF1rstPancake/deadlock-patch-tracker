@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
+import { formatPatchPulse, sortHeroesForFriendScan } from './board.ts'
 import type { Patch } from '../types.ts'
 
 const patchPath = resolve(
@@ -69,5 +70,44 @@ describe('Sep 16 board', () => {
     expect(knives?.display).toMatch(/3\.5% current HP/)
     expect(knives?.display).toMatch(/ricochet/)
     expect(knives?.raw).toMatch(/ricocheting/)
+  })
+
+  it('pulses the patch shape from sentiment tallies', () => {
+    const counts = { buff: 0, nerf: 0, mixed: 0, fix: 0, neutral: 0 }
+    for (const hero of patch.heroes) counts[hero.sentiment] += 1
+    expect(formatPatchPulse(counts)).toBe('9 buff · 5 nerf · 5 mixed · 1 fix')
+    expect(formatPatchPulse({ buff: 12, nerf: 5, mixed: 3, fix: 2 })).toBe(
+      '12 buff · 5 nerf · 3 mixed · 2 fix',
+    )
+    expect(
+      formatPatchPulse({ buff: 0, nerf: 0, mixed: 0, fix: 0, neutral: 0 }),
+    ).toBe('')
+  })
+
+  it('sorts the board buffs-first for a friend scan', () => {
+    const sorted = sortHeroesForFriendScan(patch.heroes)
+    expect(sorted.slice(0, 9).map((hero) => hero.name)).toEqual([
+      'Graves',
+      'Haze',
+      'Holliday',
+      'Kelvin',
+      'Lady Geist',
+      'Paige',
+      'Shiv',
+      'Venator',
+      'Yamato',
+    ])
+    const ranks = { buff: 0, nerf: 1, mixed: 2, fix: 3, neutral: 4 }
+    for (let i = 1; i < sorted.length; i++) {
+      const prev = ranks[sorted[i - 1].sentiment]
+      const next = ranks[sorted[i].sentiment]
+      expect(next).toBeGreaterThanOrEqual(prev)
+    }
+    expect(sorted[sorted.length - 1].name).toBe('Rem')
+    const abramsIndex = sorted.findIndex((hero) => hero.name === 'Abrams')
+    const gravesIndex = sorted.findIndex((hero) => hero.name === 'Graves')
+    const remIndex = sorted.findIndex((hero) => hero.name === 'Rem')
+    expect(gravesIndex).toBeLessThan(abramsIndex)
+    expect(abramsIndex).toBeLessThan(remIndex)
   })
 })

@@ -33,16 +33,23 @@ export function HeroCard({ hero }: HeroCardProps) {
               <span className="glyph" aria-hidden="true">
                 {LINE_GLYPH[change.tag]}
               </span>
-              <span className="change-text">
+              <div className="change-text">
                 <span className="sr-only">{LINE_LABEL[change.tag]}: </span>
                 {changeDisplay(change)}
                 {change.clarified ? (
                   <details className="clarified">
-                    <summary title={`Steam: ${raw}`}>Clarified</summary>
-                    <p>Steam: {raw}</p>
+                    <summary>
+                      Clarified
+                      <span className="sr-only">
+                        . Show original Steam wording.
+                      </span>
+                    </summary>
+                    <p className="steam-raw">
+                      <span className="steam-raw-kicker">Steam:</span> {raw}
+                    </p>
                   </details>
                 ) : null}
-              </span>
+              </div>
             </li>
           )
         })}
