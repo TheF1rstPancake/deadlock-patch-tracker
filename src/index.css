@@ -388,8 +388,8 @@ h1 {
 }
 
 .clarified {
-  display: inline;
-  margin-left: 8px;
+  display: block;
+  margin-top: 6px;
 }
 
 .clarified summary {
