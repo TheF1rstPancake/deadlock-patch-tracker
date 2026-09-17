@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-05-28",
+  "title": "Minor Update - 05-28-2026",
+  "date": "2026-05-28",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1833968530888928",
+  "gid": "1833968530888928",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1833968530888928:0",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn spawn time and interval changed from 10/15/20/25/etc to 12/18/24/30/etc",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:1",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn timer now gets frozen with Frozen Shelter",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:2",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "nerf",
+      "raw": "Urn no longer provides the +35% Bullet and Spirit Resist aura for the behind team when it is being carried or dropped. The aura is now only active when it is being deposited.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:3",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn runner when behind now gains +35% Bullet and Spirit Resist for themselves only",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:4",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "fix",
+      "raw": "Fixed the trailing team Urn runner's extra sprint bonus not working properly",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:5",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn will do damage to the runner after a team has held it for 30s (was 50s before), however, this timer will freeze while there are enemies within a 40m radius of the urn runner.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:6",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn will now always add at least 2s to the team 30s held timer limit anytime it is picked up, even if it is instantly dropped",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:7",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "nerf",
+      "raw": "You are no longer prevented from picking up the urn for 12s after it is dropped after the previous 50s team held timer",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:8",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "neutral",
+      "raw": "The conditions for when the Urn decides to run back home have been reworked. The Urn will now stay in place on the ground as long as there are enemies in a 40m radius (enemies of the last person to have dropped or fumbled the Urn). If there are no enemies, then the Urn will wait up to 13s if there is a friendly player in a 40m radius.",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:9",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "neutral",
+      "raw": "If the Urn held timer is over 45s (keeping in mind this timer is frozen if there are nearby enemies), the next time it is dropped it will immediately run back home if there are no nearby enemies.",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:10",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "nerf",
+      "raw": "Parrying a trooper no longer resets your parry cooldown (however it won't end your parry early like a hero hit does)",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888928:11",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "neutral",
+      "raw": "Parrying a trooper now stuns the trooper",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    }
+  ],
+  "heroes": []
+}

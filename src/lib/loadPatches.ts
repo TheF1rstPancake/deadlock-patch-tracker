@@ -1,18 +1,43 @@
-import type { Patch } from '../types.ts'
+import type { HistoryIndex, Patch } from '../types.ts'
+import historyIndex from '../../data/index.json'
 
-const modules = import.meta.glob('../../data/patches/*.json', {
-  eager: true,
+const patchLoaders = import.meta.glob('../../data/patches/*.json', {
   import: 'default',
-}) as Record<string, Patch>
+}) as Record<string, () => Promise<Patch>>
 
-export function loadAllPatches(): Patch[] {
-  return Object.values(modules).sort((a, b) => b.date.localeCompare(a.date))
+export function loadHistoryIndex(): HistoryIndex {
+  return historyIndex as HistoryIndex
 }
 
-export function loadLatestPatch(): Patch {
-  const patches = loadAllPatches()
-  if (patches.length === 0) {
-    throw new Error('No patch JSON found in data/patches')
+export function listPatchIds(): string[] {
+  return loadHistoryIndex()
+    .patches.slice()
+    .sort((a, b) => {
+      const byDate = b.date.localeCompare(a.date)
+      if (byDate !== 0) return byDate
+      return b.id.localeCompare(a.id)
+    })
+    .map((patch) => patch.id)
+}
+
+function loaderFor(id: string): (() => Promise<Patch>) | undefined {
+  const path = Object.keys(patchLoaders).find((file) =>
+    file.endsWith(`/${id}.json`),
+  )
+  return path ? patchLoaders[path] : undefined
+}
+
+export async function loadPatchById(id: string): Promise<Patch | undefined> {
+  const load = loaderFor(id)
+  if (!load) return undefined
+  return load()
+}
+
+export async function loadLatestPatch(): Promise<Patch> {
+  const ids = listPatchIds()
+  for (const id of ids) {
+    const patch = await loadPatchById(id)
+    if (patch) return patch
   }
-  return patches[0]
+  throw new Error('No patch JSON found in data/patches')
 }

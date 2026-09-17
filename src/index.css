@@ -176,6 +176,94 @@ h1 {
   outline: none;
 }
 
+.patch-picker select {
+  max-width: min(100%, 34rem);
+  border: 1px solid var(--line);
+  background: var(--weapon-dark);
+  color: var(--ink);
+  border-radius: 0;
+  padding: 8px 12px;
+  font: inherit;
+  margin-bottom: 10px;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+.patch-picker select:focus-visible {
+  outline: 1px solid var(--gold-hot);
+  outline-offset: 2px;
+}
+
+.hero-history {
+  margin: -4px 0 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--weapon-dark);
+  background: var(--weapon-dark);
+}
+
+.hero-history-lede {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hero-history-lede strong {
+  color: var(--ink);
+  font-family: Cinzel, 'Times New Roman', serif;
+  letter-spacing: 0.02em;
+}
+
+.hero-history-totals {
+  display: block;
+  margin-top: 4px;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: var(--gold);
+}
+
+.hero-history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.history-chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 8px 3px;
+  cursor: pointer;
+}
+
+.history-chip.is-current {
+  border-color: var(--gold);
+  color: var(--gold-hot);
+}
+
+.history-tag {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.history-tag-buff { color: var(--buff); }
+.history-tag-nerf { color: var(--nerf); }
+.history-tag-mixed { color: var(--gold-hot); }
+.history-tag-fix { color: var(--fix); }
+.history-tag-neutral { color: var(--neutral); }
+
 .toolbar {
   display: flex;
   gap: 14px;

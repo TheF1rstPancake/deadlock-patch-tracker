@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "ingest": "tsx scripts/ingest.ts",
+    "ingest:all": "tsx scripts/ingest.ts --all",
     "vendor-portraits": "tsx scripts/vendor-portraits.ts",
     "test": "vitest run"
   },

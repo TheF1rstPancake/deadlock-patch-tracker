@@ -1,22 +1,42 @@
 import { formatPatchPulse } from '../lib/board.ts'
-import type { HeroSentiment, Patch } from '../types.ts'
+import type { HeroSentiment, HistoryPatchSummary, Patch } from '../types.ts'
+import { PatchPicker } from './PatchPicker.tsx'
 
 interface PatchHeaderProps {
   patch: Patch
+  patches: HistoryPatchSummary[]
   heroCount: number
   counts: Record<HeroSentiment, number>
+  onSelectPatch: (id: string) => void
 }
 
-export function PatchHeader({ patch, heroCount, counts }: PatchHeaderProps) {
+export function PatchHeader({
+  patch,
+  patches,
+  heroCount,
+  counts,
+  onSelectPatch,
+}: PatchHeaderProps) {
   const formatted = formatDate(patch.date)
   const pulse = formatPatchPulse(counts)
+  const kicker =
+    patches.length > 1 ? 'Hero roster · patch history' : 'Hero roster · latest patch'
 
   return (
     <header className="masthead">
-      <p className="kicker">Hero roster · latest patch</p>
+      <p className="kicker">{kicker}</p>
       <div className="masthead-row">
         <div>
-          <h1>{patch.title}</h1>
+          {patches.length > 1 ? (
+            <PatchPicker
+              patches={patches}
+              selectedId={patch.id}
+              onSelect={onSelectPatch}
+            />
+          ) : (
+            <h1>{patch.title}</h1>
+          )}
+          {patches.length > 1 ? <h1>{patch.title}</h1> : null}
           <p className="lede">
             {formatted} · {heroCount} {heroCount === 1 ? 'hero' : 'heroes'}{' '}
             touched

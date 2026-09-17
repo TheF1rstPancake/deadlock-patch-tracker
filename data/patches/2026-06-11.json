@@ -1,0 +1,2077 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-06-11",
+  "title": "Minor Update - 06-11-2026",
+  "date": "2026-06-11",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1835236783562074",
+  "gid": "1835236783562074",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1835236783562074:0",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "nerf",
+      "raw": "Urn give up time reduced from 75s to 60s",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 75,
+          "to": 60,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:1",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "nerf",
+      "raw": "Urn bounty reduced by 10% (unreduced for trailing team)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:2",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "nerf",
+      "raw": "Breakables health permanent bonus reduced from 15/25/35 to 15/20/30 for level 1/2/3",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:3",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "buff",
+      "raw": "Kill comeback bounty values increased by 8%",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:4",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Street Brawl",
+        "slug": "street-brawl",
+        "facet": "All"
+      },
+      "tag": "nerf",
+      "raw": "All ability and item range/radius values are reduced by 10%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:5",
+      "section": "",
+      "target": {
+        "kind": "item",
+        "name": "Opening Rounds",
+        "slug": "opening-rounds",
+        "facet": "Conditional Weapon Damage"
+      },
+      "tag": "nerf",
+      "raw": "Conditional Weapon Damage bonus reduced from 30% to 25%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 30,
+          "to": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:6",
+      "section": "",
+      "target": {
+        "kind": "item",
+        "name": "Opening Rounds",
+        "slug": "opening-rounds",
+        "facet": "Spirit Power"
+      },
+      "tag": "buff",
+      "raw": "Spirit Power increased from +4 to +7",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 4,
+          "to": 7
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:7",
+      "section": "",
+      "target": {
+        "kind": "item",
+        "name": "Arcane Surge",
+        "slug": "arcane-surge"
+      },
+      "tag": "fix",
+      "raw": "Fixed various cases with the bonuses not working",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:8",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Disengaging Sigil"
+      },
+      "tag": "buff",
+      "raw": "Disengaging Sigil velocity increased by 50%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:9",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Disengaging Sigil"
+      },
+      "tag": "neutral",
+      "raw": "Disengaging Sigil velocity's vertical:horizontal ratio changed from 1.5:1 to 1:1",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:10",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Disengaging Sigil"
+      },
+      "tag": "neutral",
+      "raw": "Disengaging Sigil now allows input to alter the direction apollo launches himself (A/D biases to the left/right and W/S affect how much backwards motion is applied",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:11",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Disengaging Sigil T1"
+      },
+      "tag": "neutral",
+      "raw": "Disengaging Sigil T1 changed from \"+30 Damage\" to \"Gain +25% Fire Rate and Bullet Speed for 8s\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:12",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Disengaging Sigil T2"
+      },
+      "tag": "neutral",
+      "raw": "Disengaging Sigil T2 changed from \"Gain +30% Fire Rate and +50% Bullet Speed for 10s\" to \"On Player Hit: +1 Stamina restored and resets Air Jump/Dash limit\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:13",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Disengaging Sigil T3"
+      },
+      "tag": "neutral",
+      "raw": "Disengaging Sigil T3 changed from \"On Player Hit: +2 stamina restored and reset Air Jump/Dash limit\" to \"Recast within 4s\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:14",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Flawless Advance"
+      },
+      "tag": "neutral",
+      "raw": "Flawless Advance now allows Apollo to parry during it",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:15",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Bebop",
+        "slug": "bebop",
+        "facet": "Exploding Uppercut T3"
+      },
+      "tag": "buff",
+      "raw": "Exploding Uppercut T3 increased from +17% Missing Health to +18%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:16",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Bebop",
+        "slug": "bebop"
+      },
+      "tag": "fix",
+      "raw": "Fixed Sticky Bomb T3 duration ending once the bomb went off rather than the 5s duration",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:17",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Bebop",
+        "slug": "bebop",
+        "facet": "Sticky Bomb T3"
+      },
+      "tag": "neutral",
+      "raw": "Sticky Bomb T3 changed from \"On Cast: +5m Move Speed and +20% Fire Rate for 5s\" to \"On Cast: +5m Move Speed and +25% Debuff Resistance for 6s\" (applies retroactively)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:18",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Calico",
+        "slug": "calico",
+        "facet": "Gloom Bombs"
+      },
+      "tag": "neutral",
+      "raw": "Gloom Bombs melee resist debuff now stacks additively",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:19",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Calico",
+        "slug": "calico",
+        "facet": "Gloom Bombs T2"
+      },
+      "tag": "buff",
+      "raw": "Gloom Bombs T2 increased from -5% Melee Resist for 5s to -6% for 6s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:20",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Calico",
+        "slug": "calico",
+        "facet": "Gloom Bombs"
+      },
+      "tag": "neutral",
+      "raw": "Gloom Bombs melee resist now applies on impact rather than explosion",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:21",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Calico",
+        "slug": "calico",
+        "facet": "Return"
+      },
+      "tag": "buff",
+      "raw": "Return to Shadows damage increased from 140 to 150",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 140,
+          "to": 150
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:22",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Calico",
+        "slug": "calico",
+        "facet": "Return"
+      },
+      "tag": "buff",
+      "raw": "Return to Shadows T2 damage increased from +65 to +75",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 65,
+          "to": 75
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:23",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Calico",
+        "slug": "calico",
+        "facet": "Return"
+      },
+      "tag": "buff",
+      "raw": "Return to Shadows T3 heal increased from 350 to 450",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 350,
+          "to": 450
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:24",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Call Bell"
+      },
+      "tag": "nerf",
+      "raw": "Call Bell explosion damage spirit scaling reduced from 1.3 to 1.2",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.3,
+          "to": 1.2
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:25",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Call Bell T3"
+      },
+      "tag": "nerf",
+      "raw": "Call Bell T3 spirit scaling reduced from 0.4 to 0.35",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.4,
+          "to": 0.35
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:26",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Jar"
+      },
+      "tag": "nerf",
+      "raw": "Jar of Dead collection rate reduced by 20% (takes longer to gain a charge)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:27",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Jar"
+      },
+      "tag": "nerf",
+      "raw": "Jar of Dead damage reduced from 17+0.27 to 16+0.25",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:28",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Jar"
+      },
+      "tag": "buff",
+      "raw": "Jar of Dead bounty increased from 5+0.25/boon to 7+0.5/boon",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:29",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Grasping Hands T3 Immobilize"
+      },
+      "tag": "nerf",
+      "raw": "Grasping Hands T3 Immobilize duration reduced from +1s to +0.75s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 0.75,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:30",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Gun"
+      },
+      "tag": "buff",
+      "raw": "Gun cycle time increased from 0.5775 to 0.6 (~4% DPS nerf)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 0.5775,
+          "to": 0.6
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:31",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Bullet"
+      },
+      "tag": "nerf",
+      "raw": "Bullet damage growth reduced from +1.0 to +0.85",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 0.85
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:32",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Rain"
+      },
+      "tag": "nerf",
+      "raw": "Rain of Arrows cooldown increased from 22s to 23s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 22,
+          "to": 23,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:33",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Rain"
+      },
+      "tag": "nerf",
+      "raw": "Rain of Arrows T2 reduced from -13s Cooldown to -12s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Rain of Arrows T2: cooldown reduction −13s → −12s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1835236783562074:34",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg"
+      },
+      "tag": "neutral",
+      "raw": "Powder Keg now has an alt cast behavior to place the barrel at her feet",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:35",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg"
+      },
+      "tag": "neutral",
+      "raw": "Powder Keg various improvements to the launch angles, velocities and feel of casting",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:36",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg"
+      },
+      "tag": "neutral",
+      "raw": "Powder Keg now starts with 2 charges",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:37",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg Charge Time"
+      },
+      "tag": "nerf",
+      "raw": "Powder Keg Charge Time increased from 3.5s to 7s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "charge_time",
+          "polarity": "up_is_nerf",
+          "from": 3.5,
+          "to": 7,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:38",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg"
+      },
+      "tag": "nerf",
+      "raw": "Powder Keg spirit scaling reduced from 1.6 to 1.4",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.6,
+          "to": 1.4
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:39",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg T2"
+      },
+      "tag": "neutral",
+      "raw": "Powder Keg T2 changed from \"+58 Damage\" to \"+1 Charge\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:40",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg T3"
+      },
+      "tag": "neutral",
+      "raw": "Powder Keg T3 changed from \"+2 Charges and +0.4s Displacement\" to \"+100 Damage, +0.5 Spirit Scaling and -5s Charge Time\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:41",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday"
+      },
+      "tag": "fix",
+      "raw": "Fixed various issues with placing bounce pad on elevated areas",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:42",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Bounce Pad"
+      },
+      "tag": "nerf",
+      "raw": "Bounce Pad landing radius reduced from 12m to 9m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 12,
+          "to": 9,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:43",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Bounce Pad T3"
+      },
+      "tag": "neutral",
+      "raw": "Bounce Pad T3 changed from \"+68 Stomp Damage and Improved Spirit Scaling\" to \"+0.7s Stomp Stun\" (only triggers from Holliday)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:44",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Infernus",
+        "slug": "infernus"
+      },
+      "tag": "fix",
+      "raw": "Fixed Afterburn Max duration refreshing not properly accounting for both Debuff Resist and +Ability Duration",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:45",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Infernus",
+        "slug": "infernus"
+      },
+      "tag": "fix",
+      "raw": "Fixed Concussive Combustion cooldown not updating when getting the T2 or other CD reducing items when the ability is on cooldown",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:46",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy"
+      },
+      "tag": "fix",
+      "raw": "Fixed a bug where Stone Form could sometimes do significantly more damage than intended",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:47",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turret DPS"
+      },
+      "tag": "neutral",
+      "raw": "Mini Turret DPS rescaled from 30+0.39 to 24+0.42 (break even at 200 spirit power)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:48",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets T3 Fire Rate"
+      },
+      "tag": "nerf",
+      "raw": "Mini Turrets T3 Fire Rate reduced from +30% to +25%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "fire_rate",
+          "polarity": "up_is_buff",
+          "from": 30,
+          "to": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:49",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis"
+      },
+      "tag": "fix",
+      "raw": "Fixed some rare cases where Heavy Barrage would stop working",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:50",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Heavy Barrage DPS"
+      },
+      "tag": "nerf",
+      "raw": "Heavy Barrage DPS reduced from 22.5 to 21",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 22.5,
+          "to": 21
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:51",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Paige",
+        "slug": "paige",
+        "facet": "Rallying Charge"
+      },
+      "tag": "nerf",
+      "raw": "Rallying Charge distance for max amp reduced from 350m to 250m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 350,
+          "to": 250,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:52",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Paige",
+        "slug": "paige",
+        "facet": "Rallying Charge T2"
+      },
+      "tag": "buff",
+      "raw": "Rallying Charge T2 increased from -30s Cooldown to -50s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Rallying Charge T2: cooldown reduction −30s → −50s (stronger CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1835236783562074:53",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Paige",
+        "slug": "paige",
+        "facet": "Plot Armor"
+      },
+      "tag": "buff",
+      "raw": "Plot Armor barrier spirit scaling increased from 1.3 to 1.5",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.3,
+          "to": 1.5
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:54",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Paige",
+        "slug": "paige",
+        "facet": "Plot Armor T3"
+      },
+      "tag": "buff",
+      "raw": "Plot Armor T3 barrier spirit scaling increased from +0.3 to +0.5",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.3,
+          "to": 0.5
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:55",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Bullet"
+      },
+      "tag": "nerf",
+      "raw": "Bullet damage growth reduced from +0.2 to +0.16",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 0.2,
+          "to": 0.16
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:56",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Flying Cloak T3"
+      },
+      "tag": "nerf",
+      "raw": "Flying Cloak T3 reduced from -13s Cooldown to -12s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Flying Cloak T3: cooldown reduction −13s → −12s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1835236783562074:57",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction"
+      },
+      "tag": "neutral",
+      "raw": "Affliction now does half damage on objectives",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:58",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Seven",
+        "slug": "seven",
+        "facet": "Bullet"
+      },
+      "tag": "nerf",
+      "raw": "Bullet damage growth reduced from 0.337 to 0.24",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 0.337,
+          "to": 0.24
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:59",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Seven",
+        "slug": "seven",
+        "facet": "Power Surge T3"
+      },
+      "tag": "nerf",
+      "raw": "Power Surge T3 reduced from +12s Duration to +10s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:60",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Seven",
+        "slug": "seven",
+        "facet": "Storm Cloud"
+      },
+      "tag": "neutral",
+      "raw": "Storm Cloud now hits breakables",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:61",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Killing Blow"
+      },
+      "tag": "neutral",
+      "raw": "Killing Blow now has +30% more cooldown whenever it does not impact a player",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:62",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Lycan Curse"
+      },
+      "tag": "nerf",
+      "raw": "Lycan Curse cooldown increased from 40s to 70s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 40,
+          "to": 70,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:63",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Lycan Curse T3"
+      },
+      "tag": "nerf",
+      "raw": "Lycan Curse T3 no longer heals",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:64",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Puddle Punch T2"
+      },
+      "tag": "buff",
+      "raw": "Puddle Punch T2 increased from +40% Lifesteal to +60%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:65",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Goo Ball T2"
+      },
+      "tag": "buff",
+      "raw": "Goo Ball T2 now also increases Bullet and Spirit Resist by +10%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:66",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor",
+        "facet": "Aura"
+      },
+      "tag": "nerf",
+      "raw": "Aura of Suffering radius reduced from 9m to 8m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 9,
+          "to": 8,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:67",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor",
+        "facet": "Aura"
+      },
+      "tag": "buff",
+      "raw": "Aura of Suffering T3 now also increases radius by +1m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:68",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor"
+      },
+      "tag": "fix",
+      "raw": "Fixed some client performance issues when using Aura of Suffering",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:69",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor",
+        "facet": "Shocking Reanimation"
+      },
+      "tag": "nerf",
+      "raw": "Shocking Reanimation cooldown increased from 230s to 240s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 230,
+          "to": 240,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:70",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor",
+        "facet": "Shocking Reanimation T3"
+      },
+      "tag": "nerf",
+      "raw": "Shocking Reanimation T3 reduced from -120s Cooldown to -110s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Shocking Reanimation T3: cooldown reduction −120s → −110s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1835236783562074:71",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor",
+        "facet": "Shocking Reanimation T3"
+      },
+      "tag": "buff",
+      "raw": "Shocking Reanimation T3 increased from +150 Damage to +175",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:72",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Assassinate Max Bonus Damage"
+      },
+      "tag": "buff",
+      "raw": "Assassinate Max Bonus Damage spirit scaling increased from 1.7 to 2.0",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.7,
+          "to": 2
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:73",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Bullet"
+      },
+      "tag": "nerf",
+      "raw": "Bullet falloff reduced from 20m->58m to 18m->47m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:74",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Alchemical Flask"
+      },
+      "tag": "nerf",
+      "raw": "Alchemical Flask spirit scaling reduced from 0.73 to 0.63",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.73,
+          "to": 0.63
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:75",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Alchemical Flask T2"
+      },
+      "tag": "nerf",
+      "raw": "Alchemical Flask T2 reduced from +40 Damage to +35",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:76",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Alchemical Flask T2"
+      },
+      "tag": "buff",
+      "raw": "Alchemical Flask T2 increased from -20% Weapon Damage to -25%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1835236783562074:77",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Willpower"
+      },
+      "tag": "buff",
+      "raw": "Willpower spirit scaling increased from +0.5 to +0.8",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.5,
+          "to": 0.8
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:78",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Binding Word T3"
+      },
+      "tag": "nerf",
+      "raw": "Binding Word T3 reduced from -18s Cooldown to -14s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Binding Word T3: cooldown reduction −18s → −14s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1835236783562074:79",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Last Stand"
+      },
+      "tag": "buff",
+      "raw": "Last Stand lifesteal increased from 65% to 75%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "lifesteal",
+          "polarity": "up_is_buff",
+          "from": 65,
+          "to": 75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1835236783562074:80",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Last Stand T2"
+      },
+      "tag": "buff",
+      "raw": "Last Stand T2 increased from -30s Cooldown to -35s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Last Stand T2: cooldown reduction −30s → −35s (stronger CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1835236783562074:81",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Last Stand T3"
+      },
+      "tag": "buff",
+      "raw": "Last Stand T3 increased from +3s Duration to +4s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Apollo",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Disengaging Sigil velocity increased by 50%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Disengaging Sigil velocity's vertical:horizontal ratio changed from 1.5:1 to 1:1",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Disengaging Sigil now allows input to alter the direction apollo launches himself (A/D biases to the left/right and W/S affect how much backwards motion is applied",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Disengaging Sigil T1 changed from \"+30 Damage\" to \"Gain +25% Fire Rate and Bullet Speed for 8s\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Disengaging Sigil T2 changed from \"Gain +30% Fire Rate and +50% Bullet Speed for 10s\" to \"On Player Hit: +1 Stamina restored and resets Air Jump/Dash limit\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Disengaging Sigil T3 changed from \"On Player Hit: +2 stamina restored and reset Air Jump/Dash limit\" to \"Recast within 4s\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Flawless Advance now allows Apollo to parry during it",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Bebop",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Exploding Uppercut T3 increased from +17% Missing Health to +18%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Fixed Sticky Bomb T3 duration ending once the bomb went off rather than the 5s duration",
+          "tag": "fix"
+        },
+        {
+          "raw": "Sticky Bomb T3 changed from \"On Cast: +5m Move Speed and +20% Fire Rate for 5s\" to \"On Cast: +5m Move Speed and +25% Debuff Resistance for 6s\" (applies retroactively)",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Calico",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Gloom Bombs melee resist debuff now stacks additively",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Gloom Bombs T2 increased from -5% Melee Resist for 5s to -6% for 6s",
+          "tag": "buff"
+        },
+        {
+          "raw": "Gloom Bombs melee resist now applies on impact rather than explosion",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Return to Shadows damage increased from 140 to 150",
+          "tag": "buff"
+        },
+        {
+          "raw": "Return to Shadows T2 damage increased from +65 to +75",
+          "tag": "buff"
+        },
+        {
+          "raw": "Return to Shadows T3 heal increased from 350 to 450",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Graves",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Jar of Dead collection rate reduced by 20% (takes longer to gain a charge)",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Jar of Dead damage reduced from 17+0.27 to 16+0.25",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Jar of Dead bounty increased from 5+0.25/boon to 7+0.5/boon",
+          "tag": "buff"
+        },
+        {
+          "raw": "Grasping Hands T3 Immobilize duration reduced from +1s to +0.75s",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Grey Talon",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Gun cycle time increased from 0.5775 to 0.6 (~4% DPS nerf)",
+          "tag": "buff"
+        },
+        {
+          "raw": "Bullet damage growth reduced from +1.0 to +0.85",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rain of Arrows cooldown increased from 22s to 23s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rain of Arrows T2 reduced from -13s Cooldown to -12s",
+          "tag": "nerf",
+          "display": "Rain of Arrows T2: cooldown reduction −13s → −12s (weaker CDR)",
+          "clarified": true
+        }
+      ]
+    },
+    {
+      "name": "Holliday",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Powder Keg now has an alt cast behavior to place the barrel at her feet",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Powder Keg various improvements to the launch angles, velocities and feel of casting",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Powder Keg now starts with 2 charges",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Powder Keg Charge Time increased from 3.5s to 7s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Powder Keg spirit scaling reduced from 1.6 to 1.4",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Powder Keg T2 changed from \"+58 Damage\" to \"+1 Charge\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Powder Keg T3 changed from \"+2 Charges and +0.4s Displacement\" to \"+100 Damage, +0.5 Spirit Scaling and -5s Charge Time\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Fixed various issues with placing bounce pad on elevated areas",
+          "tag": "fix"
+        },
+        {
+          "raw": "Bounce Pad landing radius reduced from 12m to 9m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Bounce Pad T3 changed from \"+68 Stomp Damage and Improved Spirit Scaling\" to \"+0.7s Stomp Stun\" (only triggers from Holliday)",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Infernus",
+      "sentiment": "fix",
+      "changes": [
+        {
+          "raw": "Fixed Afterburn Max duration refreshing not properly accounting for both Debuff Resist and +Ability Duration",
+          "tag": "fix"
+        },
+        {
+          "raw": "Fixed Concussive Combustion cooldown not updating when getting the T2 or other CD reducing items when the ability is on cooldown",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "Ivy",
+      "sentiment": "fix",
+      "changes": [
+        {
+          "raw": "Fixed a bug where Stone Form could sometimes do significantly more damage than intended",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Mini Turret DPS rescaled from 30+0.39 to 24+0.42 (break even at 200 spirit power)",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Mini Turrets T3 Fire Rate reduced from +30% to +25%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Fixed some rare cases where Heavy Barrage would stop working",
+          "tag": "fix"
+        },
+        {
+          "raw": "Heavy Barrage DPS reduced from 22.5 to 21",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Paige",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Rallying Charge distance for max amp reduced from 350m to 250m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rallying Charge T2 increased from -30s Cooldown to -50s",
+          "tag": "buff",
+          "display": "Rallying Charge T2: cooldown reduction −30s → −50s (stronger CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Plot Armor barrier spirit scaling increased from 1.3 to 1.5",
+          "tag": "buff"
+        },
+        {
+          "raw": "Plot Armor T3 barrier spirit scaling increased from +0.3 to +0.5",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Pocket",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Bullet damage growth reduced from +0.2 to +0.16",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Flying Cloak T3 reduced from -13s Cooldown to -12s",
+          "tag": "nerf",
+          "display": "Flying Cloak T3: cooldown reduction −13s → −12s (weaker CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Affliction now does half damage on objectives",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Seven",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Bullet damage growth reduced from 0.337 to 0.24",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Power Surge T3 reduced from +12s Duration to +10s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Storm Cloud now hits breakables",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Shiv",
+      "sentiment": "neutral",
+      "changes": [
+        {
+          "raw": "Killing Blow now has +30% more cooldown whenever it does not impact a player",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Silver",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Lycan Curse cooldown increased from 40s to 70s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Lycan Curse T3 no longer heals",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "The Doorman",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Call Bell explosion damage spirit scaling reduced from 1.3 to 1.2",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Call Bell T3 spirit scaling reduced from 0.4 to 0.35",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Victor",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Aura of Suffering radius reduced from 9m to 8m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Aura of Suffering T3 now also increases radius by +1m",
+          "tag": "buff"
+        },
+        {
+          "raw": "Fixed some client performance issues when using Aura of Suffering",
+          "tag": "fix"
+        },
+        {
+          "raw": "Shocking Reanimation cooldown increased from 230s to 240s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Shocking Reanimation T3 reduced from -120s Cooldown to -110s",
+          "tag": "nerf",
+          "display": "Shocking Reanimation T3: cooldown reduction −120s → −110s (weaker CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Shocking Reanimation T3 increased from +150 Damage to +175",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Vindicta",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Assassinate Max Bonus Damage spirit scaling increased from 1.7 to 2.0",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Viscous",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Puddle Punch T2 increased from +40% Lifesteal to +60%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Goo Ball T2 now also increases Bullet and Spirit Resist by +10%",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Warden",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Bullet falloff reduced from 20m->58m to 18m->47m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Alchemical Flask spirit scaling reduced from 0.73 to 0.63",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Alchemical Flask T2 reduced from +40 Damage to +35",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Alchemical Flask T2 increased from -20% Weapon Damage to -25%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Willpower spirit scaling increased from +0.5 to +0.8",
+          "tag": "buff"
+        },
+        {
+          "raw": "Binding Word T3 reduced from -18s Cooldown to -14s",
+          "tag": "nerf",
+          "display": "Binding Word T3: cooldown reduction −18s → −14s (weaker CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Last Stand lifesteal increased from 65% to 75%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Last Stand T2 increased from -30s Cooldown to -35s",
+          "tag": "buff",
+          "display": "Last Stand T2: cooldown reduction −30s → −35s (stronger CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Last Stand T3 increased from +3s Duration to +4s",
+          "tag": "buff"
+        }
+      ]
+    }
+  ]
+}

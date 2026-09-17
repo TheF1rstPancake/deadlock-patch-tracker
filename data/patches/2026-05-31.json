@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-05-31",
+  "title": "Minor Update - 05-31-2026",
+  "date": "2026-05-31",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1833968530895860",
+  "gid": "1833968530895860",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1833968530895860:0",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Disengaging Sigil T2"
+      },
+      "tag": "buff",
+      "raw": "Disengaging Sigil T2 increased from +20% Fire Rate to +30%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530895860:1",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Flawless Advance T1"
+      },
+      "tag": "neutral",
+      "raw": "Flawless Advance T1 heal from 30+0.75 to 35+1.0",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530895860:2",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Flawless Advance T2"
+      },
+      "tag": "buff",
+      "raw": "Flawless Advance T2 increased from -10s Cooldown to -12s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Flawless Advance T2: cooldown reduction −10s → −12s (stronger CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1833968530895860:3",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Itani Lo Sahn"
+      },
+      "tag": "buff",
+      "raw": "Itani Lo Sahn damage increased from 190 to 200",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 190,
+          "to": 200
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:4",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Itani Lo Sahn"
+      },
+      "tag": "buff",
+      "raw": "Itani Lo Sahn spirit scaling increased from 2.3 to 2.6",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 2.3,
+          "to": 2.6
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:5",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Jar"
+      },
+      "tag": "nerf",
+      "raw": "Jar of Dead damage reduced from 20 + 0.31/spirit to 17 + 0.27/spirit",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530895860:6",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Ghouls"
+      },
+      "tag": "nerf",
+      "raw": "Ghouls damage reduced by 15%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530895860:7",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Ghouls"
+      },
+      "tag": "buff",
+      "raw": "Ghouls bounty increased from 25+1/min to 35+2/min",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530895860:8",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Heavy Barrage"
+      },
+      "tag": "nerf",
+      "raw": "Heavy Barrage range reduced from 50m to 36m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 50,
+          "to": 36,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:9",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Heavy Barrage T1 Dash Slow"
+      },
+      "tag": "nerf",
+      "raw": "Heavy Barrage T1 Dash Slow reduced from 30% to 18% (regular slow still 30%)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "slow",
+          "polarity": "up_is_buff",
+          "from": 30,
+          "to": 18,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:10",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Heavy Barrage T3 Damage Per Rocket"
+      },
+      "tag": "nerf",
+      "raw": "Heavy Barrage T3 Damage Per Rocket reduced from +18 to +15",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 18,
+          "to": 15
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:11",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Flying Cloak T3"
+      },
+      "tag": "nerf",
+      "raw": "Flying Cloak T3 reduced from -14s Cooldown to -13s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Flying Cloak T3: cooldown reduction −14s → −13s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1833968530895860:12",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction T3"
+      },
+      "tag": "nerf",
+      "raw": "Affliction T3 reduced from +18 DPS to +14",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530895860:13",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Slam Fire Current Health"
+      },
+      "tag": "nerf",
+      "raw": "Slam Fire Current Health as Damage reduced from 3% to 2.5%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 3,
+          "to": 2.5,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:14",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Slam Fire T3"
+      },
+      "tag": "nerf",
+      "raw": "Slam Fire T3 reduced from 8% Current Health as Damage to 7%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530895860:15",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Entangling Bola"
+      },
+      "tag": "nerf",
+      "raw": "Entangling Bola cooldown increased from 20s to 23s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 20,
+          "to": 23,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:16",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Entangling Bola T2"
+      },
+      "tag": "buff",
+      "raw": "Entangling Bola T2 increased from -5s Cooldown to -8s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Entangling Bola T2: cooldown reduction −5s → −8s (stronger CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1833968530895860:17",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Lycan Curse Fire Rate"
+      },
+      "tag": "nerf",
+      "raw": "Lycan Curse Fire Rate reduced from 65% to 60%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "fire_rate",
+          "polarity": "up_is_buff",
+          "from": 65,
+          "to": 60,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:18",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor",
+        "facet": "Shocking Reanimation T3"
+      },
+      "tag": "nerf",
+      "raw": "Shocking Reanimation T3 reduced from -130s Cooldown to -120s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Shocking Reanimation T3: cooldown reduction −130s → −120s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1833968530895860:19",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Power Slash"
+      },
+      "tag": "nerf",
+      "raw": "Power Slash spirit scaling reduced from 2.1 to 1.85",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 2.1,
+          "to": 1.85
+        }
+      ]
+    },
+    {
+      "id": "1833968530895860:20",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Flying Slash"
+      },
+      "tag": "nerf",
+      "raw": "Flying Slash cast range reduced from 30m to 28m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 30,
+          "to": 28,
+          "unit": "m"
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Apollo",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Disengaging Sigil T2 increased from +20% Fire Rate to +30%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Flawless Advance T1 heal from 30+0.75 to 35+1.0",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Flawless Advance T2 increased from -10s Cooldown to -12s",
+          "tag": "buff",
+          "display": "Flawless Advance T2: cooldown reduction −10s → −12s (stronger CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Itani Lo Sahn damage increased from 190 to 200",
+          "tag": "buff"
+        },
+        {
+          "raw": "Itani Lo Sahn spirit scaling increased from 2.3 to 2.6",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Graves",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Jar of Dead damage reduced from 20 + 0.31/spirit to 17 + 0.27/spirit",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Ghouls damage reduced by 15%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Ghouls bounty increased from 25+1/min to 35+2/min",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Heavy Barrage range reduced from 50m to 36m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Heavy Barrage T1 Dash Slow reduced from 30% to 18% (regular slow still 30%)",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Heavy Barrage T3 Damage Per Rocket reduced from +18 to +15",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Pocket",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Flying Cloak T3 reduced from -14s Cooldown to -13s",
+          "tag": "nerf",
+          "display": "Flying Cloak T3: cooldown reduction −14s → −13s (weaker CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Affliction T3 reduced from +18 DPS to +14",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Silver",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Slam Fire Current Health as Damage reduced from 3% to 2.5%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Slam Fire T3 reduced from 8% Current Health as Damage to 7%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Entangling Bola cooldown increased from 20s to 23s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Entangling Bola T2 increased from -5s Cooldown to -8s",
+          "tag": "buff",
+          "display": "Entangling Bola T2: cooldown reduction −5s → −8s (stronger CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Lycan Curse Fire Rate reduced from 65% to 60%",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Victor",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Shocking Reanimation T3 reduced from -130s Cooldown to -120s",
+          "tag": "nerf",
+          "display": "Shocking Reanimation T3: cooldown reduction −130s → −120s (weaker CDR)",
+          "clarified": true
+        }
+      ]
+    },
+    {
+      "name": "Yamato",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Power Slash spirit scaling reduced from 2.1 to 1.85",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Flying Slash cast range reduced from 30m to 28m",
+          "tag": "nerf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1481 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-09",
+  "title": "Minor Update - 07-09-2026",
+  "date": "2026-07-09",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1836506165584438",
+  "gid": "1836506165584438",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1836506165584438:0",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner"
+      },
+      "tag": "nerf",
+      "raw": "Urn Runner sprint bonus reduced from +2m to 0 (trailing bonus reduced from +7m to +5m)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "sprint",
+          "polarity": "up_is_buff",
+          "from": 2,
+          "to": 0,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:1",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner"
+      },
+      "tag": "nerf",
+      "raw": "Urn Runner move speed bonus reduced from +3.5m to +2m",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 3.5,
+          "to": 2,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:2",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner",
+        "facet": "Urn Runner Stamina Recovery"
+      },
+      "tag": "buff",
+      "raw": "Urn Runner Stamina Recovery increased from +15% to +25%",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "stamina",
+          "polarity": "up_is_buff",
+          "from": 15,
+          "to": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:3",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "buff",
+      "raw": "Urn talking frequency increased from every 8s to every 6s",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:4",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "buff",
+      "raw": "Urn talking sound distance increased (easier to hear a nearby Urn Runner)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:5",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift"
+      },
+      "tag": "nerf",
+      "raw": "Unstable Rift warning time reduced from 25s to 20s",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 25,
+          "to": 20,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:6",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Rift Troopers",
+        "slug": "rift-troopers"
+      },
+      "tag": "neutral",
+      "raw": "Rift Troopers now have Spirit Resist (30/35/40/45%)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:7",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Rift Troopers",
+        "slug": "rift-troopers"
+      },
+      "tag": "neutral",
+      "raw": "Rift Troopers now have Melee Resistance (25%)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:8",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Rift Troopers",
+        "slug": "rift-troopers"
+      },
+      "tag": "buff",
+      "raw": "Rift Troopers spawn interval increased from every 0.3s to 0.5s (spawns slightly more staggered)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:9",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift"
+      },
+      "tag": "buff",
+      "raw": "Unstable Rift comeback resist aura radius increased from 20m to 35m",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 35,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:10",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Rift Troopers",
+        "slug": "rift-troopers"
+      },
+      "tag": "buff",
+      "raw": "Rift Troopers max comeback count increased from 12 to 14",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 12,
+          "to": 14
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:11",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "nerf",
+      "raw": "Objectives bounty split for nearby heroes reduced from 40% to 30% (this means slightly more portion of the bounty is split team wide rather than towards an individual player)",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "bounty",
+          "polarity": "up_is_buff",
+          "from": 40,
+          "to": 30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:12",
+      "section": "",
+      "target": {
+        "kind": "item",
+        "name": "Scourge",
+        "slug": "scourge",
+        "facet": "Max Health Per Second"
+      },
+      "tag": "nerf",
+      "raw": "Max Health Per Second reduced from 2.6% to 2.5%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 2.6,
+          "to": 2.5,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:13",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Billy",
+        "slug": "billy",
+        "facet": "Rising Ram T3"
+      },
+      "tag": "nerf",
+      "raw": "Rising Ram T3 spirit scaling reduced from 0.035 to 0.03",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.035,
+          "to": 0.03
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:14",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Bullet"
+      },
+      "tag": "neutral",
+      "raw": "Bullet damage rescaled from 29.26 + 1.1/boon to 26 + 1.19",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:15",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Crit"
+      },
+      "tag": "nerf",
+      "raw": "Crit scaling reduced from -25% to -30%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": -25,
+          "to": -30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:16",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Hotel Guest T3"
+      },
+      "tag": "buff",
+      "raw": "Hotel Guest T3 increased from 13s Cooldown on Failure to Check Out to 15s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:17",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Bullet"
+      },
+      "tag": "nerf",
+      "raw": "Bullet damage per boon reduced from +0.616 to +0.49",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 0.616,
+          "to": 0.49
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:18",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Bloodscent T3"
+      },
+      "tag": "nerf",
+      "raw": "Bloodscent T3 reduced from +12% to +11%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 12,
+          "to": 11,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:19",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Stalker's Mark"
+      },
+      "tag": "nerf",
+      "raw": "Stalker's Mark cooldown increased from 20s to 24s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 20,
+          "to": 24,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:20",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Stalker's Mark T2"
+      },
+      "tag": "buff",
+      "raw": "Stalker's Mark T2 increased from -8s Cooldown to -12s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Stalker's Mark T2: cooldown reduction −8s → −12s (stronger CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1836506165584438:21",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Stalker's Mark T3"
+      },
+      "tag": "nerf",
+      "raw": "Stalker's Mark T3 reduced from +2% Bleed to +1.5%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:22",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Jar"
+      },
+      "tag": "buff",
+      "raw": "Jar of Dead T1 heal spirit scaling increased from 0.1 to 0.16",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.1,
+          "to": 0.16
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:23",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Jar"
+      },
+      "tag": "neutral",
+      "raw": "Jar of Dead now build up faster from neutral creeps",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:24",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Grasping Hands"
+      },
+      "tag": "nerf",
+      "raw": "Grasping Hands immobilize duration reduced from 1.25s to 1s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 1.25,
+          "to": 1,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:25",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Grasping Hands T3"
+      },
+      "tag": "buff",
+      "raw": "Grasping Hands T3 cooldown increased from -10s to -14s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": -10,
+          "to": -14,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:26",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Essence Theft"
+      },
+      "tag": "neutral",
+      "raw": "Essence Theft now procs from melee hits",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:27",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Essence Theft T3"
+      },
+      "tag": "buff",
+      "raw": "Essence Theft T3 now also increases Max Steal Targets from 3 to 4",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 3,
+          "to": 4
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:28",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Borrowed Decree T1"
+      },
+      "tag": "neutral",
+      "raw": "Borrowed Decree T1 changed from \"-15s Cooldown\" to \"-15s Cooldown and +25% Ghoul Speed\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:29",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Graves",
+        "slug": "graves",
+        "facet": "Borrowed Decree T2"
+      },
+      "tag": "neutral",
+      "raw": "Borrowed Decree T2 changed from \"+25% Ghoul Speed and +10s Duration\" to \"-0.3s Time to Spawn and +10s Duration\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:30",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Sleep Dagger T2"
+      },
+      "tag": "buff",
+      "raw": "Sleep Dagger T2 now also applies 15 Fixation Stacks",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:31",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Sleep Dagger T2"
+      },
+      "tag": "nerf",
+      "raw": "Sleep Dagger T2 reduced from -18s Cooldown to -17s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Sleep Dagger T2: cooldown reduction −18s → −17s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1836506165584438:32",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg"
+      },
+      "tag": "nerf",
+      "raw": "Powder Keg spirit scaling reduced from 1.2 to 1.05",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.2,
+          "to": 1.05
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:33",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Fire Scarabs T3"
+      },
+      "tag": "nerf",
+      "raw": "Fire Scarabs T3 spirit scaling reduced from +0.17 to +0.13",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.17,
+          "to": 0.13
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:34",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Dust Devil T3"
+      },
+      "tag": "nerf",
+      "raw": "Dust Devil T3 spirit scaling reduced from +1 to +0.6",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 0.6
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:35",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Djinn's Mark"
+      },
+      "tag": "buff",
+      "raw": "Djinn's Mark cooldown reduced from 3s to 2.75",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 3,
+          "to": 2.75,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:36",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Djinn's Mark T3"
+      },
+      "tag": "nerf",
+      "raw": "Djinn's Mark T3 cooldown reduced from -1s Cooldown to -0.75s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Djinn's Mark T3 cooldown: cooldown reduction −1s → −0.75s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1836506165584438:37",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Traveler T3"
+      },
+      "tag": "buff",
+      "raw": "Traveler T3 increased from -70s Cooldown to -90s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Traveler T3: cooldown reduction −70s → −90s (stronger CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1836506165584438:38",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction"
+      },
+      "tag": "nerf",
+      "raw": "Affliction duration reduced from 11s to 10s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 11,
+          "to": 10,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:39",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Serrated Knives T3"
+      },
+      "tag": "nerf",
+      "raw": "Serrated Knives T3 spirit scaling reduced from +0.09 to +0.07",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.09,
+          "to": 0.07
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:40",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Slice"
+      },
+      "tag": "nerf",
+      "raw": "Slice and Dice spirit scaling reduced from 1.44 to 1.2",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.44,
+          "to": 1.2
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:41",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Slice"
+      },
+      "tag": "nerf",
+      "raw": "Slice and Dice T2 reduced from -6% Spirit Resist to -4%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1836506165584438:42",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Bloodletting"
+      },
+      "tag": "nerf",
+      "raw": "Bloodletting cooldown increased from 20s to 25s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 20,
+          "to": 25,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:43",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Bloodletting T1"
+      },
+      "tag": "buff",
+      "raw": "Bloodletting T1 increased from -10s Cooldown to -15s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Bloodletting T1: cooldown reduction −10s → −15s (stronger CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1836506165584438:44",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Bloodletting Damage Cleared"
+      },
+      "tag": "nerf",
+      "raw": "Bloodletting Damage Cleared reduced from 35% to 30%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 35,
+          "to": 30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:45",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Bloodletting T2 Damage Cleared"
+      },
+      "tag": "buff",
+      "raw": "Bloodletting T2 Damage Cleared increased from 35% to 40%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 35,
+          "to": 40,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:46",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Killing Blow Health Threshold"
+      },
+      "tag": "nerf",
+      "raw": "Killing Blow Health Threshold reduced from 20% to 18%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 18,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:47",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv",
+        "facet": "Killing Blow T3 Health Threshold"
+      },
+      "tag": "buff",
+      "raw": "Killing Blow T3 Health Threshold increased from +8% to +10%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 8,
+          "to": 10,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:48",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Silver",
+        "slug": "silver",
+        "facet": "Lycan Curse"
+      },
+      "tag": "buff",
+      "raw": "Lycan Curse cooldown reduced from 80s to 60s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 80,
+          "to": 60,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:49",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Victor",
+        "slug": "victor",
+        "facet": "Shocking Reanimation"
+      },
+      "tag": "buff",
+      "raw": "Shocking Reanimation cooldown reduced from 275s to 240s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 275,
+          "to": 240,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:50",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Splatter T3"
+      },
+      "tag": "nerf",
+      "raw": "Splatter T3 spirit scaling reduced from +1.0 to +0.9",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 0.9
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:51",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Flying Slash"
+      },
+      "tag": "nerf",
+      "raw": "Flying Slash range reduced from 28m to 26m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 28,
+          "to": 26,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:52",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Flying Slash T3 Charge Delay"
+      },
+      "tag": "nerf",
+      "raw": "Flying Slash T3 Charge Delay increased from 3s to 4s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "delay",
+          "polarity": "up_is_nerf",
+          "from": 3,
+          "to": 4,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1836506165584438:53",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Flying Slash T3 Ally Targeting"
+      },
+      "tag": "neutral",
+      "raw": "Flying Slash T3 Ally Targeting now requires alt cast input",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Billy",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Rising Ram T3 spirit scaling reduced from 0.035 to 0.03",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Drifter",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Bullet damage per boon reduced from +0.616 to +0.49",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Bloodscent T3 reduced from +12% to +11%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Stalker's Mark cooldown increased from 20s to 24s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Stalker's Mark T2 increased from -8s Cooldown to -12s",
+          "tag": "buff",
+          "display": "Stalker's Mark T2: cooldown reduction −8s → −12s (stronger CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Stalker's Mark T3 reduced from +2% Bleed to +1.5%",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Graves",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Jar of Dead T1 heal spirit scaling increased from 0.1 to 0.16",
+          "tag": "buff"
+        },
+        {
+          "raw": "Jar of Dead now build up faster from neutral creeps",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Grasping Hands immobilize duration reduced from 1.25s to 1s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Grasping Hands T3 cooldown increased from -10s to -14s",
+          "tag": "buff"
+        },
+        {
+          "raw": "Essence Theft now procs from melee hits",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Essence Theft T3 now also increases Max Steal Targets from 3 to 4",
+          "tag": "buff"
+        },
+        {
+          "raw": "Borrowed Decree T1 changed from \"-15s Cooldown\" to \"-15s Cooldown and +25% Ghoul Speed\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Borrowed Decree T2 changed from \"+25% Ghoul Speed and +10s Duration\" to \"-0.3s Time to Spawn and +10s Duration\"",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Haze",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Sleep Dagger T2 now also applies 15 Fixation Stacks",
+          "tag": "buff"
+        },
+        {
+          "raw": "Sleep Dagger T2 reduced from -18s Cooldown to -17s",
+          "tag": "nerf",
+          "display": "Sleep Dagger T2: cooldown reduction −18s → −17s (weaker CDR)",
+          "clarified": true
+        }
+      ]
+    },
+    {
+      "name": "Holliday",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Powder Keg spirit scaling reduced from 1.2 to 1.05",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Mirage",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Fire Scarabs T3 spirit scaling reduced from +0.17 to +0.13",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Dust Devil T3 spirit scaling reduced from +1 to +0.6",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Djinn's Mark cooldown reduced from 3s to 2.75",
+          "tag": "buff"
+        },
+        {
+          "raw": "Djinn's Mark T3 cooldown reduced from -1s Cooldown to -0.75s",
+          "tag": "nerf",
+          "display": "Djinn's Mark T3 cooldown: cooldown reduction −1s → −0.75s (weaker CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Traveler T3 increased from -70s Cooldown to -90s",
+          "tag": "buff",
+          "display": "Traveler T3: cooldown reduction −70s → −90s (stronger CDR)",
+          "clarified": true
+        }
+      ]
+    },
+    {
+      "name": "Pocket",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Affliction duration reduced from 11s to 10s",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Shiv",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Serrated Knives T3 spirit scaling reduced from +0.09 to +0.07",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Slice and Dice spirit scaling reduced from 1.44 to 1.2",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Slice and Dice T2 reduced from -6% Spirit Resist to -4%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Bloodletting cooldown increased from 20s to 25s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Bloodletting T1 increased from -10s Cooldown to -15s",
+          "tag": "buff",
+          "display": "Bloodletting T1: cooldown reduction −10s → −15s (stronger CDR)",
+          "clarified": true
+        },
+        {
+          "raw": "Bloodletting Damage Cleared reduced from 35% to 30%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Bloodletting T2 Damage Cleared increased from 35% to 40%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Killing Blow Health Threshold reduced from 20% to 18%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Killing Blow T3 Health Threshold increased from +8% to +10%",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Silver",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Lycan Curse cooldown reduced from 80s to 60s",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "The Doorman",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Bullet damage rescaled from 29.26 + 1.1/boon to 26 + 1.19",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Crit scaling reduced from -25% to -30%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Hotel Guest T3 increased from 13s Cooldown on Failure to Check Out to 15s",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Victor",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Shocking Reanimation cooldown reduced from 275s to 240s",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Viscous",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Splatter T3 spirit scaling reduced from +1.0 to +0.9",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Yamato",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Flying Slash range reduced from 28m to 26m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Flying Slash T3 Charge Delay increased from 3s to 4s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Flying Slash T3 Ally Targeting now requires alt cast input",
+          "tag": "neutral"
+        }
+      ]
+    }
+  ]
+}
