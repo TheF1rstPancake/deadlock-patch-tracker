@@ -33,6 +33,12 @@ export async function loadPatchById(id: string): Promise<Patch | undefined> {
   return load()
 }
 
+export async function loadAllPatches(): Promise<Patch[]> {
+  const ids = listPatchIds()
+  const patches = await Promise.all(ids.map((id) => loadPatchById(id)))
+  return patches.filter((patch): patch is Patch => Boolean(patch))
+}
+
 export async function loadLatestPatch(): Promise<Patch> {
   const ids = listPatchIds()
   for (const id of ids) {

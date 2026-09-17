@@ -1,6 +1,7 @@
 import { formatPatchPulse } from '../lib/board.ts'
 import type { HeroSentiment, HistoryPatchSummary, Patch } from '../types.ts'
 import { PatchPicker } from './PatchPicker.tsx'
+import { SiteNav } from './SiteNav.tsx'
 
 interface PatchHeaderProps {
   patch: Patch
@@ -47,15 +48,18 @@ export function PatchHeader({
             </p>
           ) : null}
         </div>
-        <a
-          className="steam-link"
-          href={patch.steamUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open on Steam
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div className="masthead-actions">
+          <SiteNav current="roster" />
+          <a
+            className="steam-link"
+            href={patch.steamUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open on Steam
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </header>
   )
