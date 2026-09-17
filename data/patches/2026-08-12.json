@@ -1,0 +1,867 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-08-12",
+  "title": "Minor Update - 08-12-2026",
+  "date": "2026-08-12",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1840944183775204",
+  "gid": "1840944183775204",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1840944183775204:0",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Riposte"
+      },
+      "tag": "buff",
+      "raw": "Riposte melee resist reduction increased from -22% to -25%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "melee_resist",
+          "polarity": "up_is_buff",
+          "from": -22,
+          "to": -25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:1",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Riposte T2"
+      },
+      "tag": "neutral",
+      "raw": "Riposte T2 changed from \"-30% Melee Resist\" to \"-25% Melee Resist and +0.4s Stun Duration\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:2",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo",
+        "facet": "Riposte T3"
+      },
+      "tag": "buff",
+      "raw": "Riposte T3 increased from 60% Lifesteal for 7s to 75% Lifesteal for 13s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:3",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Apollo",
+        "slug": "apollo"
+      },
+      "tag": "fix",
+      "raw": "Fixed Itani Lo Sahn being canceled with movement abilities",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:4",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Billy",
+        "slug": "billy",
+        "facet": "Base"
+      },
+      "tag": "nerf",
+      "raw": "Base health regen reduced from 2.5 to 2.0",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 2.5,
+          "to": 2
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:5",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Billy",
+        "slug": "billy",
+        "facet": "Rising Ram T3"
+      },
+      "tag": "neutral",
+      "raw": "Rising Ram T3 changed from \"On Impact: Deal 7% max health as spirit damage\" to \"On hero hit: +10% Max HP for 16s\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:6",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Billy",
+        "slug": "billy",
+        "facet": "Chain Gang"
+      },
+      "tag": "nerf",
+      "raw": "Chain Gang spirit scaling reduced from 1 to 0.7",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 0.7
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:7",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Doorway"
+      },
+      "tag": "nerf",
+      "raw": "Doorway range reduced from 70m to 65m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 70,
+          "to": 65,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:8",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Walker"
+      },
+      "tag": "nerf",
+      "raw": "Walker will no longer consider Luggage Cart dragged enemies as valid targets to trigger the stomp on until soon after they are dropped off",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:9",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "The Doorman",
+        "slug": "the-doorman",
+        "facet": "Similar"
+      },
+      "tag": "buff",
+      "raw": "Similar to the Walker change above, the turrets in the healing area in base now also wait on considering valid targets",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:10",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Rend"
+      },
+      "tag": "nerf",
+      "raw": "Rend spirit scaling reduced from 1.7 to 1.4",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.7,
+          "to": 1.4
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:11",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Stalker's Mark"
+      },
+      "tag": "nerf",
+      "raw": "Stalker's Mark cooldown increased from 24s to 26s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 24,
+          "to": 26,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:12",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Drifter",
+        "slug": "drifter",
+        "facet": "Stalker's Mark T2"
+      },
+      "tag": "nerf",
+      "raw": "Stalker's Mark T2 reduced from -12s Cooldown to -10s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "display": "Stalker's Mark T2: cooldown reduction −12s → −10s (weaker CDR)",
+      "clarified": true
+    },
+    {
+      "id": "1840944183775204:13",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Holliday",
+        "slug": "holliday",
+        "facet": "Powder Keg"
+      },
+      "tag": "neutral",
+      "raw": "Powder Keg now does half its damage immediately and half over 3s as a damage over time burn (same overall damage, multiple instances stack)",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:14",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Stone Form T3"
+      },
+      "tag": "nerf",
+      "raw": "Stone Form T3 stun duration reduced from +1s to +0.75s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 0.75,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:15",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Falloff"
+      },
+      "tag": "nerf",
+      "raw": "Falloff range reduced from 20m->58m to 18m->54m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:16",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Bullet"
+      },
+      "tag": "nerf",
+      "raw": "Bullet damage base and growth values reduced by 5%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:17",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Spirit Resist"
+      },
+      "tag": "nerf",
+      "raw": "Spirit Resist per boon reduced from +0.625% to +0.35%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_resist",
+          "polarity": "up_is_buff",
+          "from": 0.625,
+          "to": 0.35,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:18",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets"
+      },
+      "tag": "nerf",
+      "raw": "Mini Turrets no longer shoots heroes on ziplines",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:19",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets"
+      },
+      "tag": "nerf",
+      "raw": "Mini Turrets no longer have 80% decaying resist for the first 6s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:20",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets"
+      },
+      "tag": "buff",
+      "raw": "Mini Turrets health increased from 90 + 7.8/boon to 100 + 9/boon",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:21",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Medicinal Specter T1"
+      },
+      "tag": "neutral",
+      "raw": "Medicinal Specter T1 changed from \"Provides +40% Spirit Resist\" to \"+1.5s Duration\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:22",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Medicinal Specter T3"
+      },
+      "tag": "nerf",
+      "raw": "Medicinal Specter T3 no longer increases duration by +1.5s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:23",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Medicinal Specter T3"
+      },
+      "tag": "buff",
+      "raw": "Medicinal Specter T3 now also increases spirit resistance by +40%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:24",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Paige",
+        "slug": "paige",
+        "facet": "Plot Armor"
+      },
+      "tag": "buff",
+      "raw": "Plot Armor weapon damage scaling increased from 0.2 to 0.3",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 0.2,
+          "to": 0.3
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:25",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Seven",
+        "slug": "seven",
+        "facet": "Lightning Ball T3"
+      },
+      "tag": "buff",
+      "raw": "Lightning Ball T3 radius increased from +1.5m to +1.75m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 1.5,
+          "to": 1.75,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:26",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Stake T1"
+      },
+      "tag": "nerf",
+      "raw": "Stake T1 reduced from +65 Damage to +45",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1840944183775204:27",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Vyper",
+        "slug": "vyper",
+        "facet": "Petrifying Bola"
+      },
+      "tag": "buff",
+      "raw": "Petrifying Bola radius increased from 8m to 12m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 8,
+          "to": 12,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:28",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Vyper",
+        "slug": "vyper",
+        "facet": "Petrifying Bola"
+      },
+      "tag": "buff",
+      "raw": "Petrifying Bola petrify duration increased from 2s to 2.2s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 2,
+          "to": 2.2,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:29",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Card Trick Heart"
+      },
+      "tag": "nerf",
+      "raw": "Card Trick Heart heal spirit scaling reduced from 1 to 0.75",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 0.75
+        }
+      ]
+    },
+    {
+      "id": "1840944183775204:30",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Full Auto T3"
+      },
+      "tag": "nerf",
+      "raw": "Full Auto T3 spirit scaling reduced from +0.06 to +0.045",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.06,
+          "to": 0.045
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Apollo",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Riposte melee resist reduction increased from -22% to -25%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Riposte T2 changed from \"-30% Melee Resist\" to \"-25% Melee Resist and +0.4s Stun Duration\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Riposte T3 increased from 60% Lifesteal for 7s to 75% Lifesteal for 13s",
+          "tag": "buff"
+        },
+        {
+          "raw": "Fixed Itani Lo Sahn being canceled with movement abilities",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "Billy",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Base health regen reduced from 2.5 to 2.0",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rising Ram T3 changed from \"On Impact: Deal 7% max health as spirit damage\" to \"On hero hit: +10% Max HP for 16s\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Chain Gang spirit scaling reduced from 1 to 0.7",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Drifter",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Rend spirit scaling reduced from 1.7 to 1.4",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Stalker's Mark cooldown increased from 24s to 26s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Stalker's Mark T2 reduced from -12s Cooldown to -10s",
+          "tag": "nerf",
+          "display": "Stalker's Mark T2: cooldown reduction −12s → −10s (weaker CDR)",
+          "clarified": true
+        }
+      ]
+    },
+    {
+      "name": "Holliday",
+      "sentiment": "neutral",
+      "changes": [
+        {
+          "raw": "Powder Keg now does half its damage immediately and half over 3s as a damage over time burn (same overall damage, multiple instances stack)",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Ivy",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Stone Form T3 stun duration reduced from +1s to +0.75s",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Lash",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Falloff range reduced from 20m->58m to 18m->54m",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Bullet damage base and growth values reduced by 5%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Spirit Resist per boon reduced from +0.625% to +0.35%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Mini Turrets no longer shoots heroes on ziplines",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Mini Turrets no longer have 80% decaying resist for the first 6s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Mini Turrets health increased from 90 + 7.8/boon to 100 + 9/boon",
+          "tag": "buff"
+        },
+        {
+          "raw": "Medicinal Specter T1 changed from \"Provides +40% Spirit Resist\" to \"+1.5s Duration\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Medicinal Specter T3 no longer increases duration by +1.5s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Medicinal Specter T3 now also increases spirit resistance by +40%",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Paige",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Plot Armor weapon damage scaling increased from 0.2 to 0.3",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Seven",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Lightning Ball T3 radius increased from +1.5m to +1.75m",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "The Doorman",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Doorway range reduced from 70m to 65m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Walker will no longer consider Luggage Cart dragged enemies as valid targets to trigger the stomp on until soon after they are dropped off",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Similar to the Walker change above, the turrets in the healing area in base now also wait on considering valid targets",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Vindicta",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Stake T1 reduced from +65 Damage to +45",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Vyper",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Petrifying Bola radius increased from 8m to 12m",
+          "tag": "buff"
+        },
+        {
+          "raw": "Petrifying Bola petrify duration increased from 2s to 2.2s",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Wraith",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Card Trick Heart heal spirit scaling reduced from 1 to 0.75",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Full Auto T3 spirit scaling reduced from +0.06 to +0.045",
+          "tag": "nerf"
+        }
+      ]
+    }
+  ]
+}

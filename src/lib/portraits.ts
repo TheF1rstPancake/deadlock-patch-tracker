@@ -1,9 +1,7 @@
+import { slugifyName } from './slug.ts'
+
 export function heroPortraitSlug(name: string): string {
-  return name
-    .normalize('NFKD')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
+  return slugifyName(name)
 }
 
 export function heroPortraitUrl(name: string): string {

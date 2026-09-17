@@ -19,6 +19,16 @@ describe('Sep 16 board', () => {
     expect(patch.heroes).toHaveLength(20)
   })
 
+  it('stores PatchV2 events as source of truth with a heroes projection', () => {
+    expect(patch.schemaVersion).toBe(2)
+    expect(patch.layout).toBe('sectioned')
+    expect(patch.sectionsPresent).toEqual(['General', 'Items', 'Heroes'])
+    expect(patch.events.length).toBeGreaterThan(patch.heroes.length)
+    expect(
+      patch.events.filter((event) => event.target.kind === 'hero'),
+    ).toHaveLength(patch.heroes.reduce((n, hero) => n + hero.changes.length, 0))
+  })
+
   it('matches the V1 sanity sentiments', () => {
     const byName = Object.fromEntries(
       patch.heroes.map((hero) => [hero.name, hero.sentiment]),

@@ -1,0 +1,1095 @@
+{
+  "schemaVersion": 1,
+  "source": "https://assets.deadlock-api.com/v2",
+  "heroes": [
+    {
+      "name": "Abrams",
+      "slug": "abrams"
+    },
+    {
+      "name": "Apollo",
+      "slug": "apollo"
+    },
+    {
+      "name": "Bebop",
+      "slug": "bebop"
+    },
+    {
+      "name": "Billy",
+      "slug": "billy"
+    },
+    {
+      "name": "Boho",
+      "slug": "boho"
+    },
+    {
+      "name": "Bomber",
+      "slug": "bomber"
+    },
+    {
+      "name": "Cadence",
+      "slug": "cadence"
+    },
+    {
+      "name": "Calico",
+      "slug": "calico"
+    },
+    {
+      "name": "Celeste",
+      "slug": "celeste"
+    },
+    {
+      "name": "Drifter",
+      "slug": "drifter"
+    },
+    {
+      "name": "Dynamo",
+      "slug": "dynamo"
+    },
+    {
+      "name": "Fathom",
+      "slug": "fathom"
+    },
+    {
+      "name": "Fortuna",
+      "slug": "fortuna"
+    },
+    {
+      "name": "Graf",
+      "slug": "graf"
+    },
+    {
+      "name": "Graves",
+      "slug": "graves"
+    },
+    {
+      "name": "Grey Talon",
+      "slug": "grey-talon"
+    },
+    {
+      "name": "Gunslinger",
+      "slug": "gunslinger"
+    },
+    {
+      "name": "Haze",
+      "slug": "haze"
+    },
+    {
+      "name": "Holliday",
+      "slug": "holliday"
+    },
+    {
+      "name": "Infernus",
+      "slug": "infernus"
+    },
+    {
+      "name": "Ivy",
+      "slug": "ivy"
+    },
+    {
+      "name": "Kali",
+      "slug": "kali"
+    },
+    {
+      "name": "Kelvin",
+      "slug": "kelvin"
+    },
+    {
+      "name": "Lady Geist",
+      "slug": "lady-geist"
+    },
+    {
+      "name": "Lash",
+      "slug": "lash"
+    },
+    {
+      "name": "McGinnis",
+      "slug": "mcginnis"
+    },
+    {
+      "name": "Mina",
+      "slug": "mina"
+    },
+    {
+      "name": "Mirage",
+      "slug": "mirage"
+    },
+    {
+      "name": "Mo & Krill",
+      "slug": "mo-krill"
+    },
+    {
+      "name": "Paige",
+      "slug": "paige"
+    },
+    {
+      "name": "Paradox",
+      "slug": "paradox"
+    },
+    {
+      "name": "Pocket",
+      "slug": "pocket"
+    },
+    {
+      "name": "Raven",
+      "slug": "raven"
+    },
+    {
+      "name": "Rem",
+      "slug": "rem"
+    },
+    {
+      "name": "Rutger",
+      "slug": "rutger"
+    },
+    {
+      "name": "Seven",
+      "slug": "seven"
+    },
+    {
+      "name": "Shield Guy",
+      "slug": "shield-guy"
+    },
+    {
+      "name": "Shiv",
+      "slug": "shiv"
+    },
+    {
+      "name": "Silver",
+      "slug": "silver"
+    },
+    {
+      "name": "Sinclair",
+      "slug": "sinclair"
+    },
+    {
+      "name": "Skyrunner",
+      "slug": "skyrunner"
+    },
+    {
+      "name": "Swan",
+      "slug": "swan"
+    },
+    {
+      "name": "The Boss",
+      "slug": "the-boss"
+    },
+    {
+      "name": "The Doorman",
+      "slug": "the-doorman"
+    },
+    {
+      "name": "Thumper",
+      "slug": "thumper"
+    },
+    {
+      "name": "Tokamak",
+      "slug": "tokamak"
+    },
+    {
+      "name": "Trapper",
+      "slug": "trapper"
+    },
+    {
+      "name": "Vandal",
+      "slug": "vandal"
+    },
+    {
+      "name": "Venator",
+      "slug": "venator"
+    },
+    {
+      "name": "Victor",
+      "slug": "victor"
+    },
+    {
+      "name": "Vindicta",
+      "slug": "vindicta"
+    },
+    {
+      "name": "Viscous",
+      "slug": "viscous"
+    },
+    {
+      "name": "Vyper",
+      "slug": "vyper"
+    },
+    {
+      "name": "Warden",
+      "slug": "warden"
+    },
+    {
+      "name": "Wraith",
+      "slug": "wraith"
+    },
+    {
+      "name": "Wrecker",
+      "slug": "wrecker"
+    },
+    {
+      "name": "Yamato",
+      "slug": "yamato"
+    }
+  ],
+  "items": [
+    {
+      "name": "Active Reload",
+      "slug": "active-reload"
+    },
+    {
+      "name": "Aerial Supremacy",
+      "slug": "aerial-supremacy"
+    },
+    {
+      "name": "Alchemical Fire",
+      "slug": "alchemical-fire"
+    },
+    {
+      "name": "Ammo Scavenger",
+      "slug": "ammo-scavenger"
+    },
+    {
+      "name": "Ancient Shield",
+      "slug": "ancient-shield"
+    },
+    {
+      "name": "Apex Combat",
+      "slug": "apex-combat"
+    },
+    {
+      "name": "Arcane Surge",
+      "slug": "arcane-surge"
+    },
+    {
+      "name": "Arctic Blast",
+      "slug": "arctic-blast"
+    },
+    {
+      "name": "Armor Piercing Rounds",
+      "slug": "armor-piercing-rounds"
+    },
+    {
+      "name": "Ballistic Enchantment",
+      "slug": "ballistic-enchantment"
+    },
+    {
+      "name": "Battle Vest",
+      "slug": "battle-vest"
+    },
+    {
+      "name": "Berserker",
+      "slug": "berserker"
+    },
+    {
+      "name": "Blood Tribute",
+      "slug": "blood-tribute"
+    },
+    {
+      "name": "Boundless Spirit",
+      "slug": "boundless-spirit"
+    },
+    {
+      "name": "Bullet Armor",
+      "slug": "bullet-armor"
+    },
+    {
+      "name": "Bullet Lifesteal",
+      "slug": "bullet-lifesteal"
+    },
+    {
+      "name": "Bullet Resilience",
+      "slug": "bullet-resilience"
+    },
+    {
+      "name": "Bullet Resist Shredder",
+      "slug": "bullet-resist-shredder"
+    },
+    {
+      "name": "Burst Fire",
+      "slug": "burst-fire"
+    },
+    {
+      "name": "Capacitor",
+      "slug": "capacitor"
+    },
+    {
+      "name": "Celestial Blessing",
+      "slug": "celestial-blessing"
+    },
+    {
+      "name": "Cheat Death",
+      "slug": "cheat-death"
+    },
+    {
+      "name": "Cloak of Opportunity",
+      "slug": "cloak-of-opportunity"
+    },
+    {
+      "name": "Close Quarters",
+      "slug": "close-quarters"
+    },
+    {
+      "name": "Cold Front",
+      "slug": "cold-front"
+    },
+    {
+      "name": "Colossus",
+      "slug": "colossus"
+    },
+    {
+      "name": "Compress Cooldown",
+      "slug": "compress-cooldown"
+    },
+    {
+      "name": "Conjure Missiles",
+      "slug": "conjure-missiles"
+    },
+    {
+      "name": "Counterspell",
+      "slug": "counterspell"
+    },
+    {
+      "name": "Crippling Headshot",
+      "slug": "crippling-headshot"
+    },
+    {
+      "name": "Crushing Fists",
+      "slug": "crushing-fists"
+    },
+    {
+      "name": "Cultist Sacrifice",
+      "slug": "cultist-sacrifice"
+    },
+    {
+      "name": "Cursed Relic",
+      "slug": "cursed-relic"
+    },
+    {
+      "name": "Debuff Reducer",
+      "slug": "debuff-reducer"
+    },
+    {
+      "name": "Decay",
+      "slug": "decay"
+    },
+    {
+      "name": "Disarming Hex",
+      "slug": "disarming-hex"
+    },
+    {
+      "name": "Dispel Magic",
+      "slug": "dispel-magic"
+    },
+    {
+      "name": "Divine Barrier",
+      "slug": "divine-barrier"
+    },
+    {
+      "name": "Diviner's Kevlar",
+      "slug": "diviner-s-kevlar"
+    },
+    {
+      "name": "Duration Extender",
+      "slug": "duration-extender"
+    },
+    {
+      "name": "Echo Shard",
+      "slug": "echo-shard"
+    },
+    {
+      "name": "Electric Slippers",
+      "slug": "electric-slippers"
+    },
+    {
+      "name": "Enchanter's Emblem",
+      "slug": "enchanter-s-emblem"
+    },
+    {
+      "name": "Endless Magazine",
+      "slug": "endless-magazine"
+    },
+    {
+      "name": "Enduring Speed",
+      "slug": "enduring-speed"
+    },
+    {
+      "name": "Enduring Spirit",
+      "slug": "enduring-spirit"
+    },
+    {
+      "name": "Escalating Exposure",
+      "slug": "escalating-exposure"
+    },
+    {
+      "name": "Escalating Resilience",
+      "slug": "escalating-resilience"
+    },
+    {
+      "name": "Eternal Gift",
+      "slug": "eternal-gift"
+    },
+    {
+      "name": "Ethereal Shift",
+      "slug": "ethereal-shift"
+    },
+    {
+      "name": "Express Shot",
+      "slug": "express-shot"
+    },
+    {
+      "name": "Extended Magazine",
+      "slug": "extended-magazine"
+    },
+    {
+      "name": "Extra Charge",
+      "slug": "extra-charge"
+    },
+    {
+      "name": "Extra Health",
+      "slug": "extra-health"
+    },
+    {
+      "name": "Extra Regen",
+      "slug": "extra-regen"
+    },
+    {
+      "name": "Extra Spirit",
+      "slug": "extra-spirit"
+    },
+    {
+      "name": "Extra Stamina",
+      "slug": "extra-stamina"
+    },
+    {
+      "name": "Fleetfoot",
+      "slug": "fleetfoot"
+    },
+    {
+      "name": "Focus Lens",
+      "slug": "focus-lens"
+    },
+    {
+      "name": "Fortitude",
+      "slug": "fortitude"
+    },
+    {
+      "name": "Frenzy",
+      "slug": "frenzy"
+    },
+    {
+      "name": "Frostbite Charm",
+      "slug": "frostbite-charm"
+    },
+    {
+      "name": "Fury Trance",
+      "slug": "fury-trance"
+    },
+    {
+      "name": "Glass Cannon",
+      "slug": "glass-cannon"
+    },
+    {
+      "name": "Glass Cannon v2",
+      "slug": "glass-cannon-v2"
+    },
+    {
+      "name": "Golden Goose Egg",
+      "slug": "golden-goose-egg"
+    },
+    {
+      "name": "Greater Expansion",
+      "slug": "greater-expansion"
+    },
+    {
+      "name": "Grit",
+      "slug": "grit"
+    },
+    {
+      "name": "Guardian Ward",
+      "slug": "guardian-ward"
+    },
+    {
+      "name": "Haunting Scream",
+      "slug": "haunting-scream"
+    },
+    {
+      "name": "Haunting Shot",
+      "slug": "haunting-shot"
+    },
+    {
+      "name": "Headhunter",
+      "slug": "headhunter"
+    },
+    {
+      "name": "Headshot Booster",
+      "slug": "headshot-booster"
+    },
+    {
+      "name": "Healbane",
+      "slug": "healbane"
+    },
+    {
+      "name": "Healing Booster",
+      "slug": "healing-booster"
+    },
+    {
+      "name": "Healing Nova",
+      "slug": "healing-nova"
+    },
+    {
+      "name": "Healing Rite",
+      "slug": "healing-rite"
+    },
+    {
+      "name": "Healing Tempo",
+      "slug": "healing-tempo"
+    },
+    {
+      "name": "Heroic Aura",
+      "slug": "heroic-aura"
+    },
+    {
+      "name": "Hex-Sealed Knuckles",
+      "slug": "hex-sealed-knuckles"
+    },
+    {
+      "name": "Hexafoil Ward",
+      "slug": "hexafoil-ward"
+    },
+    {
+      "name": "High-Velocity Rounds",
+      "slug": "high-velocity-rounds"
+    },
+    {
+      "name": "Hollow Point",
+      "slug": "hollow-point"
+    },
+    {
+      "name": "Hunter's Aura",
+      "slug": "hunter-s-aura"
+    },
+    {
+      "name": "Improved Spirit",
+      "slug": "improved-spirit"
+    },
+    {
+      "name": "Indomitable",
+      "slug": "indomitable"
+    },
+    {
+      "name": "Infinite Rounds",
+      "slug": "infinite-rounds"
+    },
+    {
+      "name": "Infuser",
+      "slug": "infuser"
+    },
+    {
+      "name": "Inhibitor",
+      "slug": "inhibitor"
+    },
+    {
+      "name": "Intensifying Magazine",
+      "slug": "intensifying-magazine"
+    },
+    {
+      "name": "Juggernaut",
+      "slug": "juggernaut"
+    },
+    {
+      "name": "Kinetic Dash",
+      "slug": "kinetic-dash"
+    },
+    {
+      "name": "Knockdown",
+      "slug": "knockdown"
+    },
+    {
+      "name": "Leech",
+      "slug": "leech"
+    },
+    {
+      "name": "Lifestrike",
+      "slug": "lifestrike"
+    },
+    {
+      "name": "Lightning Scroll",
+      "slug": "lightning-scroll"
+    },
+    {
+      "name": "Long Range",
+      "slug": "long-range"
+    },
+    {
+      "name": "Lucky Shot",
+      "slug": "lucky-shot"
+    },
+    {
+      "name": "Magic Carpet",
+      "slug": "magic-carpet"
+    },
+    {
+      "name": "Majestic Leap",
+      "slug": "majestic-leap"
+    },
+    {
+      "name": "Majestic Leap - Disabled",
+      "slug": "majestic-leap-disabled"
+    },
+    {
+      "name": "Melee Charge",
+      "slug": "melee-charge"
+    },
+    {
+      "name": "Melee Lifesteal",
+      "slug": "melee-lifesteal"
+    },
+    {
+      "name": "Mercurial Magnum",
+      "slug": "mercurial-magnum"
+    },
+    {
+      "name": "Metal Skin",
+      "slug": "metal-skin"
+    },
+    {
+      "name": "Monster Rounds",
+      "slug": "monster-rounds"
+    },
+    {
+      "name": "Mystic Burst",
+      "slug": "mystic-burst"
+    },
+    {
+      "name": "Mystic Conduit",
+      "slug": "mystic-conduit"
+    },
+    {
+      "name": "Mystic Expansion",
+      "slug": "mystic-expansion"
+    },
+    {
+      "name": "Mystic Regeneration",
+      "slug": "mystic-regeneration"
+    },
+    {
+      "name": "Mystic Reverb",
+      "slug": "mystic-reverb"
+    },
+    {
+      "name": "Mystic Shot",
+      "slug": "mystic-shot"
+    },
+    {
+      "name": "Mystic Slow",
+      "slug": "mystic-slow"
+    },
+    {
+      "name": "Mystic Vulnerability",
+      "slug": "mystic-vulnerability"
+    },
+    {
+      "name": "Mystical Piano",
+      "slug": "mystical-piano"
+    },
+    {
+      "name": "Nullification Burst",
+      "slug": "nullification-burst"
+    },
+    {
+      "name": "Omnicharge Signet",
+      "slug": "omnicharge-signet"
+    },
+    {
+      "name": "Opening Rounds",
+      "slug": "opening-rounds"
+    },
+    {
+      "name": "Patron's Healing",
+      "slug": "patron-s-healing"
+    },
+    {
+      "name": "Phantom Strike",
+      "slug": "phantom-strike"
+    },
+    {
+      "name": "Plated Armor",
+      "slug": "plated-armor"
+    },
+    {
+      "name": "Point Blank",
+      "slug": "point-blank"
+    },
+    {
+      "name": "Prism Blast",
+      "slug": "prism-blast"
+    },
+    {
+      "name": "Quicksilver Reload",
+      "slug": "quicksilver-reload"
+    },
+    {
+      "name": "Radiant Regeneration",
+      "slug": "radiant-regeneration"
+    },
+    {
+      "name": "Rapid Recharge",
+      "slug": "rapid-recharge"
+    },
+    {
+      "name": "Rapid Rounds",
+      "slug": "rapid-rounds"
+    },
+    {
+      "name": "Reactive Barrier",
+      "slug": "reactive-barrier"
+    },
+    {
+      "name": "Rebirth",
+      "slug": "rebirth"
+    },
+    {
+      "name": "Rebuttal",
+      "slug": "rebuttal"
+    },
+    {
+      "name": "Recharging Rush",
+      "slug": "recharging-rush"
+    },
+    {
+      "name": "Refresher",
+      "slug": "refresher"
+    },
+    {
+      "name": "Rescue Beam",
+      "slug": "rescue-beam"
+    },
+    {
+      "name": "Restorative Locket",
+      "slug": "restorative-locket"
+    },
+    {
+      "name": "Restorative Shot",
+      "slug": "restorative-shot"
+    },
+    {
+      "name": "Return Fire",
+      "slug": "return-fire"
+    },
+    {
+      "name": "Ricochet",
+      "slug": "ricochet"
+    },
+    {
+      "name": "Runed Gauntlets",
+      "slug": "runed-gauntlets"
+    },
+    {
+      "name": "Rusted Barrel",
+      "slug": "rusted-barrel"
+    },
+    {
+      "name": "Scourge",
+      "slug": "scourge"
+    },
+    {
+      "name": "Seraphim Wings",
+      "slug": "seraphim-wings"
+    },
+    {
+      "name": "Shadow Step",
+      "slug": "shadow-step"
+    },
+    {
+      "name": "Shadow Strike",
+      "slug": "shadow-strike"
+    },
+    {
+      "name": "Shadow Weave",
+      "slug": "shadow-weave"
+    },
+    {
+      "name": "Sharpshooter",
+      "slug": "sharpshooter"
+    },
+    {
+      "name": "Shrink Ray",
+      "slug": "shrink-ray"
+    },
+    {
+      "name": "Silence Wave",
+      "slug": "silence-wave"
+    },
+    {
+      "name": "Silencer",
+      "slug": "silencer"
+    },
+    {
+      "name": "Siphon Bullets",
+      "slug": "siphon-bullets"
+    },
+    {
+      "name": "Slowing Bullets",
+      "slug": "slowing-bullets"
+    },
+    {
+      "name": "Slowing Hex",
+      "slug": "slowing-hex"
+    },
+    {
+      "name": "Soul Explosion",
+      "slug": "soul-explosion"
+    },
+    {
+      "name": "Soul Rebirth",
+      "slug": "soul-rebirth"
+    },
+    {
+      "name": "Spellbreaker",
+      "slug": "spellbreaker"
+    },
+    {
+      "name": "Spellslinger",
+      "slug": "spellslinger"
+    },
+    {
+      "name": "Spirit Armor",
+      "slug": "spirit-armor"
+    },
+    {
+      "name": "Spirit Burn",
+      "slug": "spirit-burn"
+    },
+    {
+      "name": "Spirit Lifesteal",
+      "slug": "spirit-lifesteal"
+    },
+    {
+      "name": "Spirit Rend",
+      "slug": "spirit-rend"
+    },
+    {
+      "name": "Spirit Resilience",
+      "slug": "spirit-resilience"
+    },
+    {
+      "name": "Spirit Sap",
+      "slug": "spirit-sap"
+    },
+    {
+      "name": "Spirit Shielding",
+      "slug": "spirit-shielding"
+    },
+    {
+      "name": "Spirit Shredder Bullets",
+      "slug": "spirit-shredder-bullets"
+    },
+    {
+      "name": "Spirit Snatch",
+      "slug": "spirit-snatch"
+    },
+    {
+      "name": "Spirit Strike",
+      "slug": "spirit-strike"
+    },
+    {
+      "name": "Spiritual Overflow",
+      "slug": "spiritual-overflow"
+    },
+    {
+      "name": "Split Shot",
+      "slug": "split-shot"
+    },
+    {
+      "name": "Sprint Boots",
+      "slug": "sprint-boots"
+    },
+    {
+      "name": "Stalker",
+      "slug": "stalker"
+    },
+    {
+      "name": "Stamina Mastery",
+      "slug": "stamina-mastery"
+    },
+    {
+      "name": "Superior Cooldown",
+      "slug": "superior-cooldown"
+    },
+    {
+      "name": "Superior Duration",
+      "slug": "superior-duration"
+    },
+    {
+      "name": "Suppressor",
+      "slug": "suppressor"
+    },
+    {
+      "name": "Surge of Power",
+      "slug": "surge-of-power"
+    },
+    {
+      "name": "Swift Striker",
+      "slug": "swift-striker"
+    },
+    {
+      "name": "Tankbuster",
+      "slug": "tankbuster"
+    },
+    {
+      "name": "Tesla Bullets",
+      "slug": "tesla-bullets"
+    },
+    {
+      "name": "Timeless Emblem",
+      "slug": "timeless-emblem"
+    },
+    {
+      "name": "Titanic Magazine",
+      "slug": "titanic-magazine"
+    },
+    {
+      "name": "Torment Pulse",
+      "slug": "torment-pulse"
+    },
+    {
+      "name": "Toughness",
+      "slug": "toughness"
+    },
+    {
+      "name": "Toxic Bullets",
+      "slug": "toxic-bullets"
+    },
+    {
+      "name": "Transcendent Cooldown",
+      "slug": "transcendent-cooldown"
+    },
+    {
+      "name": "Trophy Collector",
+      "slug": "trophy-collector"
+    },
+    {
+      "name": "Unstable Concoction",
+      "slug": "unstable-concoction"
+    },
+    {
+      "name": "Unstoppable",
+      "slug": "unstoppable"
+    },
+    {
+      "name": "Vampiric Burst",
+      "slug": "vampiric-burst"
+    },
+    {
+      "name": "Veil Walker",
+      "slug": "veil-walker"
+    },
+    {
+      "name": "Vortex Web",
+      "slug": "vortex-web"
+    },
+    {
+      "name": "Warp Stone",
+      "slug": "warp-stone"
+    },
+    {
+      "name": "Weakening Headshot",
+      "slug": "weakening-headshot"
+    },
+    {
+      "name": "Weapon Shielding",
+      "slug": "weapon-shielding"
+    },
+    {
+      "name": "Weighted Shots",
+      "slug": "weighted-shots"
+    },
+    {
+      "name": "Witchmail",
+      "slug": "witchmail"
+    }
+  ],
+  "systems": [
+    {
+      "name": "Unstable Rift",
+      "slug": "unstable-rift",
+      "aliases": [
+        "Soul Urn",
+        "Urn"
+      ]
+    },
+    {
+      "name": "Urn Runner",
+      "slug": "urn-runner",
+      "aliases": []
+    },
+    {
+      "name": "Street Brawl",
+      "slug": "street-brawl",
+      "aliases": []
+    },
+    {
+      "name": "Mid Boss",
+      "slug": "mid-boss",
+      "aliases": [
+        "Midboss",
+        "Mid-Boss"
+      ]
+    },
+    {
+      "name": "Sinner's Sacrifice",
+      "slug": "sinners-sacrifice",
+      "aliases": []
+    },
+    {
+      "name": "Patron",
+      "slug": "patron",
+      "aliases": []
+    },
+    {
+      "name": "Walker",
+      "slug": "walker",
+      "aliases": [
+        "Walkers"
+      ]
+    },
+    {
+      "name": "Guardian",
+      "slug": "guardian",
+      "aliases": [
+        "Guardians"
+      ]
+    },
+    {
+      "name": "Shrine",
+      "slug": "shrine",
+      "aliases": [
+        "Shrines"
+      ]
+    },
+    {
+      "name": "Rift Troopers",
+      "slug": "rift-troopers",
+      "aliases": []
+    },
+    {
+      "name": "Troopers",
+      "slug": "troopers",
+      "aliases": [
+        "Super troopers",
+        "Medic Troopers"
+      ]
+    }
+  ],
+  "heroAliases": {
+    "Doorman": "The Doorman",
+    "The Doorman": "The Doorman",
+    "Gray Talon": "Grey Talon",
+    "Mo and Krill": "Mo & Krill",
+    "Mo And Krill": "Mo & Krill",
+    "Sinclair": "Sinclair",
+    "The Magnificent Sinclair": "Sinclair",
+    "Ladygeist": "Lady Geist",
+    "Mo & Krill": "Mo & Krill"
+  }
+}

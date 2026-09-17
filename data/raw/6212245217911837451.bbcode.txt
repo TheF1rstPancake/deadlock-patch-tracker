@@ -1,0 +1,9 @@
+Today's update adds Hero Labs (a new experimental hero matchmaking mode that adds six new in-progress heroes), player commends, as well as updates to character shaders and environment lighting, among the usual assortment of improvements, fixes, and balance adjustments. 
+
+For the full patch notes, visit the Deadlock forums here: https://forums.playdeadlock.com/threads/10-24-2024-update.40951/
+
+
+
+[i]Example of the new character shader changes:[/i]
+
+[img]{STEAM_CLAN_IMAGE}/45164767/d937a6e939528a54b0c25ff5caf9e4dff86121c9.png[/img]
