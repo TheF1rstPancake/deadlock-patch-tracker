@@ -24,7 +24,11 @@ export function HeroCard({ hero }: HeroCardProps) {
           {SENTIMENT_LABEL[hero.sentiment]}
         </span>
       </header>
-      <ul className="change-list">
+      <ul
+        className="change-list"
+        tabIndex={0}
+        aria-label={`${hero.name} changes`}
+      >
         {hero.changes.map((change) => {
           const raw = changeRaw(change)
           return (
