@@ -1,6 +1,7 @@
 import { formatPatchPulse } from '../lib/board.ts'
 import type { HeroSentiment, HistoryPatchSummary, Patch } from '../types.ts'
 import { PatchPicker } from './PatchPicker.tsx'
+import { SiteNav } from './SiteNav.tsx'
 
 interface PatchHeaderProps {
   patch: Patch
@@ -24,7 +25,10 @@ export function PatchHeader({
 
   return (
     <header className="masthead">
-      <p className="kicker">{kicker}</p>
+      <div className="masthead-top">
+        <p className="kicker">{kicker}</p>
+        <SiteNav current="roster" />
+      </div>
       <div className="masthead-row">
         <div>
           {patches.length > 1 ? (

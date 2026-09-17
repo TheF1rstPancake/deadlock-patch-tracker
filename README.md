@@ -2,13 +2,23 @@
 
 Pretty hero +/- board from Steam Deadlock changelogs, with a checked-in **PatchV2** event ledger so we can answer “what happened to X over time.”
 
-Open the page → pick a patch → see **every hero touched** as a card (official-looking Valve hero card art, monogram fallback) → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items. Search a hero to see which patches touched them (from `data/index.json`). Charts / win-rate are out of scope.
+Open the page → pick a patch → see **every hero touched** as a card (official-looking Valve hero card art, monogram fallback) → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items. Search a hero to see which patches touched them (from `data/index.json`). Masthead **Patterns** opens a heroes-or-items heatmap of buff/nerf history (no win-rate / external stats).
+
+Hash `#patterns` is the hero heatmap, `#patterns/items` the item heatmap, `#patterns/hero/{slug}` / `#patterns/item/{slug}` an entity chart. Roster (`#` or `#YYYY-MM-DD`) stays home.
 
 The masthead **pulse** (under the lede) shouts the patch shape in the first five seconds from those same tallies, e.g. `9 buff · 5 nerf · 5 mixed · 1 fix`.
 
 Default board sort is **buffs-first** for a friend scan: buff → nerf → mixed → fix → name (alphabetical within each bucket). Filter chips still narrow the grid; they do not change that order.
 
-The live board is still heroes-only. Items, General, and system lines live in `events[]` (and the history index) so we can add an item board later without rewriting the store.
+The live roster board is still heroes-only. Items, General, and system lines live in `events[]` (and the history index). The **Patterns** view reads those events for a hero heatmap and a separate item heatmap — they are never mixed in one matrix.
+
+Heatmap cells:
+
+- **Empty** = no events for that entity that patch (sparse “no touch,” not a painted zero).
+- **Color** = signed net (**buffs − nerfs**). Fix and neutral are excluded from net; fixes can show as a hatch/dot.
+- **Number / opacity** = buff+nerf **touch volume**, so +5/−5 churn is still visible.
+
+Default overview sort is **recent volatility** (buff+nerf events in the **last 5 ingested patches**; hover the **?** on that chip — not a ~30-day window). **Total touches** is still a chip. The heatmap defaults to the **top 14** entities and the **newest 10 patches**; **Show all** / **All patches** expand. Entity detail keeps the full patch history: grouped buff vs nerf bars per date. Cumulative net is an optional toggle, off by default; fixes are dots, not the same Y as buff/nerf.
 
 Steam appid: `1422450`.
 
@@ -202,6 +212,5 @@ Steam notes are not always `[ Heroes ]` sections:
 
 ## Later
 
-- Item board UI (data is already in `events[]`)
-- Charts / “who gets nerfed routinely” (index totals exist; no win-rate API in-repo)
+- Item roster board (Patterns already charts items; the home grid is still heroes)
 - Hosted refresh (still no auth)
