@@ -1,6 +1,7 @@
 import type { HeroPatch } from '../types.ts'
 import { changeDisplay, changeRaw } from '../types.ts'
-import { SENTIMENT_LABEL, LINE_GLYPH, LINE_LABEL, heroInitials } from '../lib/labels.ts'
+import { SENTIMENT_LABEL, LINE_GLYPH, LINE_LABEL } from '../lib/labels.ts'
+import { HeroPortrait } from './HeroPortrait.tsx'
 
 interface HeroCardProps {
   hero: HeroPatch
@@ -12,9 +13,7 @@ export function HeroCard({ hero }: HeroCardProps) {
   return (
     <article className={`hero-card sentiment-${hero.sentiment}`}>
       <header className="hero-card-head">
-        <div className="monogram" aria-hidden="true">
-          {heroInitials(hero.name)}
-        </div>
+        <HeroPortrait name={hero.name} />
         <div className="hero-card-titles">
           <h2>{hero.name}</h2>
           <p className="hero-meta">
@@ -33,16 +32,23 @@ export function HeroCard({ hero }: HeroCardProps) {
               <span className="glyph" aria-hidden="true">
                 {LINE_GLYPH[change.tag]}
               </span>
-              <span className="change-text">
+              <div className="change-text">
                 <span className="sr-only">{LINE_LABEL[change.tag]}: </span>
                 {changeDisplay(change)}
                 {change.clarified ? (
                   <details className="clarified">
-                    <summary title={`Steam: ${raw}`}>Clarified</summary>
-                    <p>Steam: {raw}</p>
+                    <summary>
+                      Clarified
+                      <span className="sr-only">
+                        . Show original Steam wording.
+                      </span>
+                    </summary>
+                    <p className="steam-raw">
+                      <span className="steam-raw-kicker">Steam:</span> {raw}
+                    </p>
                   </details>
                 ) : null}
-              </span>
+              </div>
             </li>
           )
         })}

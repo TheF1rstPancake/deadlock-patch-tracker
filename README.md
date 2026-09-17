@@ -2,7 +2,11 @@
 
 Pretty hero +/- board from the latest Steam Deadlock changelog.
 
-Open the page → see **every hero touched in the most recent patch** as a card → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items.
+Open the page → see **every hero touched in the most recent patch** as a card (official-looking Valve hero card art, monogram fallback) → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items.
+
+The masthead **pulse** (under the lede) shouts the patch shape in the first five seconds from those same tallies, e.g. `9 buff · 5 nerf · 5 mixed · 1 fix`.
+
+Default board sort is **buffs-first** for a friend scan: buff → nerf → mixed → fix → name (alphabetical within each bucket). Filter chips still narrow the grid; they do not change that order.
 
 V1 is a single-patch snapshot. No login. Items and General are not first-class cards.
 
@@ -77,7 +81,15 @@ npm run ingest -- --no-preserve-overrides
 
 `--from-file` accepts Steam BBCode or markdown with a `## Heroes` (or `[ Heroes ]`) section and `- Hero: change` bullets.
 
-After ingest, commit the JSON. The UI does not call Steam at runtime.
+After ingest, vendor hero card art for any new names, then commit JSON + `public/heroes/`:
+
+```bash
+npm run vendor-portraits
+```
+
+The UI does not call Steam or the assets API at runtime. Portraits are checked-in WebP from [deadlock-api](https://assets.deadlock-api.com) (Valve game files). This is a fan tracker, not affiliated with Valve. If a card 404s, the monogram initials stay as fallback.
+
+If deadlock-api has no card for a new hero, pull the matching file from the wiki [Hero card images](https://deadlock.wiki/Category:Hero_card_images) category (`{Name} card.png`) into `public/heroes/{slug}.webp`. Unattended wiki downloads often hit Cloudflare, so that fallback is manual.
 
 ## Data shape
 
@@ -106,7 +118,7 @@ After ingest, commit the JSON. The UI does not call Steam at runtime.
 }
 ```
 
-`raw` is Valve’s wording. `display` is our paraphrase when `clarified` is true; the UI shows a **Clarified** chip that expands to the Steam line. If `display` is omitted, the board shows `raw`.
+`raw` is Valve’s wording. `display` is our paraphrase when `clarified` is true; the UI shows a **Clarified** chip. Click or keyboard-activate the chip (`Enter` / `Space`) to expand `Steam: …` with the original line. One provenance footnote sits above the grid; the legend does not repeat it. If `display` is omitted, the board shows `raw`.
 
 ### Overrides
 
@@ -148,5 +160,4 @@ Sep 16 sanity checks: Viscous mixed, Celeste nerf, Graves buff, Rem fix.
 - Multi-patch history and a “who gets nerfed routinely” view
 - Items and General as first-class cards
 - Stronger classification (ability-stat polarity, human review queue)
-- Optional hero portraits
 - Hosted refresh (still no auth)

@@ -1,12 +1,15 @@
-import type { Patch } from '../types.ts'
+import { formatPatchPulse } from '../lib/board.ts'
+import type { HeroSentiment, Patch } from '../types.ts'
 
 interface PatchHeaderProps {
   patch: Patch
   heroCount: number
+  counts: Record<HeroSentiment, number>
 }
 
-export function PatchHeader({ patch, heroCount }: PatchHeaderProps) {
+export function PatchHeader({ patch, heroCount, counts }: PatchHeaderProps) {
   const formatted = formatDate(patch.date)
+  const pulse = formatPatchPulse(counts)
 
   return (
     <header className="masthead">
@@ -18,6 +21,11 @@ export function PatchHeader({ patch, heroCount }: PatchHeaderProps) {
             {formatted} · {heroCount} {heroCount === 1 ? 'hero' : 'heroes'}{' '}
             touched
           </p>
+          {pulse ? (
+            <p className="pulse" aria-label="Patch shape">
+              {pulse}
+            </p>
+          ) : null}
         </div>
         <a
           className="steam-link"

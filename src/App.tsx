@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { FilterBar, type SentimentFilter } from './components/FilterBar.tsx'
 import { HeroCard } from './components/HeroCard.tsx'
 import { PatchHeader } from './components/PatchHeader.tsx'
+import { sortHeroesForFriendScan } from './lib/board.ts'
 import { loadLatestPatch } from './lib/loadPatches.ts'
 import type { HeroSentiment } from './types.ts'
 
@@ -29,11 +30,12 @@ export default function App() {
 
   const heroes = useMemo(() => {
     const needle = query.trim().toLowerCase()
-    return patch.heroes.filter((hero) => {
+    const filtered = patch.heroes.filter((hero) => {
       if (filter !== 'all' && hero.sentiment !== filter) return false
       if (needle && !hero.name.toLowerCase().includes(needle)) return false
       return true
     })
+    return sortHeroesForFriendScan(filtered)
   }, [filter, patch, query])
 
   const visibleSentiments = useMemo(() => {
@@ -44,7 +46,11 @@ export default function App() {
 
   return (
     <div className="shell">
-      <PatchHeader patch={patch} heroCount={patch.heroes.length} />
+      <PatchHeader
+        patch={patch}
+        heroCount={patch.heroes.length}
+        counts={counts}
+      />
       <FilterBar
         filter={filter}
         onFilter={setFilter}
@@ -53,7 +59,8 @@ export default function App() {
         counts={counts}
       />
       <p className="provenance">
-        Clarified = we rephrased for clarity; tap to see the Steam line.
+        Clarified = we rephrased for clarity; tap the chip to see the Steam
+        line.
       </p>
       <main>
         {heroes.length === 0 ? (
@@ -71,9 +78,6 @@ export default function App() {
             <span className="legend-nerf">− nerf</span>
             <span className="legend-neutral">~ rework / unclear</span>
             <span className="legend-fix">✓ fix</span>
-            <span className="legend-note">
-              Clarified = we rephrased for clarity; tap to see the Steam line.
-            </span>
           </p>
         )}
       </main>

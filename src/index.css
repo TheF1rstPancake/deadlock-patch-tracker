@@ -139,6 +139,16 @@ h1 {
   font-size: 1.02rem;
 }
 
+.pulse {
+  margin: 8px 0 0;
+  color: var(--gold-hot);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .steam-link {
   display: inline-flex;
   align-items: center;
@@ -262,7 +272,7 @@ h1 {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 0;
-  padding: 14px 14px 10px;
+  padding: 14px 14px 20px;
   box-shadow: none;
   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
   border-top: 3px solid var(--neutral);
@@ -285,22 +295,39 @@ h1 {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 10px 12px;
-  align-items: center;
+  align-items: start;
   margin-bottom: 10px;
 }
 
-.monogram {
-  width: 42px;
-  height: 42px;
+.monogram,
+.portrait {
+  width: 64px;
+  height: 80px;
   border-radius: 0;
+  background: var(--weapon-dark);
+  color: var(--gold-hot);
+  border: 1px solid var(--line);
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+.monogram {
   display: grid;
   place-items: center;
   font-family: Cinzel, serif;
   font-weight: 700;
   letter-spacing: 0.02em;
-  background: var(--weapon-dark);
-  color: var(--gold-hot);
-  border: 1px solid var(--line);
+}
+
+.portrait {
+  overflow: hidden;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 22% 10%;
 }
 
 .hero-card-titles h2 {
@@ -399,11 +426,14 @@ h1 {
 
 .clarified {
   display: block;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .clarified summary {
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  gap: 4px;
   cursor: pointer;
   list-style: none;
   font-family: 'Barlow Condensed', sans-serif;
@@ -413,11 +443,19 @@ h1 {
   text-transform: uppercase;
   color: var(--gold);
   border: 1px solid var(--line);
-  padding: 1px 6px 0;
+  padding: 2px 8px 1px;
+  background: var(--weapon-dark);
 }
 
-.clarified summary::-webkit-details-marker {
+.clarified summary::-webkit-details-marker,
+.clarified summary::marker {
   display: none;
+  content: '';
+}
+
+.clarified summary:focus-visible {
+  outline: 2px solid var(--gold-hot);
+  outline-offset: 2px;
 }
 
 .clarified[open] summary {
@@ -425,10 +463,24 @@ h1 {
   color: var(--gold-hot);
 }
 
-.clarified p {
-  margin: 6px 0 0;
-  color: var(--muted);
-  font-size: 0.82rem;
+.steam-raw {
+  display: block;
+  margin: 8px 0 2px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: var(--weapon-dark);
+  border-left: 2px solid var(--gold-hot);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.steam-raw-kicker {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-hot);
+  margin-right: 4px;
 }
 
 .empty {
@@ -466,13 +518,6 @@ h1 {
 }
 .legend-fix {
   color: var(--fix);
-}
-
-.legend-note {
-  color: var(--muted);
-  text-transform: none;
-  letter-spacing: 0.02em;
-  font-family: Barlow, sans-serif;
 }
 
 @media (max-width: 640px) {
