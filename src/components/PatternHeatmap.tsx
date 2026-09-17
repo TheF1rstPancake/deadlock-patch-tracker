@@ -10,17 +10,16 @@ import type { CSSProperties, FormEvent, KeyboardEvent } from 'react'
 
 interface PatternHeatmapProps {
   matrix: PatternMatrix
-  query: string
+  rowMeta?: 'recent' | 'total'
   onSelect: (entity: PatternEntity) => void
 }
 
-export function PatternHeatmap({ matrix, query, onSelect }: PatternHeatmapProps) {
-  const needle = query.trim().toLowerCase()
-  const rows = needle
-    ? matrix.entities.filter((entity) =>
-        entity.name.toLowerCase().includes(needle),
-      )
-    : matrix.entities
+export function PatternHeatmap({
+  matrix,
+  rowMeta = 'total',
+  onSelect,
+}: PatternHeatmapProps) {
+  const rows = matrix.entities
   const kindLabel = matrix.kind === 'hero' ? 'Heroes' : 'Items'
 
   if (rows.length === 0) {
@@ -59,6 +58,7 @@ export function PatternHeatmap({ matrix, query, onSelect }: PatternHeatmapProps)
               entity={entity}
               patches={matrix.patches}
               maxTouchVolume={matrix.maxTouchVolume}
+              rowMeta={rowMeta}
               onSelect={onSelect}
             />
           ))}
@@ -72,6 +72,7 @@ interface HeatmapRowProps {
   entity: PatternEntity
   patches: PatternMatrix['patches']
   maxTouchVolume: number
+  rowMeta: 'recent' | 'total'
   onSelect: (entity: PatternEntity) => void
 }
 
@@ -79,6 +80,7 @@ function HeatmapRow({
   entity,
   patches,
   maxTouchVolume,
+  rowMeta,
   onSelect,
 }: HeatmapRowProps) {
   const activate = () => onSelect(entity)
@@ -100,8 +102,9 @@ function HeatmapRow({
       <th scope="row" className="pattern-entity">
         <span className="pattern-entity-name">{entity.name}</span>
         <span className="pattern-entity-meta">
-          {entity.totalTouches} touch
-          {entity.totalTouches === 1 ? '' : 'es'}
+          {rowMeta === 'recent'
+            ? `${entity.recentTouches} recent`
+            : `${entity.totalTouches} touch${entity.totalTouches === 1 ? '' : 'es'}`}
         </span>
       </th>
       {entity.cells.map((cell, index) => {

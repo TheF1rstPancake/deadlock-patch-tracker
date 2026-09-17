@@ -2,9 +2,12 @@ import { describe, expect, it } from 'vitest'
 import type { ChangeEvent, Patch } from '../types.ts'
 import {
   RECENT_PATCH_WINDOW,
+  OVERVIEW_PATCH_COLUMNS,
+  OVERVIEW_TOP_ROWS,
   buildEntityDetail,
   buildPatternMatrix,
   cellTone,
+  clipOverviewMatrix,
   matchingPatternEntities,
   signedNet,
   uniqueMatch,
@@ -152,6 +155,37 @@ describe('buildPatternMatrix', () => {
     expect(byRecent.entities.find((row) => row.slug === 'alpha')?.recentTouches).toBe(
       1,
     )
+  })
+})
+
+describe('clipOverviewMatrix', () => {
+  it('keeps the newest columns and top rows, leaving full history on the source matrix', () => {
+    const roster = Array.from({ length: 18 }, (_, i) => `Hero${i}`)
+    const extra = Array.from({ length: 12 }, (_, i) => {
+      const month = String(i + 1).padStart(2, '0')
+      const id = `2026-${month}-01`
+      return patch(
+        id,
+        roster.map((name, n) =>
+          event(`${id}:${n}`, 'hero', name, `hero-${n}`, 'buff'),
+        ),
+      )
+    })
+    const full = buildPatternMatrix(extra, 'hero', { sort: 'recent' })
+    expect(full.patches).toHaveLength(12)
+    expect(full.entities).toHaveLength(18)
+
+    const clipped = clipOverviewMatrix(full)
+    expect(clipped.patches.map((column) => column.id)).toEqual(
+      full.patches.slice(-OVERVIEW_PATCH_COLUMNS).map((column) => column.id),
+    )
+    expect(clipped.entities).toHaveLength(OVERVIEW_TOP_ROWS)
+    expect(clipped.entities[0]?.cells).toHaveLength(OVERVIEW_PATCH_COLUMNS)
+    expect(full.entities[0]?.cells).toHaveLength(12)
+
+    const expanded = clipOverviewMatrix(full, { allPatches: true, allRows: true })
+    expect(expanded.patches).toHaveLength(12)
+    expect(expanded.entities).toHaveLength(18)
   })
 })
 

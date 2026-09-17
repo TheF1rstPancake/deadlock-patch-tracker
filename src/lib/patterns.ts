@@ -8,8 +8,16 @@ import type { PatternKind } from './route.ts'
  * a single notes post — so five patches is the more stable “lately” signal.
  */
 export const RECENT_PATCH_WINDOW = 5
+/** Overview heatmap columns (newest). “All patches” expands to the full ledger. */
+export const OVERVIEW_PATCH_COLUMNS = 10
+/** Overview rows by current sort. “Show all” expands the full catalog. */
+export const OVERVIEW_TOP_ROWS = 14
 
 export type PatternSort = 'total' | 'recent'
+export const DEFAULT_PATTERN_SORT: PatternSort = 'recent'
+
+export const RECENT_VOLATILITY_HINT =
+  `Buff+nerf events in the last ${RECENT_PATCH_WINDOW} ingested patches — not a 30-day window.`
 
 export interface TagCounts {
   buff: number
@@ -246,6 +254,43 @@ export function buildPatternMatrix(
     maxTouchVolume,
     entities,
   }
+}
+
+export function clipOverviewMatrix(
+  matrix: PatternMatrix,
+  options: {
+    allPatches?: boolean
+    allRows?: boolean
+    query?: string
+  } = {},
+): PatternMatrix {
+  const needle = options.query?.trim().toLowerCase() ?? ''
+  let entities = needle
+    ? matchingPatternEntities(matrix.entities, needle)
+    : [...matrix.entities]
+
+  if (!options.allRows && !needle) {
+    entities = entities.slice(0, OVERVIEW_TOP_ROWS)
+  }
+
+  let patches = matrix.patches
+  if (!options.allPatches && patches.length > OVERVIEW_PATCH_COLUMNS) {
+    patches = patches.slice(-OVERVIEW_PATCH_COLUMNS)
+    const keep = new Set(patches.map((column) => column.id))
+    entities = entities.map((entity) => ({
+      ...entity,
+      cells: entity.cells.filter((cell) => keep.has(cell.patchId)),
+    }))
+  }
+
+  let maxTouchVolume = 0
+  for (const entity of entities) {
+    for (const cell of entity.cells) {
+      if (cell.touchVolume > maxTouchVolume) maxTouchVolume = cell.touchVolume
+    }
+  }
+
+  return { ...matrix, patches, entities, maxTouchVolume }
 }
 
 export function buildEntityDetail(

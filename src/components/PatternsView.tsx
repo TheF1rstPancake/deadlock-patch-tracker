@@ -3,9 +3,13 @@ import { PatternHeatmap, PatternSearchForm } from './PatternHeatmap.tsx'
 import { SiteNav } from './SiteNav.tsx'
 import { loadAllPatches } from '../lib/loadPatches.ts'
 import {
-  RECENT_PATCH_WINDOW,
+  DEFAULT_PATTERN_SORT,
+  OVERVIEW_PATCH_COLUMNS,
+  OVERVIEW_TOP_ROWS,
+  RECENT_VOLATILITY_HINT,
   buildEntityDetail,
   buildPatternMatrix,
+  clipOverviewMatrix,
   uniqueMatch,
   type PatternSort,
 } from '../lib/patterns.ts'
@@ -20,9 +24,11 @@ interface PatternsViewProps {
 
 export function PatternsView({ kind, slug }: PatternsViewProps) {
   const [patches, setPatches] = useState<Patch[] | null>(null)
-  const [sort, setSort] = useState<PatternSort>('total')
+  const [sort, setSort] = useState<PatternSort>(DEFAULT_PATTERN_SORT)
   const [query, setQuery] = useState('')
   const [showCumulative, setShowCumulative] = useState(false)
+  const [allRows, setAllRows] = useState(false)
+  const [allPatches, setAllPatches] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -37,12 +43,19 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
   useEffect(() => {
     setQuery('')
     setShowCumulative(false)
+    setAllRows(false)
+    setAllPatches(false)
   }, [kind, slug])
 
   const matrix = useMemo(() => {
     if (!patches) return null
     return buildPatternMatrix(patches, kind, { sort })
   }, [kind, patches, sort])
+
+  const overview = useMemo(() => {
+    if (!matrix) return null
+    return clipOverviewMatrix(matrix, { allPatches, allRows, query })
+  }, [allPatches, allRows, matrix, query])
 
   const detail = useMemo(() => {
     if (!patches || !slug) return undefined
@@ -59,13 +72,17 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
     if (match) go(patternsHash(match.kind, match.slug))
   }
 
-  if (!patches || !matrix) {
+  if (!patches || !matrix || !overview) {
     return (
       <div className="shell shell-patterns">
         <p className="empty">Loading patterns…</p>
       </div>
     )
   }
+
+  const searching = query.trim().length > 0
+  const moreRows = !searching && matrix.entities.length > OVERVIEW_TOP_ROWS
+  const morePatches = matrix.patches.length > OVERVIEW_PATCH_COLUMNS
 
   return (
     <div className="shell shell-patterns">
@@ -75,11 +92,6 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
           <SiteNav current="patterns" patternsKind={kind} />
         </div>
         <h1>Buff / nerf patterns</h1>
-        <p className="lede">
-          {slug
-            ? 'Per-patch buff vs nerf event counts. Cumulative net is optional and off by default.'
-            : `${kind === 'hero' ? 'Heroes' : 'Items'} across ${matrix.patches.length} ingested patches. Color is signed net (buffs − nerfs). The number is touch volume so canceling churn still shows. Empty cells were not touched that patch — not a gray zero.`}
-        </p>
       </header>
 
       {slug ? (
@@ -128,29 +140,52 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
               <button
                 type="button"
                 className="chip"
+                aria-pressed={sort === 'recent'}
+                aria-description={RECENT_VOLATILITY_HINT}
+                onClick={() => setSort('recent')}
+              >
+                Recent volatility
+                <span className="chip-help" title={RECENT_VOLATILITY_HINT} aria-hidden="true">
+                  ?
+                </span>
+              </button>
+              <button
+                type="button"
+                className="chip"
                 aria-pressed={sort === 'total'}
                 onClick={() => setSort('total')}
               >
                 Total touches
               </button>
-              <button
-                type="button"
-                className="chip"
-                aria-pressed={sort === 'recent'}
-                onClick={() => setSort('recent')}
-              >
-                Recent volatility
-              </button>
             </div>
-            <p className="pattern-sort-note">
-              Default sort is total buff+nerf events. Recent volatility counts
-              those events in the last {RECENT_PATCH_WINDOW} ingested patches
-              (not a 30-day window).
-            </p>
+            <div className="chips" role="group" aria-label="Heatmap window">
+              {morePatches ? (
+                <button
+                  type="button"
+                  className="chip"
+                  aria-pressed={allPatches}
+                  onClick={() => setAllPatches((on) => !on)}
+                >
+                  All patches
+                  <span className="chip-count">{matrix.patches.length}</span>
+                </button>
+              ) : null}
+              {moreRows ? (
+                <button
+                  type="button"
+                  className="chip"
+                  aria-pressed={allRows}
+                  onClick={() => setAllRows((on) => !on)}
+                >
+                  Show all
+                  <span className="chip-count">{matrix.entities.length}</span>
+                </button>
+              ) : null}
+            </div>
           </div>
           <PatternHeatmap
-            matrix={matrix}
-            query={query}
+            matrix={overview}
+            rowMeta={sort === 'recent' ? 'recent' : 'total'}
             onSelect={(entity) => go(patternsHash(entity.kind, entity.slug))}
           />
           <p className="legend">
