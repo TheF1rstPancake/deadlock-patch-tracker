@@ -79,8 +79,8 @@ function BuffNerfChart({
   )
   const cumulatives = series.map((point) => point.cumulativeNet)
   const maxAbsCum = Math.max(1, ...cumulatives.map((value) => Math.abs(value)))
-  const groupW = 36
-  const pad = { top: 18, right: showCumulative ? 44 : 12, bottom: 52, left: 28 }
+  const groupW = 42
+  const pad = { top: 18, right: showCumulative ? 44 : 12, bottom: 36, left: 28 }
   const plotH = 160
   const width = pad.left + pad.right + series.length * groupW
   const height = pad.top + pad.bottom + plotH
@@ -172,8 +172,7 @@ function BuffNerfChart({
                 className="pattern-chart-col"
                 x={x0 + groupW / 2}
                 y={height - 8}
-                textAnchor="end"
-                transform={`rotate(-50 ${x0 + groupW / 2} ${height - 8})`}
+                textAnchor="middle"
               >
                 {label}
               </text>

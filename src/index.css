@@ -102,6 +102,15 @@ body {
   background: linear-gradient(90deg, var(--gold-hot), transparent 70%);
 }
 
+.masthead-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
 .kicker {
   margin: 0 0 8px;
   font-family: 'Barlow Condensed', Impact, sans-serif;
@@ -110,6 +119,10 @@ body {
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--gold);
+}
+
+.masthead-top .kicker {
+  margin: 0;
 }
 
 .masthead-row {
@@ -730,7 +743,7 @@ h1 {
 .pattern-table {
   border-collapse: separate;
   border-spacing: 3px;
-  min-width: 100%;
+  width: max-content;
 }
 
 .pattern-table th,
@@ -753,11 +766,14 @@ h1 {
   padding: 0 0 6px;
 }
 
-.pattern-corner {
+.pattern-table thead .pattern-corner {
   left: 0;
   z-index: 4;
   text-align: left;
   padding-left: 8px;
+  width: 11rem;
+  min-width: 11rem;
+  max-width: 11rem;
 }
 
 .pattern-col-label {
@@ -786,7 +802,8 @@ h1 {
   background: var(--bg);
   text-align: left;
   padding: 4px 10px 4px 8px;
-  min-width: 9.5rem;
+  width: 11rem;
+  min-width: 11rem;
   max-width: 11rem;
   vertical-align: middle;
 }
@@ -1041,7 +1058,14 @@ h1 {
   }
 
   .pattern-entity {
-    min-width: 7.5rem;
+    width: 8.5rem;
+    min-width: 8.5rem;
+    max-width: 8.5rem;
+  }
+
+  .pattern-table thead .pattern-corner {
+    width: 8.5rem;
+    min-width: 8.5rem;
     max-width: 8.5rem;
   }
 }

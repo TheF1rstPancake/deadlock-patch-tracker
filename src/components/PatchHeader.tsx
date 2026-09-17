@@ -25,7 +25,10 @@ export function PatchHeader({
 
   return (
     <header className="masthead">
-      <p className="kicker">{kicker}</p>
+      <div className="masthead-top">
+        <p className="kicker">{kicker}</p>
+        <SiteNav current="roster" />
+      </div>
       <div className="masthead-row">
         <div>
           {patches.length > 1 ? (
@@ -48,18 +51,15 @@ export function PatchHeader({
             </p>
           ) : null}
         </div>
-        <div className="masthead-actions">
-          <SiteNav current="roster" />
-          <a
-            className="steam-link"
-            href={patch.steamUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open on Steam
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
+        <a
+          className="steam-link"
+          href={patch.steamUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open on Steam
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </header>
   )

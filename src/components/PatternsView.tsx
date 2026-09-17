@@ -70,21 +70,16 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
   return (
     <div className="shell shell-patterns">
       <header className="masthead">
-        <p className="kicker">Balance · patterns</p>
-        <div className="masthead-row">
-          <div>
-            <h1>Buff / nerf patterns</h1>
-            <p className="lede">
-              {kind === 'hero' ? 'Heroes' : 'Items'} across {matrix.patches.length}{' '}
-              ingested patches. Color is signed net (buffs − nerfs). The number is
-              touch volume so canceling churn still shows. Empty cells were not
-              touched that patch — not a gray zero.
-            </p>
-          </div>
-          <div className="masthead-actions">
-            <SiteNav current="patterns" patternsKind={kind} />
-          </div>
+        <div className="masthead-top">
+          <p className="kicker">Balance · patterns</p>
+          <SiteNav current="patterns" patternsKind={kind} />
         </div>
+        <h1>Buff / nerf patterns</h1>
+        <p className="lede">
+          {slug
+            ? 'Per-patch buff vs nerf event counts. Cumulative net is optional and off by default.'
+            : `${kind === 'hero' ? 'Heroes' : 'Items'} across ${matrix.patches.length} ingested patches. Color is signed net (buffs − nerfs). The number is touch volume so canceling churn still shows. Empty cells were not touched that patch — not a gray zero.`}
+        </p>
       </header>
 
       {slug ? (
