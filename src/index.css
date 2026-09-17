@@ -28,6 +28,8 @@
   --fix: var(--spirit);
   --fix-void: var(--spirit-void);
   --neutral: var(--weapon-light);
+  /* Caps every card to one body height; longer patch lists scroll inside. */
+  --change-list-height: 13.25rem;
   font-family: Barlow, 'Trebuchet MS', sans-serif;
   line-height: 1.42;
   font-weight: 400;
@@ -265,10 +267,14 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 20.5rem), 1fr));
   gap: 12px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .hero-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 0;
@@ -296,6 +302,7 @@ h1 {
   grid-template-columns: auto 1fr auto;
   gap: 10px 12px;
   align-items: start;
+  flex: 0 0 auto;
   margin-bottom: 10px;
 }
 
@@ -384,8 +391,44 @@ h1 {
 .change-list {
   list-style: none;
   margin: 0;
-  padding: 8px 0 0;
+  padding: 8px 4px 0 0;
   border-top: 1px solid var(--weapon-dark);
+  flex: 1 1 auto;
+  height: var(--change-list-height);
+  min-height: var(--change-list-height);
+  max-height: var(--change-list-height);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--weapon-dark);
+}
+
+.change-list:focus {
+  outline: none;
+}
+
+.change-list:focus-visible {
+  outline: 2px solid var(--gold-hot);
+  outline-offset: -2px;
+}
+
+.change-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.change-list::-webkit-scrollbar-track {
+  background: var(--weapon-dark);
+}
+
+.change-list::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border: 1px solid var(--weapon-dark);
+}
+
+.change-list::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-hot);
 }
 
 .change {
@@ -528,6 +571,12 @@ h1 {
 
   .hero-card-head {
     grid-template-columns: auto 1fr;
+  }
+
+  .change-list {
+    height: 11.5rem;
+    min-height: 11.5rem;
+    max-height: 11.5rem;
   }
 
   .badge {
