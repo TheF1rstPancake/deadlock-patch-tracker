@@ -295,22 +295,39 @@ h1 {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 10px 12px;
-  align-items: center;
+  align-items: start;
   margin-bottom: 10px;
 }
 
-.monogram {
-  width: 42px;
-  height: 42px;
+.monogram,
+.portrait {
+  width: 64px;
+  height: 80px;
   border-radius: 0;
+  background: var(--weapon-dark);
+  color: var(--gold-hot);
+  border: 1px solid var(--line);
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+.monogram {
   display: grid;
   place-items: center;
   font-family: Cinzel, serif;
   font-weight: 700;
   letter-spacing: 0.02em;
-  background: var(--weapon-dark);
-  color: var(--gold-hot);
-  border: 1px solid var(--line);
+}
+
+.portrait {
+  overflow: hidden;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 22% 10%;
 }
 
 .hero-card-titles h2 {

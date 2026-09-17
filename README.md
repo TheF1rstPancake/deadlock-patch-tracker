@@ -2,7 +2,7 @@
 
 Pretty hero +/- board from the latest Steam Deadlock changelog.
 
-Open the page → see **every hero touched in the most recent patch** as a card → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items.
+Open the page → see **every hero touched in the most recent patch** as a card (official-looking Valve hero card art, monogram fallback) → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items.
 
 The masthead **pulse** (under the lede) shouts the patch shape in the first five seconds from those same tallies, e.g. `9 buff · 5 nerf · 5 mixed · 1 fix`.
 
@@ -81,7 +81,13 @@ npm run ingest -- --no-preserve-overrides
 
 `--from-file` accepts Steam BBCode or markdown with a `## Heroes` (or `[ Heroes ]`) section and `- Hero: change` bullets.
 
-After ingest, commit the JSON. The UI does not call Steam at runtime.
+After ingest, vendor hero card art for any new names, then commit JSON + `public/heroes/`:
+
+```bash
+npm run vendor-portraits
+```
+
+The UI does not call Steam or the assets API at runtime. Portraits are checked-in WebP from [deadlock-api](https://assets.deadlock-api.com) (Valve game files). This is a fan tracker, not affiliated with Valve. If a card 404s, the monogram initials stay as fallback.
 
 ## Data shape
 
@@ -152,5 +158,4 @@ Sep 16 sanity checks: Viscous mixed, Celeste nerf, Graves buff, Rem fix.
 - Multi-patch history and a “who gets nerfed routinely” view
 - Items and General as first-class cards
 - Stronger classification (ability-stat polarity, human review queue)
-- Optional hero portraits
 - Hosted refresh (still no auth)
