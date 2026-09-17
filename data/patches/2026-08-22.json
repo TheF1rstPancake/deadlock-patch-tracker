@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-08-22",
+  "title": "Minor Update - 08-22-2026",
+  "date": "2026-08-22",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1841579228672283",
+  "gid": "1841579228672283",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1841579228672283:0",
+      "section": "",
+      "target": {
+        "kind": "item",
+        "name": "Radiant Regeneration",
+        "slug": "radiant-regeneration",
+        "facet": "Heal"
+      },
+      "tag": "nerf",
+      "raw": "Heal on cast reduced from 70 to 65",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 70,
+          "to": 65
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:1",
+      "section": "",
+      "target": {
+        "kind": "item",
+        "name": "Restorative Locket",
+        "slug": "restorative-locket",
+        "facet": "Spirit Resistance"
+      },
+      "tag": "nerf",
+      "raw": "Spirit Resistance reduced from 10% to 8%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_resist",
+          "polarity": "up_is_buff",
+          "from": 10,
+          "to": 8,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:2",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Dazzling Trick"
+      },
+      "tag": "nerf",
+      "raw": "Dazzling Trick cooldown increased from 32s to 34s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 32,
+          "to": 34,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:3",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Dazzling Trick T2"
+      },
+      "tag": "neutral",
+      "raw": "Dazzling Trick T2 barrier rescaled from \"+80 and +0.7 scaling\" to \"+70 and +0.76\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1841579228672283:4",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Dazzling Trick T3"
+      },
+      "tag": "buff",
+      "raw": "Dazzling Trick T3 cooldown increased from -18s to -20s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": -18,
+          "to": -20,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:5",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Dazzling Trick T3"
+      },
+      "tag": "nerf",
+      "raw": "Dazzling Trick T3 reduced from +1.5s Silence to +1.25s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1841579228672283:6",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Radiant Daggers Spirit Amp"
+      },
+      "tag": "nerf",
+      "raw": "Radiant Daggers Spirit Amp per stack reduced from +8% to +7%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_amp",
+          "polarity": "up_is_buff",
+          "from": 8,
+          "to": 7,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:7",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Radiant Daggers T3 Spirit Amp"
+      },
+      "tag": "buff",
+      "raw": "Radiant Daggers T3 Spirit Amp per stack increased from +3% to +4%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_amp",
+          "polarity": "up_is_buff",
+          "from": 3,
+          "to": 4,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:8",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Shining Wonder"
+      },
+      "tag": "nerf",
+      "raw": "Shining Wonder bounce range reduced from 17.5m to 16.5m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 17.5,
+          "to": 16.5,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:9",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Shining Wonder"
+      },
+      "tag": "nerf",
+      "raw": "Shining Wonder damage reduced from 165 to 140",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 165,
+          "to": 140
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:10",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Shining Wonder"
+      },
+      "tag": "nerf",
+      "raw": "Shining Wonder spirit scaling reduced from 0.9 to 0.6",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.9,
+          "to": 0.6
+        }
+      ]
+    },
+    {
+      "id": "1841579228672283:11",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Celeste",
+        "slug": "celeste",
+        "facet": "Shining Wonder T2"
+      },
+      "tag": "buff",
+      "raw": "Shining Wonder T2 now also increases spirit scaling by +0.45",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Celeste",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Dazzling Trick cooldown increased from 32s to 34s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Dazzling Trick T2 barrier rescaled from \"+80 and +0.7 scaling\" to \"+70 and +0.76\"",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Dazzling Trick T3 cooldown increased from -18s to -20s",
+          "tag": "buff"
+        },
+        {
+          "raw": "Dazzling Trick T3 reduced from +1.5s Silence to +1.25s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Radiant Daggers Spirit Amp per stack reduced from +8% to +7%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Radiant Daggers T3 Spirit Amp per stack increased from +3% to +4%",
+          "tag": "buff"
+        },
+        {
+          "raw": "Shining Wonder bounce range reduced from 17.5m to 16.5m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Shining Wonder damage reduced from 165 to 140",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Shining Wonder spirit scaling reduced from 0.9 to 0.6",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Shining Wonder T2 now also increases spirit scaling by +0.45",
+          "tag": "buff"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-05-25",
+  "title": "Minor Update - 05-25-2026",
+  "date": "2026-05-25",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1833968530888746",
+  "gid": "1833968530888746",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1833968530888746:0",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn drop off point is moved from the above bridge in the mid lane to under the bridge in the side lane",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:1",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "buff",
+      "raw": "Urn timer extension when contested increased from 1.25s to 3s",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 1.25,
+          "to": 3,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1833968530888746:2",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "buff",
+      "raw": "Urn deposit timers for favored/neutral/unfavored increased from 3/5/10s to 5/10/15s",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:3",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "nerf",
+      "raw": "Urn comeback bullet and spirit resist auras reduced from 50% to 35%",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_resist",
+          "polarity": "up_is_buff",
+          "from": 50,
+          "to": 35,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1833968530888746:4",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn pickup spot is now where the old comeback drop off spots were for when your team is behind",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:5",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner",
+        "facet": "Urn"
+      },
+      "tag": "nerf",
+      "raw": "Urn runner no longer has sprint disabled",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:6",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn runner now has max sprint acceleration",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:7",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn runner now gains +2m Sprint, +1 Stamina, +10% Dash Distance and +15% Stamina Regen",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:8",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Urn Runner",
+        "slug": "urn-runner",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn runner for the team that is behind now gains an extra +4m Sprint",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:9",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "buff",
+      "raw": "Urn collision radius increased by 20%",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1833968530888746:10",
+      "section": "",
+      "target": {
+        "kind": "unknown",
+        "name": "Unknown",
+        "slug": "unknown"
+      },
+      "tag": "neutral",
+      "raw": "Various smaller urn holding timers and variables adjusted to account for the new location",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    }
+  ],
+  "heroes": []
+}

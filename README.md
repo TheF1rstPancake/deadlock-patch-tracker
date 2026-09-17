@@ -1,14 +1,14 @@
 # Deadlock patch tracker
 
-Pretty hero +/- board from the latest Steam Deadlock changelog.
+Pretty hero +/- board from Steam Deadlock changelogs, with a checked-in **PatchV2** event ledger so we can answer “what happened to X over time.”
 
-Open the page → see **every hero touched in the most recent patch** as a card (official-looking Valve hero card art, monogram fallback) → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items.
+Open the page → pick a patch → see **every hero touched** as a card (official-looking Valve hero card art, monogram fallback) → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items. Search a hero to see which patches touched them (from `data/index.json`). Charts / win-rate are out of scope.
 
 The masthead **pulse** (under the lede) shouts the patch shape in the first five seconds from those same tallies, e.g. `9 buff · 5 nerf · 5 mixed · 1 fix`.
 
 Default board sort is **buffs-first** for a friend scan: buff → nerf → mixed → fix → name (alphabetical within each bucket). Filter chips still narrow the grid; they do not change that order.
 
-V1 is a single-patch snapshot. No login. Items and General are not first-class cards.
+The live board is still heroes-only. Items, General, and system lines live in `events[]` (and the history index) so we can add an item board later without rewriting the store.
 
 Steam appid: `1422450`.
 
@@ -24,10 +24,10 @@ Then open the printed local URL (default `http://localhost:5173`).
 ```bash
 npm run build     # production bundle; must pass
 npm run preview   # serve the build
-npm test          # classifier + parser tests
+npm test          # classifier + parser + event tests
 ```
 
-The UI reads checked-in JSON from `data/patches/*.json` and shows the **latest `date`**. Sep 16, 2026 is preloaded.
+The UI reads checked-in JSON from `data/patches/*.json` (latest `date` by default; hash `#YYYY-MM-DD` selects another). Portraits live in `public/heroes/`.
 
 The Vite config uses `base: './'` so a relative `dist/` copy works on GitHub project Pages, Meg, or any static host that is not at the domain root.
 
@@ -49,7 +49,7 @@ Open the Tailnet URL on port `4397`. Because `base` is relative, it does not nee
 
 ### GitHub Pages
 
-`.github/workflows/pages.yml` builds `dist` and deploys with `actions/deploy-pages`.
+`.github/workflows/pages.yml` builds `dist` and deploys with `actions/deploy-pages`. Pages updates on merge to `main`.
 
 **Private repo Pages** needs GitHub Pro (or an org with Pages enabled). Enabling Pages from a default private-repo token often fails with `Resource not accessible by integration`. Either:
 
@@ -64,10 +64,12 @@ Until Pages is enabled, the workflow file is enough.
 
 ## Refresh from Steam
 
-Pull the newest community patch notes (feed `steam_community_announcements`), parse `[ Heroes ]`, classify each line, and write `data/patches/YYYY-MM-DD.json`:
+Pull community announcements (`feeds=steam_community_announcements`), detect **sectioned / flat / prose** layouts, resolve each `- Name: change` against the hero roster ∪ item catalog (never assume hero on a flat list), classify, project `heroes[]` for the board, mirror raw BBCode, and rebuild `data/index.json`:
 
 ```bash
-npm run ingest
+npm run ingest           # latest tagged patchnotes post
+npm run ingest:all       # every reachable tagged patchnotes post
+                         # (+ title-heuristic changelogs with bullets/sections)
 ```
 
 Useful flags:
@@ -75,13 +77,14 @@ Useful flags:
 ```bash
 npm run ingest -- --dry-run
 npm run ingest -- --gid 1844115010490072
+npm run ingest -- --all --tagged-only
 npm run ingest -- --from-file path/to/changelog.md
 npm run ingest -- --no-preserve-overrides
 ```
 
-`--from-file` accepts Steam BBCode or markdown with a `## Heroes` (or `[ Heroes ]`) section and `- Hero: change` bullets.
+`--from-file` accepts Steam BBCode or markdown (`## Heroes` / `[ Heroes ]`, or a flat `- Name: change` list).
 
-After ingest, vendor hero card art for any new names, then commit JSON + `public/heroes/`:
+After ingest, vendor hero card art for any new names, then commit JSON + `public/heroes/` + `data/raw/`:
 
 ```bash
 npm run vendor-portraits
@@ -91,16 +94,38 @@ The UI does not call Steam or the assets API at runtime. Portraits are checked-i
 
 If deadlock-api has no card for a new hero, pull the matching file from the wiki [Hero card images](https://deadlock.wiki/Category:Hero_card_images) category (`{Name} card.png`) into `public/heroes/{slug}.webp`. Unattended wiki downloads often hit Cloudflare, so that fallback is manual.
 
-## Data shape
+Steam’s community-announcements feed is a **rolling window**, not a forever archive. Ingest pages with `enddate`, but extra pages may be empty; we keep `data/raw/{gid}.bbcode.txt` so re-parse does not depend on Steam. See `docs/findings/steam-community-enddate.md`.
+
+Unclear / low-confidence lines are flagged `parse.needsReview` for a Cursor cleanup pass (`docs/cursor-parse-patch.md`). Ingest is mechanical first — it does not call an LLM per line.
+
+## Data shape (PatchV2)
+
+Each `data/patches/{id}.json` is a **PatchV2** document. `events[]` is the source of truth. `heroes[]` is a projection of `target.kind === "hero"` for the current board.
 
 ```json
 {
+  "schemaVersion": 2,
   "id": "2026-09-16",
   "title": "Minor Update - 09-16-2026",
   "date": "2026-09-16",
   "steamUrl": "https://store.steampowered.com/news/app/1422450/view/…",
   "gid": "1844115010490072",
   "appid": 1422450,
+  "layout": "sectioned",
+  "sectionsPresent": ["General", "Items", "Heroes"],
+  "events": [
+    {
+      "id": "1844115010490072:0",
+      "section": "Heroes",
+      "target": { "kind": "hero", "name": "Paige", "slug": "paige", "facet": "Captivating Read T1" },
+      "tag": "buff",
+      "metrics": [{ "stat": "cooldown_reduction", "from": -11, "to": -14, "unit": "s", "polarity": "up_is_buff" }],
+      "raw": "Captivating Read T1 increased from -11s Cooldown to -14s",
+      "display": "Captivating Read T1: cooldown reduction −11s → −14s (stronger CDR)",
+      "clarified": true,
+      "parse": { "confidence": "high", "needsReview": false, "source": "mechanical" }
+    }
+  ],
   "heroes": [
     {
       "name": "Paige",
@@ -118,20 +143,32 @@ If deadlock-api has no card for a new hero, pull the matching file from the wiki
 }
 ```
 
+On disk:
+
+| Path | What |
+| --- | --- |
+| `data/patches/{id}.json` | PatchV2 (events + heroes projection) |
+| `data/raw/{gid}.bbcode.txt` | Steam contents mirror |
+| `data/index.json` | Patch list + per-target touches/totals |
+| `data/catalog.json` | Hero roster ∪ shop item catalog (+ system aliases) |
+
 `raw` is Valve’s wording. `display` is our paraphrase when `clarified` is true; the UI shows a **Clarified** chip. Click or keyboard-activate the chip (`Enter` / `Space`) to expand `Steam: …` with the original line. One provenance footnote sits above the grid; the legend does not repeat it. If `display` is omitted, the board shows `raw`.
+
+`id` is the calendar date from the title when unique. If two posts share a day, the file id becomes `{date}-{gid}`. `gid` is the stable Steam key.
 
 ### Overrides
 
 The JSON is the source of truth. Heuristic misses are fine to correct by hand:
 
-- Set `tag` on a change, and `"override": true` so the next ingest keeps it.
+- Set `tag` on a change/event, and `"override": true` so the next ingest keeps it.
 - Set `sentiment` on a hero, and `"override": true` to pin the card.
+- Cursor cleanup (`docs/cursor-parse-patch.md`) should only rewrite `needsReview` / low-confidence fields and must not overwrite `override: true`.
 
 Re-ingest preserves those fields unless you pass `--no-preserve-overrides`.
 
 ## Classification heuristic
 
-Applied per line (the text after `Hero:`), first match wins:
+Applied per line (the text after `Hero:` / `Item:`), first match wins:
 
 1. **Fix** — `fix` / `fixed` / `bug` / collision wording, or UI/QoL (`target UI`, HUD, indicator). Bugfixes alone never become a buff.
 2. **Neutral** — reworks with `instead of`.
@@ -155,9 +192,16 @@ Hero card sentiment from the line tags:
 
 Sep 16 sanity checks: Viscous mixed, Celeste nerf, Graves buff, Rem fix.
 
-## V2 roadmap
+## Layouts ingest understands
 
-- Multi-patch history and a “who gets nerfed routinely” view
-- Items and General as first-class cards
-- Stronger classification (ability-stat polarity, human review queue)
+Steam notes are not always `[ Heroes ]` sections:
+
+- **sectioned** — `[ General ]` / `[ Items ]` / `[ Heroes ]` (and older Weapon / Vitality / Spirit Items, Hero Changes)
+- **flat** — interleaved `- Celeste: …` / `- Restorative Locket: …` with no headers; kind comes from the catalog
+- **prose** — matchmaking / visual / forum-link posts; stored with `needsReview`
+
+## Later
+
+- Item board UI (data is already in `events[]`)
+- Charts / “who gets nerfed routinely” (index totals exist; no win-rate API in-repo)
 - Hosted refresh (still no auth)

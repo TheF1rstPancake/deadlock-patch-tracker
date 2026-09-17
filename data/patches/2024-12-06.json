@@ -1,0 +1,6143 @@
+{
+  "schemaVersion": 2,
+  "id": "2024-12-06",
+  "title": "12-06-2024 Update",
+  "date": "2024-12-06",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1785321795648842",
+  "gid": "1785321795648842",
+  "appid": 1422450,
+  "layout": "sectioned",
+  "sectionsPresent": [
+    "General Changes",
+    "Misc Gameplay",
+    "Weapon Items",
+    "Vitality Items",
+    "Spirit Items",
+    "Heroes"
+  ],
+  "events": [
+    {
+      "id": "1785321795648842:0",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added a new hero, Raven, to Hero Labs.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:1",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added park theming to purple lane.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:2",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added park backdrop to park side of map.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:3",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Updated tree models to new visual style and added player collision to canopies.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:4",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "For each player on the main leaderboard, you can see their top 3 heroes as well as their overall skill rating.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:5",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Moved the post-game survey to the final score screen.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:6",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added text box field to the post-game survey.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:7",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "buff",
+      "raw": "Muting a player now also silences map drawing, pings, and chatwheel messages.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:8",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Various rendering performance improvements on map assets.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:9",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added two new setting options \"Force English Hero Names\" and \"Force English Item Names\", which will display those values in English regardless of your chosen language.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:10",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added Toggle Crouch as a new keybind.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:11",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added a new setting option: \"Additional Build Search Language\", which lets you select a language to search for when requesting builds in addition to the current display language of the client.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:12",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed shop search not working in the shop when opened from Resources.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:13",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Revisions to melee parry effect and removal of the parry fail effect to make parries more clear.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:14",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Tweaked falloff range and toned down bass frequencies of hotel music.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:15",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added Pocket Barrage cast delay sound.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:16",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Updated Pocket Enchanted Satchel cast sound.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:17",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Passive cooldown indicator now shows when the item is off cooldown instead of 1 second before.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:18",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed invulnerable-to-debuff sound effect playing at wrong times.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:19",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed melee damage audio playing despite no damage dealt.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:20",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed rejuv collect sound playing from wrong location in hero sandbox.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:21",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Updated parry cast and parry success sounds.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:22",
+      "section": "General Changes",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage"
+      },
+      "tag": "neutral",
+      "raw": "Mirage now has custom animations for most of his core movement.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:23",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed being able to wall jump off of the same surface multiple times.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:24",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed the Damage Report UI clipping into the shop in Sandbox mode.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:25",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed shop showing with a broken build tab if you had previously navigated to the hero builds, then opened it from Resources.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:26",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed clicking on minimap not taking you to that location as a spectator.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:27",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Fade rooftop antenna ambient effects so that they are not visible at a distance.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:28",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Visual revisions to Quantum entanglement effect.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:29",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Reverted recent updates to Shiv run animations.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:30",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "buff",
+      "raw": "Increased volume and adjusted the mix of sounds for firing while disarmed and using abilities while silenced.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:31",
+      "section": "General Changes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Lash's Flog"
+      },
+      "tag": "neutral",
+      "raw": "Lash's Flog impact sound adjusted for better feedback for attacking player.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:32",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed bug preventing purchase sound from playing when buying/quickbuying Active or Imbued items.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:33",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Visual updates to Mirage muzzle flash and tracers.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:34",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Updated Bullet Flurry tracers to be spirit-based.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:35",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed Bebop's bomb damage growth not being reflected in the tooltip.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:36",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed Grey Talon's tech power growth from his ult not being reflected in the shop.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:37",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fix to Yamato Shadow Transformation visuals when duration is extended after killing an enemy.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:38",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed some item sounds playing on caster instead of target.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:39",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Updated Krill VO - largely remastering pass, but some new content.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:40",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Updated Ivy VO - largely remastering pass, but also fixed some lines with Spanish pronunciation issues.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:41",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Fixed a regression where Kelvin referenced Grey Talon incorrectly.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:42",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Updated Divine Barrier cast sound.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:43",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "fix",
+      "raw": "Added Telemetry HUD options to the settings menu. The Telemetry HUD is an in-game HUD which can be used to monitor the frame rate and network conditions. The Telemetry HUD can be enabled under Settings > Game. More information on the HUD can be found here.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:44",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added new Learn to Play tutorial images in collaboration with Toastyghostey.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:45",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Steam Input Support:",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:46",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added support for new Crouch Toggle button.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:47",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added 3 new Official Control Schemes: { Standard | Gyro | FlickStick }. Thanks to @FlickStickVids for consultation.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:48",
+      "section": "General Changes",
+      "target": {
+        "kind": "general",
+        "name": "General Changes",
+        "slug": "general-changes"
+      },
+      "tag": "neutral",
+      "raw": "Added versioning system to Configs, so that outdated configs are unloaded.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:49",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Added an Extra Competitive option to allow players to control what type of players are placed on their team. If you prefer to play with higher levels of coordination, communication, and competitiveness, then you can use this option to tell the matchmaker to build your team with like-minded allies. This option will sometimes be inactive in scenarios where the pool is very shallow (large portions of Eternus, off peak hours like 5am, extremely long queue, etc.), but otherwise in most normal scenarios the matchmaker will attempt to find you similar players.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:50",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "The new Extra Competitive option, Incoming Chat, and Lane Preference (party only) settings are now collected within a 'Queue Options' button on the dashboard below the profile area.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:51",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "buff",
+      "raw": "The recent change to increase party size allowed at the top MMR (from 2 to 3) reverted for Eternus and up, but maintained for Ascendant.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 2,
+          "to": 3
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:52",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "The matchmaker will now try to prioritize each team having at least 2 frontliners when it has the option to do so.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:53",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Ability Range stat now has diminishing stacking.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:54",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Ability Duration stat now has diminishing stacking.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:55",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Fire Rate now has a minimum final value of -50%.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:56",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Heroes now have +0.5 Sprint.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:57",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "item",
+        "name": "Sprint Boots",
+        "slug": "sprint-boots"
+      },
+      "tag": "nerf",
+      "raw": "Sprint Boots reduced from +2 Sprint to +1.5.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:58",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "item",
+        "name": "Enduring Speed",
+        "slug": "enduring-speed"
+      },
+      "tag": "nerf",
+      "raw": "Enduring Speed reduced from +2 Sprint to +1.5.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:59",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "fix",
+      "raw": "Carrying Urn now sets and limits your movespeed to a fixed 13 (this includes things like Ivy Air Drop). It no longer provides sprint. The speed cannot be reduced or increased.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:60",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "system",
+        "name": "Unstable Rift",
+        "slug": "unstable-rift",
+        "facet": "Urn"
+      },
+      "tag": "neutral",
+      "raw": "Urn spawn point now alternates left and right starting with left, rather than being random.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:61",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Shooting a trooper on a zipline now causes other troopers near it on the zipline to dismount as well.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:62",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "nerf",
+      "raw": "Flying over buildings no longer causes you to get zapped, only standing on the building does.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:63",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "system",
+        "name": "Patron",
+        "slug": "patron",
+        "facet": "Patron HP"
+      },
+      "tag": "nerf",
+      "raw": "Patron HP reduced from 10k to 7.5k.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:64",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "nerf",
+      "raw": "Downed Patron HP reduced from 18k to 13.5k.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:65",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "system",
+        "name": "Patron",
+        "slug": "patron",
+        "facet": "Patron HP"
+      },
+      "tag": "neutral",
+      "raw": "Patron HP grows by 250/Min starting 20 min.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:66",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Downed Patron HP grows by 450/Min starting 20 min (overall, these are -25% HP at 20 min, 0% at 30 min, and +25% at 40 min).",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:67",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Added a tick based souls system that gives the bottom two net worth players on the team a small amount of souls per second. The amount of souls available to distribute to the bottom two players is based on the souls gathered by your team (2% and 1%). This occurs after the laning phase.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:68",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "nerf",
+      "raw": "Added new limiting function for the soul orb duplication abuses during the laning phase. You shouldn't experience any real difference in normal gameplay: Players can only participate in 4 Soul Orb share events per trooper wave, before being declared lower priority. A low priority player is not counted for when deciding how many souls to generate. Example: if a player is near 4 troopers from Wave 1 when they die, then moves to a different lane that has an allied hero still fighting Wave 1 troopers, that player will no longer cause the wave to double the souls generated as is the case now, as they are considered a low priority player for that wave. The generated Souls will then be split as normal.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:69",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Misc Gameplay",
+        "slug": "misc-gameplay"
+      },
+      "tag": "neutral",
+      "raw": "Reverted a few changes recently related to soul duplication issues.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:70",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Reverted",
+        "slug": "reverted"
+      },
+      "tag": "neutral",
+      "raw": "- Guardians now deal 25% more damage to troopers.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:71",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Reverted",
+        "slug": "reverted"
+      },
+      "tag": "neutral",
+      "raw": "- Guardians now take 25% more damage from troopers/players.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:72",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Reverted",
+        "slug": "reverted"
+      },
+      "tag": "nerf",
+      "raw": "- Range to be considered for souls reduced by 5m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:73",
+      "section": "Misc Gameplay",
+      "target": {
+        "kind": "general",
+        "name": "Reverted",
+        "slug": "reverted"
+      },
+      "tag": "neutral",
+      "raw": "- Troopers now do 20% more damage to each other.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:74",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Basic Magazine",
+        "slug": "basic-magazine",
+        "facet": "Weapon Damage"
+      },
+      "tag": "nerf",
+      "raw": "Weapon Damage reduced from 15% to 12%.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 15,
+          "to": 12,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:75",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Close Quarters",
+        "slug": "close-quarters",
+        "facet": "Weapon Damage"
+      },
+      "tag": "nerf",
+      "raw": "Weapon Damage reduced from 25% to 22%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 25,
+          "to": 22,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:76",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Close Quarters",
+        "slug": "close-quarters",
+        "facet": "Bullet Resist"
+      },
+      "tag": "nerf",
+      "raw": "Bullet Resist reduced from 5% to 4%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "bullet_resist",
+          "polarity": "up_is_buff",
+          "from": 5,
+          "to": 4,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:77",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Headshot Booster",
+        "slug": "headshot-booster",
+        "facet": "Cooldown"
+      },
+      "tag": "nerf",
+      "raw": "Cooldown increased from 7.5s to 8.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 7.5,
+          "to": 8.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:78",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "High-Velocity Mag",
+        "slug": "high-velocity-mag",
+        "facet": "Weapon Damage"
+      },
+      "tag": "nerf",
+      "raw": "Weapon Damage reduced from 13% to 11%.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 13,
+          "to": 11,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:79",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Hollow Point",
+        "slug": "hollow-point",
+        "facet": "Threshold"
+      },
+      "tag": "buff",
+      "raw": "Threshold increased from 60% to 65%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 60,
+          "to": 65,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:80",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Hollow Point",
+        "slug": "hollow-point",
+        "facet": "Weapon Damage"
+      },
+      "tag": "nerf",
+      "raw": "Weapon Damage reduced from 22% to 20%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 22,
+          "to": 20,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:81",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Monster Rounds",
+        "slug": "monster-rounds",
+        "facet": "Weapon Damage"
+      },
+      "tag": "nerf",
+      "raw": "Weapon Damage vs NPC reduced from 30% to 26%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 30,
+          "to": 26,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:82",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Rapid Rounds",
+        "slug": "rapid-rounds",
+        "facet": "Fire Rate"
+      },
+      "tag": "nerf",
+      "raw": "Fire Rate reduced from 11% to 10%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "fire_rate",
+          "polarity": "up_is_buff",
+          "from": 11,
+          "to": 10,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:83",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Restorative Shot",
+        "slug": "restorative-shot",
+        "facet": "Weapon Damage"
+      },
+      "tag": "nerf",
+      "raw": "Weapon Damage reduced from 6% to 3%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 6,
+          "to": 3,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:84",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Berserker",
+        "slug": "berserker"
+      },
+      "tag": "buff",
+      "raw": "Now builds into Frenzy.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:85",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Active Reload",
+        "slug": "active-reload",
+        "facet": "Ammo"
+      },
+      "tag": "buff",
+      "raw": "Ammo increased from 18% to 24%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 18,
+          "to": 24,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:86",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Fleetfoot",
+        "slug": "fleetfoot",
+        "facet": "Cooldown"
+      },
+      "tag": "nerf",
+      "raw": "Cooldown increased from 19s to 20s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 19,
+          "to": 20,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:87",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Melee Charge",
+        "slug": "melee-charge",
+        "facet": "Bonus Health"
+      },
+      "tag": "nerf",
+      "raw": "Bonus Health reduced from +75 to +65.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 75,
+          "to": 65
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:88",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Spellslinger",
+        "slug": "spellslinger",
+        "facet": "Proc"
+      },
+      "tag": "neutral",
+      "raw": "Proc bonus changed from 3% Spirit Power to 3% Spirit Amp.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:89",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Point Blank",
+        "slug": "point-blank"
+      },
+      "tag": "neutral",
+      "raw": "Now provides +20% Melee Resistance.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:90",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Toxic Bullets",
+        "slug": "toxic-bullets",
+        "facet": "Bleed"
+      },
+      "tag": "buff",
+      "raw": "Bleed damage increased from 2.5% to 2.75%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 2.5,
+          "to": 2.75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:91",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Alchemical Fire",
+        "slug": "alchemical-fire",
+        "facet": "Spirit Power"
+      },
+      "tag": "nerf",
+      "raw": "Spirit Power reduced from 11 to 7.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 11,
+          "to": 7
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:92",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Sharpshooter",
+        "slug": "sharpshooter"
+      },
+      "tag": "neutral",
+      "raw": "Now reduces your Fire Rate by 10% and movespeed by 0.5.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:93",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Sharpshooter",
+        "slug": "sharpshooter",
+        "facet": "Weapon Damage"
+      },
+      "tag": "buff",
+      "raw": "Weapon Damage increased from 20% to 30%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:94",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Sharpshooter",
+        "slug": "sharpshooter",
+        "facet": "Far"
+      },
+      "tag": "buff",
+      "raw": "Far range Weapon Damage increased from +50% to +70%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 50,
+          "to": 70,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:95",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Titanic Magazine",
+        "slug": "titanic-magazine",
+        "facet": "Melee Resistance"
+      },
+      "tag": "buff",
+      "raw": "Melee Resistance increased from 25% to 30%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "melee_resist",
+          "polarity": "up_is_buff",
+          "from": 25,
+          "to": 30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:96",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Alchemical Fire",
+        "slug": "alchemical-fire"
+      },
+      "tag": "neutral",
+      "raw": "Added alternate desaturated variant for friendly versions of this.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:97",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Frenzy",
+        "slug": "frenzy"
+      },
+      "tag": "buff",
+      "raw": "Now builds from Berserker. Grants Berserker passive. Increases bonus per stack from 6% to 8%. Provides +12 ammo, 150 Bonus Health, +10% Bullet Resist. Stat bonuses when 50% below unchanged (4 m/s, 40% Fire Rate, 55% Bullet Resist, has 4s buffer memory).",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "bullet_resist",
+          "polarity": "up_is_buff",
+          "from": 6,
+          "to": 8,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:98",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Crippling Headshot",
+        "slug": "crippling-headshot"
+      },
+      "tag": "neutral",
+      "raw": "The headshot debuff will now stack from different sources, diminishingly (24%, 12%, 6%, etc).",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:99",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Shadow Weave",
+        "slug": "shadow-weave",
+        "facet": "Spot"
+      },
+      "tag": "buff",
+      "raw": "Spot radius increased from 22m to 26m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 22,
+          "to": 26,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:100",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Lucky Shot",
+        "slug": "lucky-shot",
+        "facet": "Proc Chance"
+      },
+      "tag": "nerf",
+      "raw": "Proc Chance reduced from 35% to 34%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 35,
+          "to": 34,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:101",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Silencer",
+        "slug": "silencer",
+        "facet": "Buildup"
+      },
+      "tag": "buff",
+      "raw": "Buildup difficulty increased by 18%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:102",
+      "section": "Weapon Items",
+      "target": {
+        "kind": "item",
+        "name": "Spiritual Overflow",
+        "slug": "spiritual-overflow",
+        "facet": "Cooldown Reduction"
+      },
+      "tag": "nerf",
+      "raw": "Cooldown Reduction reduced from 15% to 12%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown_reduction",
+          "polarity": "up_is_buff",
+          "from": 15,
+          "to": 12,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:103",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Extra Stamina",
+        "slug": "extra-stamina",
+        "facet": "Fire Rate"
+      },
+      "tag": "nerf",
+      "raw": "Fire Rate reduced from 6% to 5%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "fire_rate",
+          "polarity": "up_is_buff",
+          "from": 6,
+          "to": 5,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:104",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Healing Rite",
+        "slug": "healing-rite",
+        "facet": "Health"
+      },
+      "tag": "nerf",
+      "raw": "Health bonus reduced from +45 to +30.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 45,
+          "to": 30
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:105",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Healing Nova",
+        "slug": "healing-nova",
+        "facet": "Time"
+      },
+      "tag": "buff",
+      "raw": "Time to heal increased from 2s to 2.75s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 2,
+          "to": 2.75,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:106",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Enchanter's Barrier",
+        "slug": "enchanter-s-barrier",
+        "facet": "Cooldown"
+      },
+      "tag": "nerf",
+      "raw": "Cooldown reduction reduced from 8% to 6%.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown_reduction",
+          "polarity": "up_is_buff",
+          "from": 8,
+          "to": 6,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:107",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Return Fire",
+        "slug": "return-fire"
+      },
+      "tag": "nerf",
+      "raw": "Return Fire no longer has +9 Spirit Power.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:108",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Return Fire",
+        "slug": "return-fire"
+      },
+      "tag": "neutral",
+      "raw": "Return Fire now has +3 HP Regen.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:109",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Return Fire",
+        "slug": "return-fire"
+      },
+      "tag": "neutral",
+      "raw": "Return Fire now has +10% Ammo.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:110",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Restorative Locket",
+        "slug": "restorative-locket",
+        "facet": "Cooldown"
+      },
+      "tag": "buff",
+      "raw": "Cooldown reduced from 30s to 25s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 30,
+          "to": 25,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:111",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Veil Walker",
+        "slug": "veil-walker",
+        "facet": "When"
+      },
+      "tag": "neutral",
+      "raw": "When shot while invisible, you will require 1s to go back invisible rather than 0.25s.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:112",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Veil Walker",
+        "slug": "veil-walker",
+        "facet": "Cooldown"
+      },
+      "tag": "nerf",
+      "raw": "Cooldown increased from 18s to 22s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 18,
+          "to": 22,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:113",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Majestic Leap",
+        "slug": "majestic-leap"
+      },
+      "tag": "nerf",
+      "raw": "No longer gets interrupted on slam down if you get shot.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:114",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Metal Skin",
+        "slug": "metal-skin",
+        "facet": "Duration"
+      },
+      "tag": "buff",
+      "raw": "Duration increased from 3.5s to 4s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 3.5,
+          "to": 4,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:115",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Metal Skin",
+        "slug": "metal-skin",
+        "facet": "Stamina"
+      },
+      "tag": "nerf",
+      "raw": "Stamina movement distance reduced by 25%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:116",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Rescue Beam",
+        "slug": "rescue-beam",
+        "facet": "Range"
+      },
+      "tag": "nerf",
+      "raw": "Range reduced from 32m to 28m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 32,
+          "to": 28,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:117",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Debuff Remover",
+        "slug": "debuff-remover",
+        "facet": "Buff"
+      },
+      "tag": "buff",
+      "raw": "Buff duration increased from 4s to 5s.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 4,
+          "to": 5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:118",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Debuff Remover",
+        "slug": "debuff-remover",
+        "facet": "Heal"
+      },
+      "tag": "buff",
+      "raw": "Heal on active increased from 10% Max HP to 300 HP.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:119",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Unstoppable",
+        "slug": "unstoppable"
+      },
+      "tag": "neutral",
+      "raw": "Now has 20% Slow Resistance.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:120",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Leech",
+        "slug": "leech"
+      },
+      "tag": "nerf",
+      "raw": "No longer provides +12% Cooldown Reduction.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:121",
+      "section": "Vitality Items",
+      "target": {
+        "kind": "item",
+        "name": "Leech",
+        "slug": "leech"
+      },
+      "tag": "neutral",
+      "raw": "Now upgrades from Healbane. Provides +60% Anti Healing for 8s on Spirit Damage dealt.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:122",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Infuser",
+        "slug": "infuser",
+        "facet": "Duration"
+      },
+      "tag": "buff",
+      "raw": "Duration increased from 6s to 8s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 6,
+          "to": 8,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:123",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Infuser",
+        "slug": "infuser"
+      },
+      "tag": "nerf",
+      "raw": "No longer grants +50 Health.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:124",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Infuser",
+        "slug": "infuser"
+      },
+      "tag": "buff",
+      "raw": "Now grants +70 Spirit Shield.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:125",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Withering Whip",
+        "slug": "withering-whip",
+        "facet": "Duration"
+      },
+      "tag": "buff",
+      "raw": "Duration increased from 4.5s to 5s.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 4.5,
+          "to": 5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:126",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Withering Whip",
+        "slug": "withering-whip",
+        "facet": "Bullet Resist"
+      },
+      "tag": "nerf",
+      "raw": "Bullet Resist reduced from -11% to -12%.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "bullet_resist",
+          "polarity": "up_is_buff",
+          "from": -11,
+          "to": -12,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:127",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Slowing Hex",
+        "slug": "slowing-hex",
+        "facet": "Cooldown"
+      },
+      "tag": "nerf",
+      "raw": "Cooldown increased from 26s to 28s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 26,
+          "to": 28,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:128",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Suppressor",
+        "slug": "suppressor",
+        "facet": "Duration"
+      },
+      "tag": "buff",
+      "raw": "Duration increased from 2s to 2.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 2,
+          "to": 2.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:129",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Decay",
+        "slug": "decay",
+        "facet": "Bleed"
+      },
+      "tag": "buff",
+      "raw": "Bleed damage increased from 1.4% to 1.5%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 1.4,
+          "to": 1.5,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:130",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Rapid Recharge",
+        "slug": "rapid-recharge",
+        "facet": "Cooldown"
+      },
+      "tag": "buff",
+      "raw": "Cooldown for charged abilities reduced from 30% to 25%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 30,
+          "to": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:131",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Ethereal Shift",
+        "slug": "ethereal-shift",
+        "facet": "Allows"
+      },
+      "tag": "neutral",
+      "raw": "Allows you to float around slowly (2 m/s).",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:132",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Silence Glyph",
+        "slug": "silence-glyph"
+      },
+      "tag": "neutral",
+      "raw": "Now pierces through all enemies in the path.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:133",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Silence Glyph",
+        "slug": "silence-glyph",
+        "facet": "Projectile"
+      },
+      "tag": "buff",
+      "raw": "Projectile and collision size increased by 40%.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:134",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Arcane Surge",
+        "slug": "arcane-surge",
+        "facet": "Ability"
+      },
+      "tag": "nerf",
+      "raw": "Ability range reduced from +20% to +18%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 18,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:135",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Arcane Surge",
+        "slug": "arcane-surge",
+        "facet": "Ability"
+      },
+      "tag": "nerf",
+      "raw": "Ability duration reduced from +20% to +18.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 18,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:136",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Arcane Surge",
+        "slug": "arcane-surge",
+        "facet": "Spirit Power"
+      },
+      "tag": "nerf",
+      "raw": "Spirit Power reduced from +20 to +18.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 20,
+          "to": 18
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:137",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Mystic Slow",
+        "slug": "mystic-slow",
+        "facet": "Duration"
+      },
+      "tag": "buff",
+      "raw": "Duration increased from 2s to 2.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 2,
+          "to": 2.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:138",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Surge of Power",
+        "slug": "surge-of-power",
+        "facet": "Fire Rate"
+      },
+      "tag": "buff",
+      "raw": "Fire Rate increased from 10% to 15%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "fire_rate",
+          "polarity": "up_is_buff",
+          "from": 10,
+          "to": 15,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:139",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Knockdown",
+        "slug": "knockdown",
+        "facet": "Stun"
+      },
+      "tag": "nerf",
+      "raw": "Stun duration reduced from 0.9 to 0.75.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 0.9,
+          "to": 0.75
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:140",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Knockdown",
+        "slug": "knockdown",
+        "facet": "Stun"
+      },
+      "tag": "neutral",
+      "raw": "Stun now lasts 1s longer against airborne targets based on how high off the ground they are (up to 30m).",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:141",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Refresher",
+        "slug": "refresher",
+        "facet": "Cast"
+      },
+      "tag": "nerf",
+      "raw": "Cast delay increased from 0.3s to 0.6s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "delay",
+          "polarity": "up_is_nerf",
+          "from": 0.3,
+          "to": 0.6,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:142",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Diviner's Kevlar",
+        "slug": "diviner-s-kevlar",
+        "facet": "Cooldown Reduction"
+      },
+      "tag": "nerf",
+      "raw": "Cooldown Reduction reduced from 12% to 10%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown_reduction",
+          "polarity": "up_is_buff",
+          "from": 12,
+          "to": 10,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:143",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Diviner's Kevlar",
+        "slug": "diviner-s-kevlar",
+        "facet": "Ability Duration"
+      },
+      "tag": "buff",
+      "raw": "Ability Duration increased from 7% to 10%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 7,
+          "to": 10,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:144",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Mystic Reverb",
+        "slug": "mystic-reverb",
+        "facet": "Damage"
+      },
+      "tag": "buff",
+      "raw": "Damage increased from 45% to 50%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 45,
+          "to": 50,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:145",
+      "section": "Spirit Items",
+      "target": {
+        "kind": "item",
+        "name": "Magic Carpet",
+        "slug": "magic-carpet",
+        "facet": "Duration"
+      },
+      "tag": "buff",
+      "raw": "Duration increased from 7s to 8s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 7,
+          "to": 8,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:146",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Abrams",
+        "slug": "abrams",
+        "facet": "Bullet Damage"
+      },
+      "tag": "nerf",
+      "raw": "Bullet Damage decreased from 4.68 to 4.5.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 4.68,
+          "to": 4.5
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:147",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Abrams",
+        "slug": "abrams",
+        "facet": "Spirit Siphon"
+      },
+      "tag": "buff",
+      "raw": "Spirit Siphon spirit scaling increased from 0.5 to 0.65.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.5,
+          "to": 0.65
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:148",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Bebop",
+        "slug": "bebop",
+        "facet": "Uppercut"
+      },
+      "tag": "neutral",
+      "raw": "Uppercut now only locks enemies out of air control for a max of 0.5s (down from 1s).",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:149",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Bebop",
+        "slug": "bebop",
+        "facet": "Hook"
+      },
+      "tag": "neutral",
+      "raw": "Hook now shows a hero icon when you connect with a target.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:150",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Bebop",
+        "slug": "bebop",
+        "facet": "Hook"
+      },
+      "tag": "buff",
+      "raw": "Hook delay reduced when pulling allies.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:151",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Bebop",
+        "slug": "bebop",
+        "facet": "Hook T1"
+      },
+      "tag": "buff",
+      "raw": "Hook T1 now also improves melee damage.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:152",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Dynamo",
+        "slug": "dynamo"
+      },
+      "tag": "fix",
+      "raw": "Fixed Quantum Entanglement not deselecting if you get silenced while targeting.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:153",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Dynamo",
+        "slug": "dynamo",
+        "facet": "Kinetic Pulse T2"
+      },
+      "tag": "neutral",
+      "raw": "Kinetic Pulse T2 now affects melee damage too.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:154",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Dynamo",
+        "slug": "dynamo"
+      },
+      "tag": "fix",
+      "raw": "Fixed Magic Carpet + Dynamo heal interaction.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:155",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Dynamo",
+        "slug": "dynamo",
+        "facet": "Singularity"
+      },
+      "tag": "nerf",
+      "raw": "Singularity cooldown increased from 191s to 215s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 191,
+          "to": 215,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:156",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Dynamo",
+        "slug": "dynamo",
+        "facet": "Singularity"
+      },
+      "tag": "buff",
+      "raw": "Singularity now deals half damage to objectives.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:157",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Dynamo",
+        "slug": "dynamo",
+        "facet": "Singularity"
+      },
+      "tag": "fix",
+      "raw": "Singularity fixed tooltip referencing knock-up that it doesn't do.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:158",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Immobilizing Trap"
+      },
+      "tag": "neutral",
+      "raw": "Immobilizing Trap renamed to Spirit Snare.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:159",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Spirit Snare"
+      },
+      "tag": "neutral",
+      "raw": "Spirit Snare now applies a Curse debuff for 1.75s to all enemies in the radius when it triggers instead of a tether.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:160",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Spirit Snare T2"
+      },
+      "tag": "nerf",
+      "raw": "Spirit Snare T2 no longer increases slow by 1s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:161",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Spirit Snare T2"
+      },
+      "tag": "buff",
+      "raw": "Spirit Snare T2 now increases Curse debuff by 0.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:162",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "You"
+      },
+      "tag": "buff",
+      "raw": "You can now shoot Charged Shot onto Spirit Snare center to trigger it to detonate immediately in a 30% increased radius.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:163",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Grey Talon",
+        "slug": "grey-talon",
+        "facet": "Charged Shot"
+      },
+      "tag": "buff",
+      "raw": "Charged Shot can now secure orbs.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:164",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Smoke Bomb T1 Sprint"
+      },
+      "tag": "nerf",
+      "raw": "Smoke Bomb T1 Sprint reduced from +6 to +5.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "sprint",
+          "polarity": "up_is_buff",
+          "from": 6,
+          "to": 5
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:165",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Smoke Bomb T3"
+      },
+      "tag": "buff",
+      "raw": "Smoke Bomb T3 charge time reduced from 10s to 7s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "charge_time",
+          "polarity": "up_is_nerf",
+          "from": 10,
+          "to": 7,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:166",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze"
+      },
+      "tag": "fix",
+      "raw": "Fixed Fixation not working correctly with debuff resist.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:167",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Fixation T3"
+      },
+      "tag": "nerf",
+      "raw": "Fixation T3 reduced from 0.15 to 0.12.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 0.15,
+          "to": 0.12
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:168",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Sleep"
+      },
+      "tag": "nerf",
+      "raw": "Sleep state no longer disables the target. It instead allows them to move at 2 m/s and be unable to take any other action (including stamina, mantle, parry etc). The target still wakes up on damage.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:169",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Sleep"
+      },
+      "tag": "neutral",
+      "raw": "Sleep dagger now takes effect immediately, rather than after a brief delay.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:170",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze"
+      },
+      "tag": "fix",
+      "raw": "Fixed creeps sometimes attacking and waking on sleeping targets.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:171",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Bullet Dance"
+      },
+      "tag": "nerf",
+      "raw": "Bullet Dance cooldown increased from 138s to 150s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 138,
+          "to": 150,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:172",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Bullet Dance T1"
+      },
+      "tag": "nerf",
+      "raw": "Bullet Dance T1 reduced from +7 to +6 Spirit Damage.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 7,
+          "to": 6,
+          "unit": "S"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:173",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Bullet Dance T2"
+      },
+      "tag": "buff",
+      "raw": "Bullet Dance T2 increased from -38s to -40s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": -38,
+          "to": -40,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:174",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Haze",
+        "slug": "haze",
+        "facet": "Bullet Dance"
+      },
+      "tag": "fix",
+      "raw": "Bullet Dance fixed an issue causing the game to freeze for the duration of the ult channel.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:175",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Infernus",
+        "slug": "infernus",
+        "facet": "Flame Dash"
+      },
+      "tag": "buff",
+      "raw": "Flame Dash cooldown reduced from 40s to 35s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 40,
+          "to": 35,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:176",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Infernus",
+        "slug": "infernus",
+        "facet": "Flame Dash T3"
+      },
+      "tag": "neutral",
+      "raw": "Flame Dash T3 changed from -19s CD to -15s.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:177",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Infernus",
+        "slug": "infernus",
+        "facet": "Flame Dash T3"
+      },
+      "tag": "buff",
+      "raw": "Flame Dash T3 now also makes the ability charged (15s charge time).",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:178",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Infernus",
+        "slug": "infernus",
+        "facet": "Afterburn"
+      },
+      "tag": "buff",
+      "raw": "Afterburn spirit scaling increased from 0.5 to 0.6.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.5,
+          "to": 0.6
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:179",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Melee"
+      },
+      "tag": "nerf",
+      "raw": "Melee damage and growth reduced by 15%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:180",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Starting Health"
+      },
+      "tag": "nerf",
+      "raw": "Starting Health reduced from 550 to 525.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 550,
+          "to": 525
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:181",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Watcher's Covenant"
+      },
+      "tag": "fix",
+      "raw": "Watcher's Covenant fixed to replicate healing even when you are full.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:182",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Watcher's Covenant"
+      },
+      "tag": "neutral",
+      "raw": "Watcher's Covenant now initially locks onto the target in your facing direction if there is one.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:183",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Stone Form"
+      },
+      "tag": "fix",
+      "raw": "Stone Form now shows the Ivy player a visible radius indicator for where your hero will hit.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:184",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Kudzu Bomb"
+      },
+      "tag": "neutral",
+      "raw": "Kudzu Bomb now grows on the ground if it hits geo instead of floating in the air.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:185",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Air Drop"
+      },
+      "tag": "nerf",
+      "raw": "Air Drop damage reduced from 150 to 125.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 150,
+          "to": 125
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:186",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy"
+      },
+      "tag": "fix",
+      "raw": "Fixed Phantom Strike not grounding Ivy when using Air Drop.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:187",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Ivy",
+        "slug": "ivy",
+        "facet": "Air Drop"
+      },
+      "tag": "neutral",
+      "raw": "Air Drop now lets you choose to significantly reduce your initial upward momentum by holding the fly key down while casting the ability.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:188",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Kelvin",
+        "slug": "kelvin"
+      },
+      "tag": "fix",
+      "raw": "Fixed some issues with being unable to shoot over half-height cover.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:189",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Kelvin",
+        "slug": "kelvin",
+        "facet": "Frost Grenade"
+      },
+      "tag": "buff",
+      "raw": "Frost Grenade now also reduces Stamina Regeneration during the slow duration.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:190",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Kelvin",
+        "slug": "kelvin",
+        "facet": "Frozen Shelter"
+      },
+      "tag": "neutral",
+      "raw": "Frozen Shelter now created on key up. While the key is down an outline of the area will be shown.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:191",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Kelvin",
+        "slug": "kelvin",
+        "facet": "Frozen Shelter"
+      },
+      "tag": "nerf",
+      "raw": "Frozen Shelter cooldown increased from 127s to 130s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 127,
+          "to": 130,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:192",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Kelvin",
+        "slug": "kelvin",
+        "facet": "Frozen Shelter T2"
+      },
+      "tag": "buff",
+      "raw": "Frozen Shelter T2 increased from -38s to -40s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": -38,
+          "to": -40,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:193",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lady Geist",
+        "slug": "lady-geist",
+        "facet": "Malice"
+      },
+      "tag": "buff",
+      "raw": "Malice can now secure orbs.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:194",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lady Geist",
+        "slug": "lady-geist",
+        "facet": "Soul Exchange T2"
+      },
+      "tag": "neutral",
+      "raw": "Soul Exchange T2 changed from \"-10% Min Health\" to \"On cast +40% Fire Rate for 8s\".",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:195",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lady Geist",
+        "slug": "lady-geist",
+        "facet": "Soul Exchange T3"
+      },
+      "tag": "neutral",
+      "raw": "Soul Exchange T3 changed from \"On cast, +40% Fire Rate and +40% Spirit Resist for 8s\" to \"Silences enemies in 15m radius for 3s\".",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:196",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lady Geist",
+        "slug": "lady-geist",
+        "facet": "Life Drain"
+      },
+      "tag": "buff",
+      "raw": "Life Drain duration increased from 2s to 2.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 2,
+          "to": 2.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:197",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lady Geist",
+        "slug": "lady-geist",
+        "facet": "Life Drain T3"
+      },
+      "tag": "neutral",
+      "raw": "Life Drain T3 changed from \"Enemy is Silenced while being Life Drained\" to \"Ability becomes charged and grants +1 Charge\". You can cast multiple Life Drains at the same time on different targets, no Charge Time.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:198",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Ground Strike T1"
+      },
+      "tag": "buff",
+      "raw": "Ground Strike T1 improved from -9.5s Cooldown to -10s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:199",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam"
+      },
+      "tag": "nerf",
+      "raw": "Death Slam cooldown increased from 137s to 140s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 137,
+          "to": 140,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:200",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam"
+      },
+      "tag": "buff",
+      "raw": "Death Slam channel time increased from 2s to 2.3s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 2,
+          "to": 2.3,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:201",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam Impact"
+      },
+      "tag": "buff",
+      "raw": "Death Slam Impact radius increased from 5m to 6m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 5,
+          "to": 6,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:202",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam"
+      },
+      "tag": "buff",
+      "raw": "Death Slam cone angle increased from 75 to 85.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 75,
+          "to": 85
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:203",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam"
+      },
+      "tag": "buff",
+      "raw": "Death Slam cast range increased from 18m to 20m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 18,
+          "to": 20,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:204",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam T2"
+      },
+      "tag": "neutral",
+      "raw": "Death Slam T2 changed from +100 damage to -30s Cooldown.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:205",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam T3"
+      },
+      "tag": "neutral",
+      "raw": "Death Slam T3 changed from -56s Cooldown to Impact Area Stuns for 1s.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:206",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Lash",
+        "slug": "lash",
+        "facet": "Death Slam"
+      },
+      "tag": "fix",
+      "raw": "Death Slam fixed a rendering issue that could lead to crashes, especially in tight spaces like Mid Boss arena.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:207",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets HP"
+      },
+      "tag": "buff",
+      "raw": "Mini Turrets HP gain per boon increased from 20 to 30.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 20,
+          "to": 30
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:208",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets"
+      },
+      "tag": "nerf",
+      "raw": "Mini Turrets no longer limit the damage they take to 33% of HP per second.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:209",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets"
+      },
+      "tag": "neutral",
+      "raw": "Mini Turrets now have a minimum lifetime of 4s. If they are killed during this time, they will be marked for death regardless of what happens during that time. There will be a visual indication that they are malfunctioning/dying.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:210",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "McGinnis",
+        "slug": "mcginnis",
+        "facet": "Mini Turrets Fire Rate"
+      },
+      "tag": "nerf",
+      "raw": "Mini Turrets Fire Rate reduced by 20%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:211",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Fire Scarabs"
+      },
+      "tag": "neutral",
+      "raw": "Fire Scarabs now applies its drain over 4s instead of frontloaded.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:212",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Fire Scarabs"
+      },
+      "tag": "nerf",
+      "raw": "Fire Scarabs no longer restricts you from hitting the same target (debuff duration refreshes).",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:213",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Fire Scarabs"
+      },
+      "tag": "buff",
+      "raw": "Fire Scarabs launch window increased from 5s to 8s (can be extended by duration extender).",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 5,
+          "to": 8,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:214",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Traveler"
+      },
+      "tag": "neutral",
+      "raw": "Traveler now allows you to rotate the camera.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:215",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mirage",
+        "slug": "mirage",
+        "facet": "Traveler T2"
+      },
+      "tag": "neutral",
+      "raw": "Traveler T2 changed from \"-56 Cooldown\" to \"Grants Ally Traveler Benefits\" (if cast on an enemy, it'll give the bonus to the closest ally hero within 30m).",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:216",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mo & Krill",
+        "slug": "mo-krill",
+        "facet": "Burrow"
+      },
+      "tag": "nerf",
+      "raw": "Burrow is no longer affected by Shoulder Charge.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:217",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mo & Krill",
+        "slug": "mo-krill",
+        "facet": "Spectral Wall"
+      },
+      "tag": "nerf",
+      "raw": "Spectral Wall no longer hits you while you are Burrowed.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:218",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mo & Krill",
+        "slug": "mo-krill",
+        "facet": "Scorn"
+      },
+      "tag": "neutral",
+      "raw": "Scorn now heals you instantly rather than over 1s.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:219",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Mo & Krill",
+        "slug": "mo-krill",
+        "facet": "Combo"
+      },
+      "tag": "fix",
+      "raw": "Combo health gain tooltip clarified.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:220",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Paradox",
+        "slug": "paradox",
+        "facet": "Time Wall Time Stop"
+      },
+      "tag": "nerf",
+      "raw": "Time Wall Time Stop duration reduced from 0.6s to 0.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 0.6,
+          "to": 0.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:221",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Paradox",
+        "slug": "paradox",
+        "facet": "Kinetic Carbine Max Stop"
+      },
+      "tag": "nerf",
+      "raw": "Kinetic Carbine Max Stop duration reduced from 0.5s to 0.4s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 0.5,
+          "to": 0.4,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:222",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Paradox",
+        "slug": "paradox",
+        "facet": "Kinetic Carbine T1"
+      },
+      "tag": "nerf",
+      "raw": "Kinetic Carbine T1 reduced from +0.5s to +0.4s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 0.5,
+          "to": 0.4,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:223",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Health"
+      },
+      "tag": "nerf",
+      "raw": "Health growth reduced from 31 to 27.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 31,
+          "to": 27
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:224",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Enchanter's Satchel T1"
+      },
+      "tag": "buff",
+      "raw": "Enchanter's Satchel T1 increased from -4.75s to -5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": -4.75,
+          "to": -5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:225",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Enchanter's Satchel Escape Duration"
+      },
+      "tag": "nerf",
+      "raw": "Enchanter's Satchel Escape Duration reduced from 2s to 1.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 2,
+          "to": 1.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:226",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Enchanter's Satchel T3"
+      },
+      "tag": "buff",
+      "raw": "Enchanter's Satchel T3 now also increases Escape Duration by +0.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:227",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Flying Cloak"
+      },
+      "tag": "buff",
+      "raw": "Flying Cloak duration increased from 3.2 to 3.4s (slower speed, same overall distance).",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 3.2,
+          "to": 3.4,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:228",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction"
+      },
+      "tag": "neutral",
+      "raw": "Affliction now immediately deals 18% of Current HP on application.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:229",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction DPS"
+      },
+      "tag": "nerf",
+      "raw": "Affliction DPS reduced from 27 to 12.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 27,
+          "to": 12
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:230",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction DPS Spirit Power"
+      },
+      "tag": "nerf",
+      "raw": "Affliction DPS Spirit Power scaling reduced from 0.3 to 0.22.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 0.3,
+          "to": 0.22
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:231",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction"
+      },
+      "tag": "nerf",
+      "raw": "Affliction radius reduced from 14m to 9m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 14,
+          "to": 9,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:232",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction T3"
+      },
+      "tag": "nerf",
+      "raw": "Affliction T3 reduced from +27 DPS to +15 DPS.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:233",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Pocket",
+        "slug": "pocket",
+        "facet": "Affliction T3"
+      },
+      "tag": "buff",
+      "raw": "Affliction T3 now also increases range by +5m and increases initial damage by 5%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:234",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Seven",
+        "slug": "seven",
+        "facet": "Storm Cloud"
+      },
+      "tag": "fix",
+      "raw": "Storm Cloud now grants you a secondary ability Lightning Strike. It is a one time use AoE ability. You can target anywhere in your ultimate range, after a 2s delay it releases a vertical lightning strike onto a 6m area, knocking enemies away from that radius (6m knockback) and dealing 150 Damage (1.5 spirit scaling). There is a visual indicator for enemies that that area is about to be hit.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:235",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Seven",
+        "slug": "seven",
+        "facet": "Storm Cloud DPS"
+      },
+      "tag": "nerf",
+      "raw": "Storm Cloud DPS reduced from 125 to 110.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 125,
+          "to": 110
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:236",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Seven",
+        "slug": "seven",
+        "facet": "Storm Cloud T3"
+      },
+      "tag": "buff",
+      "raw": "Storm Cloud T3 now also allows you to float around at 2.5m/s speed.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:237",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Shiv",
+        "slug": "shiv"
+      },
+      "tag": "fix",
+      "raw": "Fixed some targeting issues with Killing Blow.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:238",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Health"
+      },
+      "tag": "nerf",
+      "raw": "Health reduced from 550 to 525.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 550,
+          "to": 525
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:239",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Crow Familiar"
+      },
+      "tag": "buff",
+      "raw": "Crow Familiar projectile speed increased from 3500 to 4750.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 3500,
+          "to": 4750
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:240",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Stake"
+      },
+      "tag": "buff",
+      "raw": "Stake cooldown reduced from 42s to 40s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 42,
+          "to": 40,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:241",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Stake T2"
+      },
+      "tag": "buff",
+      "raw": "Stake T2 increased from -19s Cooldown to -20s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:242",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Stake T3"
+      },
+      "tag": "nerf",
+      "raw": "Stake T3 reduced from +0.75s to 0.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 0.75,
+          "to": 0.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:243",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Stake T3"
+      },
+      "tag": "buff",
+      "raw": "Stake T3 now also increases capture radius by +2m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:244",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Assassinate"
+      },
+      "tag": "buff",
+      "raw": "Assassinate time between charges increased from 1.6s to 2s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 1.6,
+          "to": 2,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:245",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Assassinate"
+      },
+      "tag": "nerf",
+      "raw": "Assassinate base damage reduced from 130 to 120.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 130,
+          "to": 120
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:246",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Vindicta",
+        "slug": "vindicta",
+        "facet": "Assassinate T2"
+      },
+      "tag": "nerf",
+      "raw": "Assassinate T2 damage reduced from 140 to 130.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 140,
+          "to": 130
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:247",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous"
+      },
+      "tag": "fix",
+      "raw": "Fixed visual parry cooldown bug with Puddle Punch.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:248",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous"
+      },
+      "tag": "buff",
+      "raw": "The Cube cooldown reduced from 48s to 42s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 48,
+          "to": 42,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:249",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous"
+      },
+      "tag": "nerf",
+      "raw": "The Cube cast range reduced from 30m to 26m.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "range",
+          "polarity": "up_is_buff",
+          "from": 30,
+          "to": 26,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:250",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Puddle Punch"
+      },
+      "tag": "buff",
+      "raw": "Puddle Punch radius increased from 4 to 4.5.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 4,
+          "to": 4.5
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:251",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Puddle Punch"
+      },
+      "tag": "nerf",
+      "raw": "Puddle Punch slow reduced from 20% to 15%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "slow",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 15,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:252",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Puddle Punch T2"
+      },
+      "tag": "nerf",
+      "raw": "Puddle Punch T2 slow reduced from 20% to 15%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "slow",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 15,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:253",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Puddle Punch T3"
+      },
+      "tag": "buff",
+      "raw": "Puddle Punch T3 now also causes the Punch to become a heavy melee.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:254",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Goo Ball"
+      },
+      "tag": "nerf",
+      "raw": "Goo Ball damage Spirit Power scaling reduced from 1.3 to 1.1.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 1.3,
+          "to": 1.1
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:255",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Viscous",
+        "slug": "viscous",
+        "facet": "Goo Ball"
+      },
+      "tag": "nerf",
+      "raw": "Goo Ball damage T2 reduced from 120 to 90.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 120,
+          "to": 90
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:256",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Fire Rate Spirit Power"
+      },
+      "tag": "nerf",
+      "raw": "Fire Rate Spirit Power scaling reduced from 0.25 to 0.22.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "fire_rate",
+          "polarity": "up_is_buff",
+          "from": 0.25,
+          "to": 0.22
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:257",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Last Stand Resistance"
+      },
+      "tag": "nerf",
+      "raw": "Last Stand Resistance reduced from 60% to 30%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 60,
+          "to": 30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:258",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Last Stand"
+      },
+      "tag": "neutral",
+      "raw": "Last Stand now only goes on cooldown for 20s when interrupted rather than full.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:259",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Last Stand T2"
+      },
+      "tag": "buff",
+      "raw": "Last Stand T2 now also reduces cooldown by 35s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:260",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Warden",
+        "slug": "warden",
+        "facet": "Last Stand T3"
+      },
+      "tag": "neutral",
+      "raw": "Last Stand T3 changed from \"-56s Cooldown\" to \"+50% Bullet and Spirit Resistance During Channel and +2.5s Duration.\"",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:261",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Bullet"
+      },
+      "tag": "buff",
+      "raw": "Bullet damage growth increased 0.37 to 0.39.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:262",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Full Auto T2 Spirit Damage Per"
+      },
+      "tag": "neutral",
+      "raw": "Full Auto T2 Spirit Damage Per Bullet now has default 0.05 Spirit Power scaling.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:263",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Full Auto T3"
+      },
+      "tag": "nerf",
+      "raw": "Full Auto T3 reduces the improved Spirit Power scaling from 0.1 to 0.05.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 0.1,
+          "to": 0.05
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:264",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Full Auto T3"
+      },
+      "tag": "neutral",
+      "raw": "Full Auto T3 changed from 30% Bullet Lifesteal to 20% Bullet and Spirit Lifesteal.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:265",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Telekinesis"
+      },
+      "tag": "nerf",
+      "raw": "Telekinesis cast time reduced from 0.7s to 0.4s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 0.7,
+          "to": 0.4,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:266",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Telekinesis"
+      },
+      "tag": "buff",
+      "raw": "Telekinesis projectile speed increased from 650 to 750.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 650,
+          "to": 750
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:267",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Telekinesis"
+      },
+      "tag": "neutral",
+      "raw": "Telekinesis now briefly lifts the enemy and then slams them to the ground and leaves the target with 2.5s of silence and disarm.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:268",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Telekinesis T2"
+      },
+      "tag": "buff",
+      "raw": "Telekinesis T2 duration now applies to the silence and disarm, increased to +0.75s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:269",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Wraith",
+        "slug": "wraith",
+        "facet": "Telekinesis T3"
+      },
+      "tag": "neutral",
+      "raw": "Telekinesis T3 now causes the projectile to bounce to another nearby hero within 20m.",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:270",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Flying Strike T3"
+      },
+      "tag": "buff",
+      "raw": "Flying Strike T3 now also lets you grapple to ally heroes.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:271",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Shadow Transformation"
+      },
+      "tag": "nerf",
+      "raw": "Shadow Transformation cast time reduced from 2s to 1.5s.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 2,
+          "to": 1.5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1785321795648842:272",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Shadow Transformation"
+      },
+      "tag": "nerf",
+      "raw": "Shadow Transformation no longer has a 0.6s post cast time.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1785321795648842:273",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Yamato",
+        "slug": "yamato",
+        "facet": "Shadow Transformation T3"
+      },
+      "tag": "buff",
+      "raw": "Shadow Transformation T3 now also increases Resist by 15%.",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Abrams",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Bullet Damage decreased from 4.68 to 4.5.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Spirit Siphon spirit scaling increased from 0.5 to 0.65.",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Bebop",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Uppercut now only locks enemies out of air control for a max of 0.5s (down from 1s).",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Hook now shows a hero icon when you connect with a target.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Hook delay reduced when pulling allies.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Hook T1 now also improves melee damage.",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Dynamo",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Fixed Quantum Entanglement not deselecting if you get silenced while targeting.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Kinetic Pulse T2 now affects melee damage too.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Fixed Magic Carpet + Dynamo heal interaction.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Singularity cooldown increased from 191s to 215s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Singularity now deals half damage to objectives.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Singularity fixed tooltip referencing knock-up that it doesn't do.",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "Grey Talon",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Immobilizing Trap renamed to Spirit Snare.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Spirit Snare now applies a Curse debuff for 1.75s to all enemies in the radius when it triggers instead of a tether.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Spirit Snare T2 no longer increases slow by 1s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Spirit Snare T2 now increases Curse debuff by 0.5s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "You can now shoot Charged Shot onto Spirit Snare center to trigger it to detonate immediately in a 30% increased radius.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Charged Shot can now secure orbs.",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Haze",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Smoke Bomb T1 Sprint reduced from +6 to +5.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Smoke Bomb T3 charge time reduced from 10s to 7s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Fixed Fixation not working correctly with debuff resist.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Fixation T3 reduced from 0.15 to 0.12.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Sleep state no longer disables the target. It instead allows them to move at 2 m/s and be unable to take any other action (including stamina, mantle, parry etc). The target still wakes up on damage.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Sleep dagger now takes effect immediately, rather than after a brief delay.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Fixed creeps sometimes attacking and waking on sleeping targets.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Bullet Dance cooldown increased from 138s to 150s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Bullet Dance T1 reduced from +7 to +6 Spirit Damage.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Bullet Dance T2 increased from -38s to -40s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Bullet Dance fixed an issue causing the game to freeze for the duration of the ult channel.",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "Infernus",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Flame Dash cooldown reduced from 40s to 35s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Flame Dash T3 changed from -19s CD to -15s.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Flame Dash T3 now also makes the ability charged (15s charge time).",
+          "tag": "buff"
+        },
+        {
+          "raw": "Afterburn spirit scaling increased from 0.5 to 0.6.",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Ivy",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Melee damage and growth reduced by 15%.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Starting Health reduced from 550 to 525.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Watcher's Covenant fixed to replicate healing even when you are full.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Watcher's Covenant now initially locks onto the target in your facing direction if there is one.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Stone Form now shows the Ivy player a visible radius indicator for where your hero will hit.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Kudzu Bomb now grows on the ground if it hits geo instead of floating in the air.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Air Drop damage reduced from 150 to 125.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Fixed Phantom Strike not grounding Ivy when using Air Drop.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Air Drop now lets you choose to significantly reduce your initial upward momentum by holding the fly key down while casting the ability.",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Kelvin",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Fixed some issues with being unable to shoot over half-height cover.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Frost Grenade now also reduces Stamina Regeneration during the slow duration.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Frozen Shelter now created on key up. While the key is down an outline of the area will be shown.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Frozen Shelter cooldown increased from 127s to 130s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Frozen Shelter T2 increased from -38s to -40s.",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Lady Geist",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Malice can now secure orbs.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Soul Exchange T2 changed from \"-10% Min Health\" to \"On cast +40% Fire Rate for 8s\".",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Soul Exchange T3 changed from \"On cast, +40% Fire Rate and +40% Spirit Resist for 8s\" to \"Silences enemies in 15m radius for 3s\".",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Life Drain duration increased from 2s to 2.5s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Life Drain T3 changed from \"Enemy is Silenced while being Life Drained\" to \"Ability becomes charged and grants +1 Charge\". You can cast multiple Life Drains at the same time on different targets, no Charge Time.",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Lash",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Lash's Flog impact sound adjusted for better feedback for attacking player.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Ground Strike T1 improved from -9.5s Cooldown to -10s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Death Slam cooldown increased from 137s to 140s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Death Slam channel time increased from 2s to 2.3s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Death Slam Impact radius increased from 5m to 6m.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Death Slam cone angle increased from 75 to 85.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Death Slam cast range increased from 18m to 20m.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Death Slam T2 changed from +100 damage to -30s Cooldown.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Death Slam T3 changed from -56s Cooldown to Impact Area Stuns for 1s.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Death Slam fixed a rendering issue that could lead to crashes, especially in tight spaces like Mid Boss arena.",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Mini Turrets HP gain per boon increased from 20 to 30.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Mini Turrets no longer limit the damage they take to 33% of HP per second.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Mini Turrets now have a minimum lifetime of 4s. If they are killed during this time, they will be marked for death regardless of what happens during that time. There will be a visual indication that they are malfunctioning/dying.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Mini Turrets Fire Rate reduced by 20%.",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Mirage",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Mirage now has custom animations for most of his core movement.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Fire Scarabs now applies its drain over 4s instead of frontloaded.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Fire Scarabs no longer restricts you from hitting the same target (debuff duration refreshes).",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Fire Scarabs launch window increased from 5s to 8s (can be extended by duration extender).",
+          "tag": "buff"
+        },
+        {
+          "raw": "Traveler now allows you to rotate the camera.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Traveler T2 changed from \"-56 Cooldown\" to \"Grants Ally Traveler Benefits\" (if cast on an enemy, it'll give the bonus to the closest ally hero within 30m).",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Mo & Krill",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Burrow is no longer affected by Shoulder Charge.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Spectral Wall no longer hits you while you are Burrowed.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Scorn now heals you instantly rather than over 1s.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Combo health gain tooltip clarified.",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "Paradox",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Time Wall Time Stop duration reduced from 0.6s to 0.5s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Kinetic Carbine Max Stop duration reduced from 0.5s to 0.4s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Kinetic Carbine T1 reduced from +0.5s to +0.4s.",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Pocket",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Health growth reduced from 31 to 27.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Enchanter's Satchel T1 increased from -4.75s to -5s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Enchanter's Satchel Escape Duration reduced from 2s to 1.5s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Enchanter's Satchel T3 now also increases Escape Duration by +0.5s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Flying Cloak duration increased from 3.2 to 3.4s (slower speed, same overall distance).",
+          "tag": "buff"
+        },
+        {
+          "raw": "Affliction now immediately deals 18% of Current HP on application.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Affliction DPS reduced from 27 to 12.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Affliction DPS Spirit Power scaling reduced from 0.3 to 0.22.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Affliction radius reduced from 14m to 9m.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Affliction T3 reduced from +27 DPS to +15 DPS.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Affliction T3 now also increases range by +5m and increases initial damage by 5%.",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Seven",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Storm Cloud now grants you a secondary ability Lightning Strike. It is a one time use AoE ability. You can target anywhere in your ultimate range, after a 2s delay it releases a vertical lightning strike onto a 6m area, knocking enemies away from that radius (6m knockback) and dealing 150 Damage (1.5 spirit scaling). There is a visual indicator for enemies that that area is about to be hit.",
+          "tag": "fix"
+        },
+        {
+          "raw": "Storm Cloud DPS reduced from 125 to 110.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Storm Cloud T3 now also allows you to float around at 2.5m/s speed.",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Shiv",
+      "sentiment": "fix",
+      "changes": [
+        {
+          "raw": "Fixed some targeting issues with Killing Blow.",
+          "tag": "fix"
+        }
+      ]
+    },
+    {
+      "name": "Vindicta",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Health reduced from 550 to 525.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Crow Familiar projectile speed increased from 3500 to 4750.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Stake cooldown reduced from 42s to 40s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Stake T2 increased from -19s Cooldown to -20s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Stake T3 reduced from +0.75s to 0.5s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Stake T3 now also increases capture radius by +2m.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Assassinate time between charges increased from 1.6s to 2s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Assassinate base damage reduced from 130 to 120.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Assassinate T2 damage reduced from 140 to 130.",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Viscous",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Fixed visual parry cooldown bug with Puddle Punch.",
+          "tag": "fix"
+        },
+        {
+          "raw": "The Cube cooldown reduced from 48s to 42s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "The Cube cast range reduced from 30m to 26m.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Puddle Punch radius increased from 4 to 4.5.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Puddle Punch slow reduced from 20% to 15%.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Puddle Punch T2 slow reduced from 20% to 15%.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Puddle Punch T3 now also causes the Punch to become a heavy melee.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Goo Ball damage Spirit Power scaling reduced from 1.3 to 1.1.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Goo Ball damage T2 reduced from 120 to 90.",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Warden",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Fire Rate Spirit Power scaling reduced from 0.25 to 0.22.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Last Stand Resistance reduced from 60% to 30%.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Last Stand now only goes on cooldown for 20s when interrupted rather than full.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Last Stand T2 now also reduces cooldown by 35s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Last Stand T3 changed from \"-56s Cooldown\" to \"+50% Bullet and Spirit Resistance During Channel and +2.5s Duration.\"",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Wraith",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Bullet damage growth increased 0.37 to 0.39.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Full Auto T2 Spirit Damage Per Bullet now has default 0.05 Spirit Power scaling.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Full Auto T3 reduces the improved Spirit Power scaling from 0.1 to 0.05.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Full Auto T3 changed from 30% Bullet Lifesteal to 20% Bullet and Spirit Lifesteal.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Telekinesis cast time reduced from 0.7s to 0.4s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Telekinesis projectile speed increased from 650 to 750.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Telekinesis now briefly lifts the enemy and then slams them to the ground and leaves the target with 2.5s of silence and disarm.",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Telekinesis T2 duration now applies to the silence and disarm, increased to +0.75s.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Telekinesis T3 now causes the projectile to bounce to another nearby hero within 20m.",
+          "tag": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "Yamato",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Flying Strike T3 now also lets you grapple to ally heroes.",
+          "tag": "buff"
+        },
+        {
+          "raw": "Shadow Transformation cast time reduced from 2s to 1.5s.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Shadow Transformation no longer has a 0.6s post cast time.",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Shadow Transformation T3 now also increases Resist by 15%.",
+          "tag": "buff"
+        }
+      ]
+    }
+  ]
+}

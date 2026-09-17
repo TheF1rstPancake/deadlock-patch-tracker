@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 2,
+  "id": "2024-10-24",
+  "title": "10-24-2024 Update",
+  "date": "2024-10-24",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/6212245217911837451",
+  "gid": "6212245217911837451",
+  "appid": 1422450,
+  "layout": "prose",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "6212245217911837451:0",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Patch notes",
+        "slug": "patch-notes"
+      },
+      "tag": "fix",
+      "raw": "Today's update adds Hero Labs (a new experimental hero matchmaking mode that adds six new in-progress heroes), player commends, as well as updates to character shaders and environment lighting, among the usual assortment of improvements, fixes, and balance adjustments.\n\nFor the full patch notes, visit the Deadlock forums here: https://forums.playdeadlock.com/threads/10-24-2024-update.40951/\n\nExample of the new character shader changes:\n\n{STEAM_CLAN_IMAGE}/45164767/d937a6e939528a54b0c25ff5caf9e4dff86121c9.png",
+      "parse": {
+        "confidence": "low",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    }
+  ],
+  "heroes": []
+}
