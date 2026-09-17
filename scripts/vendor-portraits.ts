@@ -8,6 +8,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const PATCH_DIR = path.join(ROOT, 'data', 'patches')
 const OUT_DIR = path.join(ROOT, 'public', 'heroes')
 const ASSETS_URL = 'https://assets.deadlock-api.com/v2/heroes?language=english'
+// Wiki Category:Hero card images is the manual fallback when the API has no
+// display-name match. Cloudflare often blocks unattended wiki downloads.
 
 interface ApiHero {
   name: string
@@ -70,7 +72,8 @@ async function main() {
     const hero = api.get(name)
     const url = hero ? cardUrl(hero) : undefined
     if (!url) {
-      missing.push(name)
+      const wikiHint = `https://deadlock.wiki/Category:Hero_card_images (${name} card.png)`
+      missing.push(`${name} — wiki: ${wikiHint}`)
       continue
     }
     const dest = path.join(OUT_DIR, `${heroPortraitSlug(name)}.webp`)

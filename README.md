@@ -89,6 +89,8 @@ npm run vendor-portraits
 
 The UI does not call Steam or the assets API at runtime. Portraits are checked-in WebP from [deadlock-api](https://assets.deadlock-api.com) (Valve game files). This is a fan tracker, not affiliated with Valve. If a card 404s, the monogram initials stay as fallback.
 
+If deadlock-api has no card for a new hero, pull the matching file from the wiki [Hero card images](https://deadlock.wiki/Category:Hero_card_images) category (`{Name} card.png`) into `public/heroes/{slug}.webp`. Unattended wiki downloads often hit Cloudflare, so that fallback is manual.
+
 ## Data shape
 
 ```json
