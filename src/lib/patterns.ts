@@ -26,17 +26,38 @@ export const MIN_PEER_SAMPLE = 4
 export type PatternSort = 'name' | 'total' | 'recent'
 export const DEFAULT_PATTERN_SORT: PatternSort = 'name'
 
-export type PatternChartMode = 'counts' | 'extent'
-export const DEFAULT_PATTERN_CHART_MODE: PatternChartMode = 'counts'
+export type PatternChartMode = 'counts' | 'extent' | 'peers'
+/** Across patches (absolute extent) — how hard over time, not vs that day’s peers. */
+export const DEFAULT_PATTERN_CHART_MODE: PatternChartMode = 'extent'
 
 export type HeatmapColorMode = 'absolute' | 'relative'
 export const DEFAULT_HEATMAP_COLOR_MODE: HeatmapColorMode = 'absolute'
 
 /**
  * Stand-in relative-% weight when a buff/nerf line has no usable from→to
- * metrics, so unmeasured lines still show on the Extent chart.
+ * metrics. Plain unmeasured lines stay small so they do not impersonate a
+ * 50% numeric hit.
  */
 export const FALLBACK_EXTENT_WEIGHT = 5
+/**
+ * Heavier stand-in for identity / structural lines (`no longer`, `removed`,
+ * `now grants`, hitbox, …) that have no ratio. Still a guess — not “how big
+ * the identity change is” — but it must outrank a tiny numeric tweak.
+ */
+export const STRUCTURAL_EXTENT_WEIGHT = 20
+/**
+ * Detect qualitative identity changes that should use `STRUCTURAL_EXTENT_WEIGHT`
+ * instead of the plain fallback when no from→to metrics parse.
+ */
+export const STRUCTURAL_LINE_RE =
+  /\bno longer\b|\bremoved\b|\bnow grants\b|\bhitbox(?:es)?\b/i
+/** Quantile of this series’ bar heights used as the Extent display cap. */
+export const EXTENT_AXIS_QUANTILE = 0.95
+/**
+ * If the loudest bar is at least this multiple of the next-loudest, treat it
+ * as a spike and clip the axis even when P95 sits near the max (short series).
+ */
+export const EXTENT_SPIKE_RATIO = 2
 
 export const RECENT_VOLATILITY_HINT =
   `Buff+nerf events in the last ${RECENT_PATCH_WINDOW} ingested patches — not a 30-day window.`
@@ -46,6 +67,27 @@ export const RELATIVE_HEATMAP_LEGEND =
 
 export const ABSOLUTE_HEATMAP_LEGEND =
   'Absolute: color = signed net (buffs − nerfs); intensity + number = buff+nerf volume. Empty = no touch.'
+
+export const COUNTS_CHART_LEGEND =
+  'Height = event count. Click a bar for the lines in it. Fixes stay dots, not bar height.'
+
+export const EXTENT_CHART_LEGEND =
+  'Height ≈ summed relative % (approximate). A spike may clip the axis — tooltips still show the true value. Hover P# ranks this buff/nerf among every same-kind hit in the ledger, not vs that day’s peers. Click a bar for lines.'
+
+export const PEERS_CHART_LEGEND =
+  'Height = within-patch percentile of buff/nerf extent. n of 3 or fewer: no rank. Click a bar for lines.'
+
+export const EXTENT_CHART_SUBTITLE =
+  'How hard was this change, period — same approximate % across patches.'
+
+export const PEERS_CHART_SUBTITLE =
+  'Among heroes/items touched this patch only — quiet patches and bloodbaths aren’t the same.'
+
+export const COUNTS_CHART_SUBTITLE =
+  'Line volume that patch (buffs above, nerfs below).'
+
+export const EXTENT_CALLOUT =
+  'Extent is approximate — summed relative % from each line’s parsed from-to metrics, with a stand-in when a line has no numbers (structural identity lines heavier than plain unmeasured lines). Not win-rate or external balance data.'
 
 export interface TagCounts {
   buff: number
@@ -87,6 +129,19 @@ export interface PatternCell {
    * buff/nerf peers. Null when n≤3 or this cell is not a buff/nerf peer.
    */
   extentPercentile: number | null
+  /**
+   * Percentile of this cell’s buff extent among same-kind buff/nerf peers
+   * (zeros included). Null when n≤3, not a peer, or buff extent is 0.
+   */
+  extentBuffPercentile: number | null
+  /** Same as `extentBuffPercentile` for the nerf side. */
+  extentNerfPercentile: number | null
+  /**
+   * Percentile of this cell’s buff extent among every same-kind buff hit in
+   * the ledger (non-zero buff extents). Null when n≤3 or buff extent is 0.
+   */
+  historyBuffPercentile: number | null
+  historyNerfPercentile: number | null
   /** Same rank rule on event counts (detail toggle). */
   countsPercentile: number | null
   events: ChangeEvent[]
@@ -113,6 +168,9 @@ export interface PatternMatrix {
   patches: PatternPatchColumn[]
   recentWindow: number
   maxTouchVolume: number
+  /** Non-zero same-kind buff extents across the ledger (historical rank n). */
+  historyBuffN: number
+  historyNerfN: number
   entities: PatternEntity[]
 }
 
@@ -121,7 +179,7 @@ export interface PatternExtent {
   buff: number
   /** Sum of relative-% magnitudes on nerf lines (always ≥ 0). */
   nerf: number
-  /** True when at least one buff/nerf line used `FALLBACK_EXTENT_WEIGHT`. */
+  /** True when at least one buff/nerf line used a stand-in extent weight. */
   estimated: boolean
 }
 
@@ -139,6 +197,12 @@ export interface PatternSeriesPoint {
   events: ChangeEvent[]
   countsPercentile: number | null
   extentPercentile: number | null
+  extentBuffPercentile: number | null
+  extentNerfPercentile: number | null
+  historyBuffPercentile: number | null
+  historyNerfPercentile: number | null
+  historyBuffN: number
+  historyNerfN: number
   peerN: number
   peerCounts: PeerBand | null
   peerExtent: PeerBand | null
@@ -150,6 +214,8 @@ export interface PatternEntityDetail {
   slug: string
   totals: TagCounts
   totalTouches: number
+  historyBuffN: number
+  historyNerfN: number
   series: PatternSeriesPoint[]
 }
 
@@ -187,9 +253,15 @@ export function rankMagnitude(buff: number, nerf: number): number {
   return Math.max(buff, nerf)
 }
 
+export function isStructuralChangeLine(text: string): boolean {
+  return STRUCTURAL_LINE_RE.test(text)
+}
+
 /**
  * One buff/nerf line’s contribution to Extent: sum of usable metric relative
- * percents, or `FALLBACK_EXTENT_WEIGHT` when none parse. Fix/neutral are 0.
+ * percents, or a stand-in when none parse. Structural/qualitative lines use
+ * `STRUCTURAL_EXTENT_WEIGHT`; other unmeasured lines use
+ * `FALLBACK_EXTENT_WEIGHT`. Fix/neutral are 0.
  */
 export function eventExtent(event: ChangeEvent): {
   weight: number
@@ -207,7 +279,11 @@ export function eventExtent(event: ChangeEvent): {
     usable += 1
   }
   if (usable > 0) return { weight: sum, estimated: false }
-  return { weight: FALLBACK_EXTENT_WEIGHT, estimated: true }
+  const text = event.display ? `${event.raw} ${event.display}` : event.raw
+  const weight = isStructuralChangeLine(text)
+    ? STRUCTURAL_EXTENT_WEIGHT
+    : FALLBACK_EXTENT_WEIGHT
+  return { weight, estimated: true }
 }
 
 export function cellTone(cell: PatternCell): CellTone {
@@ -276,14 +352,70 @@ export function formatPercentileLabel(
   peerN: number,
   metric: PatternChartMode,
 ): string {
-  const unit = metric === 'extent' ? 'extent' : 'counts'
+  const unit =
+    metric === 'peers' ? 'that day' : metric === 'extent' ? 'ledger' : 'counts'
   if (peerN < MIN_PEER_SAMPLE) {
+    if (metric === 'extent') {
+      return `ledger percentile: n too small (${peerN} same-kind hits)`
+    }
     return `${unit} percentile: n too small (${peerN} that patch)`
   }
   if (percentile === null) {
     return `no ${unit} percentile (no buff/nerf that patch)`
   }
+  if (metric === 'peers') {
+    return `P${percentile} vs ${peerN} that patch only (quiet patches ≠ bloodbaths)`
+  }
+  if (metric === 'extent') {
+    return `P${percentile} of ${peerN} same-kind hits in the ledger`
+  }
   return `P${percentile} ${unit} vs ${peerN} that patch`
+}
+
+export function formatHistoryPercentileLabel(
+  percentile: number | null,
+  sampleN: number,
+  side: BarSide,
+): string {
+  const noun = side === 'buff' ? 'buffs' : side === 'nerf' ? 'nerfs' : 'hits'
+  if (sampleN < MIN_PEER_SAMPLE) {
+    return `ledger ${noun}: n too small (${sampleN})`
+  }
+  if (percentile === null) {
+    return `no ledger ${noun} rank`
+  }
+  return `P${percentile} of ${sampleN} ${noun} in the ledger`
+}
+
+/**
+ * Robust Y max for the Extent (absolute %) chart. One stacked-% spike must
+ * not flatten the rest of the series. Caps at P95 of bar heights, and if the
+ * peak is ≥ `EXTENT_SPIKE_RATIO`× the next-loudest bar, clips to that lower
+ * cap even on a short series (where P95 sits near the max).
+ */
+export function clippedDisplayMax(
+  values: readonly number[],
+): { max: number; clipped: boolean } {
+  const positive = [...values.filter((value) => Number.isFinite(value) && value > 0)].sort(
+    (a, b) => a - b,
+  )
+  if (positive.length === 0) return { max: 1, clipped: false }
+  const rawMax = positive[positive.length - 1]!
+  const p95 = quantile(positive, EXTENT_AXIS_QUANTILE)
+  const next = positive.length >= 2 ? positive[positive.length - 2]! : rawMax
+  const spike = rawMax >= next * EXTENT_SPIKE_RATIO
+  const p95Outlier = rawMax > p95 * 1.25
+  if (!spike && !p95Outlier) {
+    return { max: Math.max(1, Math.ceil(rawMax)), clipped: false }
+  }
+  const cap = Math.max(
+    1,
+    spike ? Math.min(Math.max(p95, 1), Math.max(next, 1)) : Math.max(p95, 1),
+  )
+  if (rawMax > cap * 1.05) {
+    return { max: Math.max(1, Math.ceil(cap)), clipped: true }
+  }
+  return { max: Math.max(1, Math.ceil(rawMax)), clipped: false }
 }
 
 export function eventsForBar(
@@ -292,6 +424,73 @@ export function eventsForBar(
 ): ChangeEvent[] {
   if (side === 'all') return [...events]
   return events.filter((event) => event.tag === side)
+}
+
+/** Percentile shown for a clicked bar (or the louder side when `side` is all). */
+export function percentileForBar(
+  point: {
+    countsPercentile: number | null
+    extentPercentile: number | null
+    extentBuffPercentile: number | null
+    extentNerfPercentile: number | null
+    historyBuffPercentile: number | null
+    historyNerfPercentile: number | null
+  },
+  mode: PatternChartMode,
+  side: BarSide = 'all',
+): number | null {
+  if (mode === 'counts') return point.countsPercentile
+  if (mode === 'extent') {
+    return pickSidePercentile(
+      point.historyBuffPercentile,
+      point.historyNerfPercentile,
+      side,
+    )
+  }
+  return pickSidePercentile(
+    point.extentBuffPercentile,
+    point.extentNerfPercentile,
+    side,
+  )
+}
+
+export function historySampleN(
+  point: { historyBuffN: number; historyNerfN: number },
+  side: BarSide,
+): number {
+  if (side === 'buff') return point.historyBuffN
+  if (side === 'nerf') return point.historyNerfN
+  return Math.max(point.historyBuffN, point.historyNerfN)
+}
+
+function pickSidePercentile(
+  buff: number | null,
+  nerf: number | null,
+  side: BarSide,
+): number | null {
+  if (side === 'buff') return buff
+  if (side === 'nerf') return nerf
+  if (buff === null) return nerf
+  if (nerf === null) return buff
+  return Math.max(buff, nerf)
+}
+
+/** Diverging bar heights for the active detail chart mode. */
+export function chartBarValues(
+  point: {
+    counts: TagCounts
+    extent: PatternExtent
+    extentBuffPercentile: number | null
+    extentNerfPercentile: number | null
+  },
+  mode: PatternChartMode,
+): { up: number; down: number } {
+  if (mode === 'counts') return { up: point.counts.buff, down: point.counts.nerf }
+  if (mode === 'extent') return { up: point.extent.buff, down: point.extent.nerf }
+  return {
+    up: point.extentBuffPercentile ?? 0,
+    down: point.extentNerfPercentile ?? 0,
+  }
 }
 
 function sortPatchesChrono(patches: readonly Patch[]): Patch[] {
@@ -311,6 +510,10 @@ function emptyCell(patchId: string): PatternCell {
     signedNet: 0,
     touched: false,
     extentPercentile: null,
+    extentBuffPercentile: null,
+    extentNerfPercentile: null,
+    historyBuffPercentile: null,
+    historyNerfPercentile: null,
     countsPercentile: null,
     events: [],
   }
@@ -326,6 +529,10 @@ function cellFromBucket(patchId: string, bucket: PatchBucket | undefined): Patte
     signedNet: signedNet(bucket.counts),
     touched: true,
     extentPercentile: null,
+    extentBuffPercentile: null,
+    extentNerfPercentile: null,
+    historyBuffPercentile: null,
+    historyNerfPercentile: null,
     countsPercentile: null,
     events: [...bucket.events],
   }
@@ -434,12 +641,11 @@ function attachPeerRanks(
     const countMags = peerCells.map((cell) =>
       rankMagnitude(cell.counts.buff, cell.counts.nerf),
     )
+    const buffExtents = peerCells.map((cell) => cell.extent.buff)
+    const nerfExtents = peerCells.map((cell) => cell.extent.nerf)
     const peerExtent = tooSmall
       ? null
-      : bandFrom(
-          peerCells.map((cell) => cell.extent.buff),
-          peerCells.map((cell) => cell.extent.nerf),
-        )
+      : bandFrom(buffExtents, nerfExtents)
     const peerCounts = tooSmall
       ? null
       : bandFrom(
@@ -452,6 +658,8 @@ function attachPeerRanks(
       if (!cell) continue
       if (tooSmall || cell.touchVolume <= 0) {
         cell.extentPercentile = null
+        cell.extentBuffPercentile = null
+        cell.extentNerfPercentile = null
         cell.countsPercentile = null
       } else {
         cell.extentPercentile = percentileRank(
@@ -462,11 +670,44 @@ function attachPeerRanks(
           rankMagnitude(cell.counts.buff, cell.counts.nerf),
           countMags,
         )
+        cell.extentBuffPercentile =
+          cell.extent.buff > 0 ? percentileRank(cell.extent.buff, buffExtents) : null
+        cell.extentNerfPercentile =
+          cell.extent.nerf > 0 ? percentileRank(cell.extent.nerf, nerfExtents) : null
       }
     }
 
     return { ...column, peerN: n, peerCounts, peerExtent }
   })
+}
+
+/**
+ * Rank each non-zero buff/nerf extent against every same-kind hit in the
+ * ledger so Absolute Extent can label “how hard, period” without using
+ * that day’s peers.
+ */
+function attachHistoricalRanks(entities: PatternEntity[]): {
+  buffN: number
+  nerfN: number
+} {
+  const buffs: number[] = []
+  const nerfs: number[] = []
+  for (const entity of entities) {
+    for (const cell of entity.cells) {
+      if (cell.touchVolume <= 0) continue
+      if (cell.extent.buff > 0) buffs.push(cell.extent.buff)
+      if (cell.extent.nerf > 0) nerfs.push(cell.extent.nerf)
+    }
+  }
+  for (const entity of entities) {
+    for (const cell of entity.cells) {
+      cell.historyBuffPercentile =
+        cell.extent.buff > 0 ? percentileRank(cell.extent.buff, buffs) : null
+      cell.historyNerfPercentile =
+        cell.extent.nerf > 0 ? percentileRank(cell.extent.nerf, nerfs) : null
+    }
+  }
+  return { buffN: buffs.length, nerfN: nerfs.length }
 }
 
 export function buildPatternMatrix(
@@ -509,6 +750,7 @@ export function buildPatternMatrix(
   })
 
   const rankedColumns = attachPeerRanks(entities, columns)
+  const history = attachHistoricalRanks(entities)
   entities.sort((a, b) => compareEntities(a, b, sort))
 
   let maxTouchVolume = 0
@@ -523,6 +765,8 @@ export function buildPatternMatrix(
     patches: rankedColumns,
     recentWindow,
     maxTouchVolume,
+    historyBuffN: history.buffN,
+    historyNerfN: history.nerfN,
     entities,
   }
 }
@@ -594,6 +838,12 @@ export function buildEntityDetail(
       events: cell.events,
       countsPercentile: cell.countsPercentile,
       extentPercentile: cell.extentPercentile,
+      extentBuffPercentile: cell.extentBuffPercentile,
+      extentNerfPercentile: cell.extentNerfPercentile,
+      historyBuffPercentile: cell.historyBuffPercentile,
+      historyNerfPercentile: cell.historyNerfPercentile,
+      historyBuffN: matrix.historyBuffN,
+      historyNerfN: matrix.historyNerfN,
       peerN: column?.peerN ?? 0,
       peerCounts: column?.peerCounts ?? null,
       peerExtent: column?.peerExtent ?? null,
@@ -606,6 +856,8 @@ export function buildEntityDetail(
     slug: entity.slug,
     totals: entity.totals,
     totalTouches: entity.totalTouches,
+    historyBuffN: matrix.historyBuffN,
+    historyNerfN: matrix.historyNerfN,
     series,
   }
 }
@@ -649,7 +901,7 @@ export function cellSummary(
   const line = `${date}: ${parts.join(' · ')} (${net})`
   if (cell.touchVolume <= 0) return line
   if (colorMode === 'relative') {
-    return `${line}. ${formatPercentileLabel(cell.extentPercentile, peerN, 'extent')}`
+    return `${line}. ${formatPercentileLabel(cell.extentPercentile, peerN, 'peers')}`
   }
   return line
 }
