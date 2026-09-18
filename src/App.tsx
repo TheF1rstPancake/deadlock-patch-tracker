@@ -18,7 +18,14 @@ export default function App() {
 
   const route = parseHash(hash)
   if (route.view === 'patterns') {
-    return <PatternsView kind={route.kind} slug={route.slug} />
+    return (
+      <PatternsView
+        kind={route.kind}
+        slug={route.slug}
+        lens={route.lens}
+        focusPatchId={route.focusPatchId}
+      />
+    )
   }
   return <RosterView />
 }

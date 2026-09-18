@@ -6,6 +6,7 @@ import {
   ABSOLUTE_HEATMAP_LEGEND,
   DEFAULT_HEATMAP_COLOR_MODE,
   DEFAULT_PATTERN_CHART_MODE,
+  DEFAULT_PATTERN_LENS,
   DEFAULT_PATTERN_SORT,
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
@@ -17,6 +18,7 @@ import {
   uniqueMatch,
   type HeatmapColorMode,
   type PatternChartMode,
+  type PatternLens,
   type PatternSort,
 } from '../lib/patterns.ts'
 import { patternsHash, type PatternKind } from '../lib/route.ts'
@@ -26,13 +28,16 @@ import { useEffect, useMemo, useState } from 'react'
 interface PatternsViewProps {
   kind: PatternKind
   slug?: string
+  lens?: PatternLens
+  focusPatchId?: string
 }
 
-export function PatternsView({ kind, slug }: PatternsViewProps) {
+export function PatternsView({ kind, slug, lens: routeLens, focusPatchId }: PatternsViewProps) {
   const [patches, setPatches] = useState<Patch[] | null>(null)
   const [sort, setSort] = useState<PatternSort>(DEFAULT_PATTERN_SORT)
   const [query, setQuery] = useState('')
   const [chartMode, setChartMode] = useState<PatternChartMode>(DEFAULT_PATTERN_CHART_MODE)
+  const [lens, setLens] = useState<PatternLens>(routeLens ?? DEFAULT_PATTERN_LENS)
   const [colorMode, setColorMode] = useState<HeatmapColorMode>(DEFAULT_HEATMAP_COLOR_MODE)
   const [showCumulative, setShowCumulative] = useState(false)
   const [allRows, setAllRows] = useState(false)
@@ -51,12 +56,13 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
   useEffect(() => {
     setQuery('')
     setChartMode(DEFAULT_PATTERN_CHART_MODE)
+    setLens(routeLens ?? DEFAULT_PATTERN_LENS)
     setColorMode(DEFAULT_HEATMAP_COLOR_MODE)
     setShowCumulative(false)
     setAllRows(false)
     setAllPatches(false)
     setSort(DEFAULT_PATTERN_SORT)
-  }, [kind, slug])
+  }, [kind, slug, routeLens, focusPatchId])
 
   const matrix = useMemo(() => {
     if (!patches) return null
@@ -111,10 +117,13 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
         detail ? (
           <PatternDetail
             detail={detail}
+            lens={lens}
+            onLens={setLens}
             chartMode={chartMode}
             onChartMode={setChartMode}
             showCumulative={showCumulative}
             onToggleCumulative={setShowCumulative}
+            focusPatchId={focusPatchId}
           />
         ) : (
           <p className="empty">
@@ -232,7 +241,15 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
             matrix={overview}
             colorMode={colorMode}
             rowMeta={sort === 'recent' ? 'recent' : 'total'}
-            onSelect={(entity) => go(patternsHash(entity.kind, entity.slug))}
+            onSelect={(entity, patchId) =>
+              go(
+                patternsHash(
+                  entity.kind,
+                  entity.slug,
+                  patchId ? { lens: 'day', patch: patchId } : undefined,
+                ),
+              )
+            }
           />
           <p className="legend">
             <span className="legend-buff">buff</span>

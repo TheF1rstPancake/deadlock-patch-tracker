@@ -3,11 +3,10 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { ChangeEvent, MetricDelta, Patch } from '../types.ts'
 import {
-  DEFAULT_PATTERN_CHART_MODE,
   DEFAULT_PATTERN_SORT,
-  EXTENT_SPIKE_RATIO,
   FALLBACK_EXTENT_WEIGHT,
   MIN_PEER_SAMPLE,
+  MIN_PERCENTILE_SAMPLE,
   RECENT_PATCH_WINDOW,
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
@@ -15,16 +14,16 @@ import {
   buildEntityDetail,
   buildPatternMatrix,
   cellTone,
-  chartBarValues,
   clipOverviewMatrix,
-  clippedDisplayMax,
+  directionRank,
   eventExtent,
   eventsForBar,
-  formatHistoryPercentileLabel,
+  formatDirectionLabel,
   formatPercentileLabel,
+  formatRankMark,
+  hardestHitsFromSeries,
   isStructuralChangeLine,
   matchingPatternEntities,
-  percentileForBar,
   percentileOpacity,
   percentileRank,
   quantile,
@@ -452,6 +451,12 @@ describe('peer percentile (same kind × patch)', () => {
     expect(point.peerExtent?.p90Buff).toBeGreaterThan(point.peerExtent!.medianBuff)
     expect(point.events.map((ev) => ev.id)).toEqual(['h:a'])
     expect(point.events.some((ev) => ev.target.kind === 'item')).toBe(false)
+    // Detail %ile uses the buff-only peer set (delta is nerf-only → n=3, small-N).
+    expect(point.buffRank?.peerN).toBe(3)
+    expect(point.buffRank?.smallN).toBe(true)
+    expect(point.buffRank?.rank).toBe(1)
+    expect(formatRankMark(point.buffRank!)).toBe('1 of 3')
+    expect(point.nerfRank).toBeNull()
   })
 
   it('keeps mixed-patch rank as max(buff, nerf), not |net|', () => {
@@ -499,145 +504,231 @@ describe('bar event list', () => {
       'P92 counts vs 12 that patch',
     )
     expect(formatPercentileLabel(80, 12, 'extent')).toBe(
-      'P80 of 12 same-kind hits in the ledger',
+      'P80 extent vs 12 that patch',
     )
-    expect(formatPercentileLabel(92, 12, 'peers')).toMatch(/P92 vs 12 that patch only/)
-    expect(formatHistoryPercentileLabel(82, 40, 'nerf')).toBe(
-      'P82 of 40 nerfs in the ledger',
-    )
-    expect(DEFAULT_PATTERN_CHART_MODE).toBe('extent')
   })
 })
 
-describe('clipped extent display scale', () => {
-  it('does not clip a compact series', () => {
-    expect(clippedDisplayMax([10, 20, 30, 50, 70])).toEqual({
-      max: 70,
-      clipped: false,
-    })
-    expect(clippedDisplayMax([])).toEqual({ max: 1, clipped: false })
+function pctEvent(
+  id: string,
+  name: string,
+  slug: string,
+  tag: 'buff' | 'nerf',
+  pct: number,
+): ChangeEvent {
+  const to = tag === 'buff' ? 100 + pct : 100 - pct
+  return event(id, 'hero', name, slug, tag, [{ stat: 'damage', from: 100, to }])
+}
+
+describe('that-day directional percentile (detail chart)', () => {
+  it('does not invent a fine percentile when n<5; shows rank fraction instead', () => {
+    expect(MIN_PERCENTILE_SAMPLE).toBe(5)
+    const four = [10, 20, 30, 40]
+    const mid = directionRank(30, four, 'nerf')
+    expect(mid.smallN).toBe(true)
+    expect(mid.peerN).toBe(4)
+    expect(mid.percentile).toBe(75)
+    expect(mid.rank).toBe(2)
+    expect(formatRankMark(mid)).toBe('2 of 4')
+    expect(formatDirectionLabel(mid)).toBe('2 of 4 nerf')
+    expect(directionRank(40, four, 'nerf').rank).toBe(1)
+    expect(percentileRank(30, four)).toBe(75)
   })
 
-  it('clips a single stacked-% spike so the rest of history stays readable', () => {
-    const scale = clippedDisplayMax([10, 20, 30, 50, 70, 400])
-    expect(scale.clipped).toBe(true)
-    expect(scale.max).toBe(70)
-    expect(400).toBeGreaterThan(scale.max * EXTENT_SPIKE_RATIO)
-    // 5/22-sized bar (~70) should occupy most of the clipped axis, not a sliver.
-    expect(70 / scale.max).toBeGreaterThan(0.9)
-  })
-})
-
-describe('vs Peers (within-patch rank) bars', () => {
-  it('plots nerf percentile near the top for a #3-of-patch identity hit, ignoring a later stacked-% spike', () => {
-    const loud = [
-      patch('2026-03-06', [
-        event('spike', 'hero', 'Alpha', 'alpha', 'buff', [
-          { stat: 'damage', from: 10, to: 50 },
-          { stat: 'range', from: 10, to: 50 },
-        ]),
-        event('s:b', 'hero', 'Beta', 'beta', 'buff', [
-          { stat: 'damage', from: 100, to: 110 },
-        ]),
-        event('s:c', 'hero', 'Gamma', 'gamma', 'buff', [
-          { stat: 'damage', from: 100, to: 108 },
-        ]),
-        event('s:d', 'hero', 'Delta', 'delta', 'nerf', [
-          { stat: 'health', from: 100, to: 90 },
-        ]),
+  it('ranks buffs among buffs and nerfs among nerfs, never pooling directions or kinds', () => {
+    const day = patch('2026-06-01', [
+      pctEvent('h:a', 'Alpha', 'alpha', 'buff', 50),
+      pctEvent('h:b', 'Bravo', 'bravo', 'buff', 40),
+      pctEvent('h:c', 'Charlie', 'charlie', 'buff', 30),
+      pctEvent('h:d', 'Delta', 'delta', 'buff', 20),
+      pctEvent('h:e', 'Echo', 'echo', 'buff', 10),
+      pctEvent('h:e-n', 'Echo', 'echo', 'nerf', 15),
+      pctEvent('h:f', 'Foxtrot', 'foxtrot', 'nerf', 80),
+      pctEvent('h:g', 'Golf', 'golf', 'nerf', 35),
+      pctEvent('h:h', 'Hotel', 'hotel', 'nerf', 25),
+      pctEvent('h:i', 'India', 'india', 'nerf', 5),
+      event('h:j', 'hero', 'Juliet', 'juliet', 'fix'),
+      event('i:s', 'item', 'Sword', 'sword', 'nerf', [
+        { stat: 'damage', from: 100, to: 10 },
       ]),
-      patch('2026-05-22', [
-        event('a:regen', 'hero', 'Alpha', 'alpha', 'nerf', [
-          { stat: 'value', from: 2, to: 1 },
-        ]),
-        (() => {
-          const line = event('a:rip', 'hero', 'Alpha', 'alpha', 'nerf')
-          line.raw = 'Riposte no longer automatically dashes'
-          return line
-        })(),
-        (() => {
-          const line = event('a:aura', 'hero', 'Alpha', 'alpha', 'nerf')
-          line.raw = 'Riposte no longer triggers on damage auras'
-          return line
-        })(),
-        (() => {
-          const line = event('a:obj', 'hero', 'Alpha', 'alpha', 'nerf')
-          line.raw = 'Riposte no longer triggers off of objective damage'
-          return line
-        })(),
-        (() => {
-          const line = event('a:hit', 'hero', 'Alpha', 'alpha', 'nerf')
-          line.raw = 'Flawless Advance hitbox reduced by 10%'
-          return line
-        })(),
-        event('b:0', 'hero', 'Beta', 'beta', 'nerf', [
-          { stat: 'health', from: 100, to: 40 },
-        ]),
-        event('c:0', 'hero', 'Gamma', 'gamma', 'nerf', [
-          { stat: 'health', from: 100, to: 50 },
-        ]),
-        event('d:0', 'hero', 'Delta', 'delta', 'nerf', [
-          { stat: 'health', from: 100, to: 95 },
-        ]),
-        event('e:0', 'hero', 'Echo', 'echo', 'buff', [
-          { stat: 'damage', from: 100, to: 105 },
-        ]),
-      ]),
-    ]
-    const detail = buildEntityDetail(loud, 'hero', 'alpha')
-    const may = detail!.series.find((point) => point.patchId === '2026-05-22')
-    const mar = detail!.series.find((point) => point.patchId === '2026-03-06')
-    expect(may?.counts.nerf).toBe(5)
-    expect(may?.extent.nerf).toBeCloseTo(50 + 4 * STRUCTURAL_EXTENT_WEIGHT)
-    expect(may?.peerN).toBeGreaterThanOrEqual(MIN_PEER_SAMPLE)
-    expect(may?.extentNerfPercentile).toBeGreaterThanOrEqual(75)
-    expect(may?.extentBuffPercentile).toBeNull()
-
-    const peerBars = chartBarValues(may!, 'peers')
-    expect(peerBars.down).toBe(may!.extentNerfPercentile)
-    expect(peerBars.down).toBeGreaterThanOrEqual(75)
-    expect(peerBars.up).toBe(0)
-
-    const extentBars = chartBarValues(may!, 'extent')
-    expect(extentBars.down).toBeCloseTo(may!.extent.nerf)
-    const scale = clippedDisplayMax([
-      mar!.extent.buff,
-      mar!.extent.nerf,
-      may!.extent.buff,
-      may!.extent.nerf,
     ])
-    expect(scale.clipped).toBe(true)
-    expect(may!.extent.nerf / scale.max).toBeGreaterThan(0.9)
+    const heroes = buildPatternMatrix([day], 'hero')
+    const rankOf = (slug: string) => heroes.entities.find((row) => row.slug === slug)?.cells[0]
 
-    expect(percentileForBar(may!, 'peers', 'nerf')).toBe(may!.extentNerfPercentile)
-    expect(percentileForBar(may!, 'peers', 'buff')).toBeNull()
-    expect(percentileForBar(may!, 'extent', 'nerf')).toBe(may!.historyNerfPercentile)
-    expect(may!.historyNerfPercentile).toBeGreaterThanOrEqual(75)
-    expect(chartBarValues(may!, 'extent').down).toBeCloseTo(may!.extent.nerf)
+    const alpha = rankOf('alpha')
+    expect(alpha?.buffRank).toMatchObject({
+      side: 'buff',
+      peerN: 5,
+      percentile: 100,
+      rank: 1,
+      smallN: false,
+    })
+    expect(alpha?.nerfRank).toBeNull()
+    expect(formatRankMark(alpha!.buffRank!)).toBe('P100')
+
+    const echo = rankOf('echo')
+    expect(echo?.buffRank).toMatchObject({ peerN: 5, percentile: 20, rank: 5, smallN: false })
+    expect(echo?.nerfRank).toMatchObject({ peerN: 5, percentile: 40, rank: 4, smallN: false })
+
+    const foxtrot = rankOf('foxtrot')
+    expect(foxtrot?.buffRank).toBeNull()
+    expect(foxtrot?.nerfRank).toMatchObject({
+      peerN: 5,
+      percentile: 100,
+      rank: 1,
+      smallN: false,
+    })
+
+    expect(rankOf('juliet')?.buffRank).toBeNull()
+    expect(rankOf('juliet')?.nerfRank).toBeNull()
+    expect(rankOf('juliet')?.extentPercentile).toBeNull()
+
+    const items = buildPatternMatrix([day], 'item')
+    expect(items.entities.find((row) => row.slug === 'sword')?.cells[0]?.nerfRank?.peerN).toBe(
+      1,
+    )
+    expect(
+      items.entities.find((row) => row.slug === 'sword')?.cells[0]?.nerfRank?.smallN,
+    ).toBe(true)
   })
 
-  it('does not invent a vs-Peers rank when n≤3', () => {
-    const tiny = [
-      patch('2026-05-22', [
-        event('a:0', 'hero', 'Alpha', 'alpha', 'nerf', [
-          { stat: 'value', from: 2, to: 1 },
-        ]),
-        event('b:0', 'hero', 'Beta', 'beta', 'nerf', [
-          { stat: 'health', from: 100, to: 90 },
-        ]),
+  it('does not let empties or the other direction dilute a peer set', () => {
+    const day = patch('2026-08-01', [
+      pctEvent('a', 'Alpha', 'alpha', 'nerf', 40),
+      pctEvent('b', 'Beta', 'beta', 'nerf', 30),
+      pctEvent('c', 'Gamma', 'gamma', 'nerf', 20),
+      pctEvent('d', 'Delta', 'delta', 'nerf', 10),
+      pctEvent('e', 'Echo', 'echo', 'buff', 90),
+      event('f', 'hero', 'Fixer', 'fixer', 'fix'),
+    ])
+    const matrix = buildPatternMatrix([day], 'hero')
+    const alpha = matrix.entities.find((row) => row.slug === 'alpha')?.cells[0]
+    expect(alpha?.nerfRank?.peerN).toBe(4)
+    expect(alpha?.nerfRank?.smallN).toBe(true)
+    expect(formatRankMark(alpha!.nerfRank!)).toBe('1 of 4')
+    expect(alpha?.buffRank).toBeNull()
+    const echo = matrix.entities.find((row) => row.slug === 'echo')?.cells[0]
+    expect(echo?.buffRank?.peerN).toBe(1)
+    expect(echo?.nerfRank).toBeNull()
+  })
+
+  it('lists the loudest that-day sides under the chart, Px or rank fraction', () => {
+    const patches = [
+      patch('2026-01-01', [
+        pctEvent('a0', 'Alpha', 'alpha', 'nerf', 50),
+        pctEvent('b0', 'Beta', 'beta', 'nerf', 10),
+        pctEvent('c0', 'Gamma', 'gamma', 'nerf', 8),
+        pctEvent('d0', 'Delta', 'delta', 'nerf', 6),
+        pctEvent('e0', 'Echo', 'echo', 'nerf', 4),
+      ]),
+      patch('2026-02-01', [
+        pctEvent('a1', 'Alpha', 'alpha', 'buff', 12),
+        pctEvent('b1', 'Beta', 'beta', 'buff', 40),
+        pctEvent('c1', 'Gamma', 'gamma', 'buff', 30),
+        pctEvent('d1', 'Delta', 'delta', 'buff', 20),
+        pctEvent('e1', 'Echo', 'echo', 'buff', 10),
+      ]),
+      patch('2026-03-01', [
+        pctEvent('a2', 'Alpha', 'alpha', 'nerf', 9),
+        pctEvent('b2', 'Beta', 'beta', 'nerf', 8),
       ]),
     ]
-    const detail = buildEntityDetail(tiny, 'hero', 'alpha')
-    const point = detail!.series[0]
-    expect(point.peerN).toBe(2)
-    expect(point.extentNerfPercentile).toBeNull()
-    expect(chartBarValues(point, 'peers')).toEqual({ up: 0, down: 0 })
-    expect(formatPercentileLabel(null, 2, 'peers')).toMatch(/n too small/)
+    const detail = buildEntityDetail(patches, 'hero', 'alpha')
+    const hits = hardestHitsFromSeries(detail!.series, 'day')
+    expect(hits[0]).toMatchObject({
+      patchId: '2026-01-01',
+      side: 'nerf',
+    })
+    expect(formatRankMark(hits[0]!.rank)).toBe('P100')
+    expect(hits.some((hit) => hit.patchId === '2026-02-01' && hit.side === 'buff')).toBe(
+      true,
+    )
+    const small = hits.find((hit) => hit.patchId === '2026-03-01')
+    expect(small).toBeDefined()
+    expect(formatRankMark(small!.rank)).toBe('1 of 2')
+    expect(hits).toHaveLength(3)
+    expect(hits[2]?.patchId).toBe('2026-03-01')
+  })
+
+  it('does not let a small-N 1-of-N outrank a high percentile among a real peer set', () => {
+    const patches = [
+      patch('2026-05-22', [
+        pctEvent('a0', 'Alpha', 'alpha', 'nerf', 40),
+        pctEvent('b0', 'Beta', 'beta', 'nerf', 30),
+        pctEvent('c0', 'Gamma', 'gamma', 'nerf', 20),
+        pctEvent('d0', 'Delta', 'delta', 'nerf', 10),
+        pctEvent('e0', 'Echo', 'echo', 'nerf', 8),
+      ]),
+      patch('2026-05-31', [
+        pctEvent('a1', 'Alpha', 'alpha', 'buff', 12),
+        pctEvent('b1', 'Beta', 'beta', 'buff', 8),
+      ]),
+    ]
+    const detail = buildEntityDetail(patches, 'hero', 'alpha')
+    const hits = hardestHitsFromSeries(detail!.series, 'day')
+    expect(formatRankMark(hits[0]!.rank)).toBe('P100')
+    expect(hits[0]?.patchId).toBe('2026-05-22')
+    expect(formatRankMark(hits[1]!.rank)).toBe('1 of 2')
+    expect(hits[1]?.patchId).toBe('2026-05-31')
   })
 })
 
-describe('Apollo ledger (how-hard chart)', () => {
-  it('keeps 2026-05-22 loud on Across patches and correctly ranked on That day', () => {
+describe('across-patches directional percentile', () => {
+  it('ranks this patch’s buff among every same-kind buff touch in the ledger', () => {
+    const patches = [
+      patch('2026-01-01', [
+        pctEvent('a0', 'Alpha', 'alpha', 'buff', 50),
+        pctEvent('b0', 'Beta', 'beta', 'buff', 40),
+        pctEvent('c0', 'Gamma', 'gamma', 'buff', 30),
+        pctEvent('d0', 'Delta', 'delta', 'nerf', 80),
+      ]),
+      patch('2026-02-01', [
+        pctEvent('a1', 'Alpha', 'alpha', 'buff', 10),
+        pctEvent('b1', 'Beta', 'beta', 'buff', 20),
+        pctEvent('e1', 'Echo', 'echo', 'buff', 5),
+        event('f1', 'hero', 'Fixer', 'fixer', 'fix'),
+      ]),
+    ]
+    const detail = buildEntityDetail(patches, 'hero', 'alpha')
+    const jan = detail!.series[0]
+    const feb = detail!.series[1]
+    // Buff touches: 50, 40, 30, 10, 20, 5 → n=6 (nerfs/fixes excluded)
+    expect(jan.acrossBuffRank).toMatchObject({
+      peerN: 6,
+      percentile: 100,
+      rank: 1,
+      smallN: false,
+    })
+    expect(jan.acrossNerfRank).toBeNull()
+    expect(jan.buffRank?.peerN).toBe(3)
+    expect(feb.acrossBuffRank).toMatchObject({ peerN: 6, percentile: 33, smallN: false })
+    expect(feb.buffRank?.peerN).toBe(3)
+
+    const acrossHits = hardestHitsFromSeries(detail!.series, 'across')
+    const dayHits = hardestHitsFromSeries(detail!.series, 'day')
+    expect(acrossHits[0]?.patchId).toBe('2026-01-01')
+    expect(formatRankMark(acrossHits[0]!.rank)).toBe('P100')
+    expect(dayHits[0]?.rank.smallN).toBe(true)
+  })
+
+  it('does not mix items into hero across-ledger ranks', () => {
+    const patches = [
+      patch('2026-01-01', [
+        pctEvent('a', 'Alpha', 'alpha', 'nerf', 20),
+        event('s', 'item', 'Sword', 'sword', 'nerf', [
+          { stat: 'damage', from: 100, to: 10 },
+        ]),
+      ]),
+    ]
+    const heroes = buildEntityDetail(patches, 'hero', 'alpha')
+    expect(heroes!.series[0]?.acrossNerfRank?.peerN).toBe(1)
+    const items = buildEntityDetail(patches, 'item', 'sword')
+    expect(items!.series[0]?.acrossNerfRank?.peerN).toBe(1)
+  })
+})
+
+describe('Apollo ledger (percentile lenses)', () => {
+  it('keeps 2026-05-22 loud on That day and ranked on Across patches', () => {
     const dir = join(process.cwd(), 'data/patches')
     const patches = readdirSync(dir)
       .filter((file) => file.endsWith('.json'))
@@ -645,26 +736,21 @@ describe('Apollo ledger (how-hard chart)', () => {
     const detail = buildEntityDetail(patches, 'hero', 'apollo')
     expect(detail).toBeDefined()
     const may = detail!.series.find((point) => point.patchId === '2026-05-22')
-    const mar = detail!.series.find((point) => point.patchId === '2026-03-06')
     expect(may?.counts.nerf).toBe(5)
-    expect(may?.peerN).toBeGreaterThanOrEqual(MIN_PEER_SAMPLE)
+    expect(may?.nerfRank?.smallN).toBe(false)
+    expect(may?.nerfRank?.percentile).toBeGreaterThanOrEqual(75)
+    expect(may?.acrossNerfRank?.smallN).toBe(false)
+    expect(may?.acrossNerfRank?.percentile).toBeGreaterThanOrEqual(50)
+    expect(may?.buffRank).toBeNull()
+    expect(may?.acrossBuffRank).toBeNull()
 
-    // That day: within-patch rank among heroes touched 5/22 only.
-    expect(may?.extentNerfPercentile).toBeGreaterThanOrEqual(75)
-    expect(chartBarValues(may!, 'peers').down).toBeGreaterThanOrEqual(75)
-
-    // Across patches: absolute % stays comparable; clipped Y must not crush 5/22.
-    const heights = detail!.series.flatMap((point) => [
-      point.extent.buff,
-      point.extent.nerf,
-    ])
-    const scale = clippedDisplayMax(heights)
-    expect(chartBarValues(may!, 'extent').down).toBeCloseTo(may!.extent.nerf)
-    expect(may!.extent.nerf / scale.max).toBeGreaterThan(0.25)
-    if (mar && Math.max(mar.extent.buff, mar.extent.nerf) > may!.extent.nerf * 2) {
-      expect(scale.clipped).toBe(true)
-    }
-    expect(may!.historyNerfPercentile).not.toBeNull()
-    expect(may!.historyNerfN).toBeGreaterThanOrEqual(MIN_PEER_SAMPLE)
+    const dayHits = hardestHitsFromSeries(detail!.series, 'day')
+    expect(dayHits.some((hit) => hit.patchId === '2026-05-22' && hit.side === 'nerf')).toBe(
+      true,
+    )
+    const acrossHits = hardestHitsFromSeries(detail!.series, 'across')
+    expect(acrossHits.length).toBeGreaterThan(0)
+    expect(acrossHits[0]?.rank.smallN).toBe(false)
   })
 })
+
