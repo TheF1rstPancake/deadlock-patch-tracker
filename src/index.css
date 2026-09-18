@@ -1023,7 +1023,12 @@ h1 {
 .pattern-chart-axis {
   fill: var(--muted);
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pattern-chart-axis-pos {
+  fill: var(--vitality-bright);
 }
 
 .pattern-chart-axis-zero {

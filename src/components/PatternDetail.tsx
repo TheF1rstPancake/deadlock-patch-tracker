@@ -184,7 +184,7 @@ function BuffNerfChart({
                 y2={y}
               />
               <text
-                className={`pattern-chart-axis${tick < 0 ? ' pattern-chart-axis-neg' : ''}${tick === 0 ? ' pattern-chart-axis-zero' : ''}`}
+                className={`pattern-chart-axis${tick > 0 ? ' pattern-chart-axis-pos' : ''}${tick < 0 ? ' pattern-chart-axis-neg' : ''}${tick === 0 ? ' pattern-chart-axis-zero' : ''}`}
                 x={pad.left - 6}
                 y={y + 3}
                 textAnchor="end"
@@ -278,10 +278,9 @@ function BuffNerfChart({
 }
 
 function formatAxisValue(value: number, mode: PatternChartMode): string {
-  const rounded = Math.round(value)
-  const sign = rounded > 0 ? '+' : rounded < 0 ? '−' : ''
-  const body = String(Math.abs(rounded))
-  return `${sign}${body}${mode === 'extent' ? '%' : ''}`
+  const rounded = Math.round(Math.abs(value))
+  const sign = value > 0 ? '+' : value < 0 ? '−' : ''
+  return `${sign}${rounded}${mode === 'extent' ? '%' : ''}`
 }
 
 function formatExtent(value: number): string {
