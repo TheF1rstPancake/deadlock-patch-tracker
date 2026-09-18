@@ -18,7 +18,7 @@ Heatmap cells:
 - **Color** = signed net (**buffs − nerfs**). Fix and neutral are excluded from net; fixes can show as a hatch/dot.
 - **Number / opacity** = buff+nerf **touch volume**, so +5/−5 churn is still visible.
 
-Default overview sort is **recent volatility** (buff+nerf events in the **last 5 ingested patches**; hover the **?** on that chip — not a ~30-day window). **Total touches** is still a chip. The heatmap defaults to the **top 14** entities and the **newest 10 patches**; **Show all** / **All patches** expand. Entity detail keeps the full patch history: grouped buff vs nerf bars per date. Cumulative net is an optional toggle, off by default; fixes are dots, not the same Y as buff/nerf.
+Default overview sort is **recent volatility** (buff+nerf events in the **last 5 ingested patches**; hover the **?** on that chip — not a ~30-day window). **Total touches** is still a chip. The heatmap defaults to the **top 14** entities and the **newest 10 patches**; **Show all** / **All patches** expand. Entity detail keeps the **full patch history** on a diverging chart: buffs plot above zero, nerfs below. **Counts** (default) is per-patch event lines; **Extent** (estimated) sums relative % change from each line’s parsed `from→to` metrics, with a small stand-in weight when a line has no numbers — not win-rate. Cumulative net is an optional toggle, off by default; fixes stay dots, not bar height.
 
 Steam appid: `1422450`.
 

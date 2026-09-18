@@ -1,5 +1,6 @@
+import { metricRelativePercent } from './metrics.ts'
 import { slugifyName } from './slug.ts'
-import type { LineTag, Patch } from '../types.ts'
+import type { ChangeEvent, LineTag, Patch } from '../types.ts'
 import type { PatternKind } from './route.ts'
 
 /**
@@ -15,6 +16,15 @@ export const OVERVIEW_TOP_ROWS = 14
 
 export type PatternSort = 'total' | 'recent'
 export const DEFAULT_PATTERN_SORT: PatternSort = 'recent'
+
+export type PatternChartMode = 'counts' | 'extent'
+export const DEFAULT_PATTERN_CHART_MODE: PatternChartMode = 'counts'
+
+/**
+ * Stand-in relative-% weight when a buff/nerf line has no usable from→to
+ * metrics, so unmeasured lines still show on the Extent chart.
+ */
+export const FALLBACK_EXTENT_WEIGHT = 5
 
 export const RECENT_VOLATILITY_HINT =
   `Buff+nerf events in the last ${RECENT_PATCH_WINDOW} ingested patches — not a 30-day window.`
@@ -65,12 +75,24 @@ export interface PatternMatrix {
   entities: PatternEntity[]
 }
 
+export interface PatternExtent {
+  /** Sum of relative-% magnitudes on buff lines (always ≥ 0). */
+  buff: number
+  /** Sum of relative-% magnitudes on nerf lines (always ≥ 0). */
+  nerf: number
+  /** True when at least one buff/nerf line used `FALLBACK_EXTENT_WEIGHT`. */
+  estimated: boolean
+}
+
 export interface PatternSeriesPoint {
   patchId: string
   date: string
   title: string
   counts: TagCounts
+  extent: PatternExtent
   signedNet: number
+  /** Buff extent − nerf extent (same sign convention as `signedNet`). */
+  signedExtent: number
   cumulativeNet: number
   touched: boolean
 }
@@ -100,6 +122,37 @@ export function touchVolume(counts: TagCounts): number {
 
 export function signedNet(counts: TagCounts): number {
   return counts.buff - counts.nerf
+}
+
+export function emptyExtent(): PatternExtent {
+  return { buff: 0, nerf: 0, estimated: false }
+}
+
+export function signedExtent(extent: PatternExtent): number {
+  return extent.buff - extent.nerf
+}
+
+/**
+ * One buff/nerf line’s contribution to Extent: sum of usable metric relative
+ * percents, or `FALLBACK_EXTENT_WEIGHT` when none parse. Fix/neutral are 0.
+ */
+export function eventExtent(event: ChangeEvent): {
+  weight: number
+  estimated: boolean
+} {
+  if (event.tag !== 'buff' && event.tag !== 'nerf') {
+    return { weight: 0, estimated: false }
+  }
+  let sum = 0
+  let usable = 0
+  for (const metric of event.metrics ?? []) {
+    const mag = metricRelativePercent(metric)
+    if (mag === undefined) continue
+    sum += mag
+    usable += 1
+  }
+  if (usable > 0) return { weight: sum, estimated: false }
+  return { weight: FALLBACK_EXTENT_WEIGHT, estimated: true }
 }
 
 export function cellTone(cell: PatternCell): CellTone {
@@ -293,6 +346,31 @@ export function clipOverviewMatrix(
   return { ...matrix, patches, entities, maxTouchVolume }
 }
 
+function collectExtentByPatch(
+  patches: readonly Patch[],
+  kind: PatternKind,
+  slug: string,
+): Map<string, PatternExtent> {
+  const byPatch = new Map<string, PatternExtent>()
+  for (const patch of patches) {
+    for (const event of patch.events) {
+      if (event.target.kind !== kind) continue
+      const eventSlug = event.target.slug ?? slugifyName(event.target.name)
+      if (eventSlug !== slug) continue
+      if (event.tag !== 'buff' && event.tag !== 'nerf') continue
+      let extent = byPatch.get(patch.id)
+      if (!extent) {
+        extent = emptyExtent()
+        byPatch.set(patch.id, extent)
+      }
+      const { weight, estimated } = eventExtent(event)
+      extent[event.tag] += weight
+      if (estimated) extent.estimated = true
+    }
+  }
+  return byPatch
+}
+
 export function buildEntityDetail(
   patches: readonly Patch[],
   kind: PatternKind,
@@ -302,16 +380,20 @@ export function buildEntityDetail(
   const entity = matrix.entities.find((row) => row.slug === slug)
   if (!entity) return undefined
 
+  const extentByPatch = collectExtentByPatch(patches, kind, slug)
   let running = 0
   const series: PatternSeriesPoint[] = entity.cells.map((cell, index) => {
     running += cell.signedNet
     const column = matrix.patches[index]
+    const extent = extentByPatch.get(cell.patchId) ?? emptyExtent()
     return {
       patchId: cell.patchId,
       date: column?.date ?? cell.patchId,
       title: column?.title ?? cell.patchId,
       counts: cell.counts,
+      extent: { ...extent },
       signedNet: cell.signedNet,
+      signedExtent: signedExtent(extent),
       cumulativeNet: running,
       touched: cell.touched,
     }

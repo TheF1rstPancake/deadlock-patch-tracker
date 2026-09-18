@@ -92,3 +92,33 @@ function inferUnit(fromToken: string, toToken: string): string | undefined {
   if (/m\b/i.test(combined)) return 'm'
   return undefined
 }
+
+/** Cap relative % so a tiny `from` cannot dominate the extent chart. */
+export const MAX_RELATIVE_PERCENT = 200
+
+const PLAIN_NUMBER = /^[+-]?(?:\d+\.?\d*|\.\d+)$/
+
+/** Numeric from/to only — compound tokens like `20->60` are not a single scale. */
+export function numericMetricValue(
+  value: number | string | undefined,
+): number | undefined {
+  if (typeof value === 'number' && Number.isFinite(value)) return value
+  if (typeof value !== 'string') return undefined
+  const trimmed = value.trim()
+  if (!PLAIN_NUMBER.test(trimmed)) return undefined
+  const n = Number.parseFloat(trimmed)
+  return Number.isFinite(n) ? n : undefined
+}
+
+/**
+ * Relative-percent magnitude of a from→to delta: `|to − from| / |from| * 100`.
+ * Undefined when from/to are missing, non-numeric, or `from` is 0 (no ratio).
+ */
+export function metricRelativePercent(metric: MetricDelta): number | undefined {
+  const from = numericMetricValue(metric.from)
+  const to = numericMetricValue(metric.to)
+  if (from === undefined || to === undefined || from === 0) return undefined
+  const pct = (Math.abs(to - from) / Math.abs(from)) * 100
+  if (!Number.isFinite(pct)) return undefined
+  return Math.min(pct, MAX_RELATIVE_PERCENT)
+}
