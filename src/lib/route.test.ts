@@ -26,6 +26,13 @@ describe('parseHash', () => {
       kind: 'item',
       slug: 'shadow-weave',
     })
+    expect(parseHash('#patterns/hero/apollo?lens=day&patch=2026-05-22')).toEqual({
+      view: 'patterns',
+      kind: 'hero',
+      slug: 'apollo',
+      lens: 'day',
+      focusPatchId: '2026-05-22',
+    })
   })
 })
 
@@ -34,5 +41,8 @@ describe('patternsHash', () => {
     expect(patternsHash('hero')).toBe('#patterns')
     expect(patternsHash('item')).toBe('#patterns/items')
     expect(patternsHash('hero', 'viscous')).toBe('#patterns/hero/viscous')
+    expect(patternsHash('hero', 'apollo', { lens: 'day', patch: '2026-05-22' })).toBe(
+      '#patterns/hero/apollo?lens=day&patch=2026-05-22',
+    )
   })
 })

@@ -1,4 +1,4 @@
-import { eventExtent, type BarSide, type PatternChartMode } from '../lib/patterns.ts'
+import { eventExtent, type BarSide } from '../lib/patterns.ts'
 import { LINE_GLYPH, LINE_LABEL } from '../lib/labels.ts'
 import type { ChangeEvent, MetricDelta } from '../types.ts'
 import { useEffect, useId, useRef } from 'react'
@@ -7,7 +7,6 @@ interface PatchEventPanelProps {
   open: boolean
   title: string
   side: BarSide
-  mode: PatternChartMode
   percentileLabel: string
   events: ChangeEvent[]
   onClose: () => void
@@ -17,7 +16,6 @@ export function PatchEventPanel({
   open,
   title,
   side,
-  mode,
   percentileLabel,
   events,
   onClose,
@@ -61,7 +59,9 @@ export function PatchEventPanel({
           <div>
             <p className="kicker">{sideLabel}</p>
             <h3 id={headingId}>{title}</h3>
-            <p className="pattern-drawer-peer">{percentileLabel}</p>
+            {percentileLabel ? (
+              <p className="pattern-drawer-peer">{percentileLabel}</p>
+            ) : null}
           </div>
           <button
             ref={closeRef}
@@ -77,7 +77,7 @@ export function PatchEventPanel({
         ) : (
           <ul className="pattern-event-list">
             {events.map((event) => (
-              <EventLine key={event.id} event={event} mode={mode} />
+              <EventLine key={event.id} event={event} />
             ))}
           </ul>
         )}
@@ -86,13 +86,7 @@ export function PatchEventPanel({
   )
 }
 
-function EventLine({
-  event,
-  mode,
-}: {
-  event: ChangeEvent
-  mode: PatternChartMode
-}) {
+function EventLine({ event }: { event: ChangeEvent }) {
   const text = event.display ?? event.raw
   const extent = eventExtent(event)
   return (
@@ -121,11 +115,9 @@ function EventLine({
             ))}
           </ul>
         ) : null}
-        {(mode === 'extent' || mode === 'peers') &&
-        (event.tag === 'buff' || event.tag === 'nerf') ? (
+        {event.tag === 'buff' || event.tag === 'nerf' ? (
           <p className="pattern-event-extent">
-            {extent.estimated ? 'approx. ' : ''}
-            {formatWeight(extent.weight)} extent
+            approx. {formatWeight(extent.weight)} extent
           </p>
         ) : null}
       </div>

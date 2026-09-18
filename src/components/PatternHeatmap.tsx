@@ -14,7 +14,7 @@ interface PatternHeatmapProps {
   matrix: PatternMatrix
   colorMode?: HeatmapColorMode
   rowMeta?: 'recent' | 'total'
-  onSelect: (entity: PatternEntity) => void
+  onSelect: (entity: PatternEntity, patchId?: string) => void
 }
 
 export function PatternHeatmap({
@@ -82,7 +82,7 @@ interface HeatmapRowProps {
   maxTouchVolume: number
   colorMode: HeatmapColorMode
   rowMeta: 'recent' | 'total'
-  onSelect: (entity: PatternEntity) => void
+  onSelect: (entity: PatternEntity, patchId?: string) => void
 }
 
 function HeatmapRow({
@@ -141,6 +141,10 @@ function HeatmapRow({
             className={`pattern-cell tone-${tone}${cell.counts.fix > 0 ? ' has-fix' : ''}${tooSmall ? ' peer-small' : ''}`}
             style={style}
             title={cellSummary(cell, date, peerN, colorMode)}
+            onClick={(event) => {
+              event.stopPropagation()
+              onSelect(entity, cell.patchId)
+            }}
           >
             {showCount ? (
               <span className="pattern-cell-count">{cell.touchVolume}</span>

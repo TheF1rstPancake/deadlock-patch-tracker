@@ -1,37 +1,34 @@
 import { HeroPortrait } from './HeroPortrait.tsx'
 import { PatchEventPanel } from './PatchEventPanel.tsx'
 import {
-  COUNTS_CHART_LEGEND,
-  COUNTS_CHART_SUBTITLE,
-  EXTENT_CALLOUT,
-  EXTENT_CHART_LEGEND,
-  EXTENT_CHART_SUBTITLE,
-  PEERS_CHART_LEGEND,
-  PEERS_CHART_SUBTITLE,
-  chartBarValues,
-  clippedDisplayMax,
   compactPatchLabel,
   eventsForBar,
-  formatHistoryPercentileLabel,
-  formatPercentileLabel,
+  formatDirectionLabel,
+  formatRankMark,
   formatTotalsLine,
-  historySampleN,
-  MIN_PEER_SAMPLE,
-  percentileForBar,
+  hardestHitsFromSeries,
+  peerSetCopy,
+  ranksForLens,
   type BarSide,
+  type DirectionRank,
+  type HardestHit,
   type PatternChartMode,
   type PatternEntityDetail,
+  type PatternLens,
   type PatternSeriesPoint,
 } from '../lib/patterns.ts'
 import { patternsHash } from '../lib/route.ts'
-import { useCallback, useId, useState, type KeyboardEvent } from 'react'
+import { useCallback, useEffect, useId, useMemo, useState, type KeyboardEvent } from 'react'
 
 interface PatternDetailProps {
   detail: PatternEntityDetail
+  lens: PatternLens
+  onLens: (lens: PatternLens) => void
   chartMode: PatternChartMode
   onChartMode: (mode: PatternChartMode) => void
   showCumulative: boolean
   onToggleCumulative: (next: boolean) => void
+  focusPatchId?: string
 }
 
 interface OpenBar {
@@ -39,49 +36,37 @@ interface OpenBar {
   side: BarSide
 }
 
-const MODES: Array<{ id: PatternChartMode; label: string; title: string }> = [
-  {
-    id: 'extent',
-    label: 'Across patches',
-    title: 'Absolute extent — how hard was this change, period',
-  },
-  {
-    id: 'peers',
-    label: 'That day',
-    title: 'Among heroes or items touched this patch only',
-  },
-  { id: 'counts', label: 'Counts', title: 'Event line volume that patch' },
-]
-
 export function PatternDetail({
   detail,
+  lens,
+  onLens,
   chartMode,
   onChartMode,
   showCumulative,
   onToggleCumulative,
+  focusPatchId,
 }: PatternDetailProps) {
   const kindLabel = detail.kind === 'hero' ? 'Hero' : 'Item'
   const backHref = patternsHash(detail.kind)
   const [openBar, setOpenBar] = useState<OpenBar | null>(null)
   const closePanel = useCallback(() => setOpenBar(null), [])
+  const hits = useMemo(
+    () => hardestHitsFromSeries(detail.series, lens),
+    [detail.series, lens],
+  )
 
   const selected = openBar
     ? detail.series.find((point) => point.patchId === openBar.patchId)
     : undefined
   const listed = selected ? eventsForBar(selected.events, openBar!.side) : []
   const percentileLabel = selected
-    ? chartMode === 'extent'
-      ? formatHistoryPercentileLabel(
-          percentileForBar(selected, chartMode, openBar!.side),
-          historySampleN(selected, openBar!.side),
-          openBar!.side,
-        )
-      : formatPercentileLabel(
-          percentileForBar(selected, chartMode, openBar!.side),
-          selected.peerN,
-          chartMode,
-        )
+    ? drawerRankLabel(selected, openBar!.side, lens)
     : ''
+
+  const selectLens = (next: PatternLens) => {
+    onLens(next)
+    onChartMode('percentile')
+  }
 
   return (
     <section className="pattern-detail" aria-label={`${detail.name} pattern`}>
@@ -107,22 +92,41 @@ export function PatternDetail({
         </div>
       </header>
       <div className="toolbar pattern-chart-toolbar">
-        <div className="chips" role="radiogroup" aria-label="Chart lens">
-          {MODES.map((mode) => (
-            <button
-              key={mode.id}
-              type="button"
-              className="chip"
-              role="radio"
-              title={mode.title}
-              aria-checked={chartMode === mode.id}
-              aria-pressed={chartMode === mode.id}
-              onClick={() => onChartMode(mode.id)}
-            >
-              {mode.label}
-            </button>
-          ))}
+        <div className="chips" role="radiogroup" aria-label="Percentile lens">
+          <button
+            type="button"
+            className="chip"
+            role="radio"
+            aria-checked={lens === 'across'}
+            aria-pressed={lens === 'across'}
+            title="Percentile among every same-kind same-sign touch in the ledger"
+            onClick={() => selectLens('across')}
+          >
+            Across patches
+          </button>
+          <button
+            type="button"
+            className="chip"
+            role="radio"
+            aria-checked={lens === 'day'}
+            aria-pressed={lens === 'day'}
+            title="Percentile among same-kind same-sign peers that patch"
+            onClick={() => selectLens('day')}
+          >
+            That day
+          </button>
         </div>
+        <button
+          type="button"
+          className="chip"
+          aria-pressed={chartMode === 'counts'}
+          title="Event line counts that patch, not how hard"
+          onClick={() =>
+            onChartMode(chartMode === 'counts' ? 'percentile' : 'counts')
+          }
+        >
+          Counts
+        </button>
         <button
           type="button"
           className="chip"
@@ -132,17 +136,23 @@ export function PatternDetail({
           Cumulative net
         </button>
       </div>
-      {chartMode === 'extent' || chartMode === 'peers' ? (
-        <p className="pattern-extent-callout" role="note">
-          {EXTENT_CALLOUT}
-        </p>
-      ) : null}
-      <p className="pattern-chart-kicker">{subtitleFor(chartMode)}</p>
-      <p className="pattern-chart-note">{legendFor(chartMode)}</p>
+      <p className="pattern-chart-peer-legend">
+        {chartMode === 'counts'
+          ? 'Line counts that patch — not how hard. Click a bar for the lines in it.'
+          : peerSetCopy(detail.kind, lens)}
+      </p>
       <BuffNerfChart
         series={detail.series}
         mode={chartMode}
+        lens={lens}
         showCumulative={showCumulative}
+        openBar={openBar}
+        onOpenBar={setOpenBar}
+        focusPatchId={focusPatchId}
+      />
+      <HardestHitsList
+        hits={hits}
+        lens={lens}
         openBar={openBar}
         onOpenBar={setOpenBar}
       />
@@ -154,7 +164,6 @@ export function PatternDetail({
             : detail.name
         }
         side={openBar?.side ?? 'all'}
-        mode={chartMode}
         percentileLabel={percentileLabel}
         events={listed}
         onClose={closePanel}
@@ -163,48 +172,91 @@ export function PatternDetail({
   )
 }
 
-function subtitleFor(mode: PatternChartMode): string {
-  if (mode === 'counts') return COUNTS_CHART_SUBTITLE
-  if (mode === 'extent') return EXTENT_CHART_SUBTITLE
-  return PEERS_CHART_SUBTITLE
-}
-
-function legendFor(mode: PatternChartMode): string {
-  if (mode === 'counts') return COUNTS_CHART_LEGEND
-  if (mode === 'extent') return EXTENT_CHART_LEGEND
-  return PEERS_CHART_LEGEND
+function HardestHitsList({
+  hits,
+  lens,
+  openBar,
+  onOpenBar,
+}: {
+  hits: HardestHit[]
+  lens: PatternLens
+  openBar: OpenBar | null
+  onOpenBar: (next: OpenBar | null) => void
+}) {
+  if (hits.length === 0) return null
+  const lensNote = lens === 'across' ? 'across the ledger' : 'that day'
+  return (
+    <section className="pattern-hardest" aria-label={`Hardest hits ${lensNote}`}>
+      <h3>
+        Hardest hits
+        <span className="pattern-hardest-lens">{lensNote}</span>
+      </h3>
+      <ol className="pattern-hardest-list">
+        {hits.map((hit) => {
+          const open =
+            openBar?.patchId === hit.patchId && openBar.side === hit.side
+          return (
+            <li key={`${hit.patchId}-${hit.side}`}>
+              <button
+                type="button"
+                className={`pattern-hardest-item${open ? ' is-open' : ''}`}
+                aria-pressed={open}
+                onClick={() =>
+                  onOpenBar(open ? null : { patchId: hit.patchId, side: hit.side })
+                }
+              >
+                <span className="pattern-hardest-date">
+                  {compactPatchLabel(hit.date)}
+                </span>
+                <span className={`pattern-hardest-side is-${hit.side}`}>
+                  {hit.side}
+                </span>
+                <span className="pattern-hardest-mark">
+                  {formatRankMark(hit.rank)}
+                </span>
+              </button>
+            </li>
+          )
+        })}
+      </ol>
+    </section>
+  )
 }
 
 function BuffNerfChart({
   series,
   mode,
+  lens,
   showCumulative,
   openBar,
   onOpenBar,
+  focusPatchId,
 }: {
   series: PatternSeriesPoint[]
   mode: PatternChartMode
+  lens: PatternLens
   showCumulative: boolean
   openBar: OpenBar | null
   onOpenBar: (next: OpenBar | null) => void
+  focusPatchId?: string
 }) {
   const clipId = useId().replace(/:/g, '')
   const [hoverId, setHoverId] = useState<string | null>(null)
-  const values = series.map((point) => chartBarValues(point, mode))
-  const extentScale =
-    mode === 'extent'
-      ? clippedDisplayMax(values.flatMap((value) => [value.up, value.down]))
-      : { max: 1, clipped: false }
-  const maxAbs =
-    mode === 'peers'
-      ? 100
-      : mode === 'extent'
-        ? extentScale.max
-        : Math.max(
-            1,
-            Math.ceil(Math.max(0, ...values.map((value) => Math.max(value.up, value.down)))),
-          )
-  const axisClipped = mode === 'extent' && extentScale.clipped
+  const percentileMode = mode === 'percentile'
+  const values = series.map((point) => {
+    if (!percentileMode) return { up: point.counts.buff, down: point.counts.nerf }
+    const ranks = ranksForLens(point, lens)
+    return {
+      up: ranks.buff?.percentile ?? 0,
+      down: ranks.nerf?.percentile ?? 0,
+    }
+  })
+  const maxAbs = percentileMode
+    ? 100
+    : Math.max(
+        1,
+        Math.ceil(Math.max(1, ...values.map((value) => Math.max(value.up, value.down)))),
+      )
   const cumulatives = series.map((point) => point.cumulativeNet)
   const maxAbsCum = Math.max(1, ...cumulatives.map((value) => Math.abs(value)))
   const groupW = 42
@@ -228,7 +280,11 @@ function BuffNerfChart({
     .join(' ')
 
   const ticks = [1, 0.5, 0, -0.5, -1]
-  const ariaLabel = ariaFor(mode)
+  const ariaLabel = percentileMode
+    ? lens === 'across'
+      ? 'Per-patch buff and nerf percentiles versus every same-kind same-sign touch in the ledger, buffs above zero, nerfs below. Click a bar for the lines in it.'
+      : 'Per-patch buff and nerf percentiles versus same-direction peers that day, buffs above zero, nerfs below. Click a bar for the lines in it.'
+    : 'Per-patch buff and nerf event counts, buffs above zero, nerfs below. Click a bar for the lines in it.'
 
   const toggle = (patchId: string, side: BarSide) => {
     onOpenBar(
@@ -238,6 +294,15 @@ function BuffNerfChart({
     )
   }
 
+  useEffect(() => {
+    const targetId = openBar?.patchId ?? focusPatchId
+    if (!targetId) return
+    const node = document.querySelector(
+      `[data-patch-id="${CSS.escape(targetId)}"]`,
+    )
+    node?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' })
+  }, [openBar, focusPatchId])
+
   const hovered = hoverId
     ? series.find((point) => point.patchId === hoverId)
     : openBar
@@ -246,12 +311,6 @@ function BuffNerfChart({
 
   return (
     <div className="pattern-chart-scroll">
-      {axisClipped ? (
-        <p className="pattern-axis-clipped" role="status">
-          Axis clipped — one patch’s stacked % would flatten the rest. Bars at the
-          cap are truncated; tooltips still show the true approximate %.
-        </p>
-      ) : null}
       <svg
         className="pattern-chart"
         viewBox={`0 0 ${width} ${height}`}
@@ -297,7 +356,7 @@ function BuffNerfChart({
                 y={y + 3}
                 textAnchor="end"
               >
-                {formatAxisValue(value, mode)}
+                {formatAxisValue(value)}
               </text>
             </g>
           )
@@ -305,15 +364,11 @@ function BuffNerfChart({
         {series.map((point, index) => {
           const x0 = pad.left + index * groupW
           const pair = values[index]!
-          const drawnUp = Math.min(pair.up, maxAbs)
-          const drawnDown = Math.min(pair.down, maxAbs)
-          const buffH = (drawnUp / maxAbs) * halfH
-          const nerfH = (drawnDown / maxAbs) * halfH
+          const buffH = (pair.up / maxAbs) * halfH
+          const nerfH = (pair.down / maxAbs) * halfH
           const label = compactPatchLabel(point.date)
           const fixDots = Math.min(point.counts.fix, 3)
           const selected = openBar?.patchId === point.patchId
-          const unrankedBuff = mode === 'peers' && pair.up === 0 && point.extent.buff > 0
-          const unrankedNerf = mode === 'peers' && pair.down === 0 && point.extent.nerf > 0
           const onGroupKey = (event: KeyboardEvent<SVGGElement>) => {
             if (event.key === 'Enter' || event.key === ' ') {
               event.preventDefault()
@@ -323,10 +378,11 @@ function BuffNerfChart({
           return (
             <g
               key={point.patchId}
+              data-patch-id={point.patchId}
               className={`pattern-bar-group${selected ? ' is-open' : ''}`}
               tabIndex={0}
               role="button"
-              aria-label={`${point.date}: ${pointTooltip(point, mode)}. ${rankLabel(point, mode)}. Open line details.`}
+              aria-label={`${point.date}: ${pointTooltip(point, mode, lens)}. Open line details.`}
               onFocus={() => setHoverId(point.patchId)}
               onBlur={() => setHoverId((id) => (id === point.patchId ? null : id))}
               onMouseEnter={() => setHoverId(point.patchId)}
@@ -334,7 +390,7 @@ function BuffNerfChart({
               onKeyDown={onGroupKey}
             >
               <title>
-                {pointTooltip(point, mode)}. {rankLabel(point, mode)}
+                {pointTooltip(point, mode, lens)}
               </title>
               <rect
                 className="pattern-bar-hit"
@@ -345,39 +401,27 @@ function BuffNerfChart({
                 onClick={() => toggle(point.patchId, 'all')}
               />
               <rect
-                className={`pattern-bar-buff${point.extent.estimated && mode !== 'counts' ? ' is-approx' : ''}${pair.up > maxAbs ? ' is-clipped' : ''}${unrankedBuff ? ' is-unranked' : ''}`}
+                className="pattern-bar-buff"
                 x={x0 + 8}
-                y={unrankedBuff ? zeroY - 6 : valueY(drawnUp)}
+                y={valueY(pair.up)}
                 width={barW}
-                height={unrankedBuff ? 6 : Math.max(buffH, pair.up > 0 ? 2 : 0)}
+                height={Math.max(buffH, pair.up > 0 ? 2 : 0)}
                 onClick={(event) => {
                   event.stopPropagation()
                   toggle(point.patchId, 'buff')
                 }}
               />
               <rect
-                className={`pattern-bar-nerf${point.extent.estimated && mode !== 'counts' ? ' is-approx' : ''}${pair.down > maxAbs ? ' is-clipped' : ''}${unrankedNerf ? ' is-unranked' : ''}`}
+                className="pattern-bar-nerf"
                 x={x0 + 20}
                 y={zeroY}
                 width={barW}
-                height={unrankedNerf ? 6 : Math.max(nerfH, pair.down > 0 ? 2 : 0)}
+                height={Math.max(nerfH, pair.down > 0 ? 2 : 0)}
                 onClick={(event) => {
                   event.stopPropagation()
                   toggle(point.patchId, 'nerf')
                 }}
               />
-              {pair.up > maxAbs ? (
-                <polygon
-                  className="pattern-bar-clip-cap pattern-bar-clip-cap-buff"
-                  points={clipCapPoints(x0 + 8, pad.top, barW, 'up')}
-                />
-              ) : null}
-              {pair.down > maxAbs ? (
-                <polygon
-                  className="pattern-bar-clip-cap pattern-bar-clip-cap-nerf"
-                  points={clipCapPoints(x0 + 20, pad.top + plotH, barW, 'down')}
-                />
-              ) : null}
               {Array.from({ length: fixDots }, (_, dot) => (
                 <circle
                   key={dot}
@@ -439,7 +483,7 @@ function BuffNerfChart({
             y={pad.top - 12}
             textAnchor="middle"
           >
-            {hoverPercentileText(hovered, mode)}
+            {hoverRankText(hovered, mode, lens)}
           </text>
         ) : null}
       </svg>
@@ -447,82 +491,51 @@ function BuffNerfChart({
   )
 }
 
-function clipCapPoints(x: number, edgeY: number, w: number, side: 'up' | 'down'): string {
-  const mid = x + w / 2
-  if (side === 'up') {
-    return `${x},${edgeY + 7} ${x + w},${edgeY + 7} ${mid},${edgeY}`
-  }
-  return `${x},${edgeY - 7} ${x + w},${edgeY - 7} ${mid},${edgeY}`
-}
-
-function ariaFor(mode: PatternChartMode): string {
-  if (mode === 'counts') {
-    return 'Per-patch buff and nerf event counts, buffs above zero, nerfs below. Click a bar for the lines in it.'
-  }
-  if (mode === 'extent') {
-    return 'Across patches: per-patch estimated relative-percent extent, buffs above zero, nerfs below. Same percent math over time. Axis may be clipped. Click a bar for the lines in it.'
-  }
-  return 'That day: per-patch peer percentile of buff and nerf extent among heroes or items touched this patch only. Quiet patches and bloodbaths are not the same. Click a bar for the lines in it.'
-}
-
-function rankLabel(point: PatternSeriesPoint, mode: PatternChartMode): string {
-  if (mode === 'extent') {
-    const side = louderHistorySide(point)
-    return formatHistoryPercentileLabel(
-      percentileForBar(point, mode, side),
-      historySampleN(point, side),
-      side,
-    )
-  }
-  return formatPercentileLabel(
-    percentileForBar(point, mode),
-    point.peerN,
-    mode,
+function ranksOnPoint(
+  point: PatternSeriesPoint,
+  lens: PatternLens,
+): DirectionRank[] {
+  const ranks = ranksForLens(point, lens)
+  return [ranks.buff, ranks.nerf].filter((rank): rank is DirectionRank =>
+    Boolean(rank),
   )
 }
 
-function louderHistorySide(point: PatternSeriesPoint): BarSide {
-  const buff = point.historyBuffPercentile
-  const nerf = point.historyNerfPercentile
-  if (buff === null) return 'nerf'
-  if (nerf === null) return 'buff'
-  return nerf >= buff ? 'nerf' : 'buff'
+function drawerRankLabel(
+  point: PatternSeriesPoint,
+  side: BarSide,
+  lens: PatternLens,
+): string {
+  const ranks = ranksForLens(point, lens)
+  if (side === 'buff') {
+    return ranks.buff ? formatDirectionLabel(ranks.buff) : 'no buff that patch'
+  }
+  if (side === 'nerf') {
+    return ranks.nerf ? formatDirectionLabel(ranks.nerf) : 'no nerf that patch'
+  }
+  const listed = ranksOnPoint(point, lens)
+  return listed.length > 0
+    ? listed.map(formatDirectionLabel).join(' · ')
+    : 'no buff/nerf that patch'
 }
 
-function hoverPercentileText(
+function hoverRankText(
   point: PatternSeriesPoint,
   mode: PatternChartMode,
+  lens: PatternLens,
 ): string {
-  if (mode === 'peers') {
-    if (point.peerN < MIN_PEER_SAMPLE) return 'n too small that day'
-    const buff = point.extentBuffPercentile
-    const nerf = point.extentNerfPercentile
-    if (buff === null && nerf === null) return 'no rank'
-    if (buff !== null && nerf !== null) return `P${buff} buff · P${nerf} nerf that day`
-    if (buff !== null) return `P${buff} buff that day`
-    return `P${nerf} nerf that day`
+  if (mode === 'counts') {
+    return `${point.counts.buff}↑ ${point.counts.nerf}↓`
   }
-  if (mode === 'extent') {
-    const buff = point.historyBuffPercentile
-    const nerf = point.historyNerfPercentile
-    if (buff === null && nerf === null) return 'no ledger rank'
-    if (buff !== null && nerf !== null) return `P${buff} ledger buff · P${nerf} ledger nerf`
-    if (buff !== null) return `P${buff} ledger buff`
-    return `P${nerf} ledger nerf`
-  }
-  const percentile = percentileForBar(point, mode)
-  if (percentile === null) return 'no rank'
-  return `P${percentile} counts`
+  const ranks = ranksOnPoint(point, lens)
+  if (ranks.length === 0) return point.counts.fix ? 'fix only' : 'no rank'
+  return ranks.map(formatDirectionLabel).join(' · ')
 }
 
-function formatAxisValue(value: number, mode: PatternChartMode): string {
+function formatAxisValue(value: number): string {
   const rounded = Math.round(Math.abs(value))
   const sign = value > 0 ? '+' : value < 0 ? '−' : ''
-  if (mode === 'peers') {
-    if (value === 0) return '0'
-    return `${sign}P${rounded}`
-  }
-  return `${sign}${rounded}${mode === 'extent' ? '%' : ''}`
+  return `${sign}${rounded}`
 }
 
 function formatExtent(value: number): string {
@@ -531,7 +544,19 @@ function formatExtent(value: number): string {
   return `${body.replace(/\.0$/, '')}%`
 }
 
-function pointTooltip(point: PatternSeriesPoint, mode: PatternChartMode): string {
+function approxExtentText(point: PatternSeriesPoint): string {
+  const bits: string[] = []
+  if (point.extent.buff > 0) bits.push(`+${formatExtent(point.extent.buff)} buff`)
+  if (point.extent.nerf > 0) bits.push(`−${formatExtent(point.extent.nerf)} nerf`)
+  if (bits.length === 0) return ''
+  return `approx. ${bits.join(', ')} extent`
+}
+
+function pointTooltip(
+  point: PatternSeriesPoint,
+  mode: PatternChartMode,
+  lens: PatternLens,
+): string {
   if (mode === 'counts') {
     return [
       `${point.date}: ${point.counts.buff} buff, ${point.counts.nerf} nerf`,
@@ -541,26 +566,10 @@ function pointTooltip(point: PatternSeriesPoint, mode: PatternChartMode): string
       .filter(Boolean)
       .join(', ')
   }
-  if (mode === 'peers') {
-    const buff =
-      point.extentBuffPercentile === null
-        ? point.extent.buff > 0
-          ? 'n too small'
-          : '—'
-        : `P${point.extentBuffPercentile}`
-    const nerf =
-      point.extentNerfPercentile === null
-        ? point.extent.nerf > 0
-          ? 'n too small'
-          : '—'
-        : `P${point.extentNerfPercentile}`
-    return `${point.date}: ${buff} buff rank, ${nerf} nerf rank (not raw %)`
-  }
-  const est = point.extent.estimated ? ' (approximate)' : ''
-  const history = formatHistoryPercentileLabel(
-    percentileForBar(point, 'extent', louderHistorySide(point)),
-    historySampleN(point, louderHistorySide(point)),
-    louderHistorySide(point),
-  )
-  return `${point.date}: +${formatExtent(point.extent.buff)} buff extent, −${formatExtent(point.extent.nerf)} nerf extent${est}. ${history}`
+  const ranks = ranksOnPoint(point, lens)
+  const rankText = ranks.length
+    ? ranks.map(formatDirectionLabel).join(' · ')
+    : 'no buff/nerf rank'
+  const extent = approxExtentText(point)
+  return [point.date, rankText, extent].filter(Boolean).join(' · ')
 }
