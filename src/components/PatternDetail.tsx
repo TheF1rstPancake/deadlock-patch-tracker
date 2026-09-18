@@ -24,10 +24,10 @@ interface PatternDetailProps {
 }
 
 const COUNTS_NOTE =
-  'Buffs plot above zero, nerfs below. Click a bar (or the patch group) for the lines in it. Fixes stay dots, not bar height. Faint band = peer median→P90 that patch among other heroes or items — same units as the Y scale.'
+  'Buffs plot above zero, nerfs below. Click a bar (or the patch group) for the lines in it. Fixes stay dots, not bar height. Faint band = peer median to P90 that patch among other heroes or items — same units as the Y scale.'
 
 const EXTENT_CALLOUT =
-  'Extent is approximate — summed relative % from each line’s parsed from→to metrics, with a small stand-in when a line has no numbers. Not win-rate or external balance data.'
+  'Extent is approximate — summed relative % from each line’s parsed from-to metrics, with a small stand-in when a line has no numbers. Not win-rate or external balance data.'
 
 interface OpenBar {
   patchId: string
@@ -121,9 +121,9 @@ export function PatternDetail({
       ) : null}
       <p className="pattern-chart-note">{COUNTS_NOTE}</p>
       <p className="pattern-chart-peer-legend">
-        Peer set = other {peerKind} with ≥1 buff/nerf that same patch. Percentile
+        Peer set = other {peerKind} with at least 1 buff/nerf that same patch. Percentile
         matches the {chartMode === 'extent' ? 'Extent' : 'Counts'} toggle.
-        n≤3 → no percentile.
+        n of 3 or fewer: no percentile.
       </p>
       <BuffNerfChart
         series={detail.series}

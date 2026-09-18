@@ -33,7 +33,7 @@ export function PatternHeatmap({
 
   const caption =
     colorMode === 'relative'
-      ? `${kindLabel} by patch. Color intensity is this row’s estimated-extent percentile versus other ${peerKind} with a buff or nerf that same patch (max of buff/nerf extent). Hue is buff vs nerf. Empty cells were not touched. n≤3 that patch has no percentile.`
+      ? `${kindLabel} by patch. Color intensity is this row’s estimated-extent percentile versus other ${peerKind} with a buff or nerf that same patch (max of buff/nerf extent). Hue is buff vs nerf. Empty cells were not touched. n of 3 or fewer that patch has no percentile.`
       : `${kindLabel} by patch. Color is signed net (buffs minus nerfs). Number is buff+nerf volume. Empty cells were not touched that patch.`
 
   return (

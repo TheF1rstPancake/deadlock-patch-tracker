@@ -140,7 +140,7 @@ function formatWeight(value: number): string {
 function formatMetric(metric: MetricDelta): string {
   const bits = [metric.stat.replace(/_/g, ' ')]
   if (metric.from !== undefined || metric.to !== undefined) {
-    bits.push(`${metric.from ?? '?'} → ${metric.to ?? '?'}`)
+    bits.push(`${metric.from ?? '?'} -> ${metric.to ?? '?'}`)
   }
   if (metric.unit) bits.push(metric.unit)
   return bits.join(' ')

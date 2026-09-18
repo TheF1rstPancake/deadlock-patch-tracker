@@ -730,6 +730,8 @@ h1 {
 .pattern-sort-bar {
   margin-top: -4px;
   align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
 }
 
 .chip-help {
@@ -775,10 +777,6 @@ h1 {
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.4;
-}
-
-.pattern-sort-bar {
-  gap: 10px;
 }
 
 .pattern-search input {
@@ -1107,22 +1105,23 @@ h1 {
 }
 
 .pattern-peer-band-buff {
-  fill: rgba(116, 176, 28, 0.18);
+  fill: rgba(116, 176, 28, 0.28);
 }
 
 .pattern-peer-band-nerf {
-  fill: rgba(196, 90, 40, 0.2);
+  fill: rgba(196, 90, 40, 0.32);
 }
 
 .pattern-peer-tick-median {
-  stroke: rgba(244, 229, 206, 0.55);
-  stroke-width: 1.25;
+  stroke: rgba(244, 229, 206, 0.75);
+  stroke-width: 1.4;
 }
 
 .pattern-peer-tick-p90 {
-  stroke: rgba(244, 229, 206, 0.7);
-  stroke-width: 1.1;
+  stroke: var(--gold-hot);
+  stroke-width: 1.2;
   stroke-dasharray: 3 2;
+  opacity: 0.85;
 }
 
 .pattern-hover-pct {
@@ -1148,7 +1147,7 @@ h1 {
   border: 0;
   padding: 0;
   margin: 0;
-  background: rgba(6, 14, 0, 0.55);
+  background: rgba(6, 14, 0, 0.35);
   cursor: pointer;
 }
 

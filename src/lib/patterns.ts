@@ -42,7 +42,7 @@ export const RECENT_VOLATILITY_HINT =
   `Buff+nerf events in the last ${RECENT_PATCH_WINDOW} ingested patches — not a 30-day window.`
 
 export const RELATIVE_HEATMAP_LEGEND =
-  'Relative: color intensity = within-column percentile of estimated extent vs other heroes (or items) touched that patch — max(buff, nerf) extent. Hue is buff/nerf direction. n≤3 that patch: no percentile. Empty = no events. Not win-rate.'
+  'Relative: color intensity = within-column percentile of estimated extent vs other heroes (or items) touched that patch — max(buff, nerf) extent. Hue is buff/nerf direction. n of 3 or fewer that patch: no percentile. Empty = no events. Not win-rate.'
 
 export const ABSOLUTE_HEATMAP_LEGEND =
   'Absolute: color = signed net (buffs − nerfs); intensity + number = buff+nerf volume. Empty = no touch.'
