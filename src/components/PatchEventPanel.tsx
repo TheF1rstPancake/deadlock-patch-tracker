@@ -121,7 +121,8 @@ function EventLine({
             ))}
           </ul>
         ) : null}
-        {mode === 'extent' && (event.tag === 'buff' || event.tag === 'nerf') ? (
+        {(mode === 'extent' || mode === 'peers') &&
+        (event.tag === 'buff' || event.tag === 'nerf') ? (
           <p className="pattern-event-extent">
             {extent.estimated ? 'approx. ' : ''}
             {formatWeight(extent.weight)} extent

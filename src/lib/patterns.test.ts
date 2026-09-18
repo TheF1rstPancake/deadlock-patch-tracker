@@ -1,20 +1,30 @@
 import { describe, expect, it } from 'vitest'
+import { readdirSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import type { ChangeEvent, MetricDelta, Patch } from '../types.ts'
 import {
+  DEFAULT_PATTERN_CHART_MODE,
   DEFAULT_PATTERN_SORT,
+  EXTENT_SPIKE_RATIO,
   FALLBACK_EXTENT_WEIGHT,
   MIN_PEER_SAMPLE,
   RECENT_PATCH_WINDOW,
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
+  STRUCTURAL_EXTENT_WEIGHT,
   buildEntityDetail,
   buildPatternMatrix,
   cellTone,
+  chartBarValues,
   clipOverviewMatrix,
+  clippedDisplayMax,
   eventExtent,
   eventsForBar,
+  formatHistoryPercentileLabel,
   formatPercentileLabel,
+  isStructuralChangeLine,
   matchingPatternEntities,
+  percentileForBar,
   percentileOpacity,
   percentileRank,
   quantile,
@@ -285,6 +295,37 @@ describe('extent (estimated relative %)', () => {
     expect(eventExtent(fix)).toEqual({ weight: 0, estimated: false })
   })
 
+  it('weights structural/qualitative identity lines above the plain fallback', () => {
+    expect(STRUCTURAL_EXTENT_WEIGHT).toBeGreaterThan(FALLBACK_EXTENT_WEIGHT)
+    expect(isStructuralChangeLine('Riposte no longer automatically dashes')).toBe(
+      true,
+    )
+    expect(isStructuralChangeLine('T3 removed the lingering slow')).toBe(true)
+    expect(isStructuralChangeLine('Itani now grants a parry window')).toBe(true)
+    expect(isStructuralChangeLine('Flawless Advance hitbox reduced by 10%')).toBe(
+      true,
+    )
+    expect(isStructuralChangeLine('Base regen reduced from 2 to 1')).toBe(false)
+
+    const identity = event('q:0', 'hero', 'Alpha', 'alpha', 'nerf')
+    identity.raw = 'Riposte no longer automatically dashes'
+    expect(eventExtent(identity)).toEqual({
+      weight: STRUCTURAL_EXTENT_WEIGHT,
+      estimated: true,
+    })
+
+    const hitbox = event('q:1', 'hero', 'Alpha', 'alpha', 'nerf')
+    hitbox.raw = 'Flawless Advance hitbox reduced by 10%'
+    expect(eventExtent(hitbox).weight).toBe(STRUCTURAL_EXTENT_WEIGHT)
+
+    const numeric = event('q:2', 'hero', 'Alpha', 'alpha', 'nerf', [
+      { stat: 'value', from: 2, to: 1 },
+    ])
+    numeric.raw = 'Base regen reduced from 2 to 1'
+    expect(eventExtent(numeric)).toEqual({ weight: 50, estimated: false })
+    expect(eventExtent(numeric).weight).toBeGreaterThan(STRUCTURAL_EXTENT_WEIGHT)
+  })
+
   it('plots buff extent positive and nerf extent negative, without inventing win-rate', () => {
     const patches: Patch[] = [
       patch('2026-01-01', [
@@ -458,7 +499,172 @@ describe('bar event list', () => {
       'P92 counts vs 12 that patch',
     )
     expect(formatPercentileLabel(80, 12, 'extent')).toBe(
-      'P80 extent vs 12 that patch',
+      'P80 of 12 same-kind hits in the ledger',
     )
+    expect(formatPercentileLabel(92, 12, 'peers')).toMatch(/P92 vs 12 that patch only/)
+    expect(formatHistoryPercentileLabel(82, 40, 'nerf')).toBe(
+      'P82 of 40 nerfs in the ledger',
+    )
+    expect(DEFAULT_PATTERN_CHART_MODE).toBe('extent')
+  })
+})
+
+describe('clipped extent display scale', () => {
+  it('does not clip a compact series', () => {
+    expect(clippedDisplayMax([10, 20, 30, 50, 70])).toEqual({
+      max: 70,
+      clipped: false,
+    })
+    expect(clippedDisplayMax([])).toEqual({ max: 1, clipped: false })
+  })
+
+  it('clips a single stacked-% spike so the rest of history stays readable', () => {
+    const scale = clippedDisplayMax([10, 20, 30, 50, 70, 400])
+    expect(scale.clipped).toBe(true)
+    expect(scale.max).toBe(70)
+    expect(400).toBeGreaterThan(scale.max * EXTENT_SPIKE_RATIO)
+    // 5/22-sized bar (~70) should occupy most of the clipped axis, not a sliver.
+    expect(70 / scale.max).toBeGreaterThan(0.9)
+  })
+})
+
+describe('vs Peers (within-patch rank) bars', () => {
+  it('plots nerf percentile near the top for a #3-of-patch identity hit, ignoring a later stacked-% spike', () => {
+    const loud = [
+      patch('2026-03-06', [
+        event('spike', 'hero', 'Alpha', 'alpha', 'buff', [
+          { stat: 'damage', from: 10, to: 50 },
+          { stat: 'range', from: 10, to: 50 },
+        ]),
+        event('s:b', 'hero', 'Beta', 'beta', 'buff', [
+          { stat: 'damage', from: 100, to: 110 },
+        ]),
+        event('s:c', 'hero', 'Gamma', 'gamma', 'buff', [
+          { stat: 'damage', from: 100, to: 108 },
+        ]),
+        event('s:d', 'hero', 'Delta', 'delta', 'nerf', [
+          { stat: 'health', from: 100, to: 90 },
+        ]),
+      ]),
+      patch('2026-05-22', [
+        event('a:regen', 'hero', 'Alpha', 'alpha', 'nerf', [
+          { stat: 'value', from: 2, to: 1 },
+        ]),
+        (() => {
+          const line = event('a:rip', 'hero', 'Alpha', 'alpha', 'nerf')
+          line.raw = 'Riposte no longer automatically dashes'
+          return line
+        })(),
+        (() => {
+          const line = event('a:aura', 'hero', 'Alpha', 'alpha', 'nerf')
+          line.raw = 'Riposte no longer triggers on damage auras'
+          return line
+        })(),
+        (() => {
+          const line = event('a:obj', 'hero', 'Alpha', 'alpha', 'nerf')
+          line.raw = 'Riposte no longer triggers off of objective damage'
+          return line
+        })(),
+        (() => {
+          const line = event('a:hit', 'hero', 'Alpha', 'alpha', 'nerf')
+          line.raw = 'Flawless Advance hitbox reduced by 10%'
+          return line
+        })(),
+        event('b:0', 'hero', 'Beta', 'beta', 'nerf', [
+          { stat: 'health', from: 100, to: 40 },
+        ]),
+        event('c:0', 'hero', 'Gamma', 'gamma', 'nerf', [
+          { stat: 'health', from: 100, to: 50 },
+        ]),
+        event('d:0', 'hero', 'Delta', 'delta', 'nerf', [
+          { stat: 'health', from: 100, to: 95 },
+        ]),
+        event('e:0', 'hero', 'Echo', 'echo', 'buff', [
+          { stat: 'damage', from: 100, to: 105 },
+        ]),
+      ]),
+    ]
+    const detail = buildEntityDetail(loud, 'hero', 'alpha')
+    const may = detail!.series.find((point) => point.patchId === '2026-05-22')
+    const mar = detail!.series.find((point) => point.patchId === '2026-03-06')
+    expect(may?.counts.nerf).toBe(5)
+    expect(may?.extent.nerf).toBeCloseTo(50 + 4 * STRUCTURAL_EXTENT_WEIGHT)
+    expect(may?.peerN).toBeGreaterThanOrEqual(MIN_PEER_SAMPLE)
+    expect(may?.extentNerfPercentile).toBeGreaterThanOrEqual(75)
+    expect(may?.extentBuffPercentile).toBeNull()
+
+    const peerBars = chartBarValues(may!, 'peers')
+    expect(peerBars.down).toBe(may!.extentNerfPercentile)
+    expect(peerBars.down).toBeGreaterThanOrEqual(75)
+    expect(peerBars.up).toBe(0)
+
+    const extentBars = chartBarValues(may!, 'extent')
+    expect(extentBars.down).toBeCloseTo(may!.extent.nerf)
+    const scale = clippedDisplayMax([
+      mar!.extent.buff,
+      mar!.extent.nerf,
+      may!.extent.buff,
+      may!.extent.nerf,
+    ])
+    expect(scale.clipped).toBe(true)
+    expect(may!.extent.nerf / scale.max).toBeGreaterThan(0.9)
+
+    expect(percentileForBar(may!, 'peers', 'nerf')).toBe(may!.extentNerfPercentile)
+    expect(percentileForBar(may!, 'peers', 'buff')).toBeNull()
+    expect(percentileForBar(may!, 'extent', 'nerf')).toBe(may!.historyNerfPercentile)
+    expect(may!.historyNerfPercentile).toBeGreaterThanOrEqual(75)
+    expect(chartBarValues(may!, 'extent').down).toBeCloseTo(may!.extent.nerf)
+  })
+
+  it('does not invent a vs-Peers rank when n≤3', () => {
+    const tiny = [
+      patch('2026-05-22', [
+        event('a:0', 'hero', 'Alpha', 'alpha', 'nerf', [
+          { stat: 'value', from: 2, to: 1 },
+        ]),
+        event('b:0', 'hero', 'Beta', 'beta', 'nerf', [
+          { stat: 'health', from: 100, to: 90 },
+        ]),
+      ]),
+    ]
+    const detail = buildEntityDetail(tiny, 'hero', 'alpha')
+    const point = detail!.series[0]
+    expect(point.peerN).toBe(2)
+    expect(point.extentNerfPercentile).toBeNull()
+    expect(chartBarValues(point, 'peers')).toEqual({ up: 0, down: 0 })
+    expect(formatPercentileLabel(null, 2, 'peers')).toMatch(/n too small/)
+  })
+})
+
+describe('Apollo ledger (how-hard chart)', () => {
+  it('keeps 2026-05-22 loud on Across patches and correctly ranked on That day', () => {
+    const dir = join(process.cwd(), 'data/patches')
+    const patches = readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+    const detail = buildEntityDetail(patches, 'hero', 'apollo')
+    expect(detail).toBeDefined()
+    const may = detail!.series.find((point) => point.patchId === '2026-05-22')
+    const mar = detail!.series.find((point) => point.patchId === '2026-03-06')
+    expect(may?.counts.nerf).toBe(5)
+    expect(may?.peerN).toBeGreaterThanOrEqual(MIN_PEER_SAMPLE)
+
+    // That day: within-patch rank among heroes touched 5/22 only.
+    expect(may?.extentNerfPercentile).toBeGreaterThanOrEqual(75)
+    expect(chartBarValues(may!, 'peers').down).toBeGreaterThanOrEqual(75)
+
+    // Across patches: absolute % stays comparable; clipped Y must not crush 5/22.
+    const heights = detail!.series.flatMap((point) => [
+      point.extent.buff,
+      point.extent.nerf,
+    ])
+    const scale = clippedDisplayMax(heights)
+    expect(chartBarValues(may!, 'extent').down).toBeCloseTo(may!.extent.nerf)
+    expect(may!.extent.nerf / scale.max).toBeGreaterThan(0.25)
+    if (mar && Math.max(mar.extent.buff, mar.extent.nerf) > may!.extent.nerf * 2) {
+      expect(scale.clipped).toBe(true)
+    }
+    expect(may!.historyNerfPercentile).not.toBeNull()
+    expect(may!.historyNerfN).toBeGreaterThanOrEqual(MIN_PEER_SAMPLE)
   })
 })

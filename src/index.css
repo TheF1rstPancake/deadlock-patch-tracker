@@ -755,7 +755,9 @@ h1 {
 
 .pattern-chart-note,
 .pattern-chart-peer-legend,
-.pattern-heatmap-legend {
+.pattern-heatmap-legend,
+.pattern-chart-kicker,
+.pattern-axis-clipped {
   margin: 0 0 8px;
   color: var(--muted);
   font-size: 0.82rem;
@@ -763,8 +765,20 @@ h1 {
   max-width: 52rem;
 }
 
+.pattern-chart-kicker {
+  margin: 0 0 4px;
+  color: var(--gold-hot);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
 .pattern-heatmap-legend {
   margin-top: 8px;
+}
+
+.pattern-axis-clipped {
+  color: var(--gold-hot);
+  font-weight: 600;
 }
 
 .pattern-extent-callout {
@@ -1082,6 +1096,19 @@ h1 {
 .pattern-bar-buff.is-approx,
 .pattern-bar-nerf.is-approx {
   fill-opacity: 0.85;
+}
+
+.pattern-bar-buff.is-unranked,
+.pattern-bar-nerf.is-unranked {
+  fill-opacity: 0.45;
+}
+
+.pattern-bar-clip-cap-buff {
+  fill: var(--buff-deep);
+}
+
+.pattern-bar-clip-cap-nerf {
+  fill: var(--nerf);
 }
 
 .pattern-bar-hit {
