@@ -747,11 +747,16 @@ h1 {
   cursor: help;
 }
 
-.pattern-chart-lede {
-  margin: 0;
+.pattern-chart-toolbar {
+  margin-bottom: 6px;
+}
+
+.pattern-chart-note {
+  margin: 0 0 8px;
   color: var(--muted);
-  font-size: 0.86rem;
-  max-width: 42rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  max-width: 48rem;
 }
 
 .pattern-search input {
@@ -1002,15 +1007,36 @@ h1 {
 
 .pattern-chart-zero {
   stroke: var(--gold);
-  stroke-width: 1;
+  stroke-width: 1.25;
   stroke-dasharray: 4 4;
-  opacity: 0.7;
+  opacity: 0.85;
+}
+
+.pattern-chart-band-buff {
+  fill: rgba(116, 176, 28, 0.07);
+}
+
+.pattern-chart-band-nerf {
+  fill: rgba(196, 90, 40, 0.1);
 }
 
 .pattern-chart-axis {
   fill: var(--muted);
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pattern-chart-axis-pos {
+  fill: var(--vitality-bright);
+}
+
+.pattern-chart-axis-zero {
+  fill: var(--gold);
+}
+
+.pattern-chart-axis-neg {
+  fill: var(--weapon-light);
 }
 
 .pattern-chart-axis-gold {

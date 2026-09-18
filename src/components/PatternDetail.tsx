@@ -2,6 +2,7 @@ import { HeroPortrait } from './HeroPortrait.tsx'
 import {
   compactPatchLabel,
   formatTotalsLine,
+  type PatternChartMode,
   type PatternEntityDetail,
   type PatternSeriesPoint,
 } from '../lib/patterns.ts'
@@ -10,12 +11,19 @@ import { useId } from 'react'
 
 interface PatternDetailProps {
   detail: PatternEntityDetail
+  chartMode: PatternChartMode
+  onChartMode: (mode: PatternChartMode) => void
   showCumulative: boolean
   onToggleCumulative: (next: boolean) => void
 }
 
+const CHART_NOTE =
+  'Counts: per-patch buff vs nerf event lines (buffs up, nerfs down). Extent (estimated): summed relative % change from each line’s parsed from→to metrics on the same diverging axis; lines with no numbers get a small stand-in weight so they still appear. Fixes stay dots. Not win-rate or external balance data.'
+
 export function PatternDetail({
   detail,
+  chartMode,
+  onChartMode,
   showCumulative,
   onToggleCumulative,
 }: PatternDetailProps) {
@@ -45,12 +53,29 @@ export function PatternDetail({
           </p>
         </div>
       </header>
-      <div className="toolbar">
-        <p className="pattern-chart-lede">
-          Bars are per-patch <span className="legend-buff">buff</span> vs{' '}
-          <span className="legend-nerf">nerf</span> event counts. Fixes are dots,
-          not bar height.
-        </p>
+      <div className="toolbar pattern-chart-toolbar">
+        <div className="chips" role="radiogroup" aria-label="Chart Y scale">
+          <button
+            type="button"
+            className="chip"
+            role="radio"
+            aria-checked={chartMode === 'counts'}
+            aria-pressed={chartMode === 'counts'}
+            onClick={() => onChartMode('counts')}
+          >
+            Counts
+          </button>
+          <button
+            type="button"
+            className="chip"
+            role="radio"
+            aria-checked={chartMode === 'extent'}
+            aria-pressed={chartMode === 'extent'}
+            onClick={() => onChartMode('extent')}
+          >
+            Extent
+          </button>
+        </div>
         <button
           type="button"
           className="chip"
@@ -60,36 +85,48 @@ export function PatternDetail({
           Cumulative net
         </button>
       </div>
-      <BuffNerfChart series={detail.series} showCumulative={showCumulative} />
+      <p className="pattern-chart-note">{CHART_NOTE}</p>
+      <BuffNerfChart
+        series={detail.series}
+        mode={chartMode}
+        showCumulative={showCumulative}
+      />
     </section>
   )
 }
 
 function BuffNerfChart({
   series,
+  mode,
   showCumulative,
 }: {
   series: PatternSeriesPoint[]
+  mode: PatternChartMode
   showCumulative: boolean
 }) {
   const clipId = useId().replace(/:/g, '')
-  const maxCount = Math.max(
+  const values = series.map((point) =>
+    mode === 'counts'
+      ? { up: point.counts.buff, down: point.counts.nerf }
+      : { up: point.extent.buff, down: point.extent.nerf },
+  )
+  const maxAbs = Math.max(
     1,
-    ...series.map((point) => Math.max(point.counts.buff, point.counts.nerf)),
+    Math.ceil(Math.max(...values.map((value) => Math.max(value.up, value.down)))),
   )
   const cumulatives = series.map((point) => point.cumulativeNet)
   const maxAbsCum = Math.max(1, ...cumulatives.map((value) => Math.abs(value)))
   const groupW = 42
-  const pad = { top: 18, right: showCumulative ? 44 : 12, bottom: 36, left: 28 }
-  const plotH = 160
+  const pad = { top: 22, right: showCumulative ? 48 : 14, bottom: 36, left: 46 }
+  const plotH = 220
   const width = pad.left + pad.right + series.length * groupW
   const height = pad.top + pad.bottom + plotH
-  const zeroY = pad.top + plotH
+  const zeroY = pad.top + plotH / 2
   const barW = 10
+  const halfH = plotH / 2
 
-  const countY = (count: number) => zeroY - (count / maxCount) * plotH
-  const cumY = (value: number) =>
-    pad.top + plotH / 2 - (value / maxAbsCum) * (plotH / 2)
+  const valueY = (value: number) => zeroY - (value / maxAbs) * halfH
+  const cumY = (value: number) => zeroY - (value / maxAbsCum) * halfH
 
   const line = series
     .map((point, index) => {
@@ -99,6 +136,12 @@ function BuffNerfChart({
     })
     .join(' ')
 
+  const ticks = [1, 0.5, 0, -0.5, -1]
+  const ariaLabel =
+    mode === 'counts'
+      ? 'Per-patch buff and nerf event counts, buffs above zero, nerfs below'
+      : 'Per-patch estimated buff and nerf relative-percent extent, buffs above zero, nerfs below'
+
   return (
     <div className="pattern-chart-scroll">
       <svg
@@ -107,55 +150,71 @@ function BuffNerfChart({
         width={width}
         height={height}
         role="img"
-        aria-label="Per-patch buff and nerf event counts"
+        aria-label={ariaLabel}
       >
         <defs>
           <clipPath id={`plot-${clipId}`}>
             <rect x={pad.left} y={pad.top} width={series.length * groupW} height={plotH} />
           </clipPath>
         </defs>
-        {[0, 0.5, 1].map((tick) => {
-          const value = Math.round(maxCount * (1 - tick))
-          const y = pad.top + plotH * tick
+        <rect
+          className="pattern-chart-band-buff"
+          x={pad.left}
+          y={pad.top}
+          width={series.length * groupW}
+          height={halfH}
+        />
+        <rect
+          className="pattern-chart-band-nerf"
+          x={pad.left}
+          y={zeroY}
+          width={series.length * groupW}
+          height={halfH}
+        />
+        {ticks.map((tick) => {
+          const value = maxAbs * tick
+          const y = valueY(value)
           return (
             <g key={`grid-${tick}`}>
               <line
-                className="pattern-chart-grid"
+                className={tick === 0 ? 'pattern-chart-zero' : 'pattern-chart-grid'}
                 x1={pad.left}
                 x2={width - pad.right}
                 y1={y}
                 y2={y}
               />
-              <text className="pattern-chart-axis" x={pad.left - 6} y={y + 3} textAnchor="end">
-                {value}
+              <text
+                className={`pattern-chart-axis${tick > 0 ? ' pattern-chart-axis-pos' : ''}${tick < 0 ? ' pattern-chart-axis-neg' : ''}${tick === 0 ? ' pattern-chart-axis-zero' : ''}`}
+                x={pad.left - 6}
+                y={y + 3}
+                textAnchor="end"
+              >
+                {formatAxisValue(value, mode)}
               </text>
             </g>
           )
         })}
         {series.map((point, index) => {
           const x0 = pad.left + index * groupW
-          const buffH = (point.counts.buff / maxCount) * plotH
-          const nerfH = (point.counts.nerf / maxCount) * plotH
+          const pair = values[index]
+          const buffH = (pair.up / maxAbs) * halfH
+          const nerfH = (pair.down / maxAbs) * halfH
           const label = compactPatchLabel(point.date)
           const fixDots = Math.min(point.counts.fix, 3)
           return (
             <g key={point.patchId}>
-              <title>
-                {point.date}: {point.counts.buff} buff, {point.counts.nerf} nerf
-                {point.counts.fix ? `, ${point.counts.fix} fix` : ''}
-                {point.counts.neutral ? `, ${point.counts.neutral} other` : ''}
-              </title>
+              <title>{pointTooltip(point, mode)}</title>
               <rect
                 className="pattern-bar-buff"
-                x={x0 + 6}
-                y={countY(point.counts.buff)}
+                x={x0 + 8}
+                y={valueY(pair.up)}
                 width={barW}
                 height={buffH}
               />
               <rect
                 className="pattern-bar-nerf"
-                x={x0 + 18}
-                y={countY(point.counts.nerf)}
+                x={x0 + 20}
+                y={zeroY}
                 width={barW}
                 height={nerfH}
               />
@@ -164,7 +223,7 @@ function BuffNerfChart({
                   key={dot}
                   className="pattern-fix-dot"
                   cx={x0 + groupW / 2 + (dot - (fixDots - 1) / 2) * 5}
-                  cy={pad.top + 6}
+                  cy={pad.top - 7}
                   r={2.2}
                 />
               ))}
@@ -181,13 +240,6 @@ function BuffNerfChart({
         })}
         {showCumulative ? (
           <g clipPath={`url(#plot-${clipId})`}>
-            <line
-              className="pattern-chart-zero"
-              x1={pad.left}
-              x2={width - pad.right}
-              y1={cumY(0)}
-              y2={cumY(0)}
-            />
             <path className="pattern-cum-line" d={line} fill="none" />
             {series.map((point, index) => (
               <circle
@@ -223,4 +275,30 @@ function BuffNerfChart({
       </svg>
     </div>
   )
+}
+
+function formatAxisValue(value: number, mode: PatternChartMode): string {
+  const rounded = Math.round(Math.abs(value))
+  const sign = value > 0 ? '+' : value < 0 ? '−' : ''
+  return `${sign}${rounded}${mode === 'extent' ? '%' : ''}`
+}
+
+function formatExtent(value: number): string {
+  if (value === 0) return '0%'
+  const body = value >= 10 ? value.toFixed(0) : value.toFixed(1)
+  return `${body.replace(/\.0$/, '')}%`
+}
+
+function pointTooltip(point: PatternSeriesPoint, mode: PatternChartMode): string {
+  if (mode === 'counts') {
+    return [
+      `${point.date}: ${point.counts.buff} buff, ${point.counts.nerf} nerf`,
+      point.counts.fix ? `${point.counts.fix} fix` : '',
+      point.counts.neutral ? `${point.counts.neutral} other` : '',
+    ]
+      .filter(Boolean)
+      .join(', ')
+  }
+  const est = point.extent.estimated ? ' (estimated)' : ''
+  return `${point.date}: +${formatExtent(point.extent.buff)} buff extent, −${formatExtent(point.extent.nerf)} nerf extent${est}`
 }

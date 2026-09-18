@@ -3,6 +3,7 @@ import { PatternHeatmap, PatternSearchForm } from './PatternHeatmap.tsx'
 import { SiteNav } from './SiteNav.tsx'
 import { loadAllPatches } from '../lib/loadPatches.ts'
 import {
+  DEFAULT_PATTERN_CHART_MODE,
   DEFAULT_PATTERN_SORT,
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
@@ -11,6 +12,7 @@ import {
   buildPatternMatrix,
   clipOverviewMatrix,
   uniqueMatch,
+  type PatternChartMode,
   type PatternSort,
 } from '../lib/patterns.ts'
 import { patternsHash, type PatternKind } from '../lib/route.ts'
@@ -26,6 +28,7 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
   const [patches, setPatches] = useState<Patch[] | null>(null)
   const [sort, setSort] = useState<PatternSort>(DEFAULT_PATTERN_SORT)
   const [query, setQuery] = useState('')
+  const [chartMode, setChartMode] = useState<PatternChartMode>(DEFAULT_PATTERN_CHART_MODE)
   const [showCumulative, setShowCumulative] = useState(false)
   const [allRows, setAllRows] = useState(false)
   const [allPatches, setAllPatches] = useState(false)
@@ -42,6 +45,7 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
 
   useEffect(() => {
     setQuery('')
+    setChartMode(DEFAULT_PATTERN_CHART_MODE)
     setShowCumulative(false)
     setAllRows(false)
     setAllPatches(false)
@@ -98,6 +102,8 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
         detail ? (
           <PatternDetail
             detail={detail}
+            chartMode={chartMode}
+            onChartMode={setChartMode}
             showCumulative={showCumulative}
             onToggleCumulative={setShowCumulative}
           />

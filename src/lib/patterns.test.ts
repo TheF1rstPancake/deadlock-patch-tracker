@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import type { ChangeEvent, Patch } from '../types.ts'
+import type { ChangeEvent, MetricDelta, Patch } from '../types.ts'
 import {
+  FALLBACK_EXTENT_WEIGHT,
   RECENT_PATCH_WINDOW,
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
@@ -8,11 +9,14 @@ import {
   buildPatternMatrix,
   cellTone,
   clipOverviewMatrix,
+  eventExtent,
   matchingPatternEntities,
+  signedExtent,
   signedNet,
   uniqueMatch,
   volumeOpacity,
 } from './patterns.ts'
+import { MAX_RELATIVE_PERCENT, metricRelativePercent, numericMetricValue } from './metrics.ts'
 
 function event(
   id: string,
@@ -20,6 +24,7 @@ function event(
   name: string,
   slug: string,
   tag: ChangeEvent['tag'],
+  metrics?: MetricDelta[],
 ): ChangeEvent {
   return {
     id,
@@ -28,6 +33,7 @@ function event(
     tag,
     raw: `${name} ${tag}`,
     parse: { confidence: 'high', needsReview: false, source: 'mechanical' },
+    ...(metrics ? { metrics } : {}),
   }
 }
 
@@ -208,5 +214,104 @@ describe('entity detail series', () => {
     expect(matchingPatternEntities(matrix.entities, 'alp').map((row) => row.slug)).toEqual(
       ['alpha'],
     )
+  })
+})
+
+describe('metric relative percent', () => {
+  it('uses |to−from|/|from|×100 and skips non-ratio values', () => {
+    expect(metricRelativePercent({ stat: 'damage', from: 190, to: 200 })).toBeCloseTo(
+      (10 / 190) * 100,
+    )
+    expect(metricRelativePercent({ stat: 'cooldown', from: -11, to: -14 })).toBeCloseTo(
+      (3 / 11) * 100,
+    )
+    expect(metricRelativePercent({ stat: 'value', from: 0, to: 5 })).toBeUndefined()
+    expect(metricRelativePercent({ stat: 'value', from: '20->60', to: '30->90' })).toBeUndefined()
+    expect(numericMetricValue('20->60')).toBeUndefined()
+    expect(numericMetricValue('30+0.75')).toBeUndefined()
+    expect(metricRelativePercent({ stat: 'value', from: 0.1, to: 50 })).toBe(MAX_RELATIVE_PERCENT)
+  })
+})
+
+describe('extent (estimated relative %)', () => {
+  it('sums usable metric magnitudes; unmeasured buff/nerf lines get a small fallback', () => {
+    const measured = event('m:0', 'hero', 'Alpha', 'alpha', 'buff', [
+      { stat: 'damage', from: 100, to: 110 },
+    ])
+    expect(eventExtent(measured)).toEqual({ weight: 10, estimated: false })
+
+    const twoMetrics = event('m:1', 'hero', 'Alpha', 'alpha', 'nerf', [
+      { stat: 'damage', from: 200, to: 180 },
+      { stat: 'range', from: 50, to: 40 },
+    ])
+    expect(eventExtent(twoMetrics).weight).toBeCloseTo(10 + 20)
+    expect(eventExtent(twoMetrics).estimated).toBe(false)
+
+    const missing = event('m:2', 'hero', 'Alpha', 'alpha', 'buff')
+    expect(eventExtent(missing)).toEqual({
+      weight: FALLBACK_EXTENT_WEIGHT,
+      estimated: true,
+    })
+
+    const unusable = event('m:3', 'hero', 'Alpha', 'alpha', 'nerf', [
+      { stat: 'value', from: '12->25', to: '14->30' },
+    ])
+    expect(eventExtent(unusable)).toEqual({
+      weight: FALLBACK_EXTENT_WEIGHT,
+      estimated: true,
+    })
+
+    const fix = event('m:4', 'hero', 'Alpha', 'alpha', 'fix')
+    expect(eventExtent(fix)).toEqual({ weight: 0, estimated: false })
+  })
+
+  it('plots buff extent positive and nerf extent negative, without inventing win-rate', () => {
+    const patches: Patch[] = [
+      patch('2026-01-01', [
+        event('a:0', 'hero', 'Alpha', 'alpha', 'buff', [
+          { stat: 'damage', from: 100, to: 120 },
+        ]),
+        event('a:1', 'hero', 'Alpha', 'alpha', 'buff'),
+      ]),
+      patch('2026-02-01', [
+        event('b:0', 'hero', 'Alpha', 'alpha', 'nerf', [
+          { stat: 'health', from: 50, to: 40 },
+        ]),
+        event('b:1', 'hero', 'Alpha', 'alpha', 'nerf'),
+        event('b:2', 'hero', 'Alpha', 'alpha', 'fix'),
+      ]),
+      patch('2026-03-01', [
+        event('c:0', 'hero', 'Alpha', 'alpha', 'buff', [
+          { stat: 'damage', from: 10, to: 11 },
+        ]),
+        event('c:1', 'hero', 'Alpha', 'alpha', 'nerf', [
+          { stat: 'range', from: 100, to: 90 },
+        ]),
+      ]),
+    ]
+    const detail = buildEntityDetail(patches, 'hero', 'alpha')
+    expect(detail?.series).toHaveLength(3)
+
+    const jan = detail!.series[0]
+    expect(jan.extent.buff).toBeCloseTo(20 + FALLBACK_EXTENT_WEIGHT)
+    expect(jan.extent.nerf).toBe(0)
+    expect(jan.extent.estimated).toBe(true)
+    expect(jan.signedExtent).toBeCloseTo(20 + FALLBACK_EXTENT_WEIGHT)
+    expect(jan.signedExtent).toBeGreaterThan(0)
+
+    const feb = detail!.series[1]
+    expect(feb.extent.buff).toBe(0)
+    expect(feb.extent.nerf).toBeCloseTo(20 + FALLBACK_EXTENT_WEIGHT)
+    expect(feb.signedExtent).toBeCloseTo(-(20 + FALLBACK_EXTENT_WEIGHT))
+    expect(feb.signedExtent).toBeLessThan(0)
+    expect(feb.counts.fix).toBe(1)
+
+    const mar = detail!.series[2]
+    expect(mar.extent.buff).toBeCloseTo(10)
+    expect(mar.extent.nerf).toBeCloseTo(10)
+    expect(mar.extent.estimated).toBe(false)
+    expect(signedExtent(mar.extent)).toBeCloseTo(0)
+
+    expect(detail?.series.every((point) => !('winRate' in point))).toBe(true)
   })
 })
