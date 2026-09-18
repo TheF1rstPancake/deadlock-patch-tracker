@@ -1,13 +1,19 @@
 import { HeroPortrait } from './HeroPortrait.tsx'
+import { PatchEventPanel } from './PatchEventPanel.tsx'
 import {
   compactPatchLabel,
+  eventsForBar,
+  formatPercentileLabel,
   formatTotalsLine,
+  MIN_PEER_SAMPLE,
+  type BarSide,
   type PatternChartMode,
   type PatternEntityDetail,
   type PatternSeriesPoint,
+  type PeerBand,
 } from '../lib/patterns.ts'
 import { patternsHash } from '../lib/route.ts'
-import { useId } from 'react'
+import { useCallback, useId, useState, type KeyboardEvent } from 'react'
 
 interface PatternDetailProps {
   detail: PatternEntityDetail
@@ -17,8 +23,16 @@ interface PatternDetailProps {
   onToggleCumulative: (next: boolean) => void
 }
 
-const CHART_NOTE =
-  'Counts: per-patch buff vs nerf event lines (buffs up, nerfs down). Extent (estimated): summed relative % change from each line’s parsed from→to metrics on the same diverging axis; lines with no numbers get a small stand-in weight so they still appear. Fixes stay dots. Not win-rate or external balance data.'
+const COUNTS_NOTE =
+  'Buffs plot above zero, nerfs below. Click a bar (or the patch group) for the lines in it. Fixes stay dots, not bar height. Faint band = peer median→P90 that patch among other heroes or items — same units as the Y scale.'
+
+const EXTENT_CALLOUT =
+  'Extent is approximate — summed relative % from each line’s parsed from→to metrics, with a small stand-in when a line has no numbers. Not win-rate or external balance data.'
+
+interface OpenBar {
+  patchId: string
+  side: BarSide
+}
 
 export function PatternDetail({
   detail,
@@ -28,7 +42,22 @@ export function PatternDetail({
   onToggleCumulative,
 }: PatternDetailProps) {
   const kindLabel = detail.kind === 'hero' ? 'Hero' : 'Item'
+  const peerKind = detail.kind === 'hero' ? 'heroes' : 'items'
   const backHref = patternsHash(detail.kind)
+  const [openBar, setOpenBar] = useState<OpenBar | null>(null)
+  const closePanel = useCallback(() => setOpenBar(null), [])
+
+  const selected = openBar
+    ? detail.series.find((point) => point.patchId === openBar.patchId)
+    : undefined
+  const listed = selected ? eventsForBar(selected.events, openBar!.side) : []
+  const percentileLabel = selected
+    ? formatPercentileLabel(
+        chartMode === 'extent' ? selected.extentPercentile : selected.countsPercentile,
+        selected.peerN,
+        chartMode,
+      )
+    : ''
 
   return (
     <section className="pattern-detail" aria-label={`${detail.name} pattern`}>
@@ -85,11 +114,36 @@ export function PatternDetail({
           Cumulative net
         </button>
       </div>
-      <p className="pattern-chart-note">{CHART_NOTE}</p>
+      {chartMode === 'extent' ? (
+        <p className="pattern-extent-callout" role="note">
+          {EXTENT_CALLOUT}
+        </p>
+      ) : null}
+      <p className="pattern-chart-note">{COUNTS_NOTE}</p>
+      <p className="pattern-chart-peer-legend">
+        Peer set = other {peerKind} with ≥1 buff/nerf that same patch. Percentile
+        matches the {chartMode === 'extent' ? 'Extent' : 'Counts'} toggle.
+        n≤3 → no percentile.
+      </p>
       <BuffNerfChart
         series={detail.series}
         mode={chartMode}
         showCumulative={showCumulative}
+        openBar={openBar}
+        onOpenBar={setOpenBar}
+      />
+      <PatchEventPanel
+        open={Boolean(openBar && selected)}
+        title={
+          selected
+            ? `${detail.name} · ${selected.date}`
+            : detail.name
+        }
+        side={openBar?.side ?? 'all'}
+        mode={chartMode}
+        percentileLabel={percentileLabel}
+        events={listed}
+        onClose={closePanel}
       />
     </section>
   )
@@ -99,25 +153,40 @@ function BuffNerfChart({
   series,
   mode,
   showCumulative,
+  openBar,
+  onOpenBar,
 }: {
   series: PatternSeriesPoint[]
   mode: PatternChartMode
   showCumulative: boolean
+  openBar: OpenBar | null
+  onOpenBar: (next: OpenBar | null) => void
 }) {
   const clipId = useId().replace(/:/g, '')
+  const [hoverId, setHoverId] = useState<string | null>(null)
   const values = series.map((point) =>
     mode === 'counts'
       ? { up: point.counts.buff, down: point.counts.nerf }
       : { up: point.extent.buff, down: point.extent.nerf },
   )
+  const peerMax = series.reduce((max, point) => {
+    const band = mode === 'counts' ? point.peerCounts : point.peerExtent
+    if (!band) return max
+    return Math.max(max, band.p90Buff, band.p90Nerf, band.medianBuff, band.medianNerf)
+  }, 0)
   const maxAbs = Math.max(
     1,
-    Math.ceil(Math.max(...values.map((value) => Math.max(value.up, value.down)))),
+    Math.ceil(
+      Math.max(
+        peerMax,
+        ...values.map((value) => Math.max(value.up, value.down)),
+      ),
+    ),
   )
   const cumulatives = series.map((point) => point.cumulativeNet)
   const maxAbsCum = Math.max(1, ...cumulatives.map((value) => Math.abs(value)))
   const groupW = 42
-  const pad = { top: 22, right: showCumulative ? 48 : 14, bottom: 36, left: 46 }
+  const pad = { top: 28, right: showCumulative ? 48 : 14, bottom: 36, left: 46 }
   const plotH = 220
   const width = pad.left + pad.right + series.length * groupW
   const height = pad.top + pad.bottom + plotH
@@ -139,8 +208,22 @@ function BuffNerfChart({
   const ticks = [1, 0.5, 0, -0.5, -1]
   const ariaLabel =
     mode === 'counts'
-      ? 'Per-patch buff and nerf event counts, buffs above zero, nerfs below'
-      : 'Per-patch estimated buff and nerf relative-percent extent, buffs above zero, nerfs below'
+      ? 'Per-patch buff and nerf event counts, buffs above zero, nerfs below. Click a bar for the lines in it.'
+      : 'Per-patch estimated buff and nerf relative-percent extent, buffs above zero, nerfs below. Click a bar for the lines in it.'
+
+  const toggle = (patchId: string, side: BarSide) => {
+    onOpenBar(
+      openBar && openBar.patchId === patchId && openBar.side === side
+        ? null
+        : { patchId, side },
+    )
+  }
+
+  const hovered = hoverId
+    ? series.find((point) => point.patchId === hoverId)
+    : openBar
+      ? series.find((point) => point.patchId === openBar.patchId)
+      : undefined
 
   return (
     <div className="pattern-chart-scroll">
@@ -195,28 +278,81 @@ function BuffNerfChart({
           )
         })}
         {series.map((point, index) => {
+          const band = mode === 'counts' ? point.peerCounts : point.peerExtent
+          if (!band) return null
+          return (
+            <PeerReferenceMarks
+              key={`peer-${point.patchId}`}
+              x0={pad.left + index * groupW}
+              groupW={groupW}
+              zeroY={zeroY}
+              halfH={halfH}
+              maxAbs={maxAbs}
+              band={band}
+            />
+          )
+        })}
+        {series.map((point, index) => {
           const x0 = pad.left + index * groupW
-          const pair = values[index]
+          const pair = values[index]!
           const buffH = (pair.up / maxAbs) * halfH
           const nerfH = (pair.down / maxAbs) * halfH
           const label = compactPatchLabel(point.date)
           const fixDots = Math.min(point.counts.fix, 3)
+          const selected = openBar?.patchId === point.patchId
+          const percentile =
+            mode === 'extent' ? point.extentPercentile : point.countsPercentile
+          const onGroupKey = (event: KeyboardEvent<SVGGElement>) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault()
+              toggle(point.patchId, 'all')
+            }
+          }
           return (
-            <g key={point.patchId}>
-              <title>{pointTooltip(point, mode)}</title>
+            <g
+              key={point.patchId}
+              className={`pattern-bar-group${selected ? ' is-open' : ''}`}
+              tabIndex={0}
+              role="button"
+              aria-label={`${point.date}: ${pointTooltip(point, mode)}. ${formatPercentileLabel(percentile, point.peerN, mode)}. Open line details.`}
+              onFocus={() => setHoverId(point.patchId)}
+              onBlur={() => setHoverId((id) => (id === point.patchId ? null : id))}
+              onMouseEnter={() => setHoverId(point.patchId)}
+              onMouseLeave={() => setHoverId((id) => (id === point.patchId ? null : id))}
+              onKeyDown={onGroupKey}
+            >
+              <title>
+                {pointTooltip(point, mode)}. {formatPercentileLabel(percentile, point.peerN, mode)}
+              </title>
               <rect
-                className="pattern-bar-buff"
+                className="pattern-bar-hit"
+                x={x0}
+                y={pad.top}
+                width={groupW}
+                height={plotH}
+                onClick={() => toggle(point.patchId, 'all')}
+              />
+              <rect
+                className={`pattern-bar-buff${point.extent.estimated && mode === 'extent' ? ' is-approx' : ''}`}
                 x={x0 + 8}
                 y={valueY(pair.up)}
                 width={barW}
-                height={buffH}
+                height={Math.max(buffH, pair.up > 0 ? 2 : 0)}
+                onClick={(event) => {
+                  event.stopPropagation()
+                  toggle(point.patchId, 'buff')
+                }}
               />
               <rect
-                className="pattern-bar-nerf"
+                className={`pattern-bar-nerf${point.extent.estimated && mode === 'extent' ? ' is-approx' : ''}`}
                 x={x0 + 20}
                 y={zeroY}
                 width={barW}
-                height={nerfH}
+                height={Math.max(nerfH, pair.down > 0 ? 2 : 0)}
+                onClick={(event) => {
+                  event.stopPropagation()
+                  toggle(point.patchId, 'nerf')
+                }}
               />
               {Array.from({ length: fixDots }, (_, dot) => (
                 <circle
@@ -272,9 +408,110 @@ function BuffNerfChart({
             </text>
           </>
         ) : null}
+        {hovered ? (
+          <text
+            className="pattern-hover-pct"
+            x={pad.left + series.findIndex((point) => point.patchId === hovered.patchId) * groupW + groupW / 2}
+            y={pad.top - 12}
+            textAnchor="middle"
+          >
+            {hoverPercentileText(hovered, mode)}
+          </text>
+        ) : null}
       </svg>
     </div>
   )
+}
+
+function PeerReferenceMarks({
+  x0,
+  groupW,
+  zeroY,
+  halfH,
+  maxAbs,
+  band,
+}: {
+  x0: number
+  groupW: number
+  zeroY: number
+  halfH: number
+  maxAbs: number
+  band: PeerBand
+}) {
+  const x = x0 + 3
+  const w = groupW - 6
+  const yUp = (value: number) => zeroY - (value / maxAbs) * halfH
+  const yDown = (value: number) => zeroY + (value / maxAbs) * halfH
+  const buffBandH = Math.max(0, yUp(band.medianBuff) - yUp(band.p90Buff))
+  const nerfBandH = Math.max(0, yDown(band.p90Nerf) - yDown(band.medianNerf))
+  return (
+    <g className="pattern-peer-marks" aria-hidden="true">
+      {buffBandH > 0.5 ? (
+        <rect
+          className="pattern-peer-band-buff"
+          x={x}
+          y={yUp(band.p90Buff)}
+          width={w}
+          height={buffBandH}
+        />
+      ) : null}
+      {nerfBandH > 0.5 ? (
+        <rect
+          className="pattern-peer-band-nerf"
+          x={x}
+          y={yDown(band.medianNerf)}
+          width={w}
+          height={nerfBandH}
+        />
+      ) : null}
+      {band.medianBuff > 0 ? (
+        <line
+          className="pattern-peer-tick-median"
+          x1={x}
+          x2={x + w}
+          y1={yUp(band.medianBuff)}
+          y2={yUp(band.medianBuff)}
+        />
+      ) : null}
+      {band.p90Buff > 0 ? (
+        <line
+          className="pattern-peer-tick-p90"
+          x1={x}
+          x2={x + w}
+          y1={yUp(band.p90Buff)}
+          y2={yUp(band.p90Buff)}
+        />
+      ) : null}
+      {band.medianNerf > 0 ? (
+        <line
+          className="pattern-peer-tick-median"
+          x1={x}
+          x2={x + w}
+          y1={yDown(band.medianNerf)}
+          y2={yDown(band.medianNerf)}
+        />
+      ) : null}
+      {band.p90Nerf > 0 ? (
+        <line
+          className="pattern-peer-tick-p90"
+          x1={x}
+          x2={x + w}
+          y1={yDown(band.p90Nerf)}
+          y2={yDown(band.p90Nerf)}
+        />
+      ) : null}
+    </g>
+  )
+}
+
+function hoverPercentileText(
+  point: PatternSeriesPoint,
+  mode: PatternChartMode,
+): string {
+  if (point.peerN < MIN_PEER_SAMPLE) return 'n too small'
+  const percentile = mode === 'extent' ? point.extentPercentile : point.countsPercentile
+  if (percentile === null) return 'no rank'
+  return `P${percentile} ${mode}`
 }
 
 function formatAxisValue(value: number, mode: PatternChartMode): string {
@@ -299,6 +536,6 @@ function pointTooltip(point: PatternSeriesPoint, mode: PatternChartMode): string
       .filter(Boolean)
       .join(', ')
   }
-  const est = point.extent.estimated ? ' (estimated)' : ''
+  const est = point.extent.estimated ? ' (approximate)' : ''
   return `${point.date}: +${formatExtent(point.extent.buff)} buff extent, −${formatExtent(point.extent.nerf)} nerf extent${est}`
 }

@@ -2,7 +2,9 @@ import {
   cellSummary,
   cellTone,
   compactPatchLabel,
+  percentileOpacity,
   volumeOpacity,
+  type HeatmapColorMode,
   type PatternEntity,
   type PatternMatrix,
 } from '../lib/patterns.ts'
@@ -10,29 +12,34 @@ import type { CSSProperties, FormEvent, KeyboardEvent } from 'react'
 
 interface PatternHeatmapProps {
   matrix: PatternMatrix
+  colorMode?: HeatmapColorMode
   rowMeta?: 'recent' | 'total'
   onSelect: (entity: PatternEntity) => void
 }
 
 export function PatternHeatmap({
   matrix,
+  colorMode = 'absolute',
   rowMeta = 'total',
   onSelect,
 }: PatternHeatmapProps) {
   const rows = matrix.entities
   const kindLabel = matrix.kind === 'hero' ? 'Heroes' : 'Items'
+  const peerKind = matrix.kind === 'hero' ? 'heroes' : 'items'
 
   if (rows.length === 0) {
     return <p className="empty">No {kindLabel.toLowerCase()} match that search.</p>
   }
 
+  const caption =
+    colorMode === 'relative'
+      ? `${kindLabel} by patch. Color intensity is this row’s estimated-extent percentile versus other ${peerKind} with a buff or nerf that same patch (max of buff/nerf extent). Hue is buff vs nerf. Empty cells were not touched. n≤3 that patch has no percentile.`
+      : `${kindLabel} by patch. Color is signed net (buffs minus nerfs). Number is buff+nerf volume. Empty cells were not touched that patch.`
+
   return (
     <div className="pattern-heatmap" tabIndex={0}>
       <table className="pattern-table">
-        <caption className="sr-only">
-          {kindLabel} by patch. Color is signed net (buffs minus nerfs). Number
-          is buff+nerf volume. Empty cells were not touched that patch.
-        </caption>
+        <caption className="sr-only">{caption}</caption>
         <thead>
           <tr>
             <th scope="col" className="pattern-corner">
@@ -58,6 +65,7 @@ export function PatternHeatmap({
               entity={entity}
               patches={matrix.patches}
               maxTouchVolume={matrix.maxTouchVolume}
+              colorMode={colorMode}
               rowMeta={rowMeta}
               onSelect={onSelect}
             />
@@ -72,6 +80,7 @@ interface HeatmapRowProps {
   entity: PatternEntity
   patches: PatternMatrix['patches']
   maxTouchVolume: number
+  colorMode: HeatmapColorMode
   rowMeta: 'recent' | 'total'
   onSelect: (entity: PatternEntity) => void
 }
@@ -80,6 +89,7 @@ function HeatmapRow({
   entity,
   patches,
   maxTouchVolume,
+  colorMode,
   rowMeta,
   onSelect,
 }: HeatmapRowProps) {
@@ -109,22 +119,28 @@ function HeatmapRow({
       </th>
       {entity.cells.map((cell, index) => {
         const tone = cellTone(cell)
-        const date = patches[index]?.date ?? cell.patchId
+        const column = patches[index]
+        const date = column?.date ?? cell.patchId
+        const peerN = column?.peerN ?? 0
         const showCount = cell.touched && cell.touchVolume > 0
+        const tooSmall =
+          colorMode === 'relative' && showCount && cell.extentPercentile === null
         const style: CSSProperties | undefined =
           tone === 'buff' || tone === 'nerf' || tone === 'churn'
             ? {
                 ['--cell-alpha' as string]: String(
-                  volumeOpacity(cell.touchVolume, maxTouchVolume),
+                  colorMode === 'relative'
+                    ? percentileOpacity(cell.extentPercentile)
+                    : volumeOpacity(cell.touchVolume, maxTouchVolume),
                 ),
               }
             : undefined
         return (
           <td
             key={cell.patchId}
-            className={`pattern-cell tone-${tone}${cell.counts.fix > 0 ? ' has-fix' : ''}`}
+            className={`pattern-cell tone-${tone}${cell.counts.fix > 0 ? ' has-fix' : ''}${tooSmall ? ' peer-small' : ''}`}
             style={style}
-            title={cellSummary(cell, date)}
+            title={cellSummary(cell, date, peerN, colorMode)}
           >
             {showCount ? (
               <span className="pattern-cell-count">{cell.touchVolume}</span>
