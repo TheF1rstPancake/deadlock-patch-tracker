@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import type { ChangeEvent, MetricDelta, Patch } from '../types.ts'
 import {
+  DEFAULT_PATTERN_SORT,
   FALLBACK_EXTENT_WEIGHT,
+  MIN_PEER_SAMPLE,
   RECENT_PATCH_WINDOW,
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
@@ -10,7 +12,13 @@ import {
   cellTone,
   clipOverviewMatrix,
   eventExtent,
+  eventsForBar,
+  formatPercentileLabel,
   matchingPatternEntities,
+  percentileOpacity,
+  percentileRank,
+  quantile,
+  rankMagnitude,
   signedExtent,
   signedNet,
   uniqueMatch,
@@ -134,12 +142,20 @@ describe('buildPatternMatrix', () => {
     expect(heroes.recentWindow).toBe(RECENT_PATCH_WINDOW)
   })
 
-  it('defaults to total buff+nerf sort and can sort by last-N volatility', () => {
+  it('defaults to alphabetical and can sort by total or last-N volatility', () => {
+    expect(DEFAULT_PATTERN_SORT).toBe('name')
     const extra = [
       ...fixtures,
       patch('2026-04-01', [event('d:0', 'hero', 'Gamma', 'gamma', 'buff')]),
       patch('2026-05-01', [event('e:0', 'hero', 'Gamma', 'gamma', 'buff')]),
     ]
+    const byName = buildPatternMatrix(extra, 'hero')
+    expect(byName.entities.map((row) => row.slug)).toEqual([
+      'alpha',
+      'beta',
+      'gamma',
+    ])
+
     const byTotal = buildPatternMatrix(extra, 'hero', { sort: 'total' })
     expect(byTotal.entities.map((row) => row.slug)).toEqual([
       'alpha',
@@ -192,6 +208,10 @@ describe('clipOverviewMatrix', () => {
     const expanded = clipOverviewMatrix(full, { allPatches: true, allRows: true })
     expect(expanded.patches).toHaveLength(12)
     expect(expanded.entities).toHaveLength(18)
+
+    const alpha = clipOverviewMatrix(full, { sort: 'name' })
+    expect(alpha.entities).toHaveLength(18)
+    expect(alpha.patches).toHaveLength(OVERVIEW_PATCH_COLUMNS)
   })
 })
 
@@ -313,5 +333,132 @@ describe('extent (estimated relative %)', () => {
     expect(signedExtent(mar.extent)).toBeCloseTo(0)
 
     expect(detail?.series.every((point) => !('winRate' in point))).toBe(true)
+  })
+})
+
+describe('peer percentile (same kind × patch)', () => {
+  it('quantile interpolates and percentileRank needs n > 3', () => {
+    expect(quantile([], 0.5)).toBe(0)
+    expect(quantile([10], 0.9)).toBe(10)
+    expect(quantile([10, 20, 30, 40], 0.5)).toBe(25)
+    expect(MIN_PEER_SAMPLE).toBe(4)
+    expect(percentileRank(40, [10, 20, 30])).toBeNull()
+    expect(percentileRank(10, [10, 20, 30, 40])).toBe(25)
+    expect(percentileRank(40, [10, 20, 30, 40])).toBe(100)
+    expect(rankMagnitude(12, 40)).toBe(40)
+    expect(rankMagnitude(12, 8)).toBe(12)
+    expect(percentileOpacity(null)).toBe(0.4)
+    expect(percentileOpacity(100)).toBeGreaterThan(percentileOpacity(0)!)
+  })
+
+  it('does not invent a percentile when n≤3 heroes are touched', () => {
+    const matrix = buildPatternMatrix(fixtures, 'hero')
+    const jan = matrix.patches.find((column) => column.id === '2026-01-01')
+    expect(jan?.peerN).toBe(1)
+    expect(jan?.peerExtent).toBeNull()
+    const alphaJan = matrix.entities
+      .find((row) => row.slug === 'alpha')
+      ?.cells.find((cell) => cell.patchId === '2026-01-01')
+    expect(alphaJan?.extentPercentile).toBeNull()
+    expect(formatPercentileLabel(null, 1, 'extent')).toMatch(/n too small/)
+  })
+
+  it('ranks heroes against heroes only, using max(buff, nerf) extent', () => {
+    const loud = [
+      patch('2026-06-01', [
+        event('h:a', 'hero', 'Alpha', 'alpha', 'buff', [
+          { stat: 'damage', from: 100, to: 140 },
+        ]),
+        event('h:b', 'hero', 'Beta', 'beta', 'buff', [
+          { stat: 'damage', from: 100, to: 110 },
+        ]),
+        event('h:c', 'hero', 'Gamma', 'gamma', 'buff', [
+          { stat: 'damage', from: 100, to: 120 },
+        ]),
+        event('h:d', 'hero', 'Delta', 'delta', 'nerf', [
+          { stat: 'health', from: 100, to: 70 },
+        ]),
+        event('h:e', 'hero', 'Echo', 'echo', 'fix'),
+        event('i:s', 'item', 'Sword', 'sword', 'nerf', [
+          { stat: 'damage', from: 100, to: 10 },
+        ]),
+        event('i:t', 'item', 'Tome', 'tome', 'buff', [
+          { stat: 'damage', from: 100, to: 200 },
+        ]),
+      ]),
+    ]
+    const heroes = buildPatternMatrix(loud, 'hero')
+    const items = buildPatternMatrix(loud, 'item')
+    const column = heroes.patches[0]
+    expect(column?.peerN).toBe(4)
+    expect(column?.peerExtent).not.toBeNull()
+    expect(items.patches[0]?.peerN).toBe(2)
+    expect(items.patches[0]?.peerExtent).toBeNull()
+
+    const pct = (slug: string) =>
+      heroes.entities.find((row) => row.slug === slug)?.cells[0]?.extentPercentile
+    // extents: alpha 40, beta 10, gamma 20, delta 30 (echo fix-only, sword/tome excluded)
+    expect(pct('beta')).toBe(25)
+    expect(pct('gamma')).toBe(50)
+    expect(pct('delta')).toBe(75)
+    expect(pct('alpha')).toBe(100)
+    expect(pct('echo')).toBeNull()
+
+    const detail = buildEntityDetail(loud, 'hero', 'alpha')
+    const point = detail!.series[0]
+    expect(point.extentPercentile).toBe(100)
+    expect(point.peerN).toBe(4)
+    expect(point.peerExtent?.p90Buff).toBeGreaterThan(point.peerExtent!.medianBuff)
+    expect(point.events.map((ev) => ev.id)).toEqual(['h:a'])
+    expect(point.events.some((ev) => ev.target.kind === 'item')).toBe(false)
+  })
+
+  it('keeps mixed-patch rank as max(buff, nerf), not |net|', () => {
+    const mixed = [
+      patch('2026-07-01', [
+        event('a:b', 'hero', 'Alpha', 'alpha', 'buff', [
+          { stat: 'damage', from: 100, to: 150 },
+        ]),
+        event('a:n', 'hero', 'Alpha', 'alpha', 'nerf', [
+          { stat: 'range', from: 100, to: 50 },
+        ]),
+        event('b:0', 'hero', 'Beta', 'beta', 'buff', [
+          { stat: 'damage', from: 100, to: 105 },
+        ]),
+        event('c:0', 'hero', 'Gamma', 'gamma', 'buff', [
+          { stat: 'damage', from: 100, to: 108 },
+        ]),
+        event('d:0', 'hero', 'Delta', 'delta', 'buff', [
+          { stat: 'damage', from: 100, to: 110 },
+        ]),
+      ]),
+    ]
+    const matrix = buildPatternMatrix(mixed, 'hero')
+    const alpha = matrix.entities.find((row) => row.slug === 'alpha')?.cells[0]
+    expect(signedExtent(alpha!.extent)).toBeCloseTo(0)
+    expect(rankMagnitude(alpha!.extent.buff, alpha!.extent.nerf)).toBeCloseTo(50)
+    expect(alpha?.extentPercentile).toBe(100)
+  })
+})
+
+describe('bar event list', () => {
+  it('returns the lines in a buff/nerf bar, or the whole patch group', () => {
+    const detail = buildEntityDetail(fixtures, 'hero', 'alpha')
+    const feb = detail!.series.find((point) => point.patchId === '2026-02-01')
+    expect(feb?.events).toHaveLength(4)
+    expect(eventsForBar(feb!.events, 'buff').map((ev) => ev.tag)).toEqual([
+      'buff',
+      'buff',
+    ])
+    expect(eventsForBar(feb!.events, 'nerf').every((ev) => ev.tag === 'nerf')).toBe(
+      true,
+    )
+    expect(eventsForBar(feb!.events, 'all')).toHaveLength(4)
+    expect(formatPercentileLabel(92, 12, 'counts')).toBe(
+      'P92 counts vs 12 that patch',
+    )
+    expect(formatPercentileLabel(80, 12, 'extent')).toBe(
+      'P80 extent vs 12 that patch',
+    )
   })
 })

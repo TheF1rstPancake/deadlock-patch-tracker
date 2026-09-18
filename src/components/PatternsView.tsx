@@ -3,15 +3,19 @@ import { PatternHeatmap, PatternSearchForm } from './PatternHeatmap.tsx'
 import { SiteNav } from './SiteNav.tsx'
 import { loadAllPatches } from '../lib/loadPatches.ts'
 import {
+  ABSOLUTE_HEATMAP_LEGEND,
+  DEFAULT_HEATMAP_COLOR_MODE,
   DEFAULT_PATTERN_CHART_MODE,
   DEFAULT_PATTERN_SORT,
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
   RECENT_VOLATILITY_HINT,
+  RELATIVE_HEATMAP_LEGEND,
   buildEntityDetail,
   buildPatternMatrix,
   clipOverviewMatrix,
   uniqueMatch,
+  type HeatmapColorMode,
   type PatternChartMode,
   type PatternSort,
 } from '../lib/patterns.ts'
@@ -29,6 +33,7 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
   const [sort, setSort] = useState<PatternSort>(DEFAULT_PATTERN_SORT)
   const [query, setQuery] = useState('')
   const [chartMode, setChartMode] = useState<PatternChartMode>(DEFAULT_PATTERN_CHART_MODE)
+  const [colorMode, setColorMode] = useState<HeatmapColorMode>(DEFAULT_HEATMAP_COLOR_MODE)
   const [showCumulative, setShowCumulative] = useState(false)
   const [allRows, setAllRows] = useState(false)
   const [allPatches, setAllPatches] = useState(false)
@@ -46,9 +51,11 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
   useEffect(() => {
     setQuery('')
     setChartMode(DEFAULT_PATTERN_CHART_MODE)
+    setColorMode(DEFAULT_HEATMAP_COLOR_MODE)
     setShowCumulative(false)
     setAllRows(false)
     setAllPatches(false)
+    setSort(DEFAULT_PATTERN_SORT)
   }, [kind, slug])
 
   const matrix = useMemo(() => {
@@ -58,8 +65,8 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
 
   const overview = useMemo(() => {
     if (!matrix) return null
-    return clipOverviewMatrix(matrix, { allPatches, allRows, query })
-  }, [allPatches, allRows, matrix, query])
+    return clipOverviewMatrix(matrix, { allPatches, allRows, query, sort })
+  }, [allPatches, allRows, matrix, query, sort])
 
   const detail = useMemo(() => {
     if (!patches || !slug) return undefined
@@ -85,7 +92,9 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
   }
 
   const searching = query.trim().length > 0
-  const moreRows = !searching && matrix.entities.length > OVERVIEW_TOP_ROWS
+  const rankedSort = sort !== 'name'
+  const moreRows =
+    rankedSort && !searching && matrix.entities.length > OVERVIEW_TOP_ROWS
   const morePatches = matrix.patches.length > OVERVIEW_PATCH_COLUMNS
 
   return (
@@ -142,7 +151,37 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
             />
           </div>
           <div className="toolbar pattern-sort-bar">
+            <div className="chips" role="radiogroup" aria-label="Heatmap color">
+              <button
+                type="button"
+                className="chip"
+                role="radio"
+                aria-checked={colorMode === 'absolute'}
+                aria-pressed={colorMode === 'absolute'}
+                onClick={() => setColorMode('absolute')}
+              >
+                Absolute
+              </button>
+              <button
+                type="button"
+                className="chip"
+                role="radio"
+                aria-checked={colorMode === 'relative'}
+                aria-pressed={colorMode === 'relative'}
+                onClick={() => setColorMode('relative')}
+              >
+                Relative
+              </button>
+            </div>
             <div className="chips" role="group" aria-label="Sort heatmap">
+              <button
+                type="button"
+                className="chip"
+                aria-pressed={sort === 'name'}
+                onClick={() => setSort('name')}
+              >
+                A–Z
+              </button>
               <button
                 type="button"
                 className="chip"
@@ -191,15 +230,19 @@ export function PatternsView({ kind, slug }: PatternsViewProps) {
           </div>
           <PatternHeatmap
             matrix={overview}
+            colorMode={colorMode}
             rowMeta={sort === 'recent' ? 'recent' : 'total'}
             onSelect={(entity) => go(patternsHash(entity.kind, entity.slug))}
           />
           <p className="legend">
-            <span className="legend-buff">buff net</span>
-            <span className="legend-nerf">nerf net</span>
+            <span className="legend-buff">buff</span>
+            <span className="legend-nerf">nerf</span>
             <span className="legend-churn">churn (net 0, still touched)</span>
             <span className="legend-fix">· fix (not in net)</span>
             <span className="legend-empty">empty = no touch</span>
+          </p>
+          <p className="pattern-heatmap-legend">
+            {colorMode === 'relative' ? RELATIVE_HEATMAP_LEGEND : ABSOLUTE_HEATMAP_LEGEND}
           </p>
         </>
       )}

@@ -15,10 +15,10 @@ The live roster board is still heroes-only. Items, General, and system lines liv
 Heatmap cells:
 
 - **Empty** = no events for that entity that patch (sparse “no touch,” not a painted zero).
-- **Color** = signed net (**buffs − nerfs**). Fix and neutral are excluded from net; fixes can show as a hatch/dot.
-- **Number / opacity** = buff+nerf **touch volume**, so +5/−5 churn is still visible.
+- **Absolute** (default color): **Color** = signed net (**buffs − nerfs**). Fix and neutral are excluded from net; fixes can show as a hatch/dot. **Number / opacity** = buff+nerf **touch volume**, so +5/−5 churn is still visible.
+- **Relative**: same hue (buff/nerf/churn), but **intensity is within-column percentile** of estimated **extent** versus other heroes (or items — never mixed) with ≥1 buff/nerf that same patch. Rank uses **max(buff extent, nerf extent)** so mixed churn still ranks as a loud hit. If **n≤3** that patch, there is **no percentile** (muted fill, not a fake rank). Empty stays empty.
 
-Default overview sort is **recent volatility** (buff+nerf events in the **last 5 ingested patches**; hover the **?** on that chip — not a ~30-day window). **Total touches** is still a chip. The heatmap defaults to the **top 14** entities and the **newest 10 patches**; **Show all** / **All patches** expand. Entity detail keeps the **full patch history** on a diverging chart: buffs plot above zero, nerfs below. **Counts** (default) is per-patch event lines; **Extent** (estimated) sums relative % change from each line’s parsed `from→to` metrics, with a small stand-in weight when a line has no numbers — not win-rate. Cumulative net is an optional toggle, off by default; fixes stay dots, not bar height.
+Default overview sort is **A–Z** and shows **every hero** (or every item on the Items tab). **Recent volatility** (buff+nerf events in the **last 5 ingested patches**; hover the **?** — not a ~30-day window) and **Total touches** remain as chips; those ranked sorts may top-slice with **Show all**. The heatmap still windows to the **newest 10 patches**; **All patches** expands. Entity detail keeps the **full patch history** on a diverging chart: buffs plot above zero, nerfs below. **Counts** (default) is per-patch event lines; **Extent** is **approximate** — it sums relative % change from each line’s parsed `from→to` metrics, with a small stand-in weight when a line has no numbers — not win-rate. Faint median→P90 bands are peer reference in the same units as the active toggle. Click a buff/nerf bar (or the patch group) for the concrete lines in it. Cumulative net is an optional toggle, off by default; fixes stay dots, not bar height.
 
 Steam appid: `1422450`.
 
