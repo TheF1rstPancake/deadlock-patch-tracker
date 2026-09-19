@@ -1,5 +1,6 @@
 export type PatternKind = 'hero' | 'item'
 export type PatternDetailLens = 'across' | 'day'
+export type PatternBoard = 'heatmap' | 'career'
 
 export type AppRoute =
   | { view: 'roster'; patchId: string }
@@ -9,6 +10,7 @@ export type AppRoute =
       slug?: string
       lens?: PatternDetailLens
       focusPatchId?: string
+      board?: PatternBoard
     }
 
 function stripHash(hash: string): string {
@@ -36,6 +38,16 @@ export function parseHash(hash: string): AppRoute {
   }
   if (raw === 'patterns/items' || raw === 'patterns/item') {
     return { view: 'patterns', kind: 'item' }
+  }
+  if (
+    raw === 'patterns/career' ||
+    raw === 'patterns/career/heroes' ||
+    raw === 'patterns/career/hero'
+  ) {
+    return { view: 'patterns', kind: 'hero', board: 'career' }
+  }
+  if (raw === 'patterns/career/items' || raw === 'patterns/career/item') {
+    return { view: 'patterns', kind: 'item', board: 'career' }
   }
   const entity = raw.match(/^patterns\/(heroes|items|hero|item)\/([^/]+)$/)
   if (entity) {
@@ -70,4 +82,8 @@ export function patternsHash(
   return query
     ? `#patterns/${kind}/${slug}?${query}`
     : `#patterns/${kind}/${slug}`
+}
+
+export function careerHash(kind: PatternKind): string {
+  return kind === 'item' ? '#patterns/career/items' : '#patterns/career'
 }

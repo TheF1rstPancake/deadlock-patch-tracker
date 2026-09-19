@@ -2,9 +2,11 @@ import { HeroPortrait } from './HeroPortrait.tsx'
 import { PatchEventPanel } from './PatchEventPanel.tsx'
 import {
   compactPatchLabel,
+  cumulativeBasisLabel,
   eventsForBar,
   formatDirectionLabel,
   formatRankMark,
+  formatSignedValue,
   formatTotalsLine,
   hardestHitsFromSeries,
   peerSetCopy,
@@ -12,12 +14,13 @@ import {
   type BarSide,
   type DirectionRank,
   type HardestHit,
+  type NetBasis,
   type PatternChartMode,
   type PatternEntityDetail,
   type PatternLens,
   type PatternSeriesPoint,
 } from '../lib/patterns.ts'
-import { patternsHash } from '../lib/route.ts'
+import { careerHash, patternsHash } from '../lib/route.ts'
 import { useCallback, useEffect, useId, useMemo, useState, type KeyboardEvent } from 'react'
 
 interface PatternDetailProps {
@@ -28,6 +31,8 @@ interface PatternDetailProps {
   onChartMode: (mode: PatternChartMode) => void
   showCumulative: boolean
   onToggleCumulative: (next: boolean) => void
+  cumulativeBasis: NetBasis
+  onCumulativeBasis: (basis: NetBasis) => void
   focusPatchId?: string
 }
 
@@ -44,6 +49,8 @@ export function PatternDetail({
   onChartMode,
   showCumulative,
   onToggleCumulative,
+  cumulativeBasis,
+  onCumulativeBasis,
   focusPatchId,
 }: PatternDetailProps) {
   const kindLabel = detail.kind === 'hero' ? 'Hero' : 'Item'
@@ -68,10 +75,23 @@ export function PatternDetail({
     onChartMode('percentile')
   }
 
+  const selectCumulative = (basis: NetBasis) => {
+    if (showCumulative && cumulativeBasis === basis) {
+      onToggleCumulative(false)
+      return
+    }
+    onCumulativeBasis(basis)
+    onToggleCumulative(true)
+  }
+
   return (
     <section className="pattern-detail" aria-label={`${detail.name} pattern`}>
       <p className="pattern-back">
         <a href={backHref}>← {detail.kind === 'hero' ? 'Heroes' : 'Items'} heatmap</a>
+        <span className="pattern-back-sep" aria-hidden="true">
+          ·
+        </span>
+        <a href={careerHash(detail.kind)}>Career net</a>
       </p>
       <header className="pattern-detail-head">
         {detail.kind === 'hero' ? <HeroPortrait name={detail.name} /> : (
@@ -127,25 +147,47 @@ export function PatternDetail({
         >
           Counts
         </button>
-        <button
-          type="button"
-          className="chip"
-          aria-pressed={showCumulative}
-          onClick={() => onToggleCumulative(!showCumulative)}
-        >
-          Cumulative net
-        </button>
+        <div className="chips" role="radiogroup" aria-label="Cumulative net">
+          <button
+            type="button"
+            className="chip"
+            role="radio"
+            aria-checked={showCumulative && cumulativeBasis === 'counts'}
+            aria-pressed={showCumulative && cumulativeBasis === 'counts'}
+            title="Running signed net of buff lines minus nerf lines"
+            onClick={() => selectCumulative('counts')}
+          >
+            {cumulativeBasisLabel('counts')}
+          </button>
+          <button
+            type="button"
+            className="chip"
+            role="radio"
+            aria-checked={showCumulative && cumulativeBasis === 'extent'}
+            aria-pressed={showCumulative && cumulativeBasis === 'extent'}
+            title="Running signed approximate extent (buff minus nerf)"
+            onClick={() => selectCumulative('extent')}
+          >
+            {cumulativeBasisLabel('extent')}
+          </button>
+        </div>
       </div>
       <p className="pattern-chart-peer-legend">
         {chartMode === 'counts'
           ? 'Line counts that patch — not how hard. Click a bar for the lines in it.'
           : peerSetCopy(detail.kind, lens)}
+        {showCumulative
+          ? cumulativeBasis === 'extent'
+            ? ' Gold line: running signed approximate extent.'
+            : ' Gold line: running signed net (buff lines − nerf lines).'
+          : ''}
       </p>
       <BuffNerfChart
         series={detail.series}
         mode={chartMode}
         lens={lens}
         showCumulative={showCumulative}
+        cumulativeBasis={cumulativeBasis}
         openBar={openBar}
         onOpenBar={setOpenBar}
         focusPatchId={focusPatchId}
@@ -228,6 +270,7 @@ function BuffNerfChart({
   mode,
   lens,
   showCumulative,
+  cumulativeBasis,
   openBar,
   onOpenBar,
   focusPatchId,
@@ -236,6 +279,7 @@ function BuffNerfChart({
   mode: PatternChartMode
   lens: PatternLens
   showCumulative: boolean
+  cumulativeBasis: NetBasis
   openBar: OpenBar | null
   onOpenBar: (next: OpenBar | null) => void
   focusPatchId?: string
@@ -257,10 +301,12 @@ function BuffNerfChart({
         1,
         Math.ceil(Math.max(1, ...values.map((value) => Math.max(value.up, value.down)))),
       )
-  const cumulatives = series.map((point) => point.cumulativeNet)
+  const cumulatives = series.map((point) =>
+    cumulativeBasis === 'extent' ? point.cumulativeExtent : point.cumulativeNet,
+  )
   const maxAbsCum = Math.max(1, ...cumulatives.map((value) => Math.abs(value)))
   const groupW = 42
-  const pad = { top: 28, right: showCumulative ? 48 : 14, bottom: 36, left: 46 }
+  const pad = { top: 28, right: showCumulative ? 58 : 14, bottom: 36, left: 46 }
   const plotH = 220
   const width = pad.left + pad.right + series.length * groupW
   const height = pad.top + pad.bottom + plotH
@@ -271,10 +317,10 @@ function BuffNerfChart({
   const valueY = (value: number) => zeroY - (value / maxAbs) * halfH
   const cumY = (value: number) => zeroY - (value / maxAbsCum) * halfH
 
-  const line = series
-    .map((point, index) => {
+  const line = cumulatives
+    .map((value, index) => {
       const x = pad.left + index * groupW + groupW / 2
-      const y = cumY(point.cumulativeNet)
+      const y = cumY(value)
       return `${index === 0 ? 'M' : 'L'}${x} ${y}`
     })
     .join(' ')
@@ -450,7 +496,7 @@ function BuffNerfChart({
                 key={`cum-${point.patchId}`}
                 className="pattern-cum-dot"
                 cx={pad.left + index * groupW + groupW / 2}
-                cy={cumY(point.cumulativeNet)}
+                cy={cumY(cumulatives[index] ?? 0)}
                 r={2.4}
               />
             ))}
@@ -464,7 +510,7 @@ function BuffNerfChart({
               y={cumY(maxAbsCum) + 3}
               textAnchor="end"
             >
-              +{maxAbsCum}
+              {formatSignedValue(maxAbsCum, cumulativeBasis)}
             </text>
             <text
               className="pattern-chart-axis pattern-chart-axis-gold"
@@ -472,7 +518,7 @@ function BuffNerfChart({
               y={cumY(-maxAbsCum) + 3}
               textAnchor="end"
             >
-              −{maxAbsCum}
+              {formatSignedValue(-maxAbsCum, cumulativeBasis)}
             </text>
           </>
         ) : null}
@@ -483,7 +529,7 @@ function BuffNerfChart({
             y={pad.top - 12}
             textAnchor="middle"
           >
-            {hoverRankText(hovered, mode, lens)}
+            {hoverRankText(hovered, mode, lens, showCumulative, cumulativeBasis)}
           </text>
         ) : null}
       </svg>
@@ -523,13 +569,21 @@ function hoverRankText(
   point: PatternSeriesPoint,
   mode: PatternChartMode,
   lens: PatternLens,
+  showCumulative = false,
+  cumulativeBasis: NetBasis = 'counts',
 ): string {
-  if (mode === 'counts') {
-    return `${point.counts.buff}↑ ${point.counts.nerf}↓`
-  }
-  const ranks = ranksOnPoint(point, lens)
-  if (ranks.length === 0) return point.counts.fix ? 'fix only' : 'no rank'
-  return ranks.map(formatDirectionLabel).join(' · ')
+  const head =
+    mode === 'counts'
+      ? `${point.counts.buff}↑ ${point.counts.nerf}↓`
+      : (() => {
+          const ranks = ranksOnPoint(point, lens)
+          if (ranks.length === 0) return point.counts.fix ? 'fix only' : 'no rank'
+          return ranks.map(formatDirectionLabel).join(' · ')
+        })()
+  if (!showCumulative) return head
+  const cum =
+    cumulativeBasis === 'extent' ? point.cumulativeExtent : point.cumulativeNet
+  return `${head} · cum ${formatSignedValue(cum, cumulativeBasis)}`
 }
 
 function formatAxisValue(value: number): string {

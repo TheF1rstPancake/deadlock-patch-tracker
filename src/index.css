@@ -307,6 +307,7 @@ h1 {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1031,6 +1032,11 @@ h1 {
   margin: 18px 0 10px;
 }
 
+.pattern-back-sep {
+  margin: 0 0.55em;
+  color: var(--muted);
+}
+
 .pattern-back a {
   color: var(--gold);
   text-decoration: none;
@@ -1273,6 +1279,119 @@ h1 {
   fill: var(--gold-hot);
 }
 
+.pattern-board-tabs {
+  justify-content: flex-end;
+}
+
+.career-board {
+  margin: 8px 0 4px;
+}
+
+.career-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.career-row {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 11rem) 1fr 4.4rem;
+  align-items: center;
+  gap: 10px 12px;
+  padding: 6px 8px;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--panel);
+  border: 1px solid var(--weapon-dark);
+}
+
+.career-row:hover,
+.career-row:focus-visible {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.career-row.is-buff:hover,
+.career-row.is-buff:focus-visible {
+  border-color: var(--buff-deep);
+}
+
+.career-row.is-nerf:hover,
+.career-row.is-nerf:focus-visible {
+  border-color: var(--nerf);
+}
+
+.career-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.career-track {
+  position: relative;
+  height: 12px;
+  background: var(--weapon-dark);
+}
+
+.career-zero {
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  bottom: -2px;
+  width: 1px;
+  background: var(--gold);
+  opacity: 0.85;
+}
+
+.career-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.career-bar.is-buff {
+  background: var(--buff-deep);
+}
+
+.career-bar.is-nerf {
+  background: var(--nerf);
+}
+
+.career-bar.is-zero {
+  left: calc(50% - 1px);
+  width: 2px;
+  background: var(--gold);
+  opacity: 0.45;
+}
+
+.career-net {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+.career-row.is-buff .career-net {
+  color: var(--vitality-bright);
+}
+
+.career-row.is-nerf .career-net {
+  color: var(--weapon-light);
+}
+
+.career-row.is-zero .career-net {
+  color: var(--muted);
+}
+
 @media (max-width: 640px) {
   .shell {
     width: min(100% - 20px, 1180px);
@@ -1322,6 +1441,12 @@ h1 {
     width: 8.5rem;
     min-width: 8.5rem;
     max-width: 8.5rem;
+  }
+
+  .career-row {
+    grid-template-columns: minmax(6rem, 8rem) 1fr 3.6rem;
+    gap: 8px;
+    padding: 6px;
   }
 }
 

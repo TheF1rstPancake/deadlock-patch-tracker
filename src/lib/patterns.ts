@@ -36,6 +36,11 @@ export const DEFAULT_PATTERN_SORT: PatternSort = 'name'
 
 export type PatternChartMode = 'percentile' | 'counts'
 export const DEFAULT_PATTERN_CHART_MODE: PatternChartMode = 'percentile'
+/** Signed-net basis for detail cumulative and the career board. */
+export type NetBasis = 'counts' | 'extent'
+export const DEFAULT_NET_BASIS: NetBasis = 'counts'
+export type CareerSort = 'buffed' | 'nerfed' | 'name'
+export const DEFAULT_CAREER_SORT: CareerSort = 'buffed'
 /**
  * Detail “how hard” lens. Both are percentile-only (never absolute Extent).
  * Default is Across patches when browsing history; heatmap cell links use That day.
@@ -75,6 +80,15 @@ export const RELATIVE_HEATMAP_LEGEND =
 
 export const ABSOLUTE_HEATMAP_LEGEND =
   'Absolute: color = signed net (buffs − nerfs); intensity + number = buff+nerf volume. Empty = no touch.'
+
+export const CAREER_EXTENT_HINT =
+  'Extent nets can be dominated by rework spikes (e.g. Viscous 3/6). Counts is calmer.'
+
+export const CAREER_COUNTS_LEGEND =
+  'Lifetime net = sum of (buff lines − nerf lines) across every ingested patch. Fix/neutral do not count.'
+
+export const CAREER_EXTENT_LEGEND =
+  'Lifetime net = sum of signed approximate extent (buff − nerf) across every ingested patch. Not win-rate.'
 
 export interface TagCounts {
   buff: number
@@ -197,7 +211,10 @@ export interface PatternSeriesPoint {
   signedNet: number
   /** Buff extent − nerf extent (same sign convention as `signedNet`). */
   signedExtent: number
+  /** Running sum of `signedNet` (count basis). */
   cumulativeNet: number
+  /** Running sum of `signedExtent` (approximate extent basis). */
+  cumulativeExtent: number
   touched: boolean
   events: ChangeEvent[]
   countsPercentile: number | null
@@ -218,6 +235,20 @@ export interface PatternEntityDetail {
   totals: TagCounts
   totalTouches: number
   series: PatternSeriesPoint[]
+}
+
+export interface CareerRow {
+  kind: PatternKind
+  name: string
+  slug: string
+  totals: TagCounts
+  totalTouches: number
+  /** Σ(buff lines − nerf lines) across the ledger. */
+  countsNet: number
+  /** Σ(signed approximate extent) across the ledger. */
+  extentNet: number
+  /** True when any buff/nerf line used a stand-in extent weight. */
+  extentEstimated: boolean
 }
 
 export function emptyTagCounts(): TagCounts {
@@ -244,6 +275,93 @@ export function emptyExtent(): PatternExtent {
 
 export function signedExtent(extent: PatternExtent): number {
   return extent.buff - extent.nerf
+}
+
+export function defaultCumulativeBasis(chartMode: PatternChartMode): NetBasis {
+  return chartMode === 'counts' ? 'counts' : 'extent'
+}
+
+export function cumulativeBasisLabel(basis: NetBasis): string {
+  return basis === 'extent' ? 'Cumulative: approx extent' : 'Cumulative: counts'
+}
+
+/** `+12` / `−4` / `0` for counts; `+12%` / `−4.5%` / `0%` for extent. */
+export function formatSignedValue(value: number, basis: NetBasis): string {
+  const sign = value > 0 ? '+' : value < 0 ? '−' : ''
+  const mag = Math.abs(value)
+  if (basis === 'extent') {
+    const body = mag >= 10 ? mag.toFixed(0) : mag.toFixed(1)
+    return `${sign}${body.replace(/\.0$/, '')}%`
+  }
+  return `${sign}${Math.round(mag)}`
+}
+
+export function careerNet(
+  row: Pick<CareerRow, 'countsNet' | 'extentNet'>,
+  basis: NetBasis,
+): number {
+  return basis === 'extent' ? row.extentNet : row.countsNet
+}
+
+export function lifetimeNets(entity: Pick<PatternEntity, 'totals' | 'cells'>): {
+  countsNet: number
+  extentNet: number
+  extentEstimated: boolean
+} {
+  let extentNet = 0
+  let extentEstimated = false
+  for (const cell of entity.cells) {
+    extentNet += signedExtent(cell.extent)
+    if (cell.extent.estimated) extentEstimated = true
+  }
+  return {
+    countsNet: signedNet(entity.totals),
+    extentNet,
+    extentEstimated,
+  }
+}
+
+export function compareCareerRows(
+  a: CareerRow,
+  b: CareerRow,
+  basis: NetBasis,
+  sort: CareerSort,
+): number {
+  if (sort === 'name') {
+    const byName = a.name.localeCompare(b.name)
+    if (byName !== 0) return byName
+    return a.slug.localeCompare(b.slug)
+  }
+  const byNet =
+    sort === 'buffed'
+      ? careerNet(b, basis) - careerNet(a, basis)
+      : careerNet(a, basis) - careerNet(b, basis)
+  if (byNet !== 0) return byNet
+  return a.name.localeCompare(b.name)
+}
+
+export function buildCareerRows(
+  matrix: PatternMatrix,
+  options?: { basis?: NetBasis; sort?: CareerSort; query?: string },
+): CareerRow[] {
+  const basis = options?.basis ?? DEFAULT_NET_BASIS
+  const sort = options?.sort ?? DEFAULT_CAREER_SORT
+  const source = options?.query
+    ? matchingPatternEntities(matrix.entities, options.query)
+    : matrix.entities
+  const rows = source.map((entity) => {
+    const nets = lifetimeNets(entity)
+    return {
+      kind: entity.kind,
+      name: entity.name,
+      slug: entity.slug,
+      totals: { ...entity.totals },
+      totalTouches: entity.totalTouches,
+      ...nets,
+    }
+  })
+  rows.sort((a, b) => compareCareerRows(a, b, basis, sort))
+  return rows
 }
 
 /**
@@ -810,8 +928,10 @@ export function buildEntityDetail(
   if (!entity) return undefined
 
   let running = 0
+  let runningExtent = 0
   const series: PatternSeriesPoint[] = entity.cells.map((cell, index) => {
     running += cell.signedNet
+    runningExtent += signedExtent(cell.extent)
     const column = matrix.patches[index]
     return {
       patchId: cell.patchId,
@@ -822,6 +942,7 @@ export function buildEntityDetail(
       signedNet: cell.signedNet,
       signedExtent: signedExtent(cell.extent),
       cumulativeNet: running,
+      cumulativeExtent: runningExtent,
       touched: cell.touched,
       events: cell.events,
       countsPercentile: cell.countsPercentile,
