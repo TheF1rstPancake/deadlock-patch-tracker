@@ -4,7 +4,7 @@ Pretty hero +/- board from Steam Deadlock changelogs, with a checked-in **PatchV
 
 Open the page → pick a patch → see **every hero touched** as a card (official-looking Valve hero card art, monogram fallback) → instantly read net **buff / nerf / mixed / fix / neutral** → skim color-coded line items. Search a hero to see which patches touched them (from `data/index.json`). Masthead **Patterns** opens a heroes-or-items heatmap of buff/nerf history (no win-rate / external stats).
 
-Hash `#patterns` is the hero heatmap, `#patterns/items` the item heatmap, `#patterns/hero/{slug}` / `#patterns/item/{slug}` an entity chart. Roster (`#` or `#YYYY-MM-DD`) stays home.
+Hash `#patterns` is the hero heatmap, `#patterns/items` the item heatmap, `#patterns/career` / `#patterns/career/items` the career net board, `#patterns/hero/{slug}` / `#patterns/item/{slug}` an entity chart. Roster (`#` or `#YYYY-MM-DD`) stays home.
 
 The masthead **pulse** (under the lede) shouts the patch shape in the first five seconds from those same tallies, e.g. `9 buff · 5 nerf · 5 mixed · 1 fix`.
 
@@ -23,7 +23,9 @@ Default overview sort is **A–Z** and shows **every hero** (or every item on th
 - **Across patches** (default when opening a hero/item from search or the row name) — this patch’s buff extent ranked among **every** same-kind buff touch in the ledger (same for nerfs). Empties do not dilute.
 - **That day** — ranked only among same-kind entities with ≥1 same-sign touch **that patch**. Deep-linking a heatmap **cell** opens this lens.
 
-If fewer than 5 peers that side, the UI shows a rank fraction (`2 of 4`) instead of a fine percentile. **Counts** is an optional line-volume toggle (not “how hard”). A short **Hardest hits** list under the chart follows the **active** lens. Approximate extent weights stay in the drawer/hover only — structural/qualitative lines use a heavier stand-in than plain unmeasured lines; not win-rate. Click a buff/nerf bar (or the patch group) for the concrete lines. Cumulative net is an optional toggle, off by default; fixes stay dots, not bar height. Heatmap **Absolute | Relative** is unchanged (Relative is still within-column, not a detail-chart mode).
+If fewer than 5 peers that side, the UI shows a rank fraction (`2 of 4`) instead of a fine percentile. **Counts** is an optional line-volume toggle (not “how hard”). A short **Hardest hits** list under the chart follows the **active** lens. Approximate extent weights stay in the drawer/hover only — structural/qualitative lines use a heavier stand-in than plain unmeasured lines; not win-rate. Click a buff/nerf bar (or the patch group) for the concrete lines. **Cumulative: counts** and **Cumulative: approx extent** are optional gold lines (off by default) — running signed net of line counts, or running signed approximate extent. Fixes stay dots, not bar height. Heatmap **Absolute | Relative** is unchanged (Relative is still within-column, not a detail-chart mode).
+
+Patterns masthead **Career** (net board) stacks every hero or item by **lifetime net**. **Counts** is Σ(buff lines − nerf lines); **Extent** is Σ(signed approximate extent). Sort most buffed ↔ most nerfed, or A–Z. Extent nets can be dominated by rework spikes (e.g. Viscous 3/6); Counts is calmer. Click a row for the existing entity chart.
 
 Steam appid: `1422450`.
 

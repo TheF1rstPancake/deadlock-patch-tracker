@@ -11,9 +11,14 @@ import {
   OVERVIEW_PATCH_COLUMNS,
   OVERVIEW_TOP_ROWS,
   STRUCTURAL_EXTENT_WEIGHT,
+  buildCareerRows,
   buildEntityDetail,
   buildPatternMatrix,
+  careerNet,
   cellTone,
+  compareCareerRows,
+  cumulativeBasisLabel,
+  defaultCumulativeBasis,
   clipOverviewMatrix,
   directionRank,
   eventExtent,
@@ -21,6 +26,7 @@ import {
   formatDirectionLabel,
   formatPercentileLabel,
   formatRankMark,
+  formatSignedValue,
   hardestHitsFromSeries,
   isStructuralChangeLine,
   matchingPatternEntities,
@@ -225,7 +231,7 @@ describe('clipOverviewMatrix', () => {
 })
 
 describe('entity detail series', () => {
-  it('builds per-patch buff/nerf counts with cumulative net available but not required', () => {
+  it('builds per-patch buff/nerf counts with both cumulative bases available but not required', () => {
     const detail = buildEntityDetail(fixtures, 'hero', 'alpha')
     expect(detail?.name).toBe('Alpha')
     expect(detail?.kind).toBe('hero')
@@ -234,6 +240,9 @@ describe('entity detail series', () => {
     expect(detail?.series.map((point) => point.counts.nerf)).toEqual([0, 2, 1])
     expect(detail?.series.map((point) => point.signedNet)).toEqual([2, 0, -1])
     expect(detail?.series.map((point) => point.cumulativeNet)).toEqual([2, 2, 1])
+    // Unmeasured lines use FALLBACK_EXTENT_WEIGHT (5): +10, 0, −5
+    expect(detail?.series.map((point) => point.signedExtent)).toEqual([10, 0, -5])
+    expect(detail?.series.map((point) => point.cumulativeExtent)).toEqual([10, 10, 5])
   })
 
   it('search unique-match prefers an exact name', () => {
@@ -372,7 +381,64 @@ describe('extent (estimated relative %)', () => {
     expect(mar.extent.estimated).toBe(false)
     expect(signedExtent(mar.extent)).toBeCloseTo(0)
 
+    expect(detail?.series.map((point) => point.cumulativeExtent)).toEqual([
+      jan.signedExtent,
+      jan.signedExtent + feb.signedExtent,
+      jan.signedExtent + feb.signedExtent + mar.signedExtent,
+    ])
+
     expect(detail?.series.every((point) => !('winRate' in point))).toBe(true)
+  })
+})
+
+describe('dual cumulative labels and career net', () => {
+  it('labels the active cumulative basis and formats signed values', () => {
+    expect(defaultCumulativeBasis('counts')).toBe('counts')
+    expect(defaultCumulativeBasis('percentile')).toBe('extent')
+    expect(cumulativeBasisLabel('counts')).toBe('Cumulative: counts')
+    expect(cumulativeBasisLabel('extent')).toBe('Cumulative: approx extent')
+    expect(formatSignedValue(12, 'counts')).toBe('+12')
+    expect(formatSignedValue(-4, 'counts')).toBe('−4')
+    expect(formatSignedValue(0, 'counts')).toBe('0')
+    expect(formatSignedValue(12.4, 'extent')).toBe('+12%')
+    expect(formatSignedValue(-4.5, 'extent')).toBe('−4.5%')
+    expect(formatSignedValue(0, 'extent')).toBe('0%')
+  })
+
+  it('stacks lifetime counts and extent nets and sorts most buffed or nerfed', () => {
+    const heroes = buildPatternMatrix(fixtures, 'hero')
+    const items = buildPatternMatrix(fixtures, 'item')
+    const heroRows = buildCareerRows(heroes, { basis: 'counts', sort: 'buffed' })
+    expect(heroRows.map((row) => row.slug)).toEqual(['alpha', 'beta'])
+    expect(heroRows[0]?.countsNet).toBe(1)
+    expect(heroRows[0]?.extentNet).toBe(5)
+    expect(heroRows[1]?.countsNet).toBe(0)
+    expect(careerNet(heroRows[0]!, 'counts')).toBe(1)
+    expect(careerNet(heroRows[0]!, 'extent')).toBe(5)
+
+    const nerfed = buildCareerRows(heroes, { basis: 'counts', sort: 'nerfed' })
+    expect(nerfed.map((row) => row.slug)).toEqual(['beta', 'alpha'])
+
+    const alpha = buildCareerRows(heroes, { basis: 'extent', sort: 'name' })
+    expect(alpha.map((row) => row.slug)).toEqual(['alpha', 'beta'])
+    expect(compareCareerRows(heroRows[0]!, heroRows[1]!, 'extent', 'buffed')).toBeLessThan(0)
+
+    const itemRows = buildCareerRows(items, { basis: 'counts', sort: 'buffed' })
+    expect(itemRows).toHaveLength(1)
+    expect(itemRows[0]?.slug).toBe('sword')
+    expect(itemRows[0]?.countsNet).toBe(2)
+    expect(itemRows.some((row) => row.kind === 'hero')).toBe(false)
+  })
+
+  it('keeps item career nets on the item matrix only', () => {
+    const items = buildPatternMatrix(fixtures, 'item')
+    const detail = buildEntityDetail(fixtures, 'item', 'sword')
+    expect(detail?.series.map((point) => point.signedNet)).toEqual([-1, 0, 3])
+    expect(detail?.series.map((point) => point.cumulativeNet)).toEqual([-1, -1, 2])
+    expect(detail?.series.map((point) => point.cumulativeExtent)).toEqual([-5, -5, 10])
+    const rows = buildCareerRows(items)
+    expect(rows[0]?.countsNet).toBe(2)
+    expect(rows[0]?.extentNet).toBe(10)
   })
 })
 
@@ -724,6 +790,27 @@ describe('across-patches directional percentile', () => {
     expect(heroes!.series[0]?.acrossNerfRank?.peerN).toBe(1)
     const items = buildEntityDetail(patches, 'item', 'sword')
     expect(items!.series[0]?.acrossNerfRank?.peerN).toBe(1)
+  })
+})
+
+describe('Viscous 3/6 rework spike (career copy)', () => {
+  it('lets 2026-03-06 dominate Viscous extent more than counts', () => {
+    const dir = join(process.cwd(), 'data/patches')
+    const patches = readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+    const detail = buildEntityDetail(patches, 'hero', 'viscous')
+    expect(detail).toBeDefined()
+    const mar = detail!.series.find((point) => point.patchId === '2026-03-06')
+    expect(mar).toBeDefined()
+    expect(Math.abs(mar!.signedExtent)).toBeGreaterThan(Math.abs(mar!.signedNet) * 3)
+    const last = detail!.series[detail!.series.length - 1]
+    expect(Math.abs(last!.cumulativeExtent)).toBeGreaterThan(Math.abs(last!.cumulativeNet))
+    const matrix = buildPatternMatrix(patches, 'hero')
+    const rows = buildCareerRows(matrix, { basis: 'extent', sort: 'buffed' })
+    const viscous = rows.find((row) => row.slug === 'viscous')
+    expect(viscous).toBeDefined()
+    expect(Math.abs(viscous!.extentNet)).toBeGreaterThan(Math.abs(viscous!.countsNet))
   })
 })
 

@@ -24,6 +24,7 @@ export default function App() {
         slug={route.slug}
         lens={route.lens}
         focusPatchId={route.focusPatchId}
+        board={route.board ?? 'heatmap'}
       />
     )
   }
