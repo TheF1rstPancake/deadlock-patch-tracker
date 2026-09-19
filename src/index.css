@@ -1078,9 +1078,40 @@ h1 {
   color: var(--muted);
 }
 
+.pattern-chart-frame {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.pattern-chart-y-title {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 8px 0;
+  max-width: 2.6rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.pattern-chart-y-title-right {
+  color: var(--gold);
+}
+
 .pattern-chart-scroll {
   overflow-x: auto;
-  margin-top: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
   scrollbar-width: thin;
   scrollbar-color: var(--gold) var(--weapon-dark);
 }
