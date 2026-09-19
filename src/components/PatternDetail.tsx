@@ -3,6 +3,8 @@ import { PatchEventPanel } from './PatchEventPanel.tsx'
 import {
   compactPatchLabel,
   cumulativeBasisLabel,
+  cumulativeLineCopy,
+  defaultCumulativeBasis,
   eventsForBar,
   formatDirectionLabel,
   formatRankMark,
@@ -11,10 +13,11 @@ import {
   hardestHitsFromSeries,
   peerSetCopy,
   ranksForLens,
+  seriesCumulativeValues,
   type BarSide,
+  type ChartCumulativeBasis,
   type DirectionRank,
   type HardestHit,
-  type NetBasis,
   type PatternChartMode,
   type PatternEntityDetail,
   type PatternLens,
@@ -31,8 +34,6 @@ interface PatternDetailProps {
   onChartMode: (mode: PatternChartMode) => void
   showCumulative: boolean
   onToggleCumulative: (next: boolean) => void
-  cumulativeBasis: NetBasis
-  onCumulativeBasis: (basis: NetBasis) => void
   focusPatchId?: string
 }
 
@@ -49,10 +50,9 @@ export function PatternDetail({
   onChartMode,
   showCumulative,
   onToggleCumulative,
-  cumulativeBasis,
-  onCumulativeBasis,
   focusPatchId,
 }: PatternDetailProps) {
+  const cumulativeBasis = defaultCumulativeBasis(chartMode)
   const kindLabel = detail.kind === 'hero' ? 'Hero' : 'Item'
   const backHref = patternsHash(detail.kind)
   const [openBar, setOpenBar] = useState<OpenBar | null>(null)
@@ -73,15 +73,6 @@ export function PatternDetail({
   const selectLens = (next: PatternLens) => {
     onLens(next)
     onChartMode('percentile')
-  }
-
-  const selectCumulative = (basis: NetBasis) => {
-    if (showCumulative && cumulativeBasis === basis) {
-      onToggleCumulative(false)
-      return
-    }
-    onCumulativeBasis(basis)
-    onToggleCumulative(true)
   }
 
   return (
@@ -147,47 +138,27 @@ export function PatternDetail({
         >
           Counts
         </button>
-        <div className="chips" role="radiogroup" aria-label="Cumulative net">
-          <button
-            type="button"
-            className="chip"
-            role="radio"
-            aria-checked={showCumulative && cumulativeBasis === 'counts'}
-            aria-pressed={showCumulative && cumulativeBasis === 'counts'}
-            title="Running signed net of buff lines minus nerf lines"
-            onClick={() => selectCumulative('counts')}
-          >
-            {cumulativeBasisLabel('counts')}
-          </button>
-          <button
-            type="button"
-            className="chip"
-            role="radio"
-            aria-checked={showCumulative && cumulativeBasis === 'extent'}
-            aria-pressed={showCumulative && cumulativeBasis === 'extent'}
-            title="Running signed approximate extent (buff minus nerf)"
-            onClick={() => selectCumulative('extent')}
-          >
-            {cumulativeBasisLabel('extent')}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="chip"
+          aria-pressed={showCumulative}
+          title={cumulativeLineCopy(chartMode)}
+          onClick={() => onToggleCumulative(!showCumulative)}
+        >
+          {cumulativeBasisLabel(cumulativeBasis)}
+        </button>
       </div>
       <p className="pattern-chart-peer-legend">
         {chartMode === 'counts'
           ? 'Line counts that patch — not how hard. Click a bar for the lines in it.'
           : peerSetCopy(detail.kind, lens)}
-        {showCumulative
-          ? cumulativeBasis === 'extent'
-            ? ' Gold line: running signed approximate extent.'
-            : ' Gold line: running signed net (buff lines − nerf lines).'
-          : ''}
+        {showCumulative ? ` ${cumulativeLineCopy(chartMode)}` : ''}
       </p>
       <BuffNerfChart
         series={detail.series}
         mode={chartMode}
         lens={lens}
         showCumulative={showCumulative}
-        cumulativeBasis={cumulativeBasis}
         openBar={openBar}
         onOpenBar={setOpenBar}
         focusPatchId={focusPatchId}
@@ -270,7 +241,6 @@ function BuffNerfChart({
   mode,
   lens,
   showCumulative,
-  cumulativeBasis,
   openBar,
   onOpenBar,
   focusPatchId,
@@ -279,7 +249,6 @@ function BuffNerfChart({
   mode: PatternChartMode
   lens: PatternLens
   showCumulative: boolean
-  cumulativeBasis: NetBasis
   openBar: OpenBar | null
   onOpenBar: (next: OpenBar | null) => void
   focusPatchId?: string
@@ -287,6 +256,7 @@ function BuffNerfChart({
   const clipId = useId().replace(/:/g, '')
   const [hoverId, setHoverId] = useState<string | null>(null)
   const percentileMode = mode === 'percentile'
+  const cumulativeBasis = defaultCumulativeBasis(mode)
   const values = series.map((point) => {
     if (!percentileMode) return { up: point.counts.buff, down: point.counts.nerf }
     const ranks = ranksForLens(point, lens)
@@ -301,9 +271,7 @@ function BuffNerfChart({
         1,
         Math.ceil(Math.max(1, ...values.map((value) => Math.max(value.up, value.down)))),
       )
-  const cumulatives = series.map((point) =>
-    cumulativeBasis === 'extent' ? point.cumulativeExtent : point.cumulativeNet,
-  )
+  const cumulatives = seriesCumulativeValues(series, mode, lens)
   const maxAbsCum = Math.max(1, ...cumulatives.map((value) => Math.abs(value)))
   const groupW = 42
   const pad = { top: 28, right: showCumulative ? 58 : 14, bottom: 36, left: 46 }
@@ -529,7 +497,14 @@ function BuffNerfChart({
             y={pad.top - 12}
             textAnchor="middle"
           >
-            {hoverRankText(hovered, mode, lens, showCumulative, cumulativeBasis)}
+            {hoverRankText(
+              hovered,
+              mode,
+              lens,
+              showCumulative,
+              cumulatives[series.findIndex((point) => point.patchId === hovered.patchId)] ?? 0,
+              cumulativeBasis,
+            )}
           </text>
         ) : null}
       </svg>
@@ -570,7 +545,8 @@ function hoverRankText(
   mode: PatternChartMode,
   lens: PatternLens,
   showCumulative = false,
-  cumulativeBasis: NetBasis = 'counts',
+  cumulative = 0,
+  cumulativeBasis: ChartCumulativeBasis = 'percentile',
 ): string {
   const head =
     mode === 'counts'
@@ -581,9 +557,7 @@ function hoverRankText(
           return ranks.map(formatDirectionLabel).join(' · ')
         })()
   if (!showCumulative) return head
-  const cum =
-    cumulativeBasis === 'extent' ? point.cumulativeExtent : point.cumulativeNet
-  return `${head} · cum ${formatSignedValue(cum, cumulativeBasis)}`
+  return `${head} · cum ${formatSignedValue(cumulative, cumulativeBasis)}`
 }
 
 function formatAxisValue(value: number): string {

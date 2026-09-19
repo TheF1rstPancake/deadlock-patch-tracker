@@ -36,9 +36,16 @@ export const DEFAULT_PATTERN_SORT: PatternSort = 'name'
 
 export type PatternChartMode = 'percentile' | 'counts'
 export const DEFAULT_PATTERN_CHART_MODE: PatternChartMode = 'percentile'
-/** Signed-net basis for detail cumulative and the career board. */
+/** Signed-net basis for the career board (counts vs approximate extent). */
 export type NetBasis = 'counts' | 'extent'
 export const DEFAULT_NET_BASIS: NetBasis = 'counts'
+/**
+ * Detail-chart gold line. Must match the active bar encoding — never
+ * approximate-extent cumulative on top of percentile bars.
+ */
+export type ChartCumulativeBasis = 'counts' | 'percentile'
+/** Career or chart signed-value format (`%` only for extent). */
+export type SignedFormatBasis = NetBasis | ChartCumulativeBasis
 export type CareerSort = 'buffed' | 'nerfed' | 'name'
 export const DEFAULT_CAREER_SORT: CareerSort = 'buffed'
 /**
@@ -89,6 +96,12 @@ export const CAREER_COUNTS_LEGEND =
 
 export const CAREER_EXTENT_LEGEND =
   'Lifetime net = sum of signed approximate extent (buff − nerf) across every ingested patch. Not win-rate.'
+
+export const CUMULATIVE_PERCENTILE_LEGEND =
+  'Gold line: running signed percentile (buff Px − nerf Px).'
+
+export const CUMULATIVE_COUNTS_LEGEND =
+  'Gold line: running signed net (buff lines − nerf lines).'
 
 export interface TagCounts {
   buff: number
@@ -277,16 +290,26 @@ export function signedExtent(extent: PatternExtent): number {
   return extent.buff - extent.nerf
 }
 
-export function defaultCumulativeBasis(chartMode: PatternChartMode): NetBasis {
-  return chartMode === 'counts' ? 'counts' : 'extent'
+export function defaultCumulativeBasis(
+  chartMode: PatternChartMode,
+): ChartCumulativeBasis {
+  return chartMode === 'counts' ? 'counts' : 'percentile'
 }
 
-export function cumulativeBasisLabel(basis: NetBasis): string {
-  return basis === 'extent' ? 'Cumulative: approx extent' : 'Cumulative: counts'
+export function cumulativeBasisLabel(basis: SignedFormatBasis): string {
+  if (basis === 'extent') return 'Cumulative: approx extent'
+  if (basis === 'percentile') return 'Cumulative: percentile'
+  return 'Cumulative: counts'
 }
 
-/** `+12` / `−4` / `0` for counts; `+12%` / `−4.5%` / `0%` for extent. */
-export function formatSignedValue(value: number, basis: NetBasis): string {
+export function cumulativeLineCopy(chartMode: PatternChartMode): string {
+  return chartMode === 'counts'
+    ? CUMULATIVE_COUNTS_LEGEND
+    : CUMULATIVE_PERCENTILE_LEGEND
+}
+
+/** `+12` / `−4` / `0` for counts or percentile; `+12%` / `−4.5%` / `0%` for extent. */
+export function formatSignedValue(value: number, basis: SignedFormatBasis): string {
   const sign = value > 0 ? '+' : value < 0 ? '−' : ''
   const mag = Math.abs(value)
   if (basis === 'extent') {
@@ -530,6 +553,49 @@ export function ranksForLens(
     return { buff: point.acrossBuffRank, nerf: point.acrossNerfRank }
   }
   return { buff: point.buffRank, nerf: point.nerfRank }
+}
+
+/** Signed percentile contribution for one patch: (buff Px || 0) − (nerf Px || 0). */
+export function signedPercentileDelta(
+  point: Pick<
+    PatternSeriesPoint,
+    'buffRank' | 'nerfRank' | 'acrossBuffRank' | 'acrossNerfRank'
+  >,
+  lens: PatternLens,
+): number {
+  const ranks = ranksForLens(point, lens)
+  return (ranks.buff?.percentile ?? 0) - (ranks.nerf?.percentile ?? 0)
+}
+
+/** Running sum of `signedPercentileDelta` under the active lens. */
+export function runningSignedPercentile(
+  series: readonly Pick<
+    PatternSeriesPoint,
+    'buffRank' | 'nerfRank' | 'acrossBuffRank' | 'acrossNerfRank'
+  >[],
+  lens: PatternLens,
+): number[] {
+  let running = 0
+  return series.map((point) => {
+    running += signedPercentileDelta(point, lens)
+    return running
+  })
+}
+
+/**
+ * Gold-line values for the detail chart. Percentile mode uses the active
+ * lens ranks; counts mode uses running signedNet. Extent is never overlaid
+ * on percentile bars.
+ */
+export function seriesCumulativeValues(
+  series: readonly PatternSeriesPoint[],
+  mode: PatternChartMode,
+  lens: PatternLens = DEFAULT_PATTERN_LENS,
+): number[] {
+  if (mode === 'counts') {
+    return series.map((point) => point.cumulativeNet)
+  }
+  return runningSignedPercentile(series, lens)
 }
 
 export function peerSetCopy(kind: PatternKind, lens: PatternLens): string {
