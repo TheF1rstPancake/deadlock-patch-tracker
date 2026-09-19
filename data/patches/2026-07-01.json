@@ -23,7 +23,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -46,9 +47,10 @@
       "tag": "fix",
       "raw": "Weapon now has fixed pellet spread",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.3
       }
     },
     {
@@ -60,12 +62,14 @@
         "slug": "shiv",
         "facet": "Slice"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Slice and Dice is now back to doing spirit damage and reducing Spirit Resistance from enemies",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.34,
+        "priorTag": "neutral"
       }
     },
     {
@@ -82,7 +86,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -107,7 +112,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     }
   ],
@@ -126,7 +132,7 @@
         },
         {
           "raw": "Slice and Dice is now back to doing spirit damage and reducing Spirit Resistance from enemies",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Slice and Dice damage increased from 60 to 75",

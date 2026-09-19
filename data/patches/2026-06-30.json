@@ -801,7 +801,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -827,7 +828,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -853,7 +855,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -879,7 +882,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.78
       }
     },
     {
@@ -891,12 +895,14 @@
         "slug": "cursed-relic",
         "facet": "Damage Penalty"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Damage Penalty increased from -10% to -14%",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -922,7 +928,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -934,12 +941,14 @@
         "slug": "abrams",
         "facet": "Shoulder Charge T3"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Shoulder Charge T3 reduced from -20s Cooldown to -18s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.43,
+        "priorTag": "nerf"
       },
       "display": "Shoulder Charge T3: cooldown reduction −20s → −18s (weaker CDR)",
       "clarified": true
@@ -956,9 +965,10 @@
       "tag": "buff",
       "raw": "Riposte T1 increased from -7s Cooldown to -8s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.48
       },
       "display": "Riposte T1: cooldown reduction −7s → −8s (stronger CDR)",
       "clarified": true
@@ -977,7 +987,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       },
       "metrics": [
         {
@@ -1003,7 +1014,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1029,7 +1041,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       },
       "metrics": [
         {
@@ -1054,7 +1067,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1079,7 +1093,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1096,7 +1111,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -1113,7 +1129,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1138,7 +1155,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.72
       }
     },
     {
@@ -1155,7 +1173,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -1181,7 +1200,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1206,7 +1226,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1232,7 +1253,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1258,7 +1280,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1283,7 +1306,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1309,7 +1333,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1326,7 +1351,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1352,7 +1378,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.91
       },
       "metrics": [
         {
@@ -1372,12 +1399,14 @@
         "slug": "drifter",
         "facet": "Rend"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Rend cast time reduced from 0.5s to 0.4s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -1398,12 +1427,14 @@
         "slug": "drifter",
         "facet": "Rend"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Rend post cast time reduced from 0.5s to 0.4s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -1424,12 +1455,14 @@
         "slug": "drifter",
         "facet": "Rend T2"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Rend T2 increased from -7s Cooldown to -8s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.41,
+        "priorTag": "buff"
       },
       "display": "Rend T2: cooldown reduction −7s → −8s (stronger CDR)",
       "clarified": true
@@ -1448,7 +1481,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1465,7 +1499,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -1482,7 +1517,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1499,7 +1535,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1525,7 +1562,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1550,7 +1588,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -1567,7 +1606,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93
       },
       "metrics": [
         {
@@ -1593,7 +1633,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1618,7 +1659,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1633,9 +1675,10 @@
       "tag": "buff",
       "raw": "Sleep Dagger T1 increased from -8% Bullet Resist to -10%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.68
       }
     },
     {
@@ -1650,9 +1693,10 @@
       "tag": "buff",
       "raw": "Sleep Dagger T2 increased from -17s Cooldown to -18s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.58
       },
       "display": "Sleep Dagger T2: cooldown reduction −17s → −18s (stronger CDR)",
       "clarified": true
@@ -1671,7 +1715,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1688,7 +1733,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1713,7 +1759,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1738,7 +1785,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.91
       },
       "metrics": [
         {
@@ -1764,7 +1812,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1790,7 +1839,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       },
       "metrics": [
         {
@@ -1810,12 +1860,14 @@
         "slug": "mina",
         "facet": "Rake"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Rake missing health as damage increased from 5% to 6%",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.19,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -1841,7 +1893,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1858,7 +1911,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1883,7 +1937,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1908,7 +1963,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.87
       },
       "metrics": [
         {
@@ -1929,12 +1985,14 @@
         "slug": "mo-krill",
         "facet": "Sand Blast T3"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Sand Blast T3 increased from -20s Cooldown to -25s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.37,
+        "priorTag": "buff"
       },
       "display": "Sand Blast T3: cooldown reduction −20s → −25s (stronger CDR)",
       "clarified": true
@@ -1953,7 +2011,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1970,7 +2029,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1990,12 +2050,14 @@
         "slug": "paige",
         "facet": "Bookwyrm T1"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Bookwyrm T1 changed from \"+2s Trail Duration and +1m Radius\" to \"-12s Cooldown\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.36,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2007,12 +2069,14 @@
         "slug": "paige",
         "facet": "Bookwyrm T2"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Bookwyrm T2 changed from \"+10m Range and -12s Cooldown\" to \"+1 Charge, +1m Radius and +2s Trail Duration\"",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.56,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2024,12 +2088,14 @@
         "slug": "paige",
         "facet": "Bookworm T3"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Bookworm T3 changed from \"+100 Damage, +30 DPS and +1 Charge\" to \"+100 Damage, +30 DPS and +12m Travel Range\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.32,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2046,7 +2112,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2071,7 +2138,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2083,12 +2151,14 @@
         "slug": "paige",
         "facet": "Rallying Charge"
       },
-      "tag": "neutral",
+      "tag": "fix",
       "raw": "Rallying Charge is now properly counted as a \"miss\" (for the -50% CD Reduction) if the only thing that was impacted were non-heroes",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.57,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2105,7 +2175,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2131,7 +2202,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2143,12 +2215,14 @@
         "slug": "paradox",
         "facet": "Kinetic Carbine T3"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Kinetic Carbine T3 changed from affecting Max Damage Scaling to affecting both Min and Max Damage Scaling",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.63,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2165,7 +2239,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2188,9 +2263,10 @@
       "tag": "nerf",
       "raw": "Flying Cloak T3 reduced from -12s Cooldown to -11s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.55
       },
       "display": "Flying Cloak T3: cooldown reduction −12s → −11s (weaker CDR)",
       "clarified": true
@@ -2209,7 +2285,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2234,7 +2311,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2259,7 +2337,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92
       },
       "metrics": [
         {
@@ -2280,12 +2359,14 @@
         "slug": "rem",
         "facet": "Lil Helpers T1"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Lil Helpers T1 changed from \"+1 Helper\" to \"+1 Helper and +1.5m/s Move Speed\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2297,12 +2378,14 @@
         "slug": "rem",
         "facet": "Lil Helpers T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Lil Helpers T2 changed from \"+8% Spirit Resist and +1.5m/s Move Speed\" to \"+1 Helper and +15% Trooper Damage and Resist\"",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.47,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2314,12 +2397,14 @@
         "slug": "rem",
         "facet": "Lil Helpers T3"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Lil Helpers T3 changed from \"+2 Helpers and +20% Trooper Damage and Resist\" to \"+1 Helper and +15% Spirit Resist\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2336,7 +2421,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       },
       "metrics": [
         {
@@ -2357,12 +2443,14 @@
         "slug": "seven",
         "facet": "Storm Cloud"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Storm Cloud time to expand increased from 1.5s to 3.5s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.8,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -2383,12 +2471,14 @@
         "slug": "seven",
         "facet": "Storm Cloud"
       },
-      "tag": "buff",
+      "tag": "neutral",
       "raw": "Storm Cloud damage interval increased from 0.25s to 0.3s (DPS unchanged)",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.7,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -2414,7 +2504,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -2426,12 +2517,14 @@
         "slug": "shiv",
         "facet": "Alt Fire"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Alt Fire damage now has a custom value per boon (+0.2)",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.43,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2443,12 +2536,14 @@
         "slug": "shiv",
         "facet": "Alt Fire"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Alt Fire ammo consumed per shot increased from 3 to 5",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -2468,12 +2563,14 @@
         "slug": "shiv",
         "facet": "Alt Fire"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Alt Fire knockback movement is now disabled by slowing hex state",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.8,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2490,7 +2587,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2511,12 +2609,14 @@
         "slug": "shiv",
         "facet": "Slice"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Slice and Dice now deals +25 light melee damage (75 total) instead of 60 spirit damage",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.45,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2528,12 +2628,14 @@
         "slug": "shiv",
         "facet": "Slice"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Slice and Dice changed from -6% Spirit Resist to +4% Damage Amp",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.86,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2545,12 +2647,14 @@
         "slug": "shiv",
         "facet": "Bloodletting T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Bloodletting T2 changed from \"+15% Incoming Damage Deferred\" to \"+35% Deferred Damage Cleared\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.72,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2562,12 +2666,14 @@
         "slug": "shiv",
         "facet": "Bloodletting T3"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Bloodletting T3 changed from \"+50% Deferred Damage Cleared\" to \"+15% Incoming Damage Deferred\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.79,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2584,7 +2690,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94
       }
     },
     {
@@ -2596,12 +2703,14 @@
         "slug": "shiv",
         "facet": "Killing Blow"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Killing Blow executing a hero now instantly fills the rage bar",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2613,12 +2722,14 @@
         "slug": "shiv",
         "facet": "Killing Blow"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Killing Blow now has the T3 \"recast within 20s on a hero kill\" as part of the base ability",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2635,7 +2746,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2661,7 +2773,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2687,7 +2800,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2704,7 +2818,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2721,7 +2836,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -2736,9 +2852,10 @@
       "tag": "buff",
       "raw": "Stake T2 reduced from -20s Cooldown to -22s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.34
       },
       "display": "Stake T2: cooldown reduction −20s → −22s (weaker CDR)",
       "clarified": true
@@ -2755,9 +2872,10 @@
       "tag": "buff",
       "raw": "Crow Familiar T2 increased from -12s Cooldown to -16s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.59
       },
       "display": "Crow Familiar T2: cooldown reduction −12s → −16s (stronger CDR)",
       "clarified": true
@@ -2774,9 +2892,10 @@
       "tag": "buff",
       "raw": "Crow Familiar collision radius between each crow increased slightly",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.61
       }
     },
     {
@@ -2793,7 +2912,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2818,7 +2938,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2841,9 +2962,10 @@
       "tag": "buff",
       "raw": "Puddle Punch T3 increased from -12s Cooldown to -14s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.62
       },
       "display": "Puddle Punch T3: cooldown reduction −12s → −14s (stronger CDR)",
       "clarified": true
@@ -2862,7 +2984,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2879,7 +3002,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2905,7 +3029,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2930,7 +3055,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2953,9 +3079,10 @@
       "tag": "buff",
       "raw": "Willpower T2 increased from -22s Cooldown to -24s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.4
       },
       "display": "Willpower T2: cooldown reduction −22s → −24s (stronger CDR)",
       "clarified": true
@@ -2974,14 +3101,15 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     }
   ],
   "heroes": [
     {
       "name": "Abrams",
-      "sentiment": "nerf",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Siphon Life T3 reduced from +3m Radius to +2m",
@@ -2989,7 +3117,7 @@
         },
         {
           "raw": "Shoulder Charge T3 reduced from -20s Cooldown to -18s",
-          "tag": "nerf",
+          "tag": "buff",
           "display": "Shoulder Charge T3: cooldown reduction −20s → −18s (weaker CDR)",
           "clarified": true
         }
@@ -3089,15 +3217,15 @@
         },
         {
           "raw": "Rend cast time reduced from 0.5s to 0.4s",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Rend post cast time reduced from 0.5s to 0.4s",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Rend T2 increased from -7s Cooldown to -8s",
-          "tag": "buff",
+          "tag": "nerf",
           "display": "Rend T2: cooldown reduction −7s → −8s (stronger CDR)",
           "clarified": true
         },
@@ -3211,11 +3339,11 @@
     },
     {
       "name": "Mina",
-      "sentiment": "buff",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Rake missing health as damage increased from 5% to 6%",
-          "tag": "buff"
+          "tag": "nerf"
         },
         {
           "raw": "Sanguine Retreat T3 now also increases range by +3m",
@@ -3233,7 +3361,7 @@
     },
     {
       "name": "Mo & Krill",
-      "sentiment": "buff",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Sand Blast T2 slow increased from -25% to -30%",
@@ -3241,7 +3369,7 @@
         },
         {
           "raw": "Sand Blast T3 increased from -20s Cooldown to -25s",
-          "tag": "buff",
+          "tag": "nerf",
           "display": "Sand Blast T3: cooldown reduction −20s → −25s (stronger CDR)",
           "clarified": true
         },
@@ -3253,7 +3381,7 @@
     },
     {
       "name": "Paige",
-      "sentiment": "buff",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Health per boon increased from 29 to 33",
@@ -3261,15 +3389,15 @@
         },
         {
           "raw": "Bookwyrm T1 changed from \"+2s Trail Duration and +1m Radius\" to \"-12s Cooldown\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Bookwyrm T2 changed from \"+10m Range and -12s Cooldown\" to \"+1 Charge, +1m Radius and +2s Trail Duration\"",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Bookworm T3 changed from \"+100 Damage, +30 DPS and +1 Charge\" to \"+100 Damage, +30 DPS and +12m Travel Range\"",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Plot Armor T1 fire rate spirit scaling increased from 0.13 to 0.16",
@@ -3281,7 +3409,7 @@
         },
         {
           "raw": "Rallying Charge is now properly counted as a \"miss\" (for the -50% CD Reduction) if the only thing that was impacted were non-heroes",
-          "tag": "neutral"
+          "tag": "fix"
         },
         {
           "raw": "Rallying Charge T3 Max Amp increased from +50% to +70%",
@@ -3299,7 +3427,7 @@
         },
         {
           "raw": "Kinetic Carbine T3 changed from affecting Max Damage Scaling to affecting both Min and Max Damage Scaling",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
@@ -3321,7 +3449,7 @@
     },
     {
       "name": "Rem",
-      "sentiment": "nerf",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Tag Along healing per second spirit scaling reduced from 0.66 to 0.4",
@@ -3337,21 +3465,21 @@
         },
         {
           "raw": "Lil Helpers T1 changed from \"+1 Helper\" to \"+1 Helper and +1.5m/s Move Speed\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Lil Helpers T2 changed from \"+8% Spirit Resist and +1.5m/s Move Speed\" to \"+1 Helper and +15% Trooper Damage and Resist\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Lil Helpers T3 changed from \"+2 Helpers and +20% Trooper Damage and Resist\" to \"+1 Helper and +15% Spirit Resist\"",
-          "tag": "neutral"
+          "tag": "nerf"
         }
       ]
     },
     {
       "name": "Seven",
-      "sentiment": "buff",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Lightning Ball charge delay reduced from 7s to 6s",
@@ -3359,11 +3487,11 @@
         },
         {
           "raw": "Storm Cloud time to expand increased from 1.5s to 3.5s",
-          "tag": "buff"
+          "tag": "nerf"
         },
         {
           "raw": "Storm Cloud damage interval increased from 0.25s to 0.3s (DPS unchanged)",
-          "tag": "buff"
+          "tag": "neutral"
         },
         {
           "raw": "Storm Cloud T2 now also increases Initial Radius by +5m",
@@ -3377,15 +3505,15 @@
       "changes": [
         {
           "raw": "Alt Fire damage now has a custom value per boon (+0.2)",
-          "tag": "neutral"
-        },
-        {
-          "raw": "Alt Fire ammo consumed per shot increased from 3 to 5",
           "tag": "buff"
         },
         {
+          "raw": "Alt Fire ammo consumed per shot increased from 3 to 5",
+          "tag": "nerf"
+        },
+        {
           "raw": "Alt Fire knockback movement is now disabled by slowing hex state",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Serrated Knives cooldown reduced from 18s to 16s",
@@ -3393,19 +3521,19 @@
         },
         {
           "raw": "Slice and Dice now deals +25 light melee damage (75 total) instead of 60 spirit damage",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Slice and Dice changed from -6% Spirit Resist to +4% Damage Amp",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Bloodletting T2 changed from \"+15% Incoming Damage Deferred\" to \"+35% Deferred Damage Cleared\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Bloodletting T3 changed from \"+50% Deferred Damage Cleared\" to \"+15% Incoming Damage Deferred\"",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Killing Blow now deals damage to troopers and neutrals along the way",
@@ -3413,11 +3541,11 @@
         },
         {
           "raw": "Killing Blow executing a hero now instantly fills the rage bar",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Killing Blow now has the T3 \"recast within 20s on a hero kill\" as part of the base ability",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Killing Blow Full Rage Damage Bonus reduced from +12% to +8%",

@@ -23,7 +23,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -35,12 +36,14 @@
         "slug": "apollo",
         "facet": "Flawless Advance T1"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Flawless Advance T1 heal from 30+0.75 to 35+1.0",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "neutral"
       }
     },
     {
@@ -55,9 +58,10 @@
       "tag": "buff",
       "raw": "Flawless Advance T2 increased from -10s Cooldown to -12s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.57
       },
       "display": "Flawless Advance T2: cooldown reduction −10s → −12s (stronger CDR)",
       "clarified": true
@@ -76,7 +80,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -101,7 +106,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -126,7 +132,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -143,7 +150,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -160,7 +168,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -177,7 +186,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -203,7 +213,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9
       },
       "metrics": [
         {
@@ -229,7 +240,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -252,9 +264,10 @@
       "tag": "nerf",
       "raw": "Flying Cloak T3 reduced from -14s Cooldown to -13s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.63
       },
       "display": "Flying Cloak T3: cooldown reduction −14s → −13s (weaker CDR)",
       "clarified": true
@@ -273,7 +286,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -288,9 +302,10 @@
       "tag": "nerf",
       "raw": "Slam Fire Current Health as Damage reduced from 3% to 2.5%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.6
       },
       "metrics": [
         {
@@ -316,7 +331,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93
       }
     },
     {
@@ -333,7 +349,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -354,12 +371,14 @@
         "slug": "silver",
         "facet": "Entangling Bola T2"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Entangling Bola T2 increased from -5s Cooldown to -8s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.36,
+        "priorTag": "buff"
       },
       "display": "Entangling Bola T2: cooldown reduction −5s → −8s (stronger CDR)",
       "clarified": true
@@ -378,7 +397,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.82
       },
       "metrics": [
         {
@@ -399,12 +419,14 @@
         "slug": "victor",
         "facet": "Shocking Reanimation T3"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Shocking Reanimation T3 reduced from -130s Cooldown to -120s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.85,
+        "priorTag": "nerf"
       },
       "display": "Shocking Reanimation T3: cooldown reduction −130s → −120s (weaker CDR)",
       "clarified": true
@@ -423,7 +445,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -448,7 +471,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -472,7 +496,7 @@
         },
         {
           "raw": "Flawless Advance T1 heal from 30+0.75 to 35+1.0",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Flawless Advance T2 increased from -10s Cooldown to -12s",
@@ -544,7 +568,7 @@
     },
     {
       "name": "Silver",
-      "sentiment": "mixed",
+      "sentiment": "nerf",
       "changes": [
         {
           "raw": "Slam Fire Current Health as Damage reduced from 3% to 2.5%",
@@ -560,7 +584,7 @@
         },
         {
           "raw": "Entangling Bola T2 increased from -5s Cooldown to -8s",
-          "tag": "buff",
+          "tag": "nerf",
           "display": "Entangling Bola T2: cooldown reduction −5s → −8s (stronger CDR)",
           "clarified": true
         },
@@ -572,11 +596,11 @@
     },
     {
       "name": "Victor",
-      "sentiment": "nerf",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Shocking Reanimation T3 reduced from -130s Cooldown to -120s",
-          "tag": "nerf",
+          "tag": "buff",
           "display": "Shocking Reanimation T3: cooldown reduction −130s → −120s (weaker CDR)",
           "clarified": true
         }

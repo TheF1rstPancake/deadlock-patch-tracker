@@ -280,7 +280,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -306,7 +307,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -326,12 +328,14 @@
         "slug": "the-doorman",
         "facet": "Bullet"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Bullet damage rescaled from 29.26 + 1.1/boon to 26 + 1.19",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.75,
+        "priorTag": "neutral"
       }
     },
     {
@@ -348,7 +352,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       },
       "metrics": [
         {
@@ -369,12 +374,14 @@
         "slug": "the-doorman",
         "facet": "Hotel Guest T3"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Hotel Guest T3 increased from 13s Cooldown on Failure to Check Out to 15s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.39,
+        "priorTag": "buff"
       }
     },
     {
@@ -391,7 +398,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -416,7 +424,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -442,7 +451,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -466,9 +476,10 @@
       "tag": "buff",
       "raw": "Stalker's Mark T2 increased from -8s Cooldown to -12s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.44
       },
       "display": "Stalker's Mark T2: cooldown reduction −8s → −12s (stronger CDR)",
       "clarified": true
@@ -487,7 +498,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -504,7 +516,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -524,12 +537,14 @@
         "slug": "graves",
         "facet": "Jar"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Jar of Dead now build up faster from neutral creeps",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.8,
+        "priorTag": "neutral"
       }
     },
     {
@@ -546,7 +561,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.77
       },
       "metrics": [
         {
@@ -567,12 +583,14 @@
         "slug": "graves",
         "facet": "Grasping Hands T3"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Grasping Hands T3 cooldown increased from -10s to -14s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -593,12 +611,14 @@
         "slug": "graves",
         "facet": "Essence Theft"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Essence Theft now procs from melee hits",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.91,
+        "priorTag": "neutral"
       }
     },
     {
@@ -615,7 +635,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -635,12 +656,14 @@
         "slug": "graves",
         "facet": "Borrowed Decree T1"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Borrowed Decree T1 changed from \"-15s Cooldown\" to \"-15s Cooldown and +25% Ghoul Speed\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "neutral"
       }
     },
     {
@@ -652,12 +675,14 @@
         "slug": "graves",
         "facet": "Borrowed Decree T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Borrowed Decree T2 changed from \"+25% Ghoul Speed and +10s Duration\" to \"-0.3s Time to Spawn and +10s Duration\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.23,
+        "priorTag": "neutral"
       }
     },
     {
@@ -674,7 +699,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       }
     },
     {
@@ -686,12 +712,14 @@
         "slug": "haze",
         "facet": "Sleep Dagger T2"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Sleep Dagger T2 reduced from -18s Cooldown to -17s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.42,
+        "priorTag": "nerf"
       },
       "display": "Sleep Dagger T2: cooldown reduction −18s → −17s (weaker CDR)",
       "clarified": true
@@ -710,7 +738,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -735,7 +764,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -760,7 +790,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -785,7 +816,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -806,12 +838,14 @@
         "slug": "mirage",
         "facet": "Djinn's Mark T3"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Djinn's Mark T3 cooldown reduced from -1s Cooldown to -0.75s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.45,
+        "priorTag": "nerf"
       },
       "display": "Djinn's Mark T3 cooldown: cooldown reduction −1s → −0.75s (weaker CDR)",
       "clarified": true
@@ -825,12 +859,14 @@
         "slug": "mirage",
         "facet": "Traveler T3"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Traveler T3 increased from -70s Cooldown to -90s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.54,
+        "priorTag": "buff"
       },
       "display": "Traveler T3: cooldown reduction −70s → −90s (stronger CDR)",
       "clarified": true
@@ -849,7 +885,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.88
       },
       "metrics": [
         {
@@ -875,7 +912,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -900,7 +938,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -920,12 +959,14 @@
         "slug": "shiv",
         "facet": "Slice"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Slice and Dice T2 reduced from -6% Spirit Resist to -4%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.52,
+        "priorTag": "nerf"
       }
     },
     {
@@ -942,7 +983,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -966,9 +1008,10 @@
       "tag": "buff",
       "raw": "Bloodletting T1 increased from -10s Cooldown to -15s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.35
       },
       "display": "Bloodletting T1: cooldown reduction −10s → −15s (stronger CDR)",
       "clarified": true
@@ -987,7 +1030,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.78
       },
       "metrics": [
         {
@@ -1013,7 +1057,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9
       },
       "metrics": [
         {
@@ -1037,9 +1082,10 @@
       "tag": "nerf",
       "raw": "Killing Blow Health Threshold reduced from 20% to 18%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.43
       },
       "metrics": [
         {
@@ -1065,7 +1111,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.79
       },
       "metrics": [
         {
@@ -1091,7 +1138,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94
       },
       "metrics": [
         {
@@ -1117,7 +1165,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1143,7 +1192,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1168,7 +1218,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1194,7 +1245,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1215,12 +1267,14 @@
         "slug": "yamato",
         "facet": "Flying Slash T3 Ally Targeting"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Flying Slash T3 Ally Targeting now requires alt cast input",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.62,
+        "priorTag": "neutral"
       }
     }
   ],
@@ -1273,7 +1327,7 @@
         },
         {
           "raw": "Jar of Dead now build up faster from neutral creeps",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Grasping Hands immobilize duration reduced from 1.25s to 1s",
@@ -1281,11 +1335,11 @@
         },
         {
           "raw": "Grasping Hands T3 cooldown increased from -10s to -14s",
-          "tag": "buff"
+          "tag": "nerf"
         },
         {
           "raw": "Essence Theft now procs from melee hits",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Essence Theft T3 now also increases Max Steal Targets from 3 to 4",
@@ -1293,17 +1347,17 @@
         },
         {
           "raw": "Borrowed Decree T1 changed from \"-15s Cooldown\" to \"-15s Cooldown and +25% Ghoul Speed\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Borrowed Decree T2 changed from \"+25% Ghoul Speed and +10s Duration\" to \"-0.3s Time to Spawn and +10s Duration\"",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
     {
       "name": "Haze",
-      "sentiment": "mixed",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Sleep Dagger T2 now also applies 15 Fixation Stacks",
@@ -1311,7 +1365,7 @@
         },
         {
           "raw": "Sleep Dagger T2 reduced from -18s Cooldown to -17s",
-          "tag": "nerf",
+          "tag": "buff",
           "display": "Sleep Dagger T2: cooldown reduction −18s → −17s (weaker CDR)",
           "clarified": true
         }
@@ -1345,13 +1399,13 @@
         },
         {
           "raw": "Djinn's Mark T3 cooldown reduced from -1s Cooldown to -0.75s",
-          "tag": "nerf",
+          "tag": "buff",
           "display": "Djinn's Mark T3 cooldown: cooldown reduction −1s → −0.75s (weaker CDR)",
           "clarified": true
         },
         {
           "raw": "Traveler T3 increased from -70s Cooldown to -90s",
-          "tag": "buff",
+          "tag": "nerf",
           "display": "Traveler T3: cooldown reduction −70s → −90s (stronger CDR)",
           "clarified": true
         }
@@ -1381,7 +1435,7 @@
         },
         {
           "raw": "Slice and Dice T2 reduced from -6% Spirit Resist to -4%",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Bloodletting cooldown increased from 20s to 25s",
@@ -1423,11 +1477,11 @@
     },
     {
       "name": "The Doorman",
-      "sentiment": "mixed",
+      "sentiment": "nerf",
       "changes": [
         {
           "raw": "Bullet damage rescaled from 29.26 + 1.1/boon to 26 + 1.19",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Crit scaling reduced from -25% to -30%",
@@ -1435,7 +1489,7 @@
         },
         {
           "raw": "Hotel Guest T3 increased from 13s Cooldown on Failure to Check Out to 15s",
-          "tag": "buff"
+          "tag": "nerf"
         }
       ]
     },
@@ -1473,7 +1527,7 @@
         },
         {
           "raw": "Flying Slash T3 Ally Targeting now requires alt cast input",
-          "tag": "neutral"
+          "tag": "nerf"
         }
       ]
     }

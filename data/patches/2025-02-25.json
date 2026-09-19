@@ -740,7 +740,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -765,7 +766,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -791,7 +793,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4518,9 +4521,10 @@
       "tag": "neutral",
       "raw": "Now plays a sound when entering the active window.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       }
     },
     {
@@ -4534,9 +4538,10 @@
       "tag": "neutral",
       "raw": "Added activation sound.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -4550,9 +4555,10 @@
       "tag": "neutral",
       "raw": "Added cast and buff sounds.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -4566,9 +4572,10 @@
       "tag": "neutral",
       "raw": "Effects revisions.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -4582,9 +4589,10 @@
       "tag": "neutral",
       "raw": "Revision to buff and cast to look less modern.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -4598,9 +4606,10 @@
       "tag": "neutral",
       "raw": "Updated vfx.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4614,9 +4623,10 @@
       "tag": "fix",
       "raw": "Fixed a bug that caused the ambient sound to not loop properly.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4630,9 +4640,10 @@
       "tag": "neutral",
       "raw": "New sounds added to differentiate them from Holliday's bounce pad.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4643,12 +4654,14 @@
         "name": "Item Content Improvements",
         "slug": "item-content-improvements"
       },
-      "tag": "neutral",
+      "tag": "fix",
       "raw": "Clean up buff effect after launch.",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.65,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4662,9 +4675,10 @@
       "tag": "fix",
       "raw": "Fixed showing an extra cancel hint.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4675,12 +4689,14 @@
         "name": "Item Content Improvements",
         "slug": "item-content-improvements"
       },
-      "tag": "neutral",
+      "tag": "fix",
       "raw": "Area effect now applies the intended slow debuff.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4691,12 +4707,14 @@
         "name": "Item Content Improvements",
         "slug": "item-content-improvements"
       },
-      "tag": "nerf",
+      "tag": "fix",
       "raw": "No longer triggers off Pocket's Affliction.",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.48,
+        "priorTag": "nerf"
       }
     },
     {
@@ -4710,9 +4728,10 @@
       "tag": "neutral",
       "raw": "Added new sound to proc.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4726,9 +4745,10 @@
       "tag": "fix",
       "raw": "Fixed the UI prompt getting stuck when moving too far away from the other player.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -4742,9 +4762,10 @@
       "tag": "fix",
       "raw": "Fixed heroes sometimes getting dropped to the ground while under the effect of Rescue Beam.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4758,9 +4779,10 @@
       "tag": "neutral",
       "raw": "Added new proc and end sounds.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4771,12 +4793,14 @@
         "name": "Item Content Improvements",
         "slug": "item-content-improvements"
       },
-      "tag": "neutral",
+      "tag": "fix",
       "raw": "Now keeps the Soul Shredder Bullets passive buffs.",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.4,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4790,9 +4814,10 @@
       "tag": "neutral",
       "raw": "Now has new vfx.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -4806,9 +4831,10 @@
       "tag": "fix",
       "raw": "Fixed a rare case where the cooldown was displaying incorrectly.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -4822,9 +4848,10 @@
       "tag": "neutral",
       "raw": "Effect revisions.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -4838,9 +4865,10 @@
       "tag": "neutral",
       "raw": "Added new proc sound.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4854,9 +4882,10 @@
       "tag": "neutral",
       "raw": "Added new vfx.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -4870,9 +4899,10 @@
       "tag": "neutral",
       "raw": "Added proc sound.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {

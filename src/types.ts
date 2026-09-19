@@ -3,7 +3,7 @@ export type HeroSentiment = 'buff' | 'nerf' | 'mixed' | 'neutral' | 'fix'
 export type TargetKind = 'hero' | 'item' | 'general' | 'system' | 'unknown'
 export type Layout = 'sectioned' | 'flat' | 'prose'
 export type ParseConfidence = 'high' | 'medium' | 'low'
-export type ParseSource = 'mechanical' | 'cursor' | 'manual'
+export type ParseSource = 'mechanical' | 'cursor' | 'manual' | 'typesafe-jev'
 
 export interface HeroChange {
   /** Exact Steam / changelog wording. */
@@ -44,6 +44,10 @@ export interface ChangeParse {
   confidence: ParseConfidence
   needsReview: boolean
   source: ParseSource
+  /** TypeSafe Jev model score when `source` is `typesafe-jev`. */
+  jevConfidence?: number
+  /** Mechanical (or prior) tag when Jev flipped the classification. */
+  priorTag?: LineTag
 }
 
 export interface ChangeEvent {

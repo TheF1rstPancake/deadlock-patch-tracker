@@ -21,9 +21,10 @@
       "tag": "buff",
       "raw": "Riposte melee resist reduction increased from -22% to -25%",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.33
       },
       "metrics": [
         {
@@ -44,12 +45,14 @@
         "slug": "apollo",
         "facet": "Riposte T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Riposte T2 changed from \"-30% Melee Resist\" to \"-25% Melee Resist and +0.4s Stun Duration\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.24,
+        "priorTag": "neutral"
       }
     },
     {
@@ -66,7 +69,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -82,7 +86,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       }
     },
     {
@@ -99,7 +104,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -119,12 +125,14 @@
         "slug": "billy",
         "facet": "Rising Ram T3"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Rising Ram T3 changed from \"On Impact: Deal 7% max health as spirit damage\" to \"On hero hit: +10% Max HP for 16s\"",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.44,
+        "priorTag": "neutral"
       }
     },
     {
@@ -141,7 +149,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -166,7 +175,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -192,7 +202,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.79
       }
     },
     {
@@ -204,12 +215,14 @@
         "slug": "the-doorman",
         "facet": "Similar"
       },
-      "tag": "buff",
+      "tag": "fix",
       "raw": "Similar to the Walker change above, the turrets in the healing area in base now also wait on considering valid targets",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.62,
+        "priorTag": "buff"
       }
     },
     {
@@ -226,7 +239,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -251,7 +265,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -272,12 +287,14 @@
         "slug": "drifter",
         "facet": "Stalker's Mark T2"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Stalker's Mark T2 reduced from -12s Cooldown to -10s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.44,
+        "priorTag": "nerf"
       },
       "display": "Stalker's Mark T2: cooldown reduction −12s → −10s (weaker CDR)",
       "clarified": true
@@ -291,12 +308,14 @@
         "slug": "holliday",
         "facet": "Powder Keg"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Powder Keg now does half its damage immediately and half over 3s as a damage over time burn (same overall damage, multiple instances stack)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.39,
+        "priorTag": "neutral"
       }
     },
     {
@@ -313,7 +332,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -339,7 +359,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.83
       }
     },
     {
@@ -356,7 +377,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -373,7 +395,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -397,9 +420,10 @@
       "tag": "nerf",
       "raw": "Mini Turrets no longer shoots heroes on ziplines",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.63
       }
     },
     {
@@ -414,9 +438,10 @@
       "tag": "nerf",
       "raw": "Mini Turrets no longer have 80% decaying resist for the first 6s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.65
       }
     },
     {
@@ -433,7 +458,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -445,12 +471,14 @@
         "slug": "mcginnis",
         "facet": "Medicinal Specter T1"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Medicinal Specter T1 changed from \"Provides +40% Spirit Resist\" to \"+1.5s Duration\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.39,
+        "priorTag": "neutral"
       }
     },
     {
@@ -467,7 +495,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -484,7 +513,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -501,7 +531,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -526,7 +557,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -552,7 +584,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -569,7 +602,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -595,7 +629,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       },
       "metrics": [
         {
@@ -621,7 +656,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -646,7 +682,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -669,7 +706,7 @@
         },
         {
           "raw": "Riposte T2 changed from \"-30% Melee Resist\" to \"-25% Melee Resist and +0.4s Stun Duration\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Riposte T3 increased from 60% Lifesteal for 7s to 75% Lifesteal for 13s",
@@ -691,7 +728,7 @@
         },
         {
           "raw": "Rising Ram T3 changed from \"On Impact: Deal 7% max health as spirit damage\" to \"On hero hit: +10% Max HP for 16s\"",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Chain Gang spirit scaling reduced from 1 to 0.7",
@@ -701,7 +738,7 @@
     },
     {
       "name": "Drifter",
-      "sentiment": "nerf",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Rend spirit scaling reduced from 1.7 to 1.4",
@@ -713,7 +750,7 @@
         },
         {
           "raw": "Stalker's Mark T2 reduced from -12s Cooldown to -10s",
-          "tag": "nerf",
+          "tag": "buff",
           "display": "Stalker's Mark T2: cooldown reduction −12s → −10s (weaker CDR)",
           "clarified": true
         }
@@ -721,11 +758,11 @@
     },
     {
       "name": "Holliday",
-      "sentiment": "neutral",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Powder Keg now does half its damage immediately and half over 3s as a damage over time burn (same overall damage, multiple instances stack)",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
@@ -775,7 +812,7 @@
         },
         {
           "raw": "Medicinal Specter T1 changed from \"Provides +40% Spirit Resist\" to \"+1.5s Duration\"",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Medicinal Specter T3 no longer increases duration by +1.5s",
@@ -809,7 +846,7 @@
     },
     {
       "name": "The Doorman",
-      "sentiment": "mixed",
+      "sentiment": "nerf",
       "changes": [
         {
           "raw": "Doorway range reduced from 70m to 65m",
@@ -821,7 +858,7 @@
         },
         {
           "raw": "Similar to the Walker change above, the turrets in the healing area in base now also wait on considering valid targets",
-          "tag": "buff"
+          "tag": "fix"
         }
       ]
     },
