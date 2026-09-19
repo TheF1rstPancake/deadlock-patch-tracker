@@ -2,6 +2,7 @@ import { CareerBoard } from './CareerBoard.tsx'
 import { PatternDetail } from './PatternDetail.tsx'
 import { PatternHeatmap, PatternSearchForm } from './PatternHeatmap.tsx'
 import { SiteNav } from './SiteNav.tsx'
+import { buildAspectPeerIndex } from '../lib/aspectPeers.ts'
 import { loadAllPatches } from '../lib/loadPatches.ts'
 import {
   ABSOLUTE_HEATMAP_LEGEND,
@@ -103,6 +104,11 @@ export function PatternsView({
     return buildEntityDetail(patches, kind, slug)
   }, [kind, patches, slug])
 
+  const aspectPeers = useMemo(() => {
+    if (!patches) return null
+    return buildAspectPeerIndex(patches)
+  }, [patches])
+
   const careerRows = useMemo(() => {
     if (!matrix || board !== 'career') return []
     return buildCareerRows(matrix, { basis: netBasis, sort: careerSort, query })
@@ -118,7 +124,7 @@ export function PatternsView({
     if (match) go(patternsHash(match.kind, match.slug))
   }
 
-  if (!patches || !matrix || !overview) {
+  if (!patches || !matrix || !overview || !aspectPeers) {
     return (
       <div className="shell shell-patterns">
         <p className="empty">Loading patterns…</p>
@@ -169,6 +175,7 @@ export function PatternsView({
         detail ? (
           <PatternDetail
             detail={detail}
+            peers={aspectPeers}
             lens={lens}
             onLens={setLens}
             chartMode={chartMode}

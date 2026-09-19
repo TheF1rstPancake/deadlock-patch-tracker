@@ -1,3 +1,4 @@
+import type { AspectPeerIndex } from '../lib/aspectPeers.ts'
 import { HeroPortrait } from './HeroPortrait.tsx'
 import { PatchEventPanel } from './PatchEventPanel.tsx'
 import {
@@ -29,6 +30,7 @@ import { useCallback, useEffect, useId, useMemo, useState, type KeyboardEvent } 
 
 interface PatternDetailProps {
   detail: PatternEntityDetail
+  peers: AspectPeerIndex
   lens: PatternLens
   onLens: (lens: PatternLens) => void
   chartMode: PatternChartMode
@@ -47,6 +49,7 @@ interface OpenBar {
 
 export function PatternDetail({
   detail,
+  peers,
   lens,
   onLens,
   chartMode,
@@ -211,6 +214,9 @@ export function PatternDetail({
         side={openBar?.side ?? 'all'}
         percentileLabel={percentileLabel}
         events={listed}
+        patchId={selected?.patchId}
+        lens={lens}
+        peers={peers}
         onClose={closePanel}
       />
     </section>

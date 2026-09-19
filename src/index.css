@@ -1297,6 +1297,16 @@ h1 {
   font-size: 0.78rem;
 }
 
+.pattern-event-extent-rel {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-family: Barlow, 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 0.74rem;
+}
+
 .pattern-fix-dot {
   fill: var(--fix);
 }
