@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-17T02:09:53.038Z",
+  "generatedAt": "2026-09-19T20:18:01.866Z",
   "patches": [
     {
       "id": "2026-09-16",
@@ -207,7 +207,7 @@
         "general": 43,
         "system": 6,
         "unknown": 0,
-        "needsReview": 29
+        "needsReview": 26
       }
     },
     {
@@ -223,7 +223,7 @@
         "general": 16,
         "system": 2,
         "unknown": 0,
-        "needsReview": 7
+        "needsReview": 5
       }
     },
     {
@@ -239,7 +239,7 @@
         "general": 33,
         "system": 16,
         "unknown": 0,
-        "needsReview": 20
+        "needsReview": 18
       }
     },
     {
@@ -255,7 +255,7 @@
         "general": 48,
         "system": 19,
         "unknown": 0,
-        "needsReview": 32
+        "needsReview": 27
       }
     },
     {
@@ -271,7 +271,7 @@
         "general": 323,
         "system": 6,
         "unknown": 106,
-        "needsReview": 336
+        "needsReview": 303
       }
     },
     {
@@ -287,7 +287,7 @@
         "general": 315,
         "system": 4,
         "unknown": 6,
-        "needsReview": 236
+        "needsReview": 213
       }
     },
     {
@@ -303,7 +303,7 @@
         "general": 67,
         "system": 3,
         "unknown": 0,
-        "needsReview": 50
+        "needsReview": 41
       }
     },
     {
@@ -319,7 +319,7 @@
         "general": 73,
         "system": 8,
         "unknown": 0,
-        "needsReview": 64
+        "needsReview": 53
       }
     },
     {
@@ -436,7 +436,7 @@
         },
         {
           "patchId": "2026-06-30",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1836506165563227:48",
             "1836506165563227:49"
@@ -452,10 +452,10 @@
         }
       ],
       "totals": {
-        "buff": 27,
-        "nerf": 18,
+        "buff": 33,
+        "nerf": 20,
         "fix": 3,
-        "neutral": 9
+        "neutral": 1
       }
     },
     "hero:apollo": {
@@ -511,7 +511,7 @@
         },
         {
           "patchId": "2026-06-11",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1835236783562074:8",
             "1835236783562074:9",
@@ -554,10 +554,10 @@
         }
       ],
       "totals": {
-        "buff": 19,
-        "nerf": 9,
+        "buff": 22,
+        "nerf": 12,
         "fix": 2,
-        "neutral": 11
+        "neutral": 5
       }
     },
     "hero:bebop": {
@@ -581,7 +581,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1785321795648842:148",
             "1785321795648842:149",
@@ -628,10 +628,10 @@
         }
       ],
       "totals": {
-        "buff": 8,
-        "nerf": 7,
+        "buff": 12,
+        "nerf": 9,
         "fix": 1,
-        "neutral": 9
+        "neutral": 3
       }
     },
     "hero:billy": {
@@ -731,10 +731,10 @@
         }
       ],
       "totals": {
-        "buff": 13,
-        "nerf": 20,
-        "fix": 1,
-        "neutral": 8
+        "buff": 19,
+        "nerf": 22,
+        "fix": 0,
+        "neutral": 1
       }
     },
     "hero:calico": {
@@ -799,7 +799,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:181"
           ]
@@ -826,10 +826,10 @@
         }
       ],
       "totals": {
-        "buff": 13,
+        "buff": 26,
         "nerf": 20,
-        "fix": 2,
-        "neutral": 17
+        "fix": 3,
+        "neutral": 3
       }
     },
     "hero:celeste": {
@@ -866,7 +866,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1831432155569981:102",
             "1831432155569981:103",
@@ -934,10 +934,10 @@
         }
       ],
       "totals": {
-        "buff": 21,
-        "nerf": 28,
+        "buff": 24,
+        "nerf": 29,
         "fix": 0,
-        "neutral": 4
+        "neutral": 0
       }
     },
     "hero:drifter": {
@@ -1030,7 +1030,7 @@
         },
         {
           "patchId": "2026-08-12",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1840944183775204:10",
             "1840944183775204:11",
@@ -1039,10 +1039,10 @@
         }
       ],
       "totals": {
-        "buff": 14,
-        "nerf": 20,
+        "buff": 17,
+        "nerf": 24,
         "fix": 1,
-        "neutral": 9
+        "neutral": 2
       }
     },
     "hero:dynamo": {
@@ -1131,7 +1131,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1833334318572828:196",
             "1833334318572828:197",
@@ -1154,10 +1154,10 @@
         }
       ],
       "totals": {
-        "buff": 24,
-        "nerf": 14,
+        "buff": 32,
+        "nerf": 17,
         "fix": 4,
-        "neutral": 12
+        "neutral": 1
       }
     },
     "hero:graves": {
@@ -1248,10 +1248,10 @@
         }
       ],
       "totals": {
-        "buff": 13,
+        "buff": 25,
         "nerf": 11,
-        "fix": 8,
-        "neutral": 13
+        "fix": 9,
+        "neutral": 0
       }
     },
     "hero:grey-talon": {
@@ -1261,7 +1261,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "6148070194801611991:174",
             "6148070194801611991:175",
@@ -1298,7 +1298,7 @@
         },
         {
           "patchId": "2026-06-11",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "1835236783562074:30",
             "1835236783562074:31",
@@ -1316,10 +1316,10 @@
         }
       ],
       "totals": {
-        "buff": 7,
-        "nerf": 11,
+        "buff": 8,
+        "nerf": 14,
         "fix": 0,
-        "neutral": 7
+        "neutral": 3
       }
     },
     "hero:haze": {
@@ -1388,7 +1388,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:110",
             "1831432155569981:111",
@@ -1415,7 +1415,7 @@
         },
         {
           "patchId": "2026-07-09",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1836506165584438:30",
             "1836506165584438:31"
@@ -1443,10 +1443,10 @@
         }
       ],
       "totals": {
-        "buff": 20,
-        "nerf": 23,
-        "fix": 3,
-        "neutral": 14
+        "buff": 31,
+        "nerf": 24,
+        "fix": 4,
+        "neutral": 1
       }
     },
     "hero:holliday": {
@@ -1476,7 +1476,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:115",
             "1831432155569981:116",
@@ -1493,7 +1493,7 @@
         },
         {
           "patchId": "2026-06-11",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1835236783562074:34",
             "1835236783562074:35",
@@ -1526,7 +1526,7 @@
         },
         {
           "patchId": "2026-08-12",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1840944183775204:13"
           ]
@@ -1542,10 +1542,10 @@
         }
       ],
       "totals": {
-        "buff": 7,
-        "nerf": 15,
+        "buff": 10,
+        "nerf": 18,
         "fix": 3,
-        "neutral": 7
+        "neutral": 1
       }
     },
     "hero:infernus": {
@@ -1563,7 +1563,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1785321795648842:175",
             "1785321795648842:176",
@@ -1637,10 +1637,10 @@
         }
       ],
       "totals": {
-        "buff": 12,
-        "nerf": 14,
+        "buff": 19,
+        "nerf": 17,
         "fix": 2,
-        "neutral": 12
+        "neutral": 2
       }
     },
     "hero:ivy": {
@@ -1658,7 +1658,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1785321795648842:179",
             "1785321795648842:180",
@@ -1775,10 +1775,10 @@
         }
       ],
       "totals": {
-        "buff": 20,
-        "nerf": 30,
+        "buff": 30,
+        "nerf": 33,
         "fix": 4,
-        "neutral": 17
+        "neutral": 4
       }
     },
     "hero:kelvin": {
@@ -1874,10 +1874,10 @@
         }
       ],
       "totals": {
-        "buff": 15,
-        "nerf": 18,
-        "fix": 1,
-        "neutral": 16
+        "buff": 23,
+        "nerf": 22,
+        "fix": 2,
+        "neutral": 3
       }
     },
     "hero:lady-geist": {
@@ -1952,10 +1952,10 @@
         }
       ],
       "totals": {
-        "buff": 13,
-        "nerf": 8,
+        "buff": 18,
+        "nerf": 9,
         "fix": 0,
-        "neutral": 8
+        "neutral": 2
       }
     },
     "hero:lash": {
@@ -2069,10 +2069,10 @@
         }
       ],
       "totals": {
-        "buff": 30,
-        "nerf": 17,
+        "buff": 31,
+        "nerf": 18,
         "fix": 4,
-        "neutral": 5
+        "neutral": 3
       }
     },
     "hero:mcginnis": {
@@ -2167,7 +2167,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:120",
             "1831432155569981:121",
@@ -2218,10 +2218,10 @@
         }
       ],
       "totals": {
-        "buff": 27,
-        "nerf": 35,
-        "fix": 4,
-        "neutral": 16
+        "buff": 32,
+        "nerf": 40,
+        "fix": 6,
+        "neutral": 4
       }
     },
     "hero:mina": {
@@ -2294,7 +2294,7 @@
         },
         {
           "patchId": "2026-06-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1836506165563227:88",
             "1836506165563227:89",
@@ -2304,7 +2304,7 @@
         },
         {
           "patchId": "2026-07-28",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1839041357039193:65",
             "1839041357039193:66"
@@ -2312,10 +2312,10 @@
         }
       ],
       "totals": {
-        "buff": 16,
-        "nerf": 17,
+        "buff": 15,
+        "nerf": 25,
         "fix": 3,
-        "neutral": 9
+        "neutral": 2
       }
     },
     "hero:mirage": {
@@ -2456,10 +2456,10 @@
         }
       ],
       "totals": {
-        "buff": 29,
-        "nerf": 29,
-        "fix": 2,
-        "neutral": 23
+        "buff": 43,
+        "nerf": 30,
+        "fix": 1,
+        "neutral": 9
       }
     },
     "hero:mo-krill": {
@@ -2469,7 +2469,7 @@
       "touches": [
         {
           "patchId": "2024-12-06",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1785321795648842:216",
             "1785321795648842:217",
@@ -2534,7 +2534,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:242",
             "1833334318572828:243"
@@ -2542,7 +2542,7 @@
         },
         {
           "patchId": "2026-06-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1836506165563227:92",
             "1836506165563227:93",
@@ -2551,7 +2551,7 @@
         },
         {
           "patchId": "2026-07-28",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1839041357039193:72",
             "1839041357039193:73"
@@ -2559,10 +2559,10 @@
         }
       ],
       "totals": {
-        "buff": 13,
-        "nerf": 19,
-        "fix": 1,
-        "neutral": 15
+        "buff": 24,
+        "nerf": 21,
+        "fix": 0,
+        "neutral": 3
       }
     },
     "hero:paige": {
@@ -2637,7 +2637,7 @@
         },
         {
           "patchId": "2026-06-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1836506165563227:95",
             "1836506165563227:96",
@@ -2675,10 +2675,10 @@
         }
       ],
       "totals": {
-        "buff": 24,
-        "nerf": 11,
-        "fix": 2,
-        "neutral": 12
+        "buff": 28,
+        "nerf": 14,
+        "fix": 3,
+        "neutral": 4
       }
     },
     "hero:paradox": {
@@ -2801,10 +2801,10 @@
         }
       ],
       "totals": {
-        "buff": 23,
-        "nerf": 24,
+        "buff": 33,
+        "nerf": 26,
         "fix": 1,
-        "neutral": 17
+        "neutral": 5
       }
     },
     "hero:pocket": {
@@ -2941,10 +2941,10 @@
         }
       ],
       "totals": {
-        "buff": 26,
-        "nerf": 26,
+        "buff": 28,
+        "nerf": 32,
         "fix": 0,
-        "neutral": 9
+        "neutral": 1
       }
     },
     "hero:rem": {
@@ -2967,7 +2967,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1831432155569981:136",
             "1831432155569981:137"
@@ -2975,7 +2975,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:254",
             "1833334318572828:255",
@@ -2996,7 +2996,7 @@
         },
         {
           "patchId": "2026-06-30",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1836506165563227:107",
             "1836506165563227:108",
@@ -3016,10 +3016,10 @@
         }
       ],
       "totals": {
-        "buff": 9,
-        "nerf": 11,
+        "buff": 17,
+        "nerf": 8,
         "fix": 5,
-        "neutral": 7
+        "neutral": 2
       }
     },
     "hero:seven": {
@@ -3083,7 +3083,7 @@
         },
         {
           "patchId": "2026-06-11",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1835236783562074:58",
             "1835236783562074:59",
@@ -3092,7 +3092,7 @@
         },
         {
           "patchId": "2026-06-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1836506165563227:113",
             "1836506165563227:114",
@@ -3110,9 +3110,9 @@
       ],
       "totals": {
         "buff": 19,
-        "nerf": 11,
-        "fix": 2,
-        "neutral": 6
+        "nerf": 16,
+        "fix": 1,
+        "neutral": 2
       }
     },
     "hero:shiv": {
@@ -3129,7 +3129,7 @@
         },
         {
           "patchId": "2025-11-21",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1816849002015766:216",
             "1816849002015766:217",
@@ -3201,7 +3201,7 @@
         },
         {
           "patchId": "2026-06-11",
-          "tagSummary": "neutral",
+          "tagSummary": "nerf",
           "eventIds": [
             "1835236783562074:61"
           ]
@@ -3256,7 +3256,7 @@
         },
         {
           "patchId": "2026-07-28",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "1839041357039193:77",
             "1839041357039193:78"
@@ -3273,10 +3273,10 @@
         }
       ],
       "totals": {
-        "buff": 29,
-        "nerf": 32,
-        "fix": 4,
-        "neutral": 20
+        "buff": 43,
+        "nerf": 34,
+        "fix": 5,
+        "neutral": 3
       }
     },
     "hero:silver": {
@@ -3335,7 +3335,7 @@
         },
         {
           "patchId": "2026-05-31",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "1833968530895860:13",
             "1833968530895860:14",
@@ -3384,10 +3384,10 @@
         }
       ],
       "totals": {
-        "buff": 19,
+        "buff": 24,
         "nerf": 22,
         "fix": 2,
-        "neutral": 7
+        "neutral": 2
       }
     },
     "hero:sinclair": {
@@ -3397,7 +3397,7 @@
       "touches": [
         {
           "patchId": "2025-05-08",
-          "tagSummary": "buff",
+          "tagSummary": "fix",
           "eventIds": [
             "1799088287841594:165"
           ]
@@ -3414,9 +3414,9 @@
         }
       ],
       "totals": {
-        "buff": 3,
+        "buff": 2,
         "nerf": 2,
-        "fix": 0,
+        "fix": 1,
         "neutral": 0
       }
     },
@@ -3526,7 +3526,7 @@
         },
         {
           "patchId": "2026-07-09",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "1836506165584438:14",
             "1836506165584438:15",
@@ -3550,7 +3550,7 @@
         },
         {
           "patchId": "2026-08-12",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "1840944183775204:7",
             "1840944183775204:8",
@@ -3559,10 +3559,10 @@
         }
       ],
       "totals": {
-        "buff": 22,
-        "nerf": 32,
-        "fix": 6,
-        "neutral": 18
+        "buff": 29,
+        "nerf": 36,
+        "fix": 10,
+        "neutral": 3
       }
     },
     "hero:venator": {
@@ -3607,8 +3607,8 @@
         }
       ],
       "totals": {
-        "buff": 6,
-        "nerf": 5,
+        "buff": 7,
+        "nerf": 4,
         "fix": 0,
         "neutral": 0
       }
@@ -3670,7 +3670,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:145",
             "1831432155569981:146"
@@ -3687,7 +3687,7 @@
         },
         {
           "patchId": "2026-05-31",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1833968530895860:18"
           ]
@@ -3713,10 +3713,10 @@
         }
       ],
       "totals": {
-        "buff": 24,
+        "buff": 29,
         "nerf": 26,
-        "fix": 2,
-        "neutral": 5
+        "fix": 1,
+        "neutral": 1
       }
     },
     "hero:vindicta": {
@@ -3816,10 +3816,10 @@
         }
       ],
       "totals": {
-        "buff": 27,
-        "nerf": 17,
-        "fix": 1,
-        "neutral": 9
+        "buff": 30,
+        "nerf": 20,
+        "fix": 3,
+        "neutral": 1
       }
     },
     "hero:viscous": {
@@ -3911,7 +3911,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "fix",
+          "tagSummary": "nerf",
           "eventIds": [
             "1831432155569981:147",
             "1831432155569981:148"
@@ -3979,10 +3979,10 @@
         }
       ],
       "totals": {
-        "buff": 35,
-        "nerf": 33,
-        "fix": 5,
-        "neutral": 11
+        "buff": 40,
+        "nerf": 37,
+        "fix": 6,
+        "neutral": 1
       }
     },
     "hero:vyper": {
@@ -4009,7 +4009,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:293",
             "1833334318572828:294"
@@ -4041,8 +4041,8 @@
         }
       ],
       "totals": {
-        "buff": 7,
-        "nerf": 5,
+        "buff": 8,
+        "nerf": 4,
         "fix": 1,
         "neutral": 0
       }
@@ -4120,7 +4120,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1833334318572828:295",
             "1833334318572828:296",
@@ -4164,10 +4164,10 @@
         }
       ],
       "totals": {
-        "buff": 28,
-        "nerf": 25,
+        "buff": 31,
+        "nerf": 30,
         "fix": 0,
-        "neutral": 9
+        "neutral": 1
       }
     },
     "hero:wraith": {
@@ -4177,7 +4177,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "6148070194801611991:220",
             "6148070194801611991:221"
@@ -4290,10 +4290,10 @@
         }
       ],
       "totals": {
-        "buff": 21,
-        "nerf": 33,
+        "buff": 32,
+        "nerf": 37,
         "fix": 3,
-        "neutral": 20
+        "neutral": 5
       }
     },
     "hero:yamato": {
@@ -4315,7 +4315,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1785321795648842:270",
             "1785321795648842:271",
@@ -4419,10 +4419,10 @@
         }
       ],
       "totals": {
-        "buff": 22,
-        "nerf": 23,
+        "buff": 29,
+        "nerf": 27,
         "fix": 3,
-        "neutral": 14
+        "neutral": 3
       }
     },
     "item:active-reload": {
@@ -4471,8 +4471,8 @@
       "totals": {
         "buff": 5,
         "nerf": 1,
-        "fix": 1,
-        "neutral": 0
+        "fix": 0,
+        "neutral": 1
       }
     },
     "item:alchemical-fire": {
@@ -4606,10 +4606,10 @@
         }
       ],
       "totals": {
-        "buff": 4,
+        "buff": 5,
         "nerf": 1,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:backstabber": {
@@ -4677,10 +4677,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 2,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:basic-magazine": {
@@ -4737,17 +4737,17 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "buff",
+          "tagSummary": "neutral",
           "eventIds": [
             "1785321795648842:84"
           ]
         }
       ],
       "totals": {
-        "buff": 2,
+        "buff": 1,
         "nerf": 0,
         "fix": 0,
-        "neutral": 0
+        "neutral": 1
       }
     },
     "item:blood-tribute": {
@@ -4773,7 +4773,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:33",
             "1831432155569981:34"
@@ -4781,10 +4781,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 2,
         "nerf": 4,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:boundless-spirit": {
@@ -4959,9 +4959,9 @@
       ],
       "totals": {
         "buff": 3,
-        "nerf": 3,
+        "nerf": 4,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:celestial-blessing": {
@@ -4993,24 +4993,24 @@
       "touches": [
         {
           "patchId": "2025-11-21",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1816849002015766:117"
           ]
         },
         {
           "patchId": "2026-03-06",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1826362059925616:99"
           ]
         }
       ],
       "totals": {
-        "buff": 0,
-        "nerf": 1,
+        "buff": 2,
+        "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:cloak-of-opportunity": {
@@ -5201,7 +5201,7 @@
       "touches": [
         {
           "patchId": "2024-12-06",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1785321795648842:98"
           ]
@@ -5222,10 +5222,10 @@
         }
       ],
       "totals": {
-        "buff": 2,
+        "buff": 3,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:crushing-fists": {
@@ -5235,7 +5235,7 @@
       "touches": [
         {
           "patchId": "2026-03-06",
-          "tagSummary": "buff",
+          "tagSummary": "fix",
           "eventIds": [
             "1826362059925616:69"
           ]
@@ -5258,9 +5258,9 @@
         }
       ],
       "totals": {
-        "buff": 5,
+        "buff": 4,
         "nerf": 0,
-        "fix": 0,
+        "fix": 1,
         "neutral": 0
       }
     },
@@ -5314,7 +5314,7 @@
       "touches": [
         {
           "patchId": "2025-11-21",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1816849002015766:131",
             "1816849002015766:132",
@@ -5323,10 +5323,10 @@
         }
       ],
       "totals": {
-        "buff": 0,
+        "buff": 1,
         "nerf": 2,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:cursed-relic": {
@@ -5336,21 +5336,21 @@
       "touches": [
         {
           "patchId": "2026-03-06",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1826362059925616:126"
           ]
         },
         {
           "patchId": "2026-06-30",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1836506165563227:47"
           ]
         },
         {
           "patchId": "2026-07-28",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1839041357039193:5",
             "1839041357039193:6"
@@ -5358,10 +5358,10 @@
         }
       ],
       "totals": {
-        "buff": 2,
-        "nerf": 1,
+        "buff": 1,
+        "nerf": 3,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:debuff-reducer": {
@@ -5445,14 +5445,14 @@
         },
         {
           "patchId": "2025-11-21",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1816849002015766:123"
           ]
         },
         {
           "patchId": "2026-03-06",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1826362059925616:112"
           ]
@@ -5474,8 +5474,8 @@
         }
       ],
       "totals": {
-        "buff": 9,
-        "nerf": 2,
+        "buff": 6,
+        "nerf": 5,
         "fix": 0,
         "neutral": 0
       }
@@ -5830,15 +5830,15 @@
         },
         {
           "patchId": "2026-03-06",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1826362059925616:64"
           ]
         }
       ],
       "totals": {
-        "buff": 4,
-        "nerf": 2,
+        "buff": 2,
+        "nerf": 4,
         "fix": 0,
         "neutral": 0
       }
@@ -5991,9 +5991,9 @@
       ],
       "totals": {
         "buff": 4,
-        "nerf": 1,
+        "nerf": 2,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:fortitude": {
@@ -6010,7 +6010,7 @@
         },
         {
           "patchId": "2026-03-06",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1826362059925616:94"
           ]
@@ -6031,8 +6031,8 @@
         }
       ],
       "totals": {
-        "buff": 3,
-        "nerf": 1,
+        "buff": 4,
+        "nerf": 0,
         "fix": 0,
         "neutral": 0
       }
@@ -6090,17 +6090,17 @@
         },
         {
           "patchId": "2026-07-28",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1839041357039193:12"
           ]
         }
       ],
       "totals": {
-        "buff": 9,
+        "buff": 11,
         "nerf": 6,
         "fix": 0,
-        "neutral": 2
+        "neutral": 0
       }
     },
     "item:fury-trance": {
@@ -6134,10 +6134,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
+        "buff": 5,
         "nerf": 1,
         "fix": 0,
-        "neutral": 2
+        "neutral": 0
       }
     },
     "item:glass-cannon": {
@@ -6147,7 +6147,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "6148070194801611991:101"
           ]
@@ -6161,15 +6161,15 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:87"
           ]
         }
       ],
       "totals": {
-        "buff": 0,
-        "nerf": 3,
+        "buff": 2,
+        "nerf": 1,
         "fix": 0,
         "neutral": 0
       }
@@ -6181,7 +6181,7 @@
       "touches": [
         {
           "patchId": "2026-03-06",
-          "tagSummary": "neutral",
+          "tagSummary": "mixed",
           "eventIds": [
             "1826362059925616:907",
             "1826362059925616:1003"
@@ -6189,14 +6189,14 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:135"
           ]
         },
         {
           "patchId": "2026-09-16",
-          "tagSummary": "mixed",
+          "tagSummary": "nerf",
           "eventIds": [
             "1844115010490072:41",
             "1844115010490072:42",
@@ -6205,10 +6205,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
-        "nerf": 1,
+        "buff": 2,
+        "nerf": 3,
         "fix": 0,
-        "neutral": 4
+        "neutral": 1
       }
     },
     "item:golden-statue": {
@@ -6368,7 +6368,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1785321795648842:105"
           ]
@@ -6382,8 +6382,8 @@
         }
       ],
       "totals": {
-        "buff": 2,
-        "nerf": 1,
+        "buff": 1,
+        "nerf": 2,
         "fix": 0,
         "neutral": 0
       }
@@ -6395,7 +6395,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "buff",
+          "tagSummary": "neutral",
           "eventIds": [
             "6148070194801611991:107"
           ]
@@ -6416,10 +6416,10 @@
         }
       ],
       "totals": {
-        "buff": 2,
+        "buff": 1,
         "nerf": 1,
         "fix": 0,
-        "neutral": 0
+        "neutral": 1
       }
     },
     "item:heroic-aura": {
@@ -6550,15 +6550,15 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1833334318572828:75"
           ]
         }
       ],
       "totals": {
-        "buff": 3,
-        "nerf": 1,
+        "buff": 1,
+        "nerf": 3,
         "fix": 0,
         "neutral": 0
       }
@@ -6623,10 +6623,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
+        "buff": 4,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:infinite-rounds": {
@@ -6681,10 +6681,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
+        "buff": 4,
         "nerf": 3,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:inhibitor": {
@@ -6694,7 +6694,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "6148070194801611991:128"
           ]
@@ -6708,7 +6708,7 @@
         },
         {
           "patchId": "2026-03-06",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1826362059925616:97",
             "1826362059925616:98"
@@ -6723,8 +6723,8 @@
         }
       ],
       "totals": {
-        "buff": 2,
-        "nerf": 3,
+        "buff": 4,
+        "nerf": 1,
         "fix": 0,
         "neutral": 0
       }
@@ -6736,15 +6736,15 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "6148070194801611991:98"
           ]
         }
       ],
       "totals": {
-        "buff": 0,
-        "nerf": 1,
+        "buff": 1,
+        "nerf": 0,
         "fix": 0,
         "neutral": 0
       }
@@ -6756,7 +6756,7 @@
       "touches": [
         {
           "patchId": "2025-02-25",
-          "tagSummary": "nerf",
+          "tagSummary": "fix",
           "eventIds": [
             "1792116353369036:276",
             "1792116353369036:277",
@@ -6786,9 +6786,9 @@
       ],
       "totals": {
         "buff": 0,
-        "nerf": 1,
-        "fix": 5,
-        "neutral": 17
+        "nerf": 0,
+        "fix": 9,
+        "neutral": 14
       }
     },
     "item:item-sound-and-visuals": {
@@ -6798,7 +6798,7 @@
       "touches": [
         {
           "patchId": "2025-05-08",
-          "tagSummary": "fix",
+          "tagSummary": "buff",
           "eventIds": [
             "1799088287841594:389",
             "1799088287841594:390",
@@ -6837,10 +6837,10 @@
         }
       ],
       "totals": {
-        "buff": 0,
+        "buff": 1,
         "nerf": 0,
-        "fix": 3,
-        "neutral": 30
+        "fix": 4,
+        "neutral": 28
       }
     },
     "item:items": {
@@ -6857,7 +6857,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1831432155569981:13",
             "1831432155569981:82"
@@ -6865,17 +6865,17 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:48"
           ]
         }
       ],
       "totals": {
-        "buff": 0,
-        "nerf": 1,
+        "buff": 2,
+        "nerf": 0,
         "fix": 0,
-        "neutral": 3
+        "neutral": 2
       }
     },
     "item:juggernaut": {
@@ -6885,7 +6885,7 @@
       "touches": [
         {
           "patchId": "2026-05-22",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1833334318572828:121",
             "1833334318572828:122"
@@ -6893,8 +6893,8 @@
         }
       ],
       "totals": {
-        "buff": 2,
-        "nerf": 0,
+        "buff": 1,
+        "nerf": 1,
         "fix": 0,
         "neutral": 0
       }
@@ -6906,7 +6906,7 @@
       "touches": [
         {
           "patchId": "2024-12-06",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1785321795648842:139",
             "1785321795648842:140"
@@ -6922,10 +6922,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 2,
         "nerf": 2,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:leech": {
@@ -6935,7 +6935,7 @@
       "touches": [
         {
           "patchId": "2024-12-06",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1785321795648842:120",
             "1785321795648842:121"
@@ -6951,7 +6951,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "neutral",
+          "tagSummary": "fix",
           "eventIds": [
             "1833334318572828:134"
           ]
@@ -6965,10 +6965,10 @@
         }
       ],
       "totals": {
-        "buff": 2,
+        "buff": 3,
         "nerf": 2,
-        "fix": 0,
-        "neutral": 2
+        "fix": 1,
+        "neutral": 0
       }
     },
     "item:lifestrike": {
@@ -6993,7 +6993,7 @@
         },
         {
           "patchId": "2026-07-28",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1839041357039193:15"
           ]
@@ -7008,10 +7008,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
+        "buff": 4,
         "nerf": 2,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:long-range": {
@@ -7105,17 +7105,17 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:153"
           ]
         }
       ],
       "totals": {
-        "buff": 4,
+        "buff": 5,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:majestic-leap": {
@@ -7125,14 +7125,14 @@
       "touches": [
         {
           "patchId": "2024-12-06",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1785321795648842:113"
           ]
         },
         {
           "patchId": "2025-05-08",
-          "tagSummary": "buff",
+          "tagSummary": "fix",
           "eventIds": [
             "1799088287841594:164"
           ]
@@ -7162,8 +7162,8 @@
       ],
       "totals": {
         "buff": 4,
-        "nerf": 2,
-        "fix": 0,
+        "nerf": 1,
+        "fix": 1,
         "neutral": 0
       }
     },
@@ -7548,7 +7548,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:15",
             "1831432155569981:16",
@@ -7572,10 +7572,10 @@
         }
       ],
       "totals": {
-        "buff": 4,
+        "buff": 5,
         "nerf": 4,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:phantom-strike": {
@@ -7585,17 +7585,17 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "6148070194801611991:130"
           ]
         }
       ],
       "totals": {
-        "buff": 0,
+        "buff": 1,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:plated-armor": {
@@ -7625,17 +7625,17 @@
       "touches": [
         {
           "patchId": "2024-12-06",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1785321795648842:89"
           ]
         }
       ],
       "totals": {
-        "buff": 0,
+        "buff": 1,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:radiant-regeneration": {
@@ -7735,7 +7735,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "6148070194801611991:114"
           ]
@@ -7750,7 +7750,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:52",
             "1831432155569981:53",
@@ -7768,10 +7768,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 3,
         "nerf": 6,
         "fix": 0,
-        "neutral": 2
+        "neutral": 0
       }
     },
     "item:rebuttal": {
@@ -7781,15 +7781,15 @@
       "touches": [
         {
           "patchId": "2026-05-22",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:93"
           ]
         }
       ],
       "totals": {
-        "buff": 0,
-        "nerf": 1,
+        "buff": 1,
+        "nerf": 0,
         "fix": 0,
         "neutral": 0
       }
@@ -7908,7 +7908,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1833334318572828:97",
             "1833334318572828:98"
@@ -7938,10 +7938,10 @@
         }
       ],
       "totals": {
-        "buff": 7,
-        "nerf": 7,
-        "fix": 0,
-        "neutral": 1
+        "buff": 8,
+        "nerf": 6,
+        "fix": 1,
+        "neutral": 0
       }
     },
     "item:restorative-shot": {
@@ -7974,10 +7974,10 @@
         }
       ],
       "totals": {
-        "buff": 2,
+        "buff": 3,
         "nerf": 2,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:return-fire": {
@@ -7994,7 +7994,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1785321795648842:107",
             "1785321795648842:108",
@@ -8026,10 +8026,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
-        "nerf": 3,
+        "buff": 5,
+        "nerf": 4,
         "fix": 0,
-        "neutral": 3
+        "neutral": 0
       }
     },
     "item:rusted-barrel": {
@@ -8075,7 +8075,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1831432155569981:79",
             "1831432155569981:80"
@@ -8114,8 +8114,8 @@
         }
       ],
       "totals": {
-        "buff": 6,
-        "nerf": 6,
+        "buff": 7,
+        "nerf": 5,
         "fix": 0,
         "neutral": 0
       }
@@ -8236,9 +8236,9 @@
       ],
       "totals": {
         "buff": 10,
-        "nerf": 9,
+        "nerf": 10,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:sharpshooter": {
@@ -8256,7 +8256,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1785321795648842:92",
             "1785321795648842:93",
@@ -8265,7 +8265,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1833334318572828:72",
             "1833334318572828:73",
@@ -8274,10 +8274,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
-        "nerf": 2,
+        "buff": 5,
+        "nerf": 3,
         "fix": 0,
-        "neutral": 3
+        "neutral": 0
       }
     },
     "item:shrink-ray": {
@@ -8315,10 +8315,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 2,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:silence-wave": {
@@ -8365,7 +8365,7 @@
         },
         {
           "patchId": "2024-12-06",
-          "tagSummary": "buff",
+          "tagSummary": "nerf",
           "eventIds": [
             "1785321795648842:101"
           ]
@@ -8386,8 +8386,8 @@
         }
       ],
       "totals": {
-        "buff": 3,
-        "nerf": 1,
+        "buff": 2,
+        "nerf": 2,
         "fix": 0,
         "neutral": 0
       }
@@ -8406,16 +8406,16 @@
         },
         {
           "patchId": "2026-03-06",
-          "tagSummary": "fix",
+          "tagSummary": "buff",
           "eventIds": [
             "1826362059925616:101"
           ]
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 2,
         "nerf": 0,
-        "fix": 1,
+        "fix": 0,
         "neutral": 0
       }
     },
@@ -8433,7 +8433,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:56"
           ]
@@ -8447,8 +8447,8 @@
         }
       ],
       "totals": {
-        "buff": 1,
-        "nerf": 2,
+        "buff": 2,
+        "nerf": 1,
         "fix": 0,
         "neutral": 0
       }
@@ -8460,7 +8460,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "6148070194801611991:133",
             "6148070194801611991:134",
@@ -8494,10 +8494,10 @@
         }
       ],
       "totals": {
-        "buff": 2,
+        "buff": 4,
         "nerf": 5,
-        "fix": 1,
-        "neutral": 2
+        "fix": 0,
+        "neutral": 1
       }
     },
     "item:soul-rebirth": {
@@ -8507,7 +8507,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "neutral",
+          "tagSummary": "nerf",
           "eventIds": [
             "6148070194801611991:127"
           ]
@@ -8515,9 +8515,9 @@
       ],
       "totals": {
         "buff": 0,
-        "nerf": 0,
+        "nerf": 1,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:spellbreaker": {
@@ -8641,9 +8641,9 @@
       ],
       "totals": {
         "buff": 1,
-        "nerf": 3,
+        "nerf": 4,
         "fix": 0,
-        "neutral": 2
+        "neutral": 1
       }
     },
     "item:spirit-lifesteal": {
@@ -8743,7 +8743,7 @@
         },
         {
           "patchId": "2026-03-06",
-          "tagSummary": "buff",
+          "tagSummary": "mixed",
           "eventIds": [
             "1826362059925616:110",
             "1826362059925616:111"
@@ -8751,8 +8751,8 @@
         }
       ],
       "totals": {
-        "buff": 3,
-        "nerf": 0,
+        "buff": 2,
+        "nerf": 1,
         "fix": 0,
         "neutral": 0
       }
@@ -8821,7 +8821,7 @@
       "touches": [
         {
           "patchId": "2025-11-21",
-          "tagSummary": "neutral",
+          "tagSummary": "nerf",
           "eventIds": [
             "1816849002015766:127"
           ]
@@ -8844,9 +8844,9 @@
       ],
       "totals": {
         "buff": 3,
-        "nerf": 0,
+        "nerf": 1,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:spiritual-overflow": {
@@ -8879,7 +8879,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:35",
             "1831432155569981:36",
@@ -8898,7 +8898,7 @@
         },
         {
           "patchId": "2026-07-28",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1839041357039193:24",
             "1839041357039193:25",
@@ -8916,10 +8916,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
-        "nerf": 10,
+        "buff": 6,
+        "nerf": 11,
         "fix": 0,
-        "neutral": 5
+        "neutral": 1
       }
     },
     "item:split-shot": {
@@ -8954,10 +8954,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 3,
         "nerf": 4,
         "fix": 0,
-        "neutral": 2
+        "neutral": 0
       }
     },
     "item:sprint-boots": {
@@ -8987,7 +8987,7 @@
       "touches": [
         {
           "patchId": "2026-03-06",
-          "tagSummary": "nerf",
+          "tagSummary": "buff",
           "eventIds": [
             "1826362059925616:46",
             "1826362059925616:47"
@@ -8995,8 +8995,8 @@
         }
       ],
       "totals": {
-        "buff": 0,
-        "nerf": 2,
+        "buff": 2,
+        "nerf": 0,
         "fix": 0,
         "neutral": 0
       }
@@ -9235,7 +9235,7 @@
       "touches": [
         {
           "patchId": "2024-11-07",
-          "tagSummary": "neutral",
+          "tagSummary": "nerf",
           "eventIds": [
             "6148070194801611991:99"
           ]
@@ -9278,9 +9278,9 @@
       ],
       "totals": {
         "buff": 4,
-        "nerf": 1,
+        "nerf": 2,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:transcendent-cooldown": {
@@ -9336,9 +9336,9 @@
       ],
       "totals": {
         "buff": 1,
-        "nerf": 5,
+        "nerf": 6,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:unstable-concoction": {
@@ -9356,17 +9356,17 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1831432155569981:153"
           ]
         }
       ],
       "totals": {
-        "buff": 2,
+        "buff": 3,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:unstoppable": {
@@ -9376,7 +9376,7 @@
       "touches": [
         {
           "patchId": "2024-12-06",
-          "tagSummary": "neutral",
+          "tagSummary": "buff",
           "eventIds": [
             "1785321795648842:119"
           ]
@@ -9390,10 +9390,10 @@
         }
       ],
       "totals": {
-        "buff": 1,
+        "buff": 2,
         "nerf": 0,
         "fix": 0,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "item:vampiric-burst": {
@@ -9455,7 +9455,7 @@
         },
         {
           "patchId": "2026-04-30",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1831432155569981:63",
             "1831432155569981:64"
@@ -9481,10 +9481,10 @@
         }
       ],
       "totals": {
-        "buff": 4,
-        "nerf": 5,
+        "buff": 5,
+        "nerf": 7,
         "fix": 0,
-        "neutral": 3
+        "neutral": 0
       }
     },
     "item:vortex-web": {
@@ -9494,7 +9494,7 @@
       "touches": [
         {
           "patchId": "2026-03-06",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1826362059925616:127",
             "1826362059925616:908",
@@ -9510,10 +9510,10 @@
         }
       ],
       "totals": {
-        "buff": 0,
-        "nerf": 1,
+        "buff": 1,
+        "nerf": 2,
         "fix": 1,
-        "neutral": 2
+        "neutral": 0
       }
     },
     "item:warp-stone": {
@@ -9635,7 +9635,7 @@
         },
         {
           "patchId": "2026-05-22",
-          "tagSummary": "mixed",
+          "tagSummary": "buff",
           "eventIds": [
             "1833334318572828:63",
             "1833334318572828:64"
@@ -9650,8 +9650,8 @@
         }
       ],
       "totals": {
-        "buff": 7,
-        "nerf": 5,
+        "buff": 8,
+        "nerf": 4,
         "fix": 0,
         "neutral": 0
       }
@@ -9700,10 +9700,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
+        "buff": 2,
         "nerf": 2,
         "fix": 0,
-        "neutral": 0
+        "neutral": 1
       }
     },
     "general:base-and-map-updates": {

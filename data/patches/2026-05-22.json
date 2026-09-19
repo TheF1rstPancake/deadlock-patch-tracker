@@ -850,12 +850,14 @@
         "name": "Items",
         "slug": "items"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Added a new T1 Vitality Item, Grit. Active grants you 200 Barrier for 4s duration. Innate grants 1 Out of Combat Regen. Cooldown: 60s. Upgrades to Weapon Shielding, Spirit Shielding, Reactive Barrier (these do not inherit the manual cast active) and Guardian Ward.",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.67,
+        "priorTag": "neutral"
       }
     },
     {
@@ -872,7 +874,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -897,7 +900,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -923,7 +927,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -946,9 +951,10 @@
       "tag": "buff",
       "raw": "Now works vs NPCs",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.55
       }
     },
     {
@@ -964,7 +970,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -981,7 +988,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1007,7 +1015,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1027,12 +1036,14 @@
         "slug": "slowing-bullets",
         "facet": "Dash Distance"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Dash Distance slow reduced from -25% to -22%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.57,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -1058,7 +1069,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1083,7 +1095,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -1109,7 +1122,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94
       },
       "metrics": [
         {
@@ -1135,7 +1149,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1154,12 +1169,14 @@
         "name": "Ballistic Enhancement",
         "slug": "ballistic-enhancement"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Now upgrades from Mystic Expansion",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.6,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1174,9 +1191,10 @@
       "tag": "buff",
       "raw": "Ability Range increased from +20% to +22%",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1197,12 +1215,14 @@
         "slug": "weighted-shots",
         "facet": "Dash Distance"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Dash Distance slow reduced from -25% to -22%",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -1228,7 +1248,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93
       },
       "metrics": [
         {
@@ -1254,7 +1275,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1280,7 +1302,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1306,7 +1329,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1331,7 +1355,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1357,7 +1382,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1383,7 +1409,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1409,7 +1436,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1429,12 +1457,14 @@
         "name": "Sharpshooter",
         "slug": "sharpshooter"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Now upgrades from High-Velocity Rounds (in addition to Long Range). Grants +60% Bullet Velocity.",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1451,7 +1481,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1471,12 +1502,14 @@
         "name": "Sharpshooter",
         "slug": "sharpshooter"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Now has innate 10% Weapon Damage (from components)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.83,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1488,12 +1521,14 @@
         "slug": "hunter-s-aura",
         "facet": "Fire Rate"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Fire Rate reduction increased from -14% to -15%",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.83,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -1519,7 +1554,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1545,7 +1581,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1570,7 +1607,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1593,9 +1631,10 @@
       "tag": "nerf",
       "raw": "No longer builds up from melee attacks",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.67
       }
     },
     {
@@ -1612,7 +1651,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1638,7 +1678,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1664,7 +1705,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1690,7 +1732,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.76
       },
       "metrics": [
         {
@@ -1713,9 +1756,10 @@
       "tag": "buff",
       "raw": "Now works vs NPCs",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.39
       }
     },
     {
@@ -1732,7 +1776,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.85
       },
       "metrics": [
         {
@@ -1755,9 +1800,10 @@
       "tag": "buff",
       "raw": "Now builds from Spirit Lifesteal (gains the innates it has)",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.64
       }
     },
     {
@@ -1769,12 +1815,14 @@
         "slug": "glass-cannon",
         "facet": "Max Health"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Max Health reduction reduced from -15% to -13%",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -1800,7 +1848,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       },
       "metrics": [
         {
@@ -1826,7 +1875,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       },
       "metrics": [
         {
@@ -1852,7 +1902,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1877,7 +1928,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1902,7 +1954,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1922,12 +1975,14 @@
         "slug": "rebuttal",
         "facet": "Parry"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Parry cooldown reduced from -2s to -1.75s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.28,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -1952,7 +2007,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -1969,7 +2025,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       },
       "metrics": [
         {
@@ -1994,7 +2051,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -2005,12 +2063,14 @@
         "name": "Restorative Locket",
         "slug": "restorative-locket"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "No longer has a minimum of 1 stamina restore",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.24,
+        "priorTag": "nerf"
       }
     },
     {
@@ -2027,7 +2087,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2051,7 +2112,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93
       }
     },
     {
@@ -2067,7 +2129,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -2084,7 +2147,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2100,7 +2164,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -2117,7 +2182,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -2134,7 +2200,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2159,7 +2226,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2184,7 +2252,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92
       }
     },
     {
@@ -2200,7 +2269,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -2217,7 +2287,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2243,7 +2314,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2269,7 +2341,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2294,7 +2367,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2315,12 +2389,14 @@
         "slug": "fury-trance",
         "facet": "Gains"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Gains the +6% Weapon Damage (from component)",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.56,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2337,7 +2413,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2362,7 +2439,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -2379,7 +2457,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2404,7 +2483,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2430,7 +2510,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2455,7 +2536,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2481,7 +2563,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2505,7 +2588,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94
       }
     },
     {
@@ -2517,12 +2601,14 @@
         "slug": "juggernaut",
         "facet": "Fire Rate"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Fire Rate reduction increased from -36% to -40%",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -2548,7 +2634,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2571,9 +2658,10 @@
       "tag": "buff",
       "raw": "Now grants +90 Health (from components)",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.54
       }
     },
     {
@@ -2590,7 +2678,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2609,12 +2698,14 @@
         "name": "Indomitable",
         "slug": "indomitable"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Now has +2 Out of Combat Regen (from components)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2631,7 +2722,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2657,7 +2749,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2683,7 +2776,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2709,7 +2803,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2735,7 +2830,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92
       },
       "metrics": [
         {
@@ -2756,12 +2852,14 @@
         "slug": "infuser",
         "facet": "Gains"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Gains +6 Spirit Power (from components)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.88,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2778,7 +2876,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2801,9 +2900,10 @@
       "tag": "buff",
       "raw": "Now grants +6% Weapon Power (from components)",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.44
       }
     },
     {
@@ -2815,12 +2915,14 @@
         "slug": "leech",
         "facet": "Updated"
       },
-      "tag": "neutral",
+      "tag": "fix",
       "raw": "Updated bonus HP to match the components",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.46,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2832,12 +2934,14 @@
         "slug": "golden-goose-egg",
         "facet": "Permanent"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Permanent buff from every 100 souls to every 80",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94,
+        "priorTag": "neutral"
       }
     },
     {
@@ -2854,7 +2958,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2880,7 +2985,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2905,7 +3011,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2931,7 +3038,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2956,7 +3064,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -2971,9 +3080,10 @@
       "tag": "buff",
       "raw": "Bullet Resist increased from 8% to 9%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.56
       },
       "metrics": [
         {
@@ -2998,7 +3108,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -3015,7 +3126,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3039,7 +3151,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -3056,7 +3169,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -3081,7 +3195,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3106,7 +3221,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3131,7 +3247,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -3157,7 +3274,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       },
       "metrics": [
         {
@@ -3183,7 +3301,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.86
       },
       "metrics": [
         {
@@ -3209,7 +3328,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3235,7 +3355,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3254,12 +3375,14 @@
         "name": "Magic Carpet",
         "slug": "magic-carpet"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Now innately grants -15% Gravity and Air Control by +25%",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.59,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3271,12 +3394,14 @@
         "slug": "arctic-blast",
         "facet": "Slowed"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Slowed targets now have their stamina regen frozen for the 4s slow duration",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.32,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3293,7 +3418,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3319,7 +3445,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -3344,7 +3471,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93
       }
     },
     {
@@ -3361,7 +3489,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.87
       },
       "metrics": [
         {
@@ -3387,7 +3516,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -3413,7 +3543,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.85
       },
       "metrics": [
         {
@@ -3439,7 +3570,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3463,7 +3595,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -3475,12 +3608,14 @@
         "slug": "abrams",
         "facet": "Infernal Resilience T1"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Infernal Resilience T1 changed from \"+1.5 Health Regen\" to \"+200 Max Health\"",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.47,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3492,12 +3627,14 @@
         "slug": "abrams",
         "facet": "Infernal Resilience T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Infernal Resilience T2 changed from \"200 Max Health\" to \"+18% Melee Lifesteal\" (40% effective vs non-heroes)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.26,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3514,7 +3651,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -3531,7 +3669,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3552,12 +3691,14 @@
         "slug": "apollo",
         "facet": "Improved"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Improved the hero's hitboxes (easier to hit)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.87,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3574,7 +3715,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3594,12 +3736,14 @@
         "slug": "apollo",
         "facet": "Riposte"
       },
-      "tag": "nerf",
+      "tag": "neutral",
       "raw": "Riposte no longer automatically dashes. It now grants you a sub ability immediately to target the hero you want to jump to for a brief duration (can target the enemy before the parry to buffer it). Cast range is 25m.",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.12,
+        "priorTag": "nerf"
       }
     },
     {
@@ -3616,7 +3760,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.84
       }
     },
     {
@@ -3633,7 +3778,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9
       }
     },
     {
@@ -3650,7 +3796,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -3667,7 +3814,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3692,7 +3840,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3718,7 +3867,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -3735,7 +3885,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3760,7 +3911,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3785,7 +3937,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3811,7 +3964,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -3826,9 +3980,10 @@
       "tag": "buff",
       "raw": "Rising Ram T3 increased from -10s Cooldown to -13s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.33
       },
       "display": "Rising Ram T3: cooldown reduction −10s → −13s (stronger CDR)",
       "clarified": true
@@ -3842,12 +3997,14 @@
         "slug": "calico",
         "facet": "Gloom Bomb T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Gloom Bomb T2 changed from \"+75 Damage to Barriers\" to \"-5% Melee Resist for 5s Per Bomb\" (stacks)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.13,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3859,12 +4016,14 @@
         "slug": "celeste",
         "facet": "Improved"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Improved the hero's hitboxes (easier to hit)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3879,9 +4038,10 @@
       "tag": "nerf",
       "raw": "Stamina cooldown increased from 4.5s to 5s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.67
       },
       "metrics": [
         {
@@ -3902,12 +4062,14 @@
         "slug": "celeste",
         "facet": "Radiant Daggers T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Radiant Daggers T2 changed from \"-18s Cooldown and +70 Damage\" to \"-22s Cooldown and +80 Damage\"",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.56,
+        "priorTag": "neutral"
       }
     },
     {
@@ -3924,7 +4086,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -3941,7 +4104,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3967,7 +4131,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -3993,7 +4158,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4013,12 +4179,14 @@
         "slug": "the-doorman",
         "facet": "Call Bell"
       },
-      "tag": "nerf",
+      "tag": "fix",
       "raw": "Call Bell inaccuracy debuff no longer diminishes from 100% to 0% over 1 second (the rest of the debuff is 4s)",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.16,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -4039,12 +4207,14 @@
         "slug": "the-doorman",
         "facet": "Call Bell"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Call Bell inaccuracy debuff reduced from -100% to -40% (lasts the full duration)",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -4065,12 +4235,14 @@
         "slug": "the-doorman",
         "facet": "Doorways"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Doorways close sub ability now starts on cooldown for 8s",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.74,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4087,7 +4259,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.8
       }
     },
     {
@@ -4103,7 +4276,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -4120,7 +4294,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       }
     },
     {
@@ -4137,7 +4312,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4149,12 +4325,14 @@
         "slug": "dynamo",
         "facet": "Kinetic Pulse T2"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Kinetic Pulse T2 reduced from -18% Bullet Resistance to -15%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.46,
+        "priorTag": "nerf"
       }
     },
     {
@@ -4171,7 +4349,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4191,12 +4370,14 @@
         "slug": "dynamo",
         "facet": "Quantum Entanglement T3"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Quantum Entanglement T3 changed from dispelling non-ult debuffs to reducing the duration of non-ult debuffs by 50%",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4213,7 +4394,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4233,12 +4415,14 @@
         "slug": "graves",
         "facet": "Grasping Hands"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Grasping Hands now spawns a ghoul in the base ability (T3 still increases it by 1)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4250,12 +4434,14 @@
         "slug": "graves",
         "facet": "Updated"
       },
-      "tag": "neutral",
+      "tag": "fix",
       "raw": "Updated dash ranges for Deadheads to be calculated from the center of Graves when they are following her",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.75,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4271,7 +4457,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -4287,7 +4474,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4303,7 +4491,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4319,7 +4508,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89
       }
     },
     {
@@ -4330,12 +4520,14 @@
         "name": "Graves",
         "slug": "graves"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Added 0.1s buffer duration for Deadheads losing line-of-sight before they stop following an enemy",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.41,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4351,7 +4543,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4363,12 +4556,14 @@
         "slug": "graves",
         "facet": "Jar"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Jar of Dead spirit scaling reduced from 0.35 to 0.31 (they are better at dealing damage now)",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.33,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -4390,9 +4585,10 @@
       "tag": "buff",
       "raw": "Increased speed & acceleration of Deadheads only when they are following Graves - doesn't affect in-combat",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.61
       }
     },
     {
@@ -4408,7 +4604,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -4420,12 +4617,14 @@
         "slug": "graves",
         "facet": "Update Grave's"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Update Grave's melee to also set the dash target for Deadheads",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.58,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4440,9 +4639,10 @@
       "tag": "nerf",
       "raw": "Bullet damage and growth reduced by -10%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.69
       }
     },
     {
@@ -4459,7 +4659,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4485,7 +4686,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4511,7 +4713,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4532,12 +4735,14 @@
         "slug": "grey-talon",
         "facet": "Rain"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Rain of Arrows moving ability in air improved",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4549,12 +4754,14 @@
         "slug": "grey-talon",
         "facet": "Rain"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Rain of Arrow stamina distance changed from being -9% to +25%",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4571,7 +4778,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4591,12 +4799,14 @@
         "slug": "grey-talon",
         "facet": "Rain"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Rain of Arrows T1 changed from \"-14s Cooldown\" to \"+3 Weapon Damage and +30% Slow for 1.5s\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.15,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4608,12 +4818,14 @@
         "slug": "grey-talon",
         "facet": "Rain"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Rain of Arrows T2 changed from \"+5 Weapon Damage and +40% Slow for 1.5s\" to \"-13s Cooldown\" (Total CD from 16s to 9s)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.26,
+        "priorTag": "neutral"
       },
       "metrics": [
         {
@@ -4639,7 +4851,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -4664,7 +4877,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4689,7 +4903,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4714,7 +4929,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94
       },
       "metrics": [
         {
@@ -4739,7 +4955,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -4756,7 +4973,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4779,9 +4997,10 @@
       "tag": "nerf",
       "raw": "When interrupted on Ice Path, it no longer creates an ice path below him and instead lets him fall to the ground",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.35
       }
     },
     {
@@ -4798,7 +5017,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4823,7 +5043,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4848,7 +5069,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4873,7 +5095,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.84
       }
     },
     {
@@ -4890,7 +5113,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -4907,7 +5131,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4931,7 +5156,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -4948,7 +5174,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -4969,12 +5196,14 @@
         "slug": "mina",
         "facet": "Innate"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Innate -8% Debuff Resist",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.82,
+        "priorTag": "neutral"
       }
     },
     {
@@ -4990,7 +5219,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -5005,9 +5235,10 @@
       "tag": "buff",
       "raw": "Love Bites T3 increased from -4s Cooldown to -5s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.63
       },
       "display": "Love Bites T3: cooldown reduction −4s → −5s (stronger CDR)",
       "clarified": true
@@ -5024,9 +5255,10 @@
       "tag": "nerf",
       "raw": "Love Bites no longer applies the flat on hit damage to abilities (was doing 20% of its value on Nox Nostra)",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.65
       }
     },
     {
@@ -5041,9 +5273,10 @@
       "tag": "nerf",
       "raw": "Nox Nostra T3 reduced from 1% Current HP to 0.5%",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.38
       }
     },
     {
@@ -5058,9 +5291,10 @@
       "tag": "neutral",
       "raw": "Updated Djinn's Mark visuals",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89
       }
     },
     {
@@ -5072,12 +5306,14 @@
         "slug": "mo-krill",
         "facet": "Getting"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Getting hit with a melee no longer knocks you up when you are burrowed",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.77,
+        "priorTag": "nerf"
       }
     },
     {
@@ -5094,7 +5330,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -5111,7 +5348,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       }
     },
     {
@@ -5128,7 +5366,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -5140,12 +5379,14 @@
         "slug": "paige",
         "facet": "Rallying Charge"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Rallying Charge now has half cooldown if it hits no allies or enemies",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.85,
+        "priorTag": "neutral"
       }
     },
     {
@@ -5162,7 +5403,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -5188,7 +5430,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -5205,7 +5448,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93
       },
       "metrics": [
         {
@@ -5231,7 +5475,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -5248,7 +5493,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5273,7 +5519,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5299,7 +5546,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -5325,7 +5573,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -5351,7 +5600,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5376,7 +5626,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       }
     },
     {
@@ -5388,12 +5639,14 @@
         "slug": "rem",
         "facet": "Tag Along"
       },
-      "tag": "nerf",
+      "tag": "neutral",
       "raw": "Tag Along lingering heal duration reduced from 3s to 2s (values rebalanced to be the same overall heal just faster)",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.49,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -5419,7 +5672,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5445,7 +5699,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5470,7 +5725,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92
       }
     },
     {
@@ -5481,12 +5737,14 @@
         "name": "Rem",
         "slug": "rem"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Reduced lockout period after ejecting from Tag Along from 1s to 0.3s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -5507,12 +5765,14 @@
         "slug": "rem",
         "facet": "Tag Along"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Tag Along time to fly to your ally is now 50% faster",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "neutral"
       }
     },
     {
@@ -5524,12 +5784,14 @@
         "slug": "rem",
         "facet": "Tag Along"
       },
-      "tag": "fix",
+      "tag": "neutral",
       "raw": "Tag Along heal duration is now displayed on the hud as well as the healthbar icon",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.66,
+        "priorTag": "fix"
       }
     },
     {
@@ -5546,7 +5808,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.8
       }
     },
     {
@@ -5558,12 +5821,14 @@
         "slug": "rem",
         "facet": "Tag Along"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Tag Along now allows friendly auras to affect Rem",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.7,
+        "priorTag": "neutral"
       }
     },
     {
@@ -5575,12 +5840,14 @@
         "slug": "rem",
         "facet": "Tag Along"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Tag Along eject is no longer affected by debuff resistance and now launches upwards slightly more to prevent hitting the ground",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.27,
+        "priorTag": "nerf"
       }
     },
     {
@@ -5592,12 +5859,14 @@
         "slug": "rem",
         "facet": "Tag Along"
       },
-      "tag": "nerf",
+      "tag": "fix",
       "raw": "Tag Along eject no longer briefly restricts movement abilities and input",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.45,
+        "priorTag": "nerf"
       }
     },
     {
@@ -5609,12 +5878,14 @@
         "slug": "rem",
         "facet": "Naptime"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Naptime now provides +30% damage reduction in the base ability (T3 still adds +50%)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89,
+        "priorTag": "neutral"
       }
     },
     {
@@ -5631,7 +5902,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5654,9 +5926,10 @@
       "tag": "buff",
       "raw": "Crit reduction increased from 35% to 55%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.5
       },
       "metrics": [
         {
@@ -5677,12 +5950,14 @@
         "slug": "shiv",
         "facet": "Slice"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Slice and Dice T2 reduced from -8% Spirit Resist to -6%",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.33,
+        "priorTag": "nerf"
       }
     },
     {
@@ -5699,7 +5974,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89
       },
       "metrics": [
         {
@@ -5725,7 +6001,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -5742,7 +6019,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5768,7 +6046,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -5794,7 +6073,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -5811,7 +6091,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.71
       }
     },
     {
@@ -5823,12 +6104,14 @@
         "slug": "silver",
         "facet": "Bullet Cycle Time"
       },
-      "tag": "nerf",
+      "tag": "neutral",
       "raw": "Bullet Cycle Time reduced from 0.9s to 0.85s (overall DPS adjusted to remain the same)",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.86,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -5849,12 +6132,14 @@
         "slug": "silver",
         "facet": "Entangling Bola"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Entangling Bola no longer prevents you from jumping and mantling",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.27,
+        "priorTag": "nerf"
       }
     },
     {
@@ -5866,12 +6151,14 @@
         "slug": "silver",
         "facet": "Entangling Bola T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Entangling Bola T2 changed from \"+0.75s Duration\" to \"-5s Cooldown\"",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.21,
+        "priorTag": "neutral"
       }
     },
     {
@@ -5883,12 +6170,14 @@
         "slug": "silver",
         "facet": "Entangling Bola T3"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Entangling Bola T3 changed from \"-5s Cooldown and Ricochet to 2 additional targets\" to \"+0.75s Duration and Ricochet to 2 additional targets\"",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.55,
+        "priorTag": "neutral"
       }
     },
     {
@@ -5905,7 +6194,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       },
       "metrics": [
         {
@@ -5931,7 +6221,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -5956,7 +6247,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -5973,7 +6265,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -5990,7 +6283,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -6007,7 +6301,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6024,7 +6319,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -6044,12 +6340,14 @@
         "slug": "victor",
         "facet": "Aura"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Aura of Suffering now does 50% damage to objectives",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.44,
+        "priorTag": "neutral"
       }
     },
     {
@@ -6066,7 +6364,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6083,7 +6382,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -6100,7 +6400,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -6112,12 +6413,14 @@
         "slug": "vyper",
         "facet": "Screwjab Dagger T2"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Screwjab Dagger T2 bullet resist per stack from -5% to -6%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.63,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -6143,7 +6446,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -6160,7 +6464,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -6180,12 +6485,14 @@
         "slug": "warden",
         "facet": "Willpower T3"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Willpower T3 debuff resistance now retroactively applies to existing debuffs when cast",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.46,
+        "priorTag": "neutral"
       }
     },
     {
@@ -6202,7 +6509,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -6214,12 +6522,14 @@
         "slug": "yamato",
         "facet": "Power Slash"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Power Slash post cast time reduced from 0.4s to 0.2s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -6240,12 +6550,14 @@
         "slug": "yamato",
         "facet": "Power Slash"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Power Slash spirit scaling increased from 1.86s to 2.1",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.43,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -6271,7 +6583,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -6297,7 +6610,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -6314,7 +6628,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6331,7 +6646,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6347,7 +6663,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6364,7 +6681,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6391,11 +6709,11 @@
       "changes": [
         {
           "raw": "Infernal Resilience T1 changed from \"+1.5 Health Regen\" to \"+200 Max Health\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Infernal Resilience T2 changed from \"200 Max Health\" to \"+18% Melee Lifesteal\" (40% effective vs non-heroes)",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Seismic Impact T2 increased from +0.7s Stun Duration to +0.8s",
@@ -6413,7 +6731,7 @@
       "changes": [
         {
           "raw": "Improved the hero's hitboxes (easier to hit)",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Base regen reduced from 2 to 1",
@@ -6421,7 +6739,7 @@
         },
         {
           "raw": "Riposte no longer automatically dashes. It now grants you a sub ability immediately to target the hero you want to jump to for a brief duration (can target the enemy before the parry to buffer it). Cast range is 25m.",
-          "tag": "nerf"
+          "tag": "neutral"
         },
         {
           "raw": "Riposte no longer triggers on damage auras (things like Flame Dash)",
@@ -6485,11 +6803,11 @@
     },
     {
       "name": "Calico",
-      "sentiment": "neutral",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Gloom Bomb T2 changed from \"+75 Damage to Barriers\" to \"-5% Melee Resist for 5s Per Bomb\" (stacks)",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
@@ -6499,7 +6817,7 @@
       "changes": [
         {
           "raw": "Improved the hero's hitboxes (easier to hit)",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Stamina cooldown increased from 4.5s to 5s",
@@ -6507,7 +6825,7 @@
         },
         {
           "raw": "Radiant Daggers T2 changed from \"-18s Cooldown and +70 Damage\" to \"-22s Cooldown and +80 Damage\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Shining Wonder T2 increased from +50 Damage to +70",
@@ -6531,11 +6849,11 @@
     },
     {
       "name": "Dynamo",
-      "sentiment": "nerf",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Kinetic Pulse T2 reduced from -18% Bullet Resistance to -15%",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Kinetic Pulse spirit scaling reduced from 1.65 to 1.55",
@@ -6543,7 +6861,7 @@
         },
         {
           "raw": "Quantum Entanglement T3 changed from dispelling non-ult debuffs to reducing the duration of non-ult debuffs by 50%",
-          "tag": "neutral"
+          "tag": "nerf"
         }
       ]
     },
@@ -6557,11 +6875,11 @@
         },
         {
           "raw": "Grasping Hands now spawns a ghoul in the base ability (T3 still increases it by 1)",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Updated dash ranges for Deadheads to be calculated from the center of Graves when they are following her",
-          "tag": "neutral"
+          "tag": "fix"
         },
         {
           "raw": "Fixed Fire Rate buffs for Deadheads not being applied to their next attack, but only on subsequent attacks",
@@ -6581,7 +6899,7 @@
         },
         {
           "raw": "Added 0.1s buffer duration for Deadheads losing line-of-sight before they stop following an enemy",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Fixed Deadheads becoming inactive if Graves dies while they are following her",
@@ -6589,7 +6907,7 @@
         },
         {
           "raw": "Jar of Dead spirit scaling reduced from 0.35 to 0.31 (they are better at dealing damage now)",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Increased speed & acceleration of Deadheads only when they are following Graves - doesn't affect in-combat",
@@ -6601,7 +6919,7 @@
         },
         {
           "raw": "Update Grave's melee to also set the dash target for Deadheads",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Bullet damage and growth reduced by -10%",
@@ -6627,11 +6945,11 @@
         },
         {
           "raw": "Rain of Arrows moving ability in air improved",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Rain of Arrow stamina distance changed from being -9% to +25%",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Rain of Arrows Weapon Damage bonus reduced from +4 to +3",
@@ -6639,11 +6957,11 @@
         },
         {
           "raw": "Rain of Arrows T1 changed from \"-14s Cooldown\" to \"+3 Weapon Damage and +30% Slow for 1.5s\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Rain of Arrows T2 changed from \"+5 Weapon Damage and +40% Slow for 1.5s\" to \"-13s Cooldown\" (Total CD from 16s to 9s)",
-          "tag": "neutral"
+          "tag": "nerf"
         }
       ]
     },
@@ -6749,7 +7067,7 @@
       "changes": [
         {
           "raw": "Innate -8% Debuff Resist",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Fixed Rake sometimes not working with high ping",
@@ -6783,11 +7101,11 @@
     },
     {
       "name": "Mo & Krill",
-      "sentiment": "mixed",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Getting hit with a melee no longer knocks you up when you are burrowed",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Sand Blast T3 increased from +1s Duration to +1.5s",
@@ -6809,7 +7127,7 @@
         },
         {
           "raw": "Rallying Charge now has half cooldown if it hits no allies or enemies",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
@@ -6855,7 +7173,7 @@
     },
     {
       "name": "Rem",
-      "sentiment": "mixed",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Pillow Toss charge time reduced from 9s to 8s",
@@ -6871,7 +7189,7 @@
         },
         {
           "raw": "Tag Along lingering heal duration reduced from 3s to 2s (values rebalanced to be the same overall heal just faster)",
-          "tag": "nerf"
+          "tag": "neutral"
         },
         {
           "raw": "Tag Along T2 Barrier and Item Duration/Range effectiveness increased from 25% to 35%",
@@ -6887,15 +7205,15 @@
         },
         {
           "raw": "Reduced lockout period after ejecting from Tag Along from 1s to 0.3s",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Tag Along time to fly to your ally is now 50% faster",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Tag Along heal duration is now displayed on the hud as well as the healthbar icon",
-          "tag": "fix"
+          "tag": "neutral"
         },
         {
           "raw": "Tag Along fixed specific abilities/items that could kill Rem while he's napping",
@@ -6903,19 +7221,19 @@
         },
         {
           "raw": "Tag Along now allows friendly auras to affect Rem",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Tag Along eject is no longer affected by debuff resistance and now launches upwards slightly more to prevent hitting the ground",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Tag Along eject no longer briefly restricts movement abilities and input",
-          "tag": "nerf"
+          "tag": "fix"
         },
         {
           "raw": "Naptime now provides +30% damage reduction in the base ability (T3 still adds +50%)",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
@@ -6939,7 +7257,7 @@
       "changes": [
         {
           "raw": "Slice and Dice T2 reduced from -8% Spirit Resist to -6%",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Bloodletting Deferred Damage Cleared reduced from 40% to 35%",
@@ -6973,19 +7291,19 @@
       "changes": [
         {
           "raw": "Bullet Cycle Time reduced from 0.9s to 0.85s (overall DPS adjusted to remain the same)",
-          "tag": "nerf"
+          "tag": "neutral"
         },
         {
           "raw": "Entangling Bola no longer prevents you from jumping and mantling",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Entangling Bola T2 changed from \"+0.75s Duration\" to \"-5s Cooldown\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Entangling Bola T3 changed from \"-5s Cooldown and Ricochet to 2 additional targets\" to \"+0.75s Duration and Ricochet to 2 additional targets\"",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Lycan Curse Fire Rate reduced from 80% to 65%",
@@ -7015,15 +7333,15 @@
         },
         {
           "raw": "Call Bell inaccuracy debuff no longer diminishes from 100% to 0% over 1 second (the rest of the debuff is 4s)",
-          "tag": "nerf"
+          "tag": "fix"
         },
         {
           "raw": "Call Bell inaccuracy debuff reduced from -100% to -40% (lasts the full duration)",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Doorways close sub ability now starts on cooldown for 8s",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Doorway is no longer unsilenceable",
@@ -7067,7 +7385,7 @@
         },
         {
           "raw": "Aura of Suffering now does 50% damage to objectives",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
@@ -7091,11 +7409,11 @@
     },
     {
       "name": "Vyper",
-      "sentiment": "mixed",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Screwjab Dagger T2 bullet resist per stack from -5% to -6%",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Screwjab Dagger T3 now also increases max stacks by 2",
@@ -7105,7 +7423,7 @@
     },
     {
       "name": "Warden",
-      "sentiment": "nerf",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Bullet damage per boon reduced from 0.38 to 0.34",
@@ -7113,7 +7431,7 @@
         },
         {
           "raw": "Willpower T3 debuff resistance now retroactively applies to existing debuffs when cast",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Binding Word T2 no longer increases cast range by +12m",
@@ -7127,11 +7445,11 @@
       "changes": [
         {
           "raw": "Power Slash post cast time reduced from 0.4s to 0.2s",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Power Slash spirit scaling increased from 1.86s to 2.1",
-          "tag": "buff"
+          "tag": "nerf"
         },
         {
           "raw": "Flying Slash range increased from 25m to 30m",

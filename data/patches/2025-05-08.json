@@ -2818,12 +2818,14 @@
         "name": "Majestic Leap",
         "slug": "majestic-leap"
       },
-      "tag": "buff",
+      "tag": "fix",
       "raw": "Majestic Leap, Warp Stone, and Phantom Strike can now properly be cast while climbing ropes.",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.83,
+        "priorTag": "buff"
       }
     },
     {
@@ -2835,12 +2837,14 @@
         "slug": "sinclair",
         "facet": "Sinclair's Spectral Assistant"
       },
-      "tag": "buff",
+      "tag": "fix",
       "raw": "Sinclair's Spectral Assistant teleport follow-up can now properly be cast while climbing ropes.",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.88,
+        "priorTag": "buff"
       }
     },
     {
@@ -6796,9 +6800,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6812,9 +6817,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6829,8 +6835,9 @@
       "raw": "Effects revision to show when the item procs.",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.66
       }
     },
     {
@@ -6844,9 +6851,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6860,9 +6868,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6876,9 +6885,10 @@
       "tag": "fix",
       "raw": "Fixed it not playing the correct cast sound.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6892,9 +6902,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6908,9 +6919,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6924,9 +6936,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6940,9 +6953,10 @@
       "tag": "neutral",
       "raw": "Now uses charge-up mechanic (recharges its proc strength over its cooldown duration).",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "low",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.39
       }
     },
     {
@@ -6956,9 +6970,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -6972,9 +6987,10 @@
       "tag": "neutral",
       "raw": "Updated overhead visual counter.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9
       }
     },
     {
@@ -6985,12 +7001,14 @@
         "name": "Item Sound and Visuals",
         "slug": "item-sound-and-visuals"
       },
-      "tag": "neutral",
+      "tag": "fix",
       "raw": "Now stops all momentum on Stun so victims fall straight down.",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.69,
+        "priorTag": "neutral"
       }
     },
     {
@@ -7004,9 +7022,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7020,9 +7039,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7036,9 +7056,10 @@
       "tag": "neutral",
       "raw": "Effects revision at start to make it more apparent.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -7052,9 +7073,10 @@
       "tag": "neutral",
       "raw": "Added metal footstep sweetener sound when Metal Skin is active.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -7068,9 +7090,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7084,9 +7107,10 @@
       "tag": "neutral",
       "raw": "Now uses charge-up mechanic.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.86
       }
     },
     {
@@ -7100,9 +7124,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7116,9 +7141,10 @@
       "tag": "fix",
       "raw": "Fixed its fire rate buff not being networked, and therefore not showing up in left-hand panel.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7132,9 +7158,10 @@
       "tag": "neutral",
       "raw": "Now uses charge-up mechanic.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.8
       }
     },
     {
@@ -7148,9 +7175,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7164,9 +7192,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7180,9 +7209,10 @@
       "tag": "neutral",
       "raw": "New sounds added",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7196,9 +7226,10 @@
       "tag": "neutral",
       "raw": "Now plays a sound every time a stack is gained.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.84
       }
     },
     {
@@ -7209,12 +7240,14 @@
         "name": "Item Sound and Visuals",
         "slug": "item-sound-and-visuals"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Returned Bullets factor in attacker movement and cannot be easily avoided by strafing.",
       "parse": {
         "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.46,
+        "priorTag": "neutral"
       }
     },
     {
@@ -7228,9 +7261,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7244,9 +7278,10 @@
       "tag": "neutral",
       "raw": "Added effect on activation.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       }
     },
     {
@@ -7260,9 +7295,10 @@
       "tag": "fix",
       "raw": "Fixed item not granting +20% weapon power.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -7276,9 +7312,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7292,9 +7329,10 @@
       "tag": "neutral",
       "raw": "New sounds added.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -7308,9 +7346,10 @@
       "tag": "neutral",
       "raw": "Effects revisions for better visibility and separation from other effects.",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89
       }
     },
     {
@@ -8085,11 +8124,11 @@
   "heroes": [
     {
       "name": "Sinclair",
-      "sentiment": "buff",
+      "sentiment": "fix",
       "changes": [
         {
           "raw": "Sinclair's Spectral Assistant teleport follow-up can now properly be cast while climbing ropes.",
-          "tag": "buff"
+          "tag": "fix"
         }
       ]
     }

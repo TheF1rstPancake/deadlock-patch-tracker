@@ -333,9 +333,10 @@
       "tag": "nerf",
       "raw": "Bullet Resist Reduction reduced from -13% to -12%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.42
       },
       "metrics": [
         {
@@ -361,7 +362,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.78
       },
       "metrics": [
         {
@@ -387,7 +389,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -410,9 +413,10 @@
       "tag": "buff",
       "raw": "Now builds from Sprint Boots",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.41
       }
     },
     {
@@ -429,7 +433,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -454,7 +459,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -480,7 +486,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -506,7 +513,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -527,12 +535,14 @@
         "slug": "spiritual-overflow",
         "facet": "Buildup"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Buildup is 35% slower",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99,
+        "priorTag": "neutral"
       }
     },
     {
@@ -549,7 +559,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -574,7 +585,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -600,7 +612,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -625,7 +638,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.83
       },
       "metrics": [
         {
@@ -651,7 +665,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -675,7 +690,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.78
       }
     },
     {
@@ -691,7 +707,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -703,12 +720,14 @@
         "slug": "veil-walker",
         "facet": "Movement"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Movement speed bonus is now removed when the invisibility is removed",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.4,
+        "priorTag": "neutral"
       }
     },
     {
@@ -725,7 +744,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -750,7 +770,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -776,7 +797,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -793,7 +815,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -819,7 +842,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -844,7 +868,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.88
       }
     },
     {
@@ -860,7 +885,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -872,12 +898,14 @@
         "slug": "golden-goose-egg",
         "facet": "Damage Penalty"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Damage Penalty increased from -10% to -15%",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -903,7 +931,8 @@
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.41
       }
     },
     {
@@ -920,7 +949,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -945,7 +975,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -971,7 +1002,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -996,7 +1028,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1022,7 +1055,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1037,9 +1071,10 @@
       "tag": "buff",
       "raw": "Duration increased by 20%",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.38
       }
     },
     {
@@ -1056,7 +1091,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1081,7 +1117,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1107,7 +1144,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1133,7 +1171,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1159,7 +1198,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1185,7 +1225,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94
       },
       "display": "Seismic Impact T3 Unstoppable 6s → 5s",
       "clarified": true
@@ -1204,7 +1245,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.83
       },
       "metrics": [
         {
@@ -1229,7 +1271,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1255,7 +1298,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1280,7 +1324,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1306,7 +1351,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1331,7 +1377,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1357,7 +1404,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1382,7 +1430,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1407,7 +1456,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1432,7 +1482,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -1457,7 +1508,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1482,7 +1534,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.85
       },
       "display": "Crackshot T2 also shreds 6% Bullet Resistance for 5s (on the target)",
       "clarified": true
@@ -1501,7 +1554,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1527,7 +1581,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1553,7 +1608,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1579,7 +1635,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       }
     },
     {
@@ -1596,7 +1653,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1621,7 +1679,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1647,7 +1706,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.79
       },
       "display": "Gun falloff range shorter: 18m→54m becomes 16m→48m",
       "clarified": true
@@ -1666,7 +1726,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1691,7 +1752,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1717,7 +1779,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1743,7 +1806,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1769,7 +1833,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.76
       },
       "metrics": [
         {
@@ -1794,7 +1859,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9
       }
     },
     {
@@ -1811,7 +1877,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1828,7 +1895,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1853,7 +1921,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.74
       },
       "display": "Captivating Read T1: cooldown reduction −11s → −14s (stronger CDR)",
       "clarified": true
@@ -1872,7 +1941,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "display": "Captivating Read T3 bonus +1m → +2m",
       "clarified": true,
@@ -1899,7 +1969,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1916,7 +1987,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       },
       "display": "Kinetic Carbine min-damage floor 25% → 10% (max unchanged)",
       "clarified": true,
@@ -1944,7 +2016,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.94
       },
       "display": "Kinetic Carbine T3 no longer boosts the min-damage multiplier (close-range floor is weaker)",
       "clarified": true
@@ -1962,7 +2035,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -1977,9 +2051,10 @@
       "tag": "fix",
       "raw": "Lil Helpers now have a target UI when instant cast mode is selected",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.35
       }
     },
     {
@@ -1996,7 +2071,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2013,7 +2089,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2033,12 +2110,14 @@
         "slug": "shiv",
         "facet": "Serrated Knives"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Serrated Knives while rage is full now deals 3.5% current HP damage on impact instead of ricocheting (0.01 spirit scaling)",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.42,
+        "priorTag": "neutral"
       },
       "display": "Serrated Knives at full rage: 3.5% current HP on hit instead of ricochet (0.01 spirit scaling)",
       "clarified": true
@@ -2057,7 +2136,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2082,7 +2162,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2107,7 +2188,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.75
       },
       "display": "Dashes and light melee no longer pause gun cycle time",
       "clarified": true
@@ -2124,9 +2206,10 @@
       "tag": "nerf",
       "raw": "Boot Kick can only target heroes and objectives now",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.55
       }
     },
     {
@@ -2141,9 +2224,10 @@
       "tag": "nerf",
       "raw": "Entangling Bola can only target heroes now",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.57
       }
     },
     {
@@ -2160,7 +2244,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89
       },
       "display": "Weighted Bola now adds gravity and interrupts flight (same rules as Phantom Strike)",
       "clarified": true
@@ -2177,9 +2262,10 @@
       "tag": "buff",
       "raw": "Ira Domini now works with Ricochet, all the shots will bounce",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.4
       }
     },
     {
@@ -2196,7 +2282,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -2213,7 +2300,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2230,7 +2318,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2255,7 +2344,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "display": "Splatter T1 bonus +2m → +1.5m",
       "clarified": true,
@@ -2282,7 +2372,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2308,7 +2399,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2334,7 +2426,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2351,7 +2444,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2377,7 +2471,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2403,7 +2498,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2428,7 +2524,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2453,7 +2550,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2470,7 +2568,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2495,7 +2594,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.87
       },
       "metrics": [
         {
@@ -2521,7 +2621,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2546,7 +2647,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2566,12 +2668,14 @@
         "slug": "wraith",
         "facet": "Card Trick Diamond Bullet"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Card Trick Diamond Bullet and Spirit Resist reduction reduced from -8% to -7%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.46,
+        "priorTag": "nerf"
       },
       "display": "Card Trick Diamond Bullet / Spirit Resist shred weaker: −8% → −7%",
       "clarified": true,
@@ -2594,12 +2698,14 @@
         "slug": "wraith",
         "facet": "Card Trick T3 Diamond Bullet"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Card Trick T3 Diamond Bullet and Spirit Resist reduction reduced from -5% to -4%",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.38,
+        "priorTag": "nerf"
       },
       "display": "Card Trick T3 Diamond Bullet / Spirit Resist shred weaker: −5% → −4%",
       "clarified": true,
@@ -2627,7 +2733,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "display": "Card Trick T3 Clubs slow weaker: +20% → +15%",
       "clarified": true,
@@ -2654,7 +2761,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2671,7 +2779,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2696,7 +2805,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2713,7 +2823,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2970,7 +3081,7 @@
         },
         {
           "raw": "Serrated Knives while rage is full now deals 3.5% current HP damage on impact instead of ricocheting (0.01 spirit scaling)",
-          "tag": "neutral",
+          "tag": "buff",
           "display": "Serrated Knives at full rage: 3.5% current HP on hit instead of ricochet (0.01 spirit scaling)",
           "clarified": true
         }
@@ -3110,13 +3221,13 @@
         },
         {
           "raw": "Card Trick Diamond Bullet and Spirit Resist reduction reduced from -8% to -7%",
-          "tag": "nerf",
+          "tag": "buff",
           "display": "Card Trick Diamond Bullet / Spirit Resist shred weaker: −8% → −7%",
           "clarified": true
         },
         {
           "raw": "Card Trick T3 Diamond Bullet and Spirit Resist reduction reduced from -5% to -4%",
-          "tag": "nerf",
+          "tag": "buff",
           "display": "Card Trick T3 Diamond Bullet / Spirit Resist shred weaker: −5% → −4%",
           "clarified": true
         },

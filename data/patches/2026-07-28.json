@@ -84,7 +84,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -108,9 +109,10 @@
       "tag": "buff",
       "raw": "Bullet Resist reduction increased from -4% to -5% per stack",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.56
       },
       "metrics": [
         {
@@ -130,12 +132,14 @@
         "name": "Cursed Relic",
         "slug": "cursed-relic"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "No longer has -14% Damage Output innate",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92,
+        "priorTag": "nerf"
       }
     },
     {
@@ -146,12 +150,14 @@
         "name": "Cursed Relic",
         "slug": "cursed-relic"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Now applies a -25% Damage Output debuff for the 3.25s duration",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9,
+        "priorTag": "neutral"
       }
     },
     {
@@ -168,7 +174,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -187,12 +194,14 @@
         "name": "Echo Shard",
         "slug": "echo-shard"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Now has a 0.5s post-cast time",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.87,
+        "priorTag": "neutral"
       }
     },
     {
@@ -208,7 +217,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -223,9 +233,10 @@
       "tag": "nerf",
       "raw": "Cooldown increased from 35s to 30s + the cooldown of the imbued ability",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.64
       },
       "metrics": [
         {
@@ -251,7 +262,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -271,12 +283,14 @@
         "name": "Frenzy",
         "slug": "frenzy"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Now has +10% Bullet Lifesteal as an innate",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96,
+        "priorTag": "neutral"
       }
     },
     {
@@ -293,7 +307,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92
       }
     },
     {
@@ -305,12 +320,14 @@
         "slug": "fury-trance",
         "facet": "Active"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Active removes move speed penalty when shooting (like Fleetfoot)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9,
+        "priorTag": "neutral"
       }
     },
     {
@@ -322,12 +339,14 @@
         "slug": "lifestrike",
         "facet": "When"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "When hitting a trooper and a hero at the same time, it now always prioritizes healing off the hero (same change for Melee Lifesteal)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.31,
+        "priorTag": "neutral"
       }
     },
     {
@@ -344,7 +363,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -370,7 +390,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -395,7 +416,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -419,7 +441,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -436,7 +459,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.89
       }
     },
     {
@@ -453,7 +477,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -478,7 +503,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -495,7 +521,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -515,12 +542,14 @@
         "name": "Spiritual Overflow",
         "slug": "spiritual-overflow"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Now provides a bonus +10% Spirit Lifesteal on proc",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "neutral"
       }
     },
     {
@@ -537,7 +566,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -563,7 +593,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -588,7 +619,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -603,9 +635,10 @@
       "tag": "neutral",
       "raw": "Changed from the cooldown being on the item to being target based",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.74
       }
     },
     {
@@ -616,12 +649,14 @@
         "name": "Spirit Burn",
         "slug": "spirit-burn"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Removed half cooldown against NPC",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.55,
+        "priorTag": "neutral"
       }
     },
     {
@@ -638,7 +673,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -663,7 +699,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.92
       },
       "metrics": [
         {
@@ -688,7 +725,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       }
     },
     {
@@ -705,7 +743,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -729,9 +768,10 @@
       "tag": "neutral",
       "raw": "Riposte T3 changed from +1.6s Stun Duration to +60% Bullet, Spirit and Melee Lifesteal against the target for 7s",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.16
       }
     },
     {
@@ -748,7 +788,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -765,7 +806,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -782,7 +824,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -799,7 +842,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -825,7 +869,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -842,7 +887,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -863,12 +909,14 @@
         "slug": "the-doorman",
         "facet": "Bullet"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Bullet damage rescaled from 26 + 1.19/boon to 24 + 1.25",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.59,
+        "priorTag": "neutral"
       }
     },
     {
@@ -885,7 +933,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       },
       "metrics": [
         {
@@ -911,7 +960,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -937,7 +987,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -963,7 +1014,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -989,7 +1041,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.88
       },
       "metrics": [
         {
@@ -1014,7 +1067,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -1031,7 +1085,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1057,7 +1112,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1074,7 +1130,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1099,7 +1156,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.88
       },
       "metrics": [
         {
@@ -1125,7 +1183,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1151,7 +1210,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.84
       },
       "metrics": [
         {
@@ -1176,7 +1236,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1196,12 +1257,14 @@
         "slug": "haze",
         "facet": "Sleep Dagger T2"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Sleep Dagger T2 changed from “-17s Cooldown and Applies 15 Fixation Stacks” to “+1s Sleep Duration and Applies 15 Fixation Stacks”",
       "parse": {
         "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.43,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1213,12 +1276,14 @@
         "slug": "haze",
         "facet": "Sleep Dagger T3"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Sleep Dagger T3 changed from “+1s Sleep Duration and -50% Move and Dash Speed for 3s on wake-up” to “-17s Cooldown and -50% Move and Dash Speed for 3s on wake-up”",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.31,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1235,7 +1300,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1252,7 +1318,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.91
       }
     },
     {
@@ -1269,7 +1336,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1294,7 +1362,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1315,12 +1384,14 @@
         "slug": "lady-geist",
         "facet": "Life Drain"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Life Drain changed from 75% Damage to Heal to 100%",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.8,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1337,7 +1408,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       }
     },
     {
@@ -1354,7 +1426,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1380,7 +1453,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1392,12 +1466,14 @@
         "slug": "mina",
         "facet": "Sanguine Retreat"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Sanguine Retreat recast time increased from 3.5s to 4s",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -1423,7 +1499,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1449,7 +1526,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1475,7 +1553,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -1492,7 +1571,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1509,7 +1589,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.98
       }
     },
     {
@@ -1525,7 +1606,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.82
       }
     },
     {
@@ -1537,12 +1619,14 @@
         "slug": "mo-krill",
         "facet": "Burrow"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Burrow cooldown no longer starts after the conclusion of the ability, now starts immediately",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.41,
+        "priorTag": "nerf"
       }
     },
     {
@@ -1554,12 +1638,14 @@
         "slug": "mo-krill",
         "facet": "Combo"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Combo now lets you cast items while using it",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.9,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1576,7 +1662,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1600,9 +1687,10 @@
       "tag": "nerf",
       "raw": "Flying Cloak T3 reduced from -11s Cooldown to -10s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.54
       },
       "display": "Flying Cloak T3: cooldown reduction −11s → −10s (weaker CDR)",
       "clarified": true
@@ -1621,7 +1709,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1633,12 +1722,14 @@
         "slug": "shiv",
         "facet": "Stamina"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Stamina regen increased from 5.5s to 6s",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.36,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -1664,7 +1755,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.78
       },
       "metrics": [
         {
@@ -1690,7 +1782,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.81
       }
     },
     {
@@ -1702,12 +1795,14 @@
         "slug": "silver",
         "facet": "Slam Fire"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Slam Fire now does 100% bonus damage against NPCs (troopers and neutrals, not objectives)",
       "parse": {
-        "confidence": "medium",
+        "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97,
+        "priorTag": "neutral"
       }
     },
     {
@@ -1719,12 +1814,14 @@
         "slug": "silver",
         "facet": "Lycan Curse"
       },
-      "tag": "buff",
+      "tag": "nerf",
       "raw": "Lycan Curse precast time increased from 0.2 to 0.3",
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.86,
+        "priorTag": "buff"
       },
       "metrics": [
         {
@@ -1749,7 +1846,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.88
       },
       "metrics": [
         {
@@ -1775,7 +1873,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -1792,7 +1891,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1818,7 +1918,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       }
     },
     {
@@ -1830,12 +1931,14 @@
         "slug": "venator",
         "facet": "Ira Domini"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Ira Domini cooldown no longer starts after the conclusion of the ability, now starts immediately",
       "parse": {
-        "confidence": "high",
+        "confidence": "low",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.33,
+        "priorTag": "nerf"
       }
     },
     {
@@ -1852,7 +1955,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1877,7 +1981,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -1902,7 +2007,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95
       },
       "metrics": [
         {
@@ -1927,7 +2033,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.87
       },
       "metrics": [
         {
@@ -1952,7 +2059,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -1974,9 +2082,10 @@
       "tag": "nerf",
       "raw": "The Cube T3 reduced from -25s Cooldown to -20s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.44
       },
       "display": "The Cube T3: cooldown reduction −25s → −20s (weaker CDR)",
       "clarified": true
@@ -1995,7 +2104,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2021,7 +2131,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.84
       },
       "metrics": [
         {
@@ -2047,7 +2158,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       },
       "metrics": [
         {
@@ -2073,7 +2185,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2090,7 +2203,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 1.0
       }
     },
     {
@@ -2107,7 +2221,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.79
       },
       "metrics": [
         {
@@ -2132,7 +2247,8 @@
       "parse": {
         "confidence": "high",
         "needsReview": false,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -2240,11 +2356,11 @@
         },
         {
           "raw": "Sleep Dagger T2 changed from “-17s Cooldown and Applies 15 Fixation Stacks” to “+1s Sleep Duration and Applies 15 Fixation Stacks”",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Sleep Dagger T3 changed from “+1s Sleep Duration and -50% Move and Dash Speed for 3s on wake-up” to “-17s Cooldown and -50% Move and Dash Speed for 3s on wake-up”",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Fixation T3 reduced from +0.14 per Stack to +0.11",
@@ -2282,7 +2398,7 @@
       "changes": [
         {
           "raw": "Life Drain changed from 75% Damage to Heal to 100%",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Life Drain DPS reduced to provide the same effective heal as before but with less DPS",
@@ -2300,11 +2416,11 @@
     },
     {
       "name": "Mina",
-      "sentiment": "buff",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Sanguine Retreat recast time increased from 3.5s to 4s",
-          "tag": "buff"
+          "tag": "nerf"
         },
         {
           "raw": "Sanguine Retreat T3 cast range increased from +3m to +4m",
@@ -2340,15 +2456,15 @@
     },
     {
       "name": "Mo & Krill",
-      "sentiment": "nerf",
+      "sentiment": "buff",
       "changes": [
         {
           "raw": "Burrow cooldown no longer starts after the conclusion of the ability, now starts immediately",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Combo now lets you cast items while using it",
-          "tag": "neutral"
+          "tag": "buff"
         }
       ]
     },
@@ -2380,11 +2496,11 @@
     },
     {
       "name": "Shiv",
-      "sentiment": "mixed",
+      "sentiment": "nerf",
       "changes": [
         {
           "raw": "Stamina regen increased from 5.5s to 6s",
-          "tag": "buff"
+          "tag": "nerf"
         },
         {
           "raw": "Killing Blow recast window reduced from 20s to 16s",
@@ -2402,11 +2518,11 @@
         },
         {
           "raw": "Slam Fire now does 100% bonus damage against NPCs (troopers and neutrals, not objectives)",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Lycan Curse precast time increased from 0.2 to 0.3",
-          "tag": "buff"
+          "tag": "nerf"
         },
         {
           "raw": "Lycan Curse precast movespeed reduced from 7.6m to 2.5m",
@@ -2424,7 +2540,7 @@
       "changes": [
         {
           "raw": "Bullet damage rescaled from 26 + 1.19/boon to 24 + 1.25",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Call Bell Charge Time increased from 6s to 7s",
@@ -2474,7 +2590,7 @@
         },
         {
           "raw": "Ira Domini cooldown no longer starts after the conclusion of the ability, now starts immediately",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Ira Domini blessed stakes damage increased from 100 to 115",
