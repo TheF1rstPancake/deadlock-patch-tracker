@@ -56,6 +56,7 @@ export function PatternsView({
   const [lens, setLens] = useState<PatternLens>(routeLens ?? DEFAULT_PATTERN_LENS)
   const [colorMode, setColorMode] = useState<HeatmapColorMode>(DEFAULT_HEATMAP_COLOR_MODE)
   const [showCumulative, setShowCumulative] = useState(false)
+  const [cumulativeBasis, setCumulativeBasis] = useState<NetBasis>(DEFAULT_NET_BASIS)
   const [netBasis, setNetBasis] = useState<NetBasis>(DEFAULT_NET_BASIS)
   const [careerSort, setCareerSort] = useState<CareerSort>(DEFAULT_CAREER_SORT)
   const [allRows, setAllRows] = useState(false)
@@ -174,6 +175,8 @@ export function PatternsView({
             onChartMode={setChartMode}
             showCumulative={showCumulative}
             onToggleCumulative={setShowCumulative}
+            cumulativeBasis={cumulativeBasis}
+            onCumulativeBasis={setCumulativeBasis}
             focusPatchId={focusPatchId}
           />
         ) : (
