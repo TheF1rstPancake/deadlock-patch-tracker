@@ -17,7 +17,9 @@ import {
   careerNet,
   cellTone,
   compareCareerRows,
+  CUMULATIVE_PERCENTILE_LEGEND,
   cumulativeBasisLabel,
+  cumulativeLineCopy,
   defaultCumulativeBasis,
   clipOverviewMatrix,
   directionRank,
@@ -34,8 +36,11 @@ import {
   percentileRank,
   quantile,
   rankMagnitude,
+  runningSignedPercentile,
+  seriesCumulativeValues,
   signedExtent,
   signedNet,
+  signedPercentileDelta,
   uniqueMatch,
   volumeOpacity,
 } from './patterns.ts'
@@ -394,12 +399,19 @@ describe('extent (estimated relative %)', () => {
 describe('dual cumulative labels and career net', () => {
   it('labels the active cumulative basis and formats signed values', () => {
     expect(defaultCumulativeBasis('counts')).toBe('counts')
-    expect(defaultCumulativeBasis('percentile')).toBe('extent')
+    expect(defaultCumulativeBasis('percentile')).toBe('percentile')
     expect(cumulativeBasisLabel('counts')).toBe('Cumulative: counts')
+    expect(cumulativeBasisLabel('percentile')).toBe('Cumulative: percentile')
     expect(cumulativeBasisLabel('extent')).toBe('Cumulative: approx extent')
+    expect(cumulativeLineCopy('percentile')).toBe(CUMULATIVE_PERCENTILE_LEGEND)
+    expect(cumulativeLineCopy('counts')).toBe(
+      'Gold line: running signed net (buff lines − nerf lines).',
+    )
     expect(formatSignedValue(12, 'counts')).toBe('+12')
     expect(formatSignedValue(-4, 'counts')).toBe('−4')
     expect(formatSignedValue(0, 'counts')).toBe('0')
+    expect(formatSignedValue(3, 'percentile')).toBe('+3')
+    expect(formatSignedValue(-14, 'percentile')).toBe('−14')
     expect(formatSignedValue(12.4, 'extent')).toBe('+12%')
     expect(formatSignedValue(-4.5, 'extent')).toBe('−4.5%')
     expect(formatSignedValue(0, 'extent')).toBe('0%')
@@ -439,6 +451,67 @@ describe('dual cumulative labels and career net', () => {
     const rows = buildCareerRows(items)
     expect(rows[0]?.countsNet).toBe(2)
     expect(rows[0]?.extentNet).toBe(10)
+  })
+})
+
+describe('chart cumulative matches bar encoding', () => {
+  it('runs signed percentile (buff Px − nerf Px) per lens, not extent', () => {
+    const patches = [
+      patch('2026-01-01', [
+        pctEvent('a0', 'Alpha', 'alpha', 'buff', 50),
+        pctEvent('b0', 'Beta', 'beta', 'buff', 40),
+        pctEvent('c0', 'Gamma', 'gamma', 'buff', 30),
+        pctEvent('d0', 'Delta', 'delta', 'nerf', 80),
+      ]),
+      patch('2026-02-01', [
+        pctEvent('a1', 'Alpha', 'alpha', 'buff', 10),
+        pctEvent('b1', 'Beta', 'beta', 'buff', 20),
+        pctEvent('e1', 'Echo', 'echo', 'buff', 5),
+        event('f1', 'hero', 'Fixer', 'fixer', 'fix'),
+      ]),
+    ]
+    const detail = buildEntityDetail(patches, 'hero', 'alpha')
+    const jan = detail!.series[0]!
+    const feb = detail!.series[1]!
+    expect(signedPercentileDelta(jan, 'across')).toBe(100)
+    expect(signedPercentileDelta(feb, 'across')).toBe(33)
+    expect(runningSignedPercentile(detail!.series, 'across')).toEqual([100, 133])
+    expect(seriesCumulativeValues(detail!.series, 'percentile', 'across')).toEqual([
+      100, 133,
+    ])
+    expect(seriesCumulativeValues(detail!.series, 'counts', 'across')).toEqual(
+      detail!.series.map((point) => point.cumulativeNet),
+    )
+    expect(seriesCumulativeValues(detail!.series, 'percentile', 'across')).not.toEqual(
+      detail!.series.map((point) => point.cumulativeExtent),
+    )
+  })
+
+  it('uses the same signed-percentile rule for items', () => {
+    const patches = [
+      patch('2026-01-01', [
+        event('s0', 'item', 'Sword', 'sword', 'buff', [
+          { stat: 'damage', from: 100, to: 150 },
+        ]),
+        event('s1', 'item', 'Sword', 'sword', 'nerf', [
+          { stat: 'damage', from: 100, to: 60 },
+        ]),
+        event('t0', 'item', 'Tome', 'tome', 'buff', [
+          { stat: 'damage', from: 100, to: 140 },
+        ]),
+        event('u0', 'item', 'Urn', 'urn', 'nerf', [
+          { stat: 'damage', from: 100, to: 50 },
+        ]),
+      ]),
+    ]
+    const detail = buildEntityDetail(patches, 'item', 'sword')
+    const point = detail!.series[0]!
+    expect(signedPercentileDelta(point, 'across')).toBe(
+      (point.acrossBuffRank?.percentile ?? 0) - (point.acrossNerfRank?.percentile ?? 0),
+    )
+    expect(seriesCumulativeValues(detail!.series, 'percentile', 'across')[0]).toBe(
+      signedPercentileDelta(point, 'across'),
+    )
   })
 })
 
@@ -811,6 +884,30 @@ describe('Viscous 3/6 rework spike (career copy)', () => {
     const viscous = rows.find((row) => row.slug === 'viscous')
     expect(viscous).toBeDefined()
     expect(Math.abs(viscous!.extentNet)).toBeGreaterThan(Math.abs(viscous!.countsNet))
+  })
+})
+
+describe('Abrams 3/6 percentile vs extent (ledger)', () => {
+  it('keeps the Across cumulative step near-even when %iles are close', () => {
+    const dir = join(process.cwd(), 'data/patches')
+    const patches = readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+    const detail = buildEntityDetail(patches, 'hero', 'abrams')
+    expect(detail).toBeDefined()
+    const idx = detail!.series.findIndex((point) => point.patchId === '2026-03-06')
+    expect(idx).toBeGreaterThanOrEqual(0)
+    const mar = detail!.series[idx]!
+    const delta = signedPercentileDelta(mar, 'across')
+    expect(mar.acrossBuffRank?.percentile).toBeGreaterThanOrEqual(90)
+    expect(mar.acrossNerfRank?.percentile).toBeGreaterThanOrEqual(90)
+    expect(Math.abs(delta)).toBeLessThan(20)
+    expect(Math.abs(mar.signedExtent)).toBeGreaterThan(80)
+    const running = seriesCumulativeValues(detail!.series, 'percentile', 'across')
+    const prev = idx > 0 ? running[idx - 1]! : 0
+    expect(running[idx]! - prev).toBe(delta)
+    expect(Math.abs(running[idx]! - prev)).toBeLessThan(20)
+    expect(Math.abs(mar.cumulativeExtent - (idx > 0 ? detail!.series[idx - 1]!.cumulativeExtent : 0))).toBeGreaterThan(80)
   })
 })
 
