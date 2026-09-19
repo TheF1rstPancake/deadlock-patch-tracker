@@ -79,12 +79,15 @@ export function PatternsView({
     setColorMode(DEFAULT_HEATMAP_COLOR_MODE)
     setShowCumulative(false)
     setCumulativeBasis(DEFAULT_NET_BASIS)
-    setNetBasis(DEFAULT_NET_BASIS)
-    setCareerSort(DEFAULT_CAREER_SORT)
     setAllRows(false)
     setAllPatches(false)
     setSort(DEFAULT_PATTERN_SORT)
   }, [kind, slug, routeLens, focusPatchId, board])
+
+  useEffect(() => {
+    setNetBasis(DEFAULT_NET_BASIS)
+    setCareerSort(DEFAULT_CAREER_SORT)
+  }, [board])
 
   const matrix = useMemo(() => {
     if (!patches) return null
