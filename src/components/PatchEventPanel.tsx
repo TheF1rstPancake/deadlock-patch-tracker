@@ -1,4 +1,10 @@
-import { eventExtent, type BarSide } from '../lib/patterns.ts'
+import {
+  formatAspectPeerHeadline,
+  formatRelativeChange,
+  rankEventMetrics,
+  type AspectPeerIndex,
+} from '../lib/aspectPeers.ts'
+import { eventExtent, type BarSide, type PatternLens } from '../lib/patterns.ts'
 import { LINE_GLYPH, LINE_LABEL } from '../lib/labels.ts'
 import type { ChangeEvent, MetricDelta } from '../types.ts'
 import { useEffect, useId, useRef } from 'react'
@@ -9,6 +15,9 @@ interface PatchEventPanelProps {
   side: BarSide
   percentileLabel: string
   events: ChangeEvent[]
+  patchId?: string
+  lens: PatternLens
+  peers: AspectPeerIndex
   onClose: () => void
 }
 
@@ -18,6 +27,9 @@ export function PatchEventPanel({
   side,
   percentileLabel,
   events,
+  patchId,
+  lens,
+  peers,
   onClose,
 }: PatchEventPanelProps) {
   const headingId = useId()
@@ -77,7 +89,13 @@ export function PatchEventPanel({
         ) : (
           <ul className="pattern-event-list">
             {events.map((event) => (
-              <EventLine key={event.id} event={event} />
+              <EventLine
+                key={event.id}
+                event={event}
+                patchId={patchId}
+                lens={lens}
+                peers={peers}
+              />
             ))}
           </ul>
         )}
@@ -86,8 +104,19 @@ export function PatchEventPanel({
   )
 }
 
-function EventLine({ event }: { event: ChangeEvent }) {
+function EventLine({
+  event,
+  patchId,
+  lens,
+  peers,
+}: {
+  event: ChangeEvent
+  patchId?: string
+  lens: PatternLens
+  peers: AspectPeerIndex
+}) {
   const text = event.display ?? event.raw
+  const ranks = patchId ? rankEventMetrics(peers, event, patchId) : []
   const extent = eventExtent(event)
   return (
     <li className={`pattern-event change-${event.tag}`}>
@@ -115,11 +144,22 @@ function EventLine({ event }: { event: ChangeEvent }) {
             ))}
           </ul>
         ) : null}
-        {event.tag === 'buff' || event.tag === 'nerf' ? (
-          <p className="pattern-event-extent">
-            approx. {formatWeight(extent.weight)} extent
-          </p>
-        ) : null}
+        {ranks.length > 0
+          ? ranks.map((rank, index) => (
+              <p key={`${event.id}-peer-${index}`} className="pattern-event-extent">
+                {formatAspectPeerHeadline(rank, lens)}
+                <span className="pattern-event-extent-rel">
+                  {formatRelativeChange(rank.relativePct)}
+                </span>
+              </p>
+            ))
+          : event.tag === 'buff' || event.tag === 'nerf'
+            ? (
+                <p className="pattern-event-extent">
+                  approx. {formatWeight(extent.weight)} extent
+                </p>
+              )
+            : null}
       </div>
     </li>
   )
