@@ -1,9 +1,19 @@
 import {
   formatAspectPeerHeadline,
   formatRelativeChange,
-  rankEventMetrics,
+  rankMetricLine,
+  eventAspectText,
   type AspectPeerIndex,
+  type AspectPeerRank,
 } from '../lib/aspectPeers.ts'
+import {
+  NO_ROSTER_BASELINE_CHIP,
+  ROSTER_HINT,
+  formatRosterHeadline,
+  scoreMetricAbsolute,
+  type AbsoluteNormScore,
+} from '../lib/rosterBaselines.ts'
+import { metricRelativePercent } from '../lib/metrics.ts'
 import { eventExtent, type BarSide, type PatternLens } from '../lib/patterns.ts'
 import { LINE_GLYPH, LINE_LABEL } from '../lib/labels.ts'
 import type { ChangeEvent, MetricDelta } from '../types.ts'
@@ -116,8 +126,27 @@ function EventLine({
   peers: AspectPeerIndex
 }) {
   const text = event.display ?? event.raw
-  const ranks = patchId ? rankEventMetrics(peers, event, patchId) : []
+  const aspectText = eventAspectText(event)
   const extent = eventExtent(event)
+  const signed = event.tag === 'buff' || event.tag === 'nerf'
+  const metrics = event.metrics ?? []
+  const blocks = signed
+    ? metrics.map((metric, index) => {
+        const rank = patchId
+          ? rankMetricLine(peers, event, metric, patchId)
+          : undefined
+        return {
+          key: `${event.id}-extent-${index}`,
+          abs: scoreMetricAbsolute(metric, aspectText),
+          rank,
+          relativePct: rank?.relativePct ?? metricRelativePercent(metric),
+        }
+      })
+    : []
+  const hasExtent = blocks.some(
+    (block) => block.abs.status === 'ok' || block.rank,
+  )
+
   return (
     <li className={`pattern-event change-${event.tag}`}>
       <span className="glyph" aria-hidden="true">
@@ -137,32 +166,78 @@ function EventLine({
             </p>
           </details>
         ) : null}
-        {event.metrics && event.metrics.length > 0 ? (
+        {metrics.length > 0 ? (
           <ul className="pattern-event-metrics">
-            {event.metrics.map((metric, index) => (
+            {metrics.map((metric, index) => (
               <li key={`${event.id}-m-${index}`}>{formatMetric(metric)}</li>
             ))}
           </ul>
         ) : null}
-        {ranks.length > 0
-          ? ranks.map((rank, index) => (
-              <p key={`${event.id}-peer-${index}`} className="pattern-event-extent">
-                {formatAspectPeerHeadline(rank, lens)}
-                <span className="pattern-event-extent-rel">
-                  {formatRelativeChange(rank.relativePct)}
-                </span>
-              </p>
-            ))
-          : event.tag === 'buff' || event.tag === 'nerf'
-            ? (
-                <p className="pattern-event-extent">
-                  approx. {formatWeight(extent.weight)} extent
-                </p>
-              )
-            : null}
+        {blocks.map((block) => (
+          <ExtentCard
+            key={block.key}
+            abs={block.abs}
+            rank={block.rank}
+            relativePct={block.relativePct}
+            lens={lens}
+          />
+        ))}
+        {signed && !hasExtent ? (
+          <p className="pattern-event-extent">
+            approx. {formatWeight(extent.weight)} extent
+            <span className="pattern-event-extent-chip">
+              {NO_ROSTER_BASELINE_CHIP}
+            </span>
+          </p>
+        ) : null}
       </div>
     </li>
   )
+}
+
+function ExtentCard({
+  abs,
+  rank,
+  relativePct,
+  lens,
+}: {
+  abs: AbsoluteNormScore
+  rank: AspectPeerRank | undefined
+  relativePct: number | undefined
+  lens: PatternLens
+}) {
+  if (abs.status === 'ok') {
+    return (
+      <p className="pattern-event-extent">
+        {formatRosterHeadline(abs)}
+        <span className="pattern-event-extent-hint">{ROSTER_HINT}</span>
+        {relativePct !== undefined ? (
+          <span className="pattern-event-extent-rel">
+            {formatRelativeChange(relativePct)}
+          </span>
+        ) : null}
+        {rank ? (
+          <span className="pattern-event-extent-peer">
+            {formatAspectPeerHeadline(rank, lens)}
+          </span>
+        ) : null}
+      </p>
+    )
+  }
+  if (rank) {
+    return (
+      <p className="pattern-event-extent">
+        {formatAspectPeerHeadline(rank, lens)}
+        <span className="pattern-event-extent-rel">
+          {formatRelativeChange(rank.relativePct)}
+        </span>
+        <span className="pattern-event-extent-chip">
+          {NO_ROSTER_BASELINE_CHIP}
+        </span>
+      </p>
+    )
+  }
+  return null
 }
 
 function formatWeight(value: number): string {

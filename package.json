@@ -10,6 +10,7 @@
     "ingest": "tsx scripts/ingest.ts",
     "ingest:all": "tsx scripts/ingest.ts --all",
     "vendor-portraits": "tsx scripts/vendor-portraits.ts",
+    "build-roster-baselines": "tsx scripts/build-roster-baselines.ts",
     "test": "vitest run"
   },
   "dependencies": {

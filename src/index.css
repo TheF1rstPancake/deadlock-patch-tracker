@@ -1307,6 +1307,37 @@ h1 {
   font-size: 0.74rem;
 }
 
+.pattern-event-extent-hint {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-family: Barlow, 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 0.72rem;
+}
+
+.pattern-event-extent-peer {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.pattern-event-extent-chip {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 7px 1px;
+  border: 1px solid var(--weapon-dark);
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .pattern-fix-dot {
   fill: var(--fix);
 }
