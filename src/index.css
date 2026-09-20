@@ -1328,7 +1328,8 @@ h1 {
 }
 
 .pattern-event-extent-chip {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: 6px;
   padding: 2px 7px 1px;
   border: 1px solid var(--weapon-dark);
