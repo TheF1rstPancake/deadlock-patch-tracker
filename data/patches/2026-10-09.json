@@ -24,8 +24,9 @@
       "raw": "Granny Long Legs melee lifesteal now scales with healing output",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.71
       }
     },
     {
@@ -39,9 +40,10 @@
       "tag": "neutral",
       "raw": "Now available as a new hero",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       }
     }
   ],

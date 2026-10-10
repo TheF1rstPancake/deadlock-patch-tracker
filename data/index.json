@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T19:34:35.550Z",
+  "generatedAt": "2026-10-10T20:26:23.308Z",
   "patches": [
     {
       "id": "2026-10-09",
@@ -15,7 +15,7 @@
         "general": 0,
         "system": 0,
         "unknown": 0,
-        "needsReview": 2
+        "needsReview": 0
       }
     },
     {
@@ -31,7 +31,7 @@
         "general": 1,
         "system": 0,
         "unknown": 0,
-        "needsReview": 24
+        "needsReview": 7
       }
     },
     {
@@ -3027,10 +3027,10 @@
         }
       ],
       "totals": {
-        "buff": 3,
+        "buff": 5,
         "nerf": 9,
         "fix": 1,
-        "neutral": 2
+        "neutral": 0
       }
     },
     "hero:rem": {
@@ -3500,7 +3500,7 @@
         },
         {
           "patchId": "2026-10-05",
-          "tagSummary": "nerf",
+          "tagSummary": "mixed",
           "eventIds": [
             "1845383656394833:16",
             "1845383656394833:17",
@@ -3515,10 +3515,10 @@
         }
       ],
       "totals": {
-        "buff": 2,
-        "nerf": 10,
+        "buff": 4,
+        "nerf": 9,
         "fix": 1,
-        "neutral": 1
+        "neutral": 0
       }
     },
     "hero:solomon": {

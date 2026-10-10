@@ -41,8 +41,9 @@
       "raw": "Scrap Grenade - Fixed some bugs with bouncing targeting",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       }
     },
     {
@@ -58,8 +59,9 @@
       "raw": "Scrap Grenade - Damage increased from 65 to 70",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -83,8 +85,9 @@
       "raw": "Scrap Grenade - T2 Damage increased from 65 to 70",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -108,8 +111,9 @@
       "raw": "Rat Swarm - Base Cooldown reduced from 28s to 24s",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -134,8 +138,9 @@
       "raw": "Rule, Ratannia! - Cooldown increased from 130 to 160",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -158,9 +163,10 @@
       "tag": "nerf",
       "raw": "Rule, Ratannia! - Damage Reduction reduced from 20% to 15%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": true,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.67
       },
       "metrics": [
         {
@@ -185,8 +191,9 @@
       "raw": "Rule, Ratannia! - Radius reduced from 24m to 20m",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -207,12 +214,14 @@
         "slug": "rat-king",
         "facet": "Rule"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Rule, Ratannia! - Charge Duration reduced from 12s to 10s",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": true,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.49,
+        "priorTag": "nerf"
       },
       "metrics": [
         {
@@ -237,8 +246,9 @@
       "raw": "Rule, Ratannia! - Bonus Move speed no longer scales with Spirit",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       }
     },
     {
@@ -250,12 +260,14 @@
         "slug": "rat-king",
         "facet": "Rule"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Rule, Ratannia! - Now falls faster while charging",
       "parse": {
-        "confidence": "medium",
+        "confidence": "low",
         "needsReview": true,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.35,
+        "priorTag": "neutral"
       }
     },
     {
@@ -267,12 +279,14 @@
         "slug": "rat-king",
         "facet": "Rule"
       },
-      "tag": "neutral",
+      "tag": "buff",
       "raw": "Rule, Ratannia! - T1 +1m/s Move Speed to +2m/s Move Speed",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1,
+        "priorTag": "neutral"
       }
     },
     {
@@ -288,8 +302,9 @@
       "raw": "Rule, Ratannia! - T1 No longer gives -20s cooldown (Total cooldown from 110s to 160s)",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       },
       "metrics": [
         {
@@ -313,9 +328,10 @@
       "tag": "nerf",
       "raw": "Rule, Ratannia! - T2 No longer grants +8s Charge Duration (Total charge duration from 20s to 10s)",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": true,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.48
       },
       "metrics": [
         {
@@ -340,8 +356,9 @@
       "raw": "Rule, Ratannia! - T2 Flag Duration reduced from +8s to +5s",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -366,8 +383,9 @@
       "raw": "Rule, Ratannia! - T3 Damage Reduction reduced from 15% to 10% (Total Damage Reduction from 35% to 25%)",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.96
       },
       "metrics": [
         {
@@ -392,8 +410,9 @@
       "raw": "Base HP Regen reduced from 2 to 1",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -413,12 +432,14 @@
         "slug": "sinclair",
         "facet": "Gun"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Gun - Falloff range reduced from 25-61 to 20-60",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": true,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.52,
+        "priorTag": "nerf"
       }
     },
     {
@@ -434,8 +455,9 @@
       "raw": "Gun - Reduced bullet base damage from 17.76 to 16.5",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
       },
       "metrics": [
         {
@@ -455,12 +477,14 @@
         "slug": "sinclair",
         "facet": "Vexing Bolt"
       },
-      "tag": "neutral",
+      "tag": "nerf",
       "raw": "Vexing Bolt - Now does half damage to objectives",
       "parse": {
-        "confidence": "medium",
-        "needsReview": true,
-        "source": "mechanical"
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.73,
+        "priorTag": "neutral"
       }
     },
     {
@@ -472,12 +496,14 @@
         "slug": "sinclair",
         "facet": "Spectral Assistant"
       },
-      "tag": "nerf",
+      "tag": "buff",
       "raw": "Spectral Assistant - Gun falloff range reduced from 25-61 to 20-60",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": true,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.56,
+        "priorTag": "nerf"
       }
     },
     {
@@ -493,8 +519,9 @@
       "raw": "Rabbit Hex - Radius reduced from 6.5m to 6m",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       },
       "metrics": [
         {
@@ -519,8 +546,9 @@
       "raw": "Rabbit Hex - T3 reduced from +3m Radius to +2m",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
       }
     },
     {
@@ -536,8 +564,9 @@
       "raw": "Audience Participation - Copy duration reduced from 12s to 9s",
       "parse": {
         "confidence": "high",
-        "needsReview": true,
-        "source": "mechanical"
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.97
       },
       "metrics": [
         {
@@ -561,9 +590,10 @@
       "tag": "nerf",
       "raw": "Audience Participation - Copied cooldown increased from 40% to 60%",
       "parse": {
-        "confidence": "high",
+        "confidence": "medium",
         "needsReview": true,
-        "source": "mechanical"
+        "source": "typesafe-jev",
+        "jevConfidence": 0.55
       },
       "metrics": [
         {
@@ -611,7 +641,7 @@
         },
         {
           "raw": "Rule, Ratannia! - Charge Duration reduced from 12s to 10s",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Rule, Ratannia! - Bonus Move speed no longer scales with Spirit",
@@ -619,11 +649,11 @@
         },
         {
           "raw": "Rule, Ratannia! - Now falls faster while charging",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Rule, Ratannia! - T1 +1m/s Move Speed to +2m/s Move Speed",
-          "tag": "neutral"
+          "tag": "buff"
         },
         {
           "raw": "Rule, Ratannia! - T1 No longer gives -20s cooldown (Total cooldown from 110s to 160s)",
@@ -645,7 +675,7 @@
     },
     {
       "name": "Sinclair",
-      "sentiment": "nerf",
+      "sentiment": "mixed",
       "changes": [
         {
           "raw": "Base HP Regen reduced from 2 to 1",
@@ -653,7 +683,7 @@
         },
         {
           "raw": "Gun - Falloff range reduced from 25-61 to 20-60",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Gun - Reduced bullet base damage from 17.76 to 16.5",
@@ -661,11 +691,11 @@
         },
         {
           "raw": "Vexing Bolt - Now does half damage to objectives",
-          "tag": "neutral"
+          "tag": "nerf"
         },
         {
           "raw": "Spectral Assistant - Gun falloff range reduced from 25-61 to 20-60",
-          "tag": "nerf"
+          "tag": "buff"
         },
         {
           "raw": "Rabbit Hex - Radius reduced from 6.5m to 6m",
