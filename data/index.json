@@ -1,7 +1,39 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T20:18:01.866Z",
+  "generatedAt": "2026-10-10T20:26:23.308Z",
   "patches": [
+    {
+      "id": "2026-10-09",
+      "date": "2026-10-09",
+      "title": "Make Your Move.",
+      "gid": "1846018067934643",
+      "layout": "sectioned",
+      "counts": {
+        "events": 2,
+        "hero": 2,
+        "item": 0,
+        "general": 0,
+        "system": 0,
+        "unknown": 0,
+        "needsReview": 0
+      }
+    },
+    {
+      "id": "2026-10-05",
+      "date": "2026-10-05",
+      "title": "Minor Update - 10-05-2026",
+      "gid": "1845383656394833",
+      "layout": "sectioned",
+      "counts": {
+        "events": 25,
+        "hero": 24,
+        "item": 0,
+        "general": 1,
+        "system": 0,
+        "unknown": 0,
+        "needsReview": 7
+      }
+    },
     {
       "id": "2026-09-16",
       "date": "2026-09-16",
@@ -558,6 +590,26 @@
         "nerf": 12,
         "fix": 2,
         "neutral": 5
+      }
+    },
+    "hero:baba": {
+      "kind": "hero",
+      "name": "Baba",
+      "slug": "baba",
+      "touches": [
+        {
+          "patchId": "2026-10-09",
+          "tagSummary": "buff",
+          "eventIds": [
+            "1846018067934643:0"
+          ]
+        }
+      ],
+      "totals": {
+        "buff": 1,
+        "nerf": 0,
+        "fix": 0,
+        "neutral": 0
       }
     },
     "hero:bebop": {
@@ -2947,6 +2999,40 @@
         "neutral": 1
       }
     },
+    "hero:rat-king": {
+      "kind": "hero",
+      "name": "Rat King",
+      "slug": "rat-king",
+      "touches": [
+        {
+          "patchId": "2026-10-05",
+          "tagSummary": "mixed",
+          "eventIds": [
+            "1845383656394833:1",
+            "1845383656394833:2",
+            "1845383656394833:3",
+            "1845383656394833:4",
+            "1845383656394833:5",
+            "1845383656394833:6",
+            "1845383656394833:7",
+            "1845383656394833:8",
+            "1845383656394833:9",
+            "1845383656394833:10",
+            "1845383656394833:11",
+            "1845383656394833:12",
+            "1845383656394833:13",
+            "1845383656394833:14",
+            "1845383656394833:15"
+          ]
+        }
+      ],
+      "totals": {
+        "buff": 5,
+        "nerf": 9,
+        "fix": 1,
+        "neutral": 0
+      }
+    },
     "hero:rem": {
       "kind": "hero",
       "name": "Rem",
@@ -3411,13 +3497,48 @@
             "1816849002015766:224",
             "1816849002015766:225"
           ]
+        },
+        {
+          "patchId": "2026-10-05",
+          "tagSummary": "mixed",
+          "eventIds": [
+            "1845383656394833:16",
+            "1845383656394833:17",
+            "1845383656394833:18",
+            "1845383656394833:19",
+            "1845383656394833:20",
+            "1845383656394833:21",
+            "1845383656394833:22",
+            "1845383656394833:23",
+            "1845383656394833:24"
+          ]
         }
       ],
       "totals": {
-        "buff": 2,
-        "nerf": 2,
+        "buff": 4,
+        "nerf": 9,
         "fix": 1,
         "neutral": 0
+      }
+    },
+    "hero:solomon": {
+      "kind": "hero",
+      "name": "Solomon",
+      "slug": "solomon",
+      "touches": [
+        {
+          "patchId": "2026-10-09",
+          "tagSummary": "neutral",
+          "eventIds": [
+            "1846018067934643:1"
+          ]
+        }
+      ],
+      "totals": {
+        "buff": 0,
+        "nerf": 0,
+        "fix": 0,
+        "neutral": 1
       }
     },
     "hero:the-doorman": {
@@ -10326,12 +10447,19 @@
             "1844115010490072:15",
             "1844115010490072:16"
           ]
+        },
+        {
+          "patchId": "2026-10-05",
+          "tagSummary": "fix",
+          "eventIds": [
+            "1845383656394833:0"
+          ]
         }
       ],
       "totals": {
         "buff": 40,
         "nerf": 30,
-        "fix": 16,
+        "fix": 17,
         "neutral": 61
       }
     },

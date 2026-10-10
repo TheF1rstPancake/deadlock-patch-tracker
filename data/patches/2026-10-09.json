@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-10-09",
+  "title": "Make Your Move.",
+  "date": "2026-10-09",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1846018067934643",
+  "gid": "1846018067934643",
+  "appid": 1422450,
+  "layout": "sectioned",
+  "sectionsPresent": [
+    "Heroes"
+  ],
+  "events": [
+    {
+      "id": "1846018067934643:0",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Granny Long Legs"
+      },
+      "tag": "buff",
+      "raw": "Granny Long Legs melee lifesteal now scales with healing output",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.71
+      }
+    },
+    {
+      "id": "1846018067934643:1",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Solomon",
+        "slug": "solomon"
+      },
+      "tag": "neutral",
+      "raw": "Now available as a new hero",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Baba",
+      "sentiment": "buff",
+      "changes": [
+        {
+          "raw": "Granny Long Legs melee lifesteal now scales with healing output",
+          "tag": "buff"
+        }
+      ]
+    },
+    {
+      "name": "Solomon",
+      "sentiment": "neutral",
+      "changes": [
+        {
+          "raw": "Now available as a new hero",
+          "tag": "neutral"
+        }
+      ]
+    }
+  ]
+}
