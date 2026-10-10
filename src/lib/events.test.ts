@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { buildCatalogIndex, loadCatalog, lookupName } from './catalog.ts'
-import { buildEvents, projectHeroes, resolveTarget } from './events.ts'
+import {
+  applyPreviousEvents,
+  buildEvents,
+  projectHeroes,
+  resolveTarget,
+} from './events.ts'
 import { extractMetrics } from './metrics.ts'
 import { stripSteamMarkup } from './parseNews.ts'
 
@@ -144,6 +149,63 @@ describe('buildEvents', () => {
     expect(heroes.map((hero) => hero.name)).toEqual(['Celeste', 'Graves'])
     expect(heroes.find((hero) => hero.name === 'Celeste')?.sentiment).toBe('nerf')
     expect(heroes.find((hero) => hero.name === 'Graves')?.sentiment).toBe('buff')
+  })
+})
+
+describe('applyPreviousEvents', () => {
+  it('keeps TypeSafe Jev polarity tags on re-ingest', () => {
+    const previous = {
+      schemaVersion: 2 as const,
+      id: '2026-09-16',
+      title: 'Minor Update - 09-16-2026',
+      date: '2026-09-16',
+      steamUrl: 'https://example.test',
+      gid: '1',
+      appid: 1422450,
+      layout: 'sectioned' as const,
+      sectionsPresent: ['Heroes'],
+      events: [
+        {
+          id: '1:0',
+          section: 'Heroes',
+          target: { kind: 'hero' as const, name: 'Paige', slug: 'paige' },
+          tag: 'buff' as const,
+          raw: 'Captivating Read T1 increased from -11s Cooldown to -14s',
+          parse: {
+            confidence: 'high' as const,
+            needsReview: false,
+            source: 'typesafe-jev' as const,
+            jevConfidence: 0.99,
+            priorTag: 'nerf' as const,
+          },
+        },
+      ],
+      heroes: [],
+    }
+    const next = applyPreviousEvents(
+      [
+        {
+          id: '1:0',
+          section: 'Heroes',
+          target: { kind: 'hero', name: 'Paige', slug: 'paige' },
+          tag: 'nerf',
+          raw: 'Captivating Read T1 increased from -11s Cooldown to -14s',
+          parse: {
+            confidence: 'high',
+            needsReview: false,
+            source: 'mechanical',
+          },
+        },
+      ],
+      previous,
+      true,
+    )
+    expect(next[0]?.tag).toBe('buff')
+    expect(next[0]?.parse).toMatchObject({
+      source: 'typesafe-jev',
+      jevConfidence: 0.99,
+      priorTag: 'nerf',
+    })
   })
 })
 

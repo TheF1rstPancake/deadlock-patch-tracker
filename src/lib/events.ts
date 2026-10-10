@@ -400,13 +400,21 @@ export function applyPreviousEvents(
     const next: ChangeEvent = { ...event, parse: { ...event.parse } }
     if (
       prevEvent?.parse.source === 'cursor' ||
-      prevEvent?.parse.source === 'manual'
+      prevEvent?.parse.source === 'manual' ||
+      prevEvent?.parse.source === 'typesafe-jev'
     ) {
       next.parse.source = prevEvent.parse.source
+      if (prevEvent.parse.jevConfidence != null) {
+        next.parse.jevConfidence = prevEvent.parse.jevConfidence
+      }
+      if (prevEvent.parse.priorTag) {
+        next.parse.priorTag = prevEvent.parse.priorTag
+      }
     }
+    const jevLock = prevEvent?.parse.source === 'typesafe-jev'
     const override = prevEvent?.override || prevChange?.override
-    if (override) {
-      next.override = true
+    if (override || jevLock) {
+      if (override) next.override = true
       next.tag = prevEvent?.tag ?? prevChange?.tag ?? next.tag
     }
     const display = prevEvent?.display ?? prevChange?.display ?? next.display

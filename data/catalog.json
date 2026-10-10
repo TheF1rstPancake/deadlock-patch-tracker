@@ -11,6 +11,10 @@
       "slug": "apollo"
     },
     {
+      "name": "Baba",
+      "slug": "baba"
+    },
+    {
       "name": "Bebop",
       "slug": "bebop"
     },
@@ -37,6 +41,10 @@
     {
       "name": "Celeste",
       "slug": "celeste"
+    },
+    {
+      "name": "Deadman Danny",
+      "slug": "deadman-danny"
     },
     {
       "name": "Drifter",
@@ -119,6 +127,10 @@
       "slug": "mo-krill"
     },
     {
+      "name": "Nurse Harrow",
+      "slug": "nurse-harrow"
+    },
+    {
       "name": "Paige",
       "slug": "paige"
     },
@@ -129,6 +141,10 @@
     {
       "name": "Pocket",
       "slug": "pocket"
+    },
+    {
+      "name": "Rat King",
+      "slug": "rat-king"
     },
     {
       "name": "Raven",
@@ -165,6 +181,10 @@
     {
       "name": "Skyrunner",
       "slug": "skyrunner"
+    },
+    {
+      "name": "Solomon",
+      "slug": "solomon"
     },
     {
       "name": "Swan",
@@ -205,6 +225,10 @@
     {
       "name": "Vindicta",
       "slug": "vindicta"
+    },
+    {
+      "name": "Violet",
+      "slug": "violet"
     },
     {
       "name": "Viscous",
@@ -1090,6 +1114,8 @@
     "Sinclair": "Sinclair",
     "The Magnificent Sinclair": "Sinclair",
     "Ladygeist": "Lady Geist",
-    "Mo & Krill": "Mo & Krill"
+    "Mo & Krill": "Mo & Krill",
+    "The Rat King": "Rat King",
+    "Rat King": "Rat King"
   }
 }

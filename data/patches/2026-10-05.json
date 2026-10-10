@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-10-05",
+  "title": "Minor Update - 10-05-2026",
+  "date": "2026-10-05",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/1845383656394833",
+  "gid": "1845383656394833",
+  "appid": 1422450,
+  "layout": "sectioned",
+  "sectionsPresent": [
+    "General",
+    "Heroes"
+  ],
+  "events": [
+    {
+      "id": "1845383656394833:0",
+      "section": "General",
+      "target": {
+        "kind": "general",
+        "name": "General",
+        "slug": "general"
+      },
+      "tag": "fix",
+      "raw": "Fixed bugs that were causing troopers to walk too slowly in lane",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:1",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Scrap Grenade"
+      },
+      "tag": "fix",
+      "raw": "Scrap Grenade - Fixed some bugs with bouncing targeting",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:2",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Scrap Grenade"
+      },
+      "tag": "buff",
+      "raw": "Scrap Grenade - Damage increased from 65 to 70",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 65,
+          "to": 70
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:3",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Scrap Grenade"
+      },
+      "tag": "buff",
+      "raw": "Scrap Grenade - T2 Damage increased from 65 to 70",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 65,
+          "to": 70
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:4",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rat Swarm"
+      },
+      "tag": "buff",
+      "raw": "Rat Swarm - Base Cooldown reduced from 28s to 24s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 28,
+          "to": 24,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:5",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - Cooldown increased from 130 to 160",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 130,
+          "to": 160
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:6",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - Damage Reduction reduced from 20% to 15%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 15,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:7",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - Radius reduced from 24m to 20m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 24,
+          "to": 20,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:8",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - Charge Duration reduced from 12s to 10s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 12,
+          "to": 10,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:9",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - Bonus Move speed no longer scales with Spirit",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:10",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "neutral",
+      "raw": "Rule, Ratannia! - Now falls faster while charging",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:11",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "neutral",
+      "raw": "Rule, Ratannia! - T1 +1m/s Move Speed to +2m/s Move Speed",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:12",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - T1 No longer gives -20s cooldown (Total cooldown from 110s to 160s)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 110,
+          "to": 160,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:13",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - T2 No longer grants +8s Charge Duration (Total charge duration from 20s to 10s)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 20,
+          "to": 10,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:14",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - T2 Flag Duration reduced from +8s to +5s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 8,
+          "to": 5,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:15",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Rat King",
+        "slug": "rat-king",
+        "facet": "Rule"
+      },
+      "tag": "nerf",
+      "raw": "Rule, Ratannia! - T3 Damage Reduction reduced from 15% to 10% (Total Damage Reduction from 35% to 25%)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 15,
+          "to": 10,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:16",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Base HP Regen"
+      },
+      "tag": "nerf",
+      "raw": "Base HP Regen reduced from 2 to 1",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 2,
+          "to": 1
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:17",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Gun"
+      },
+      "tag": "nerf",
+      "raw": "Gun - Falloff range reduced from 25-61 to 20-60",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:18",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Gun"
+      },
+      "tag": "nerf",
+      "raw": "Gun - Reduced bullet base damage from 17.76 to 16.5",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 17.76,
+          "to": 16.5
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:19",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Vexing Bolt"
+      },
+      "tag": "neutral",
+      "raw": "Vexing Bolt - Now does half damage to objectives",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:20",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Spectral Assistant"
+      },
+      "tag": "nerf",
+      "raw": "Spectral Assistant - Gun falloff range reduced from 25-61 to 20-60",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:21",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Rabbit Hex"
+      },
+      "tag": "nerf",
+      "raw": "Rabbit Hex - Radius reduced from 6.5m to 6m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "radius",
+          "polarity": "up_is_buff",
+          "from": 6.5,
+          "to": 6,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:22",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Rabbit Hex"
+      },
+      "tag": "nerf",
+      "raw": "Rabbit Hex - T3 reduced from +3m Radius to +2m",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1845383656394833:23",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Audience Participation"
+      },
+      "tag": "nerf",
+      "raw": "Audience Participation - Copy duration reduced from 12s to 9s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "duration",
+          "polarity": "up_is_buff",
+          "from": 12,
+          "to": 9,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1845383656394833:24",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Sinclair",
+        "slug": "sinclair",
+        "facet": "Audience Participation"
+      },
+      "tag": "nerf",
+      "raw": "Audience Participation - Copied cooldown increased from 40% to 60%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": true,
+        "source": "mechanical"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 40,
+          "to": 60,
+          "unit": "%"
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Rat King",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Scrap Grenade - Fixed some bugs with bouncing targeting",
+          "tag": "fix"
+        },
+        {
+          "raw": "Scrap Grenade - Damage increased from 65 to 70",
+          "tag": "buff"
+        },
+        {
+          "raw": "Scrap Grenade - T2 Damage increased from 65 to 70",
+          "tag": "buff"
+        },
+        {
+          "raw": "Rat Swarm - Base Cooldown reduced from 28s to 24s",
+          "tag": "buff"
+        },
+        {
+          "raw": "Rule, Ratannia! - Cooldown increased from 130 to 160",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - Damage Reduction reduced from 20% to 15%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - Radius reduced from 24m to 20m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - Charge Duration reduced from 12s to 10s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - Bonus Move speed no longer scales with Spirit",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - Now falls faster while charging",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Rule, Ratannia! - T1 +1m/s Move Speed to +2m/s Move Speed",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Rule, Ratannia! - T1 No longer gives -20s cooldown (Total cooldown from 110s to 160s)",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - T2 No longer grants +8s Charge Duration (Total charge duration from 20s to 10s)",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - T2 Flag Duration reduced from +8s to +5s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rule, Ratannia! - T3 Damage Reduction reduced from 15% to 10% (Total Damage Reduction from 35% to 25%)",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Sinclair",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Base HP Regen reduced from 2 to 1",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Gun - Falloff range reduced from 25-61 to 20-60",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Gun - Reduced bullet base damage from 17.76 to 16.5",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Vexing Bolt - Now does half damage to objectives",
+          "tag": "neutral"
+        },
+        {
+          "raw": "Spectral Assistant - Gun falloff range reduced from 25-61 to 20-60",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rabbit Hex - Radius reduced from 6.5m to 6m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rabbit Hex - T3 reduced from +3m Radius to +2m",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Audience Participation - Copy duration reduced from 12s to 9s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Audience Participation - Copied cooldown increased from 40% to 60%",
+          "tag": "nerf"
+        }
+      ]
+    }
+  ]
+}
