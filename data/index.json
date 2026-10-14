@@ -1,7 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T20:26:23.308Z",
+  "generatedAt": "2026-10-14T19:09:32.405Z",
   "patches": [
+    {
+      "id": "2026-10-13",
+      "date": "2026-10-13",
+      "title": "Fairfax Industries Employee Spotlight",
+      "gid": "1846018067945303",
+      "layout": "sectioned",
+      "counts": {
+        "events": 1,
+        "hero": 1,
+        "item": 0,
+        "general": 0,
+        "system": 0,
+        "unknown": 0,
+        "needsReview": 0
+      }
+    },
     {
       "id": "2026-10-09",
       "date": "2026-10-09",
@@ -990,6 +1006,26 @@
         "nerf": 29,
         "fix": 0,
         "neutral": 0
+      }
+    },
+    "hero:deadman-danny": {
+      "kind": "hero",
+      "name": "Deadman Danny",
+      "slug": "deadman-danny",
+      "touches": [
+        {
+          "patchId": "2026-10-13",
+          "tagSummary": "neutral",
+          "eventIds": [
+            "1846018067945303:0"
+          ]
+        }
+      ],
+      "totals": {
+        "buff": 0,
+        "nerf": 0,
+        "fix": 0,
+        "neutral": 1
       }
     },
     "hero:drifter": {

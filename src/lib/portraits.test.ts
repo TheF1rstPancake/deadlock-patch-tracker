@@ -29,4 +29,10 @@ describe('hero portraits', () => {
       expect(existsSync(file), file).toBe(true)
     }
   })
+
+  it('vendors Deadman Danny card art for the Oct 13 ingest', () => {
+    expect(heroPortraitSlug('Deadman Danny')).toBe('deadman-danny')
+    const file = resolve(root, 'public/heroes/deadman-danny.webp')
+    expect(existsSync(file), file).toBe(true)
+  })
 })
