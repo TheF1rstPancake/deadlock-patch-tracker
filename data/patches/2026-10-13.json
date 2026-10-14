@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-10-13",
+  "title": "Fairfax Industries Employee Spotlight",
+  "date": "2026-10-13",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/703281660030880788",
+  "gid": "1846018067945303",
+  "appid": 1422450,
+  "layout": "sectioned",
+  "sectionsPresent": [
+    "Heroes"
+  ],
+  "events": [
+    {
+      "id": "1846018067945303:0",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny"
+      },
+      "tag": "neutral",
+      "raw": "Now available as a new hero",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Deadman Danny",
+      "sentiment": "neutral",
+      "changes": [
+        {
+          "raw": "Now available as a new hero",
+          "tag": "neutral"
+        }
+      ]
+    }
+  ]
+}
