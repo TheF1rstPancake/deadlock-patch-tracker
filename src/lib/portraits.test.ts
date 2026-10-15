@@ -35,4 +35,22 @@ describe('hero portraits', () => {
     const file = resolve(root, 'public/heroes/deadman-danny.webp')
     expect(existsSync(file), file).toBe(true)
   })
+
+  it('vendors Oct 14 roster cards (Baba and Deadman Danny)', () => {
+    const oct14 = JSON.parse(
+      readFileSync(resolve(root, 'data/patches/2026-10-14.json'), 'utf8'),
+    ) as Patch
+    expect(oct14.heroes.map((hero) => hero.name)).toEqual([
+      'Baba',
+      'Deadman Danny',
+    ])
+    for (const hero of oct14.heroes) {
+      const file = resolve(
+        root,
+        'public/heroes',
+        `${heroPortraitSlug(hero.name)}.webp`,
+      )
+      expect(existsSync(file), file).toBe(true)
+    }
+  })
 })

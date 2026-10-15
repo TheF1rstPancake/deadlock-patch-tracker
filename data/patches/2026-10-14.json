@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-10-14",
+  "title": "Minor Update - 10-14-2026",
+  "date": "2026-10-14",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/669505296465396213",
+  "gid": "1846651706676198",
+  "appid": 1422450,
+  "layout": "flat",
+  "sectionsPresent": [],
+  "events": [
+    {
+      "id": "1846651706676198:0",
+      "section": "",
+      "target": {
+        "kind": "item",
+        "name": "Radiant Regeneration",
+        "slug": "radiant-regeneration",
+        "facet": "Spirit"
+      },
+      "tag": "nerf",
+      "raw": "Spirit scaling reduced from 0.04 to 0.035",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.04,
+          "to": 0.035
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:1",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Spirit Resistance"
+      },
+      "tag": "nerf",
+      "raw": "Spirit Resistance scaling reduced from 0.12 to 0.1",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "spirit_resist",
+          "polarity": "up_is_buff",
+          "from": 0.12,
+          "to": 0.1
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:2",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba"
+      },
+      "tag": "nerf",
+      "raw": "Now has -7% Base Bullet Resistance",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.93,
+        "priorTag": "neutral"
+      }
+    },
+    {
+      "id": "1846651706676198:3",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Threadsap"
+      },
+      "tag": "nerf",
+      "raw": "Threadsap - Spirit reduction on enemies now ends when Baba dies",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.4,
+        "priorTag": "neutral"
+      }
+    },
+    {
+      "id": "1846651706676198:4",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Threadsap"
+      },
+      "tag": "nerf",
+      "raw": "Threadsap - Cooldown increased from 26s to 28s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 26,
+          "to": 28,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:5",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Granny Long Legs"
+      },
+      "tag": "nerf",
+      "raw": "Granny Long Legs - Cooldown increased from 30s to 32s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 30,
+          "to": 32,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:6",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Granny Long Legs"
+      },
+      "tag": "nerf",
+      "raw": "Granny Long Legs - Repeat light melees while airborne now have diminishing forward momentum",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.83,
+        "priorTag": "neutral"
+      }
+    },
+    {
+      "id": "1846651706676198:7",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Granny Long Legs"
+      },
+      "tag": "nerf",
+      "raw": "Granny Long Legs - Light melee upward launch reduced (looking up no longer lifts her as high)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    },
+    {
+      "id": "1846651706676198:8",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Granny Long Legs"
+      },
+      "tag": "nerf",
+      "raw": "Granny Long Legs - Heavy melee ground pound no longer gains horizontal speed when landing on slopes",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
+      }
+    },
+    {
+      "id": "1846651706676198:9",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Baba's Brew"
+      },
+      "tag": "nerf",
+      "raw": "Baba's Brew - Barrier scaling reduced from 1.2 to 0.7",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 1.2,
+          "to": 0.7
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:10",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Baba's Brew"
+      },
+      "tag": "nerf",
+      "raw": "Baba's Brew - Barrier reduced from 100 to 90",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 100,
+          "to": 90
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:11",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Baba",
+        "slug": "baba",
+        "facet": "Baba's Brew"
+      },
+      "tag": "nerf",
+      "raw": "Baba's Brew - Cooldown increased from 25s to 27s (moved to T2)",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 25,
+          "to": 27,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:12",
+      "section": "",
+      "target": {
+        "kind": "system",
+        "name": "Street Brawl",
+        "slug": "street-brawl",
+        "facet": "Baba Threadsap"
+      },
+      "tag": "neutral",
+      "raw": "Baba Threadsap duration lasts 35% less",
+      "parse": {
+        "confidence": "medium",
+        "needsReview": false,
+        "source": "mechanical"
+      }
+    },
+    {
+      "id": "1846651706676198:13",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Health"
+      },
+      "tag": "buff",
+      "raw": "Health regen increased from 2.5 to 3.25",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 2.5,
+          "to": 3.25
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:14",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Base"
+      },
+      "tag": "buff",
+      "raw": "Base health increased from 680 to 730",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 680,
+          "to": 730
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:15",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Gun"
+      },
+      "tag": "buff",
+      "raw": "Gun - Base bullet damage for uncharged shots from 12 to 15 and charged shots from 44 to 48",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "damage",
+          "polarity": "up_is_buff",
+          "from": 12,
+          "to": 15
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:16",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Chimera Mk1"
+      },
+      "tag": "buff",
+      "raw": "Chimera Mk1 - Cooldown boon scaling increased from -0.25 to -0.45",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": -0.25,
+          "to": -0.45
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:17",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Chimera Mk1"
+      },
+      "tag": "buff",
+      "raw": "Chimera Mk1 - Heal on hit spirit scaling increased from 1 to 2",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 1,
+          "to": 2
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:18",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Chimera Mk1"
+      },
+      "tag": "buff",
+      "raw": "Chimera Mk1 weapon scaling increased from 1.15 to 1.4",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "weapon_scaling",
+          "polarity": "up_is_buff",
+          "from": 1.15,
+          "to": 1.4
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:19",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Strix Salvo"
+      },
+      "tag": "buff",
+      "raw": "Strix Salvo - Cooldown from 30s to 25s",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.95,
+        "priorTag": "neutral"
+      },
+      "metrics": [
+        {
+          "stat": "cooldown",
+          "polarity": "up_is_nerf",
+          "from": 30,
+          "to": 25,
+          "unit": "s"
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:20",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Strix Salvo"
+      },
+      "tag": "buff",
+      "raw": "Strix Salvo - Damage spirit scaling from 0.9 to 1.1",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "spirit_scaling",
+          "polarity": "up_is_buff",
+          "from": 0.9,
+          "to": 1.1
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:21",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Strix Salvo"
+      },
+      "tag": "buff",
+      "raw": "Strix Salvo - T2 increased from \"+20 damage / +35 mark damage\" to \"+30 damage / +45 mark damage\"",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    },
+    {
+      "id": "1846651706676198:22",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Strix Salvo"
+      },
+      "tag": "buff",
+      "raw": "Strix Salvo - T3 increased from +0.2 spirit scaling to +0.35",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    },
+    {
+      "id": "1846651706676198:23",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Close"
+      },
+      "tag": "buff",
+      "raw": "Close the Deal - 1AP increased from +50 to +90",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.99
+      },
+      "metrics": [
+        {
+          "stat": "value",
+          "polarity": "unknown",
+          "from": 50,
+          "to": 90
+        }
+      ]
+    },
+    {
+      "id": "1846651706676198:24",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Chimera Mk1"
+      },
+      "tag": "nerf",
+      "raw": "Chimera Mk1 - Slow effectiveness in air reduced by 15%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    },
+    {
+      "id": "1846651706676198:25",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Rocket Jumping"
+      },
+      "tag": "buff",
+      "raw": "Rocket Jumping - Self damage from 6.5% max HP to 5% and is now spirit damage",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 0.84,
+        "priorTag": "neutral"
+      }
+    },
+    {
+      "id": "1846651706676198:26",
+      "section": "",
+      "target": {
+        "kind": "hero",
+        "name": "Deadman Danny",
+        "slug": "deadman-danny",
+        "facet": "Close The Deal"
+      },
+      "tag": "buff",
+      "raw": "Close The Deal - Bonus damage to under half health targets increased from +50% to +75%",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      },
+      "metrics": [
+        {
+          "stat": "health",
+          "polarity": "up_is_buff",
+          "from": 50,
+          "to": 75,
+          "unit": "%"
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Baba",
+      "sentiment": "nerf",
+      "changes": [
+        {
+          "raw": "Spirit Resistance scaling reduced from 0.12 to 0.1",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Now has -7% Base Bullet Resistance",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Threadsap - Spirit reduction on enemies now ends when Baba dies",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Threadsap - Cooldown increased from 26s to 28s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Granny Long Legs - Cooldown increased from 30s to 32s",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Granny Long Legs - Repeat light melees while airborne now have diminishing forward momentum",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Granny Long Legs - Light melee upward launch reduced (looking up no longer lifts her as high)",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Granny Long Legs - Heavy melee ground pound no longer gains horizontal speed when landing on slopes",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Baba's Brew - Barrier scaling reduced from 1.2 to 0.7",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Baba's Brew - Barrier reduced from 100 to 90",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Baba's Brew - Cooldown increased from 25s to 27s (moved to T2)",
+          "tag": "nerf"
+        }
+      ]
+    },
+    {
+      "name": "Deadman Danny",
+      "sentiment": "mixed",
+      "changes": [
+        {
+          "raw": "Health regen increased from 2.5 to 3.25",
+          "tag": "buff"
+        },
+        {
+          "raw": "Base health increased from 680 to 730",
+          "tag": "buff"
+        },
+        {
+          "raw": "Gun - Base bullet damage for uncharged shots from 12 to 15 and charged shots from 44 to 48",
+          "tag": "buff"
+        },
+        {
+          "raw": "Chimera Mk1 - Cooldown boon scaling increased from -0.25 to -0.45",
+          "tag": "buff"
+        },
+        {
+          "raw": "Chimera Mk1 - Heal on hit spirit scaling increased from 1 to 2",
+          "tag": "buff"
+        },
+        {
+          "raw": "Chimera Mk1 weapon scaling increased from 1.15 to 1.4",
+          "tag": "buff"
+        },
+        {
+          "raw": "Strix Salvo - Cooldown from 30s to 25s",
+          "tag": "buff"
+        },
+        {
+          "raw": "Strix Salvo - Damage spirit scaling from 0.9 to 1.1",
+          "tag": "buff"
+        },
+        {
+          "raw": "Strix Salvo - T2 increased from \"+20 damage / +35 mark damage\" to \"+30 damage / +45 mark damage\"",
+          "tag": "buff"
+        },
+        {
+          "raw": "Strix Salvo - T3 increased from +0.2 spirit scaling to +0.35",
+          "tag": "buff"
+        },
+        {
+          "raw": "Close the Deal - 1AP increased from +50 to +90",
+          "tag": "buff"
+        },
+        {
+          "raw": "Chimera Mk1 - Slow effectiveness in air reduced by 15%",
+          "tag": "nerf"
+        },
+        {
+          "raw": "Rocket Jumping - Self damage from 6.5% max HP to 5% and is now spirit damage",
+          "tag": "buff"
+        },
+        {
+          "raw": "Close The Deal - Bonus damage to under half health targets increased from +50% to +75%",
+          "tag": "buff"
+        }
+      ]
+    }
+  ]
+}
