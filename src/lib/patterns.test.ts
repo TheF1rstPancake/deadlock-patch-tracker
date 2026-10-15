@@ -996,6 +996,7 @@ describe('Deadman Danny Oct 13 empty history', () => {
     const patches = readdirSync(dir)
       .filter((file) => file.endsWith('.json'))
       .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+      .filter((patch) => patch.date <= '2026-10-13')
 
     const heroes = buildPatternMatrix(patches, 'hero')
     const items = buildPatternMatrix(patches, 'item')
@@ -1055,6 +1056,199 @@ describe('Deadman Danny Oct 13 empty history', () => {
     const dannyExtent = extentRows.find((row) => row.slug === 'deadman-danny')
     expect(dannyCounts?.countsNet).toBe(0)
     expect(dannyExtent?.extentNet).toBe(0)
+  })
+})
+
+describe('2026-10-14 minor (Baba / Danny / Radiant Regeneration)', () => {
+  it('pairs heroes+items, counts+extent, Absolute/Relative, Across/That day, roster+Patterns', () => {
+    const dir = join(process.cwd(), 'data/patches')
+    const patches = readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+    const oct14 = patches.find((patch) => patch.id === '2026-10-14')
+    expect(oct14).toBeDefined()
+    expect(oct14!.title).toBe('Minor Update - 10-14-2026')
+    expect(oct14!.gid).toBe('1846651706676198')
+    expect(oct14!.layout).toBe('flat')
+    expect(oct14!.events).toHaveLength(27)
+
+    const kinds = { hero: 0, item: 0, general: 0, system: 0, unknown: 0 }
+    for (const event of oct14!.events) kinds[event.target.kind] += 1
+    expect(kinds).toEqual({
+      hero: 25,
+      item: 1,
+      general: 0,
+      system: 1,
+      unknown: 0,
+    })
+
+    const heroItem = oct14!.events.filter(
+      (event) => event.target.kind === 'hero' || event.target.kind === 'item',
+    )
+    expect(heroItem).toHaveLength(26)
+    for (const event of heroItem) {
+      expect(event.parse.source).toBe('typesafe-jev')
+      expect(event.parse.needsReview).toBe(false)
+    }
+    const street = oct14!.events.find(
+      (event) => event.target.slug === 'street-brawl',
+    )
+    expect(street?.target.kind).toBe('system')
+    expect(street?.parse.source).toBe('mechanical')
+    expect(street?.raw).toBe('Baba Threadsap duration lasts 35% less')
+
+    expect(oct14!.heroes.map((hero) => [hero.name, hero.sentiment])).toEqual([
+      ['Baba', 'nerf'],
+      ['Deadman Danny', 'mixed'],
+    ])
+    expect(
+      oct14!.heroes
+        .find((hero) => hero.name === 'Baba')
+        ?.changes.every((change) => change.tag === 'nerf'),
+    ).toBe(true)
+    expect(
+      oct14!.heroes.find((hero) => hero.name === 'Baba')?.changes,
+    ).toHaveLength(11)
+
+    const dannyChanges = oct14!.heroes.find(
+      (hero) => hero.name === 'Deadman Danny',
+    )?.changes
+    expect(dannyChanges).toHaveLength(14)
+    expect(dannyChanges?.filter((change) => change.tag === 'buff')).toHaveLength(
+      13,
+    )
+    expect(dannyChanges?.filter((change) => change.tag === 'nerf')).toHaveLength(
+      1,
+    )
+
+    const heroes = buildPatternMatrix(patches, 'hero')
+    const items = buildPatternMatrix(patches, 'item')
+    expect(heroes.patches.at(-1)?.id).toBe('2026-10-14')
+    expect(items.patches.at(-1)?.id).toBe('2026-10-14')
+
+    const baba = heroes.entities.find((row) => row.slug === 'baba')
+    const danny = heroes.entities.find((row) => row.slug === 'deadman-danny')
+    const radiant = items.entities.find(
+      (row) => row.slug === 'radiant-regeneration',
+    )
+    expect(baba).toBeDefined()
+    expect(danny).toBeDefined()
+    expect(radiant).toBeDefined()
+    expect(heroes.entities.some((row) => row.slug === 'street-brawl')).toBe(
+      false,
+    )
+    expect(items.entities.some((row) => row.slug === 'street-brawl')).toBe(
+      false,
+    )
+
+    const babaDay = baba!.cells.find((cell) => cell.patchId === '2026-10-14')
+    const dannyDay = danny!.cells.find((cell) => cell.patchId === '2026-10-14')
+    const danny13 = danny!.cells.find((cell) => cell.patchId === '2026-10-13')
+    const radiantDay = radiant!.cells.find(
+      (cell) => cell.patchId === '2026-10-14',
+    )
+    expect(babaDay?.counts).toEqual({ buff: 0, nerf: 11, fix: 0, neutral: 0 })
+    expect(babaDay?.touchVolume).toBe(11)
+    expect(babaDay?.signedNet).toBe(-11)
+    expect(cellTone(babaDay!)).toBe('nerf')
+    expect(signedExtent(babaDay!.extent)).toBeLessThan(0)
+
+    expect(dannyDay?.counts).toEqual({ buff: 13, nerf: 1, fix: 0, neutral: 0 })
+    expect(dannyDay?.touchVolume).toBe(14)
+    expect(dannyDay?.signedNet).toBe(12)
+    expect(cellTone(dannyDay!)).toBe('buff')
+    expect(signedExtent(dannyDay!.extent)).toBeGreaterThan(0)
+
+    expect(danny13?.touched).toBe(true)
+    expect(cellTone(danny13!)).toBe('neutral')
+    expect(danny13?.touchVolume).toBe(0)
+
+    expect(radiantDay?.counts).toEqual({
+      buff: 0,
+      nerf: 1,
+      fix: 0,
+      neutral: 0,
+    })
+    expect(cellTone(radiantDay!)).toBe('nerf')
+    expect(radiantDay?.touchVolume).toBe(1)
+
+    const itemTouched = items.entities.filter((row) => {
+      const cell = row.cells.find((entry) => entry.patchId === '2026-10-14')
+      return cell?.touchVolume
+    })
+    expect(itemTouched.map((row) => row.slug)).toEqual([
+      'radiant-regeneration',
+    ])
+
+    // Absolute uses signed net + volume; Relative is within-column percentile.
+    // Only 2 heroes / 1 item have buff+nerf that day, so n≤3 → no fake %ile.
+    expect(babaDay?.extentPercentile).toBeNull()
+    expect(dannyDay?.extentPercentile).toBeNull()
+    expect(radiantDay?.extentPercentile).toBeNull()
+    expect(babaDay?.nerfRank?.smallN).toBe(true)
+    expect(dannyDay?.buffRank?.smallN).toBe(true)
+    expect(radiantDay?.nerfRank?.smallN).toBe(true)
+
+    const babaDetail = buildEntityDetail(patches, 'hero', 'baba')
+    const dannyDetail = buildEntityDetail(patches, 'hero', 'deadman-danny')
+    const radiantDetail = buildEntityDetail(
+      patches,
+      'item',
+      'radiant-regeneration',
+    )
+    const babaLast = babaDetail!.series.at(-1)
+    const dannyLast = dannyDetail!.series.at(-1)
+    const radiantLast = radiantDetail!.series.at(-1)
+    expect(babaLast?.patchId).toBe('2026-10-14')
+    expect(dannyLast?.patchId).toBe('2026-10-14')
+    expect(radiantLast?.patchId).toBe('2026-10-14')
+
+    expect(babaLast?.acrossNerfRank?.smallN).toBe(false)
+    expect(babaLast?.acrossNerfRank?.peerN).toBeGreaterThanOrEqual(
+      MIN_PERCENTILE_SAMPLE,
+    )
+    expect(babaLast?.acrossBuffRank).toBeNull()
+    expect(babaLast?.nerfRank?.smallN).toBe(true)
+    expect(babaLast?.nerfRank?.peerN).toBe(2)
+
+    expect(dannyLast?.acrossBuffRank?.smallN).toBe(false)
+    expect(dannyLast?.acrossBuffRank?.percentile).toBeGreaterThanOrEqual(90)
+    expect(dannyLast?.acrossNerfRank?.smallN).toBe(false)
+    expect(dannyLast?.buffRank?.smallN).toBe(true)
+    expect(dannyLast?.buffRank?.peerN).toBe(1)
+    expect(dannyLast?.nerfRank?.smallN).toBe(true)
+
+    expect(radiantLast?.acrossNerfRank?.smallN).toBe(false)
+    expect(radiantLast?.nerfRank?.smallN).toBe(true)
+    expect(radiantLast?.acrossBuffRank).toBeNull()
+
+    const dannyAcross = hardestHitsFromSeries(dannyDetail!.series, 'across')
+    const dannyDayHits = hardestHitsFromSeries(dannyDetail!.series, 'day')
+    expect(
+      dannyAcross.some(
+        (hit) => hit.patchId === '2026-10-14' && hit.side === 'buff',
+      ),
+    ).toBe(true)
+    expect(dannyAcross[0]?.rank.smallN).toBe(false)
+    expect(dannyDayHits[0]?.patchId).toBe('2026-10-14')
+    expect(dannyDayHits[0]?.rank.smallN).toBe(true)
+
+    const heroCounts = buildCareerRows(heroes, { basis: 'counts', sort: 'name' })
+    const heroExtent = buildCareerRows(heroes, { basis: 'extent', sort: 'name' })
+    const itemCounts = buildCareerRows(items, { basis: 'counts', sort: 'name' })
+    expect(heroCounts.find((row) => row.slug === 'baba')?.countsNet).toBe(-10)
+    expect(heroCounts.find((row) => row.slug === 'deadman-danny')?.countsNet).toBe(
+      12,
+    )
+    expect(
+      heroExtent.find((row) => row.slug === 'baba')?.extentNet,
+    ).toBeLessThan(0)
+    expect(
+      heroExtent.find((row) => row.slug === 'deadman-danny')?.extentNet,
+    ).toBeGreaterThan(0)
+    expect(
+      itemCounts.find((row) => row.slug === 'radiant-regeneration')?.totals.nerf,
+    ).toBeGreaterThanOrEqual(1)
   })
 })
 
