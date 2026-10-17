@@ -1,7 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T14:09:25.958Z",
+  "generatedAt": "2026-10-17T18:45:52.512Z",
   "patches": [
+    {
+      "id": "2026-10-16",
+      "date": "2026-10-16",
+      "title": "Paint the Town",
+      "gid": "1846651706683085",
+      "layout": "sectioned",
+      "counts": {
+        "events": 1,
+        "hero": 1,
+        "item": 0,
+        "general": 0,
+        "system": 0,
+        "unknown": 0,
+        "needsReview": 0
+      }
+    },
     {
       "id": "2026-10-14",
       "date": "2026-10-14",
@@ -4029,6 +4045,26 @@
         "buff": 30,
         "nerf": 20,
         "fix": 3,
+        "neutral": 1
+      }
+    },
+    "hero:violet": {
+      "kind": "hero",
+      "name": "Violet",
+      "slug": "violet",
+      "touches": [
+        {
+          "patchId": "2026-10-16",
+          "tagSummary": "neutral",
+          "eventIds": [
+            "1846651706683085:0"
+          ]
+        }
+      ],
+      "totals": {
+        "buff": 0,
+        "nerf": 0,
+        "fix": 0,
         "neutral": 1
       }
     },

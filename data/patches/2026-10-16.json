@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-10-16",
+  "title": "Paint the Town",
+  "date": "2026-10-16",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/669505296465396531",
+  "gid": "1846651706683085",
+  "appid": 1422450,
+  "layout": "sectioned",
+  "sectionsPresent": [
+    "Heroes"
+  ],
+  "events": [
+    {
+      "id": "1846651706683085:0",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Violet",
+        "slug": "violet"
+      },
+      "tag": "neutral",
+      "raw": "Now available as a new hero",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Violet",
+      "sentiment": "neutral",
+      "changes": [
+        {
+          "raw": "Now available as a new hero",
+          "tag": "neutral"
+        }
+      ]
+    }
+  ]
+}
