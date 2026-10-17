@@ -1065,6 +1065,7 @@ describe('2026-10-14 minor (Baba / Danny / Radiant Regeneration)', () => {
     const patches = readdirSync(dir)
       .filter((file) => file.endsWith('.json'))
       .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+      .filter((patch) => patch.date <= '2026-10-14')
     const oct14 = patches.find((patch) => patch.id === '2026-10-14')
     expect(oct14).toBeDefined()
     expect(oct14!.title).toBe('Minor Update - 10-14-2026')
@@ -1249,6 +1250,75 @@ describe('2026-10-14 minor (Baba / Danny / Radiant Regeneration)', () => {
     expect(
       itemCounts.find((row) => row.slug === 'radiant-regeneration')?.totals.nerf,
     ).toBeGreaterThanOrEqual(1)
+  })
+})
+
+describe('Violet Oct 16 empty history', () => {
+  it('renders a new-hero-only row as empty on prior patches and neutral that day on both kinds', () => {
+    const dir = join(process.cwd(), 'data/patches')
+    const patches = readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+      .filter((patch) => patch.date <= '2026-10-16')
+
+    const heroes = buildPatternMatrix(patches, 'hero')
+    const items = buildPatternMatrix(patches, 'item')
+    expect(heroes.patches.at(-1)?.id).toBe('2026-10-16')
+    expect(items.patches.at(-1)?.id).toBe('2026-10-16')
+
+    const violet = heroes.entities.find((row) => row.slug === 'violet')
+    expect(violet).toBeDefined()
+    expect(violet!.totals).toEqual({ buff: 0, nerf: 0, fix: 0, neutral: 1 })
+    expect(violet!.totalTouches).toBe(0)
+
+    const prior = violet!.cells.filter((cell) => cell.patchId !== '2026-10-16')
+    expect(prior.length).toBeGreaterThan(0)
+    for (const cell of prior) {
+      expect(cell.touched).toBe(false)
+      expect(cellTone(cell)).toBe('empty')
+      expect(cell.extentPercentile).toBeNull()
+      expect(cell.countsPercentile).toBeNull()
+      expect(cell.buffRank).toBeNull()
+      expect(cell.nerfRank).toBeNull()
+      expect(cell.acrossBuffRank).toBeNull()
+      expect(cell.acrossNerfRank).toBeNull()
+    }
+
+    const thatDay = violet!.cells.find((cell) => cell.patchId === '2026-10-16')
+    expect(thatDay?.touched).toBe(true)
+    expect(cellTone(thatDay!)).toBe('neutral')
+    expect(thatDay?.touchVolume).toBe(0)
+    expect(thatDay?.signedNet).toBe(0)
+    expect(signedExtent(thatDay!.extent)).toBe(0)
+    expect(thatDay?.extentPercentile).toBeNull()
+    expect(thatDay?.buffRank).toBeNull()
+    expect(thatDay?.nerfRank).toBeNull()
+
+    const itemDay = items.entities[0]?.cells.find(
+      (cell) => cell.patchId === '2026-10-16',
+    )
+    expect(itemDay).toBeDefined()
+    expect(itemDay!.touched).toBe(false)
+    expect(cellTone(itemDay!)).toBe('empty')
+
+    const detail = buildEntityDetail(patches, 'hero', 'violet')
+    expect(detail).toBeDefined()
+    const last = detail!.series.at(-1)
+    expect(last?.patchId).toBe('2026-10-16')
+    expect(last?.touched).toBe(true)
+    expect(last?.signedNet).toBe(0)
+    expect(last?.signedExtent).toBe(0)
+    expect(last?.cumulativeNet).toBe(0)
+    expect(last?.cumulativeExtent).toBe(0)
+    expect(hardestHitsFromSeries(detail!.series, 'across')).toEqual([])
+    expect(hardestHitsFromSeries(detail!.series, 'day')).toEqual([])
+
+    const countRows = buildCareerRows(heroes, { basis: 'counts', sort: 'name' })
+    const extentRows = buildCareerRows(heroes, { basis: 'extent', sort: 'name' })
+    const violetCounts = countRows.find((row) => row.slug === 'violet')
+    const violetExtent = extentRows.find((row) => row.slug === 'violet')
+    expect(violetCounts?.countsNet).toBe(0)
+    expect(violetExtent?.extentNet).toBe(0)
   })
 })
 

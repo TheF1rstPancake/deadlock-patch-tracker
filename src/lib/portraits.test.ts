@@ -36,6 +36,12 @@ describe('hero portraits', () => {
     expect(existsSync(file), file).toBe(true)
   })
 
+  it('vendors Violet card art for the Oct 16 ingest', () => {
+    expect(heroPortraitSlug('Violet')).toBe('violet')
+    const file = resolve(root, 'public/heroes/violet.webp')
+    expect(existsSync(file), file).toBe(true)
+  })
+
   it('vendors Oct 14 roster cards (Baba and Deadman Danny)', () => {
     const oct14 = JSON.parse(
       readFileSync(resolve(root, 'data/patches/2026-10-14.json'), 'utf8'),
