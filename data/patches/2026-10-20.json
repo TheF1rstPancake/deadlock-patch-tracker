@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-10-20",
+  "title": "Shh... This Won't Hurt a Bit.",
+  "date": "2026-10-20",
+  "steamUrl": "https://store.steampowered.com/news/app/1422450/view/669505296465396778",
+  "gid": "1846651706696737",
+  "appid": 1422450,
+  "layout": "sectioned",
+  "sectionsPresent": [
+    "Heroes"
+  ],
+  "events": [
+    {
+      "id": "1846651706696737:0",
+      "section": "Heroes",
+      "target": {
+        "kind": "hero",
+        "name": "Nurse Harrow",
+        "slug": "nurse-harrow"
+      },
+      "tag": "neutral",
+      "raw": "Now available as a new hero",
+      "parse": {
+        "confidence": "high",
+        "needsReview": false,
+        "source": "typesafe-jev",
+        "jevConfidence": 1
+      }
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Nurse Harrow",
+      "sentiment": "neutral",
+      "changes": [
+        {
+          "raw": "Now available as a new hero",
+          "tag": "neutral"
+        }
+      ]
+    }
+  ]
+}
