@@ -42,6 +42,12 @@ describe('hero portraits', () => {
     expect(existsSync(file), file).toBe(true)
   })
 
+  it('vendors Nurse Harrow card art for the Oct 20 ingest', () => {
+    expect(heroPortraitSlug('Nurse Harrow')).toBe('nurse-harrow')
+    const file = resolve(root, 'public/heroes/nurse-harrow.webp')
+    expect(existsSync(file), file).toBe(true)
+  })
+
   it('vendors Oct 14 roster cards (Baba and Deadman Danny)', () => {
     const oct14 = JSON.parse(
       readFileSync(resolve(root, 'data/patches/2026-10-14.json'), 'utf8'),

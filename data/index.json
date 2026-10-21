@@ -1,7 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T18:45:52.512Z",
+  "generatedAt": "2026-10-21T19:08:48.635Z",
   "patches": [
+    {
+      "id": "2026-10-20",
+      "date": "2026-10-20",
+      "title": "Shh... This Won't Hurt a Bit.",
+      "gid": "1846651706696737",
+      "layout": "sectioned",
+      "counts": {
+        "events": 1,
+        "hero": 1,
+        "item": 0,
+        "general": 0,
+        "system": 0,
+        "unknown": 0,
+        "needsReview": 0
+      }
+    },
     {
       "id": "2026-10-16",
       "date": "2026-10-16",
@@ -2720,6 +2736,26 @@
         "nerf": 21,
         "fix": 0,
         "neutral": 3
+      }
+    },
+    "hero:nurse-harrow": {
+      "kind": "hero",
+      "name": "Nurse Harrow",
+      "slug": "nurse-harrow",
+      "touches": [
+        {
+          "patchId": "2026-10-20",
+          "tagSummary": "neutral",
+          "eventIds": [
+            "1846651706696737:0"
+          ]
+        }
+      ],
+      "totals": {
+        "buff": 0,
+        "nerf": 0,
+        "fix": 0,
+        "neutral": 1
       }
     },
     "hero:paige": {
