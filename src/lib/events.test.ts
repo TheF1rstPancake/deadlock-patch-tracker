@@ -50,6 +50,18 @@ describe('resolveTarget', () => {
     expect(target.kind).toBe('hero')
     expect(target.name).toBe('The Doorman')
   })
+
+  it('maps Nurse notes onto Nurse Harrow', () => {
+    expect(lookupName('Nurse', catalog)?.name).toBe('Nurse Harrow')
+    const target = resolveTarget(
+      'Nurse',
+      'Wretched Vapors - T3 increased from +15% Rush Speed to +20%',
+      'Heroes',
+      catalog,
+    )
+    expect(target.kind).toBe('hero')
+    expect(target.name).toBe('Nurse Harrow')
+  })
 })
 
 describe('buildEvents', () => {
@@ -205,6 +217,8 @@ describe('applyPreviousEvents', () => {
       source: 'typesafe-jev',
       jevConfidence: 0.99,
       priorTag: 'nerf',
+      needsReview: false,
+      confidence: 'high',
     })
   })
 })

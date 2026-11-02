@@ -110,16 +110,14 @@ export function joinWrappedLines(text: string): string {
       out.push('')
       continue
     }
-    const isHeader =
-      /^\[[^\]]+\]$/.test(trimmed) || /^#{1,3}\s+\S/.test(trimmed)
+    const isHeader = matchSectionHeader(trimmed) !== null
     const isBullet = /^[-*•]\s+/.test(trimmed)
     const prev = out.length > 0 ? out[out.length - 1] : ''
     if (
       !isHeader &&
       !isBullet &&
       prev &&
-      !/^\[[^\]]+\]$/.test(prev.trim()) &&
-      !/^#{1,3}\s+/.test(prev.trim())
+      matchSectionHeader(prev.trim()) === null
     ) {
       out[out.length - 1] = `${prev.trimEnd()} ${trimmed}`
     } else {
@@ -132,14 +130,8 @@ export function joinWrappedLines(text: string): string {
 export function listSectionHeaders(text: string): string[] {
   const headers: string[] = []
   for (const line of text.split('\n')) {
-    const trimmed = line.trim()
-    const bracket = trimmed.match(/^\[\s*([^\]]+?)\s*\]$/)
-    if (bracket) {
-      headers.push(collapseWs(bracket[1]))
-      continue
-    }
-    const md = trimmed.match(/^#{1,3}\s+(.+)$/)
-    if (md) headers.push(collapseWs(md[1]))
+    const header = matchSectionHeader(line.trim())
+    if (header) headers.push(header)
   }
   return unique(headers)
 }
@@ -227,6 +219,11 @@ function matchSectionHeader(trimmed: string): string | null {
   if (bracket) return collapseWs(bracket[1])
   const md = trimmed.match(/^#{1,3}\s+(.+)$/)
   if (md) return collapseWs(md[1])
+  // Valve bold labels after BBCode strip: "General:", "Items:", "Heroes:"
+  const labeled = trimmed.match(/^([A-Za-z][A-Za-z0-9 &'/+.-]{0,40}):\s*$/)
+  if (labeled && KNOWN_SECTION.test(labeled[1])) {
+    return collapseWs(labeled[1])
+  }
   return null
 }
 

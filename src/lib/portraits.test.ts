@@ -65,4 +65,19 @@ describe('hero portraits', () => {
       expect(existsSync(file), file).toBe(true)
     }
   })
+
+  it('vendors a card image for every Halloween 2026 hero', () => {
+    const halloween = JSON.parse(
+      readFileSync(resolve(root, 'data/patches/2026-10-30.json'), 'utf8'),
+    ) as Patch
+    expect(halloween.heroes.length).toBe(34)
+    for (const hero of halloween.heroes) {
+      const file = resolve(
+        root,
+        'public/heroes',
+        `${heroPortraitSlug(hero.name)}.webp`,
+      )
+      expect(existsSync(file), file).toBe(true)
+    }
+  })
 })

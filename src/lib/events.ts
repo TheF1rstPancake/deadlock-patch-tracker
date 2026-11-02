@@ -417,6 +417,10 @@ export function applyPreviousEvents(
       if (override) next.override = true
       next.tag = prevEvent?.tag ?? prevChange?.tag ?? next.tag
     }
+    if (jevLock && prevEvent) {
+      next.parse.needsReview = prevEvent.parse.needsReview
+      next.parse.confidence = prevEvent.parse.confidence
+    }
     const display = prevEvent?.display ?? prevChange?.display ?? next.display
     if (display && display !== next.raw) {
       next.display = display

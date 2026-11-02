@@ -60,6 +60,28 @@ describe('parseNews', () => {
     ).toBe('prose')
   })
 
+  it('treats Valve bold General:/Items:/Heroes: labels as section headers', () => {
+    const bbcode = [
+      '[p]Halloween Cauldrons grant candy. Happy Haunting![/p]',
+      '[h3][b]Gameplay Update[/b][/h3][p]',
+      '[b]General:[/b]',
+      '- Mid-Boss: Health increased by 20%',
+      '[b]Items:[/b]',
+      '- Point Blank: Slow duration increased from 2s to 2.5s',
+      '[b]Heroes:[/b]',
+      '- Abrams: Base gun damage increased by 5%',
+      '[b]Street Brawl:[/b]',
+      '- Paige: Bookwyrm - T2 Trail Duration reduced from +2s to +1s[/p]',
+    ].join('\n')
+    const plain = stripSteamMarkup(bbcode)
+    expect(detectLayout(plain)).toBe('sectioned')
+    expect(
+      splitSections(plain)
+        .map((section) => section.name)
+        .filter(Boolean),
+    ).toEqual(['General', 'Items', 'Heroes', 'Street Brawl'])
+  })
+
   it('splits old Weapon / Vitality / Spirit item headers', () => {
     const text = [
       '[ Weapon Items ]',
