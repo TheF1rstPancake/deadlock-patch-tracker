@@ -1391,4 +1391,135 @@ describe('Nurse Harrow Oct 20 empty history', () => {
   })
 })
 
+describe('2026-10-30 Halloween + Gameplay Update', () => {
+  it('ingests official hero/item balance, excludes candy, and tags with Jev', () => {
+    const dir = join(process.cwd(), 'data/patches')
+    const patches = readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+    const halloween = patches.find((patch) => patch.id === '2026-10-30')
+    expect(halloween).toBeDefined()
+    expect(halloween!.title).toBe('Halloween 2026 + Gameplay Update')
+    expect(halloween!.gid).toBe('1847920302240420')
+    expect(halloween!.date).toBe('2026-10-30')
+    expect(halloween!.layout).toBe('sectioned')
+    expect(halloween!.sectionsPresent).toEqual([
+      'General',
+      'Items',
+      'Heroes',
+      'Street Brawl',
+    ])
+    expect(halloween!.events).toHaveLength(260)
+
+    const kinds = { hero: 0, item: 0, general: 0, system: 0, unknown: 0 }
+    for (const event of halloween!.events) kinds[event.target.kind] += 1
+    expect(kinds).toEqual({
+      hero: 173,
+      item: 61,
+      general: 15,
+      system: 11,
+      unknown: 0,
+    })
+
+    const heroItem = halloween!.events.filter(
+      (event) => event.target.kind === 'hero' || event.target.kind === 'item',
+    )
+    expect(heroItem).toHaveLength(234)
+    for (const event of heroItem) {
+      expect(event.parse.source).toBe('typesafe-jev')
+      expect(event.parse.needsReview).toBe(false)
+    }
+    expect(
+      halloween!.events.every(
+        (event) =>
+          !/candy|cauldron|sugar rush/i.test(event.raw) &&
+          !/candy|cauldron|sugar rush/i.test(event.target.name),
+      ),
+    ).toBe(true)
+
+    const nurse = halloween!.events.filter(
+      (event) => event.target.name === 'Nurse Harrow',
+    )
+    expect(nurse).toHaveLength(14)
+    expect(
+      nurse.some((event) => event.raw.startsWith('Wretched Vapors')),
+    ).toBe(true)
+
+    const street = halloween!.events.filter(
+      (event) => event.section === 'Street Brawl',
+    )
+    expect(street).toHaveLength(13)
+    expect(street.every((event) => event.target.kind === 'hero')).toBe(true)
+
+    const fear = nurse.find((event) => event.raw.includes('Fear buildup'))
+    expect(fear?.tag).toBe('nerf')
+    expect(fear?.parse.priorTag).toBe('buff')
+
+    const board = Object.fromEntries(
+      halloween!.heroes.map((hero) => [hero.name, hero.sentiment]),
+    )
+    expect(halloween!.heroes).toHaveLength(34)
+    expect(board.Abrams).toBe('mixed')
+    expect(board['Rat King']).toBe('mixed')
+    expect(board['Nurse Harrow']).toBe('mixed')
+    expect(board['Deadman Danny']).toBe('nerf')
+    expect(board.Wraith).toBe('nerf')
+    expect(board.Celeste).toBe('nerf')
+    expect(board.Haze).toBe('fix')
+    expect(board.Drifter).toBe('buff')
+    expect(board.Warden).toBe('buff')
+
+    const heroes = buildPatternMatrix(patches, 'hero')
+    const items = buildPatternMatrix(patches, 'item')
+    expect(heroes.patches.at(-1)?.id).toBe('2026-10-30')
+    expect(items.patches.at(-1)?.id).toBe('2026-10-30')
+
+    const rat = heroes.entities.find((row) => row.slug === 'rat-king')
+    const harrow = heroes.entities.find((row) => row.slug === 'nurse-harrow')
+    const radiant = items.entities.find(
+      (row) => row.slug === 'radiant-regeneration',
+    )
+    expect(rat).toBeDefined()
+    expect(harrow).toBeDefined()
+    expect(radiant).toBeDefined()
+
+    const ratDay = rat!.cells.find((cell) => cell.patchId === '2026-10-30')
+    const harrowDay = harrow!.cells.find(
+      (cell) => cell.patchId === '2026-10-30',
+    )
+    const radiantDay = radiant!.cells.find(
+      (cell) => cell.patchId === '2026-10-30',
+    )
+    expect(ratDay?.touched).toBe(true)
+    expect(cellTone(ratDay!)).toBe('nerf')
+    expect(ratDay!.counts.nerf).toBeGreaterThanOrEqual(10)
+    expect(ratDay!.counts.buff).toBeGreaterThan(0)
+    expect(harrowDay?.touched).toBe(true)
+    expect(harrowDay!.counts.nerf).toBeGreaterThan(harrowDay!.counts.buff)
+    expect(radiantDay?.touched).toBe(true)
+    expect(radiantDay!.counts.nerf).toBeGreaterThan(0)
+
+    const heroDayN = heroes.entities.filter((row) => {
+      const cell = row.cells.find((entry) => entry.patchId === '2026-10-30')
+      return (cell?.counts.buff ?? 0) + (cell?.counts.nerf ?? 0) > 0
+    }).length
+    expect(heroDayN).toBeGreaterThan(MIN_PERCENTILE_SAMPLE)
+    expect(ratDay?.extentPercentile).not.toBeNull()
+
+    const ratDetail = buildEntityDetail(patches, 'hero', 'rat-king')
+    const last = ratDetail!.series.at(-1)
+    expect(last?.patchId).toBe('2026-10-30')
+    expect(last?.acrossNerfRank?.smallN).toBe(false)
+    expect(last?.nerfRank?.smallN).toBe(false)
+
+    const heroCounts = buildCareerRows(heroes, { basis: 'counts', sort: 'name' })
+    expect(
+      heroCounts.find((row) => row.slug === 'rat-king')?.countsNet,
+    ).toBeLessThan(0)
+    expect(
+      heroCounts.find((row) => row.slug === 'nurse-harrow')?.countsNet,
+    ).toBeLessThan(0)
+  })
+})
+
 
