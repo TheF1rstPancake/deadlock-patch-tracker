@@ -1397,6 +1397,7 @@ describe('2026-10-30 Halloween + Gameplay Update', () => {
     const patches = readdirSync(dir)
       .filter((file) => file.endsWith('.json'))
       .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+      .filter((patch) => patch.date <= '2026-10-30')
     const halloween = patches.find((patch) => patch.id === '2026-10-30')
     expect(halloween).toBeDefined()
     expect(halloween!.title).toBe('Halloween 2026 + Gameplay Update')
@@ -1521,5 +1522,186 @@ describe('2026-10-30 Halloween + Gameplay Update', () => {
     ).toBeLessThan(0)
   })
 })
+
+describe('2026-11-04 minor (Healbane / Apollo / Baba / Celeste / Danny / Mo & Krill / Harrow / Rat King)', () => {
+  it('pairs heroes+items, counts+extent, Absolute/Relative, Across/That day, roster+Patterns', () => {
+    const dir = join(process.cwd(), 'data/patches')
+    const patches = readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8')) as Patch)
+    const nov4 = patches.find((patch) => patch.id === '2026-11-04')
+    expect(nov4).toBeDefined()
+    expect(nov4!.title).toBe('Minor Update - 11-04-2026')
+    expect(nov4!.gid).toBe('1848664643339845')
+    expect(nov4!.date).toBe('2026-11-04')
+    expect(nov4!.layout).toBe('flat')
+    expect(nov4!.steamUrl).toBe(
+      'https://store.steampowered.com/news/app/1422450/view/680766308468391944',
+    )
+    expect(nov4!.events).toHaveLength(36)
+
+    const kinds = { hero: 0, item: 0, general: 0, system: 0, unknown: 0 }
+    for (const event of nov4!.events) kinds[event.target.kind] += 1
+    expect(kinds).toEqual({
+      hero: 35,
+      item: 1,
+      general: 0,
+      system: 0,
+      unknown: 0,
+    })
+    expect(nov4!.events.every((event) => !event.parse.needsReview)).toBe(true)
+
+    const heroItem = nov4!.events.filter(
+      (event) => event.target.kind === 'hero' || event.target.kind === 'item',
+    )
+    expect(heroItem).toHaveLength(36)
+    for (const event of heroItem) {
+      expect(event.parse.source).toBe('typesafe-jev')
+      expect(event.parse.needsReview).toBe(false)
+    }
+
+    expect(nov4!.heroes.map((hero) => [hero.name, hero.sentiment])).toEqual([
+      ['Apollo', 'buff'],
+      ['Baba', 'nerf'],
+      ['Celeste', 'mixed'],
+      ['Deadman Danny', 'nerf'],
+      ['Mo & Krill', 'buff'],
+      ['Nurse Harrow', 'buff'],
+      ['Rat King', 'mixed'],
+    ])
+
+    const cycle = nov4!.events.find((event) =>
+      event.raw.includes('Cycle time increased'),
+    )
+    expect(cycle?.tag).toBe('nerf')
+    expect(cycle?.parse.priorTag).toBe('buff')
+
+    const fear = nov4!.events.find((event) =>
+      event.raw.includes('Fear buildup time'),
+    )
+    expect(fear?.tag).toBe('buff')
+    expect(fear?.parse.priorTag).toBe('nerf')
+
+    const healbaneEvent = nov4!.events.find(
+      (event) => event.target.slug === 'healbane',
+    )
+    expect(healbaneEvent?.tag).toBe('nerf')
+    expect(healbaneEvent?.parse.priorTag).toBe('neutral')
+
+    const heroes = buildPatternMatrix(patches, 'hero')
+    const items = buildPatternMatrix(patches, 'item')
+    expect(heroes.patches.at(-1)?.id).toBe('2026-11-04')
+    expect(items.patches.at(-1)?.id).toBe('2026-11-04')
+
+    const baba = heroes.entities.find((row) => row.slug === 'baba')
+    const apollo = heroes.entities.find((row) => row.slug === 'apollo')
+    const harrow = heroes.entities.find((row) => row.slug === 'nurse-harrow')
+    const healbane = items.entities.find((row) => row.slug === 'healbane')
+    expect(baba).toBeDefined()
+    expect(apollo).toBeDefined()
+    expect(harrow).toBeDefined()
+    expect(healbane).toBeDefined()
+
+    const babaDay = baba!.cells.find((cell) => cell.patchId === '2026-11-04')
+    const apolloDay = apollo!.cells.find((cell) => cell.patchId === '2026-11-04')
+    const harrowDay = harrow!.cells.find(
+      (cell) => cell.patchId === '2026-11-04',
+    )
+    const healbaneDay = healbane!.cells.find(
+      (cell) => cell.patchId === '2026-11-04',
+    )
+    expect(babaDay?.counts).toEqual({ buff: 0, nerf: 7, fix: 0, neutral: 0 })
+    expect(babaDay?.signedNet).toBe(-7)
+    expect(cellTone(babaDay!)).toBe('nerf')
+    expect(signedExtent(babaDay!.extent)).toBeLessThan(0)
+
+    expect(apolloDay?.counts).toEqual({ buff: 4, nerf: 0, fix: 0, neutral: 0 })
+    expect(apolloDay?.signedNet).toBe(4)
+    expect(cellTone(apolloDay!)).toBe('buff')
+
+    expect(harrowDay?.counts).toEqual({ buff: 3, nerf: 0, fix: 0, neutral: 0 })
+    expect(cellTone(harrowDay!)).toBe('buff')
+
+    expect(healbaneDay?.counts).toEqual({
+      buff: 0,
+      nerf: 1,
+      fix: 0,
+      neutral: 0,
+    })
+    expect(cellTone(healbaneDay!)).toBe('nerf')
+    expect(healbaneDay?.touchVolume).toBe(1)
+
+    const itemTouched = items.entities.filter((row) => {
+      const cell = row.cells.find((entry) => entry.patchId === '2026-11-04')
+      return cell?.touchVolume
+    })
+    expect(itemTouched.map((row) => row.slug)).toEqual(['healbane'])
+
+    // 7 heroes with buff/nerf that day (n>3) so Relative percentiles exist.
+    // Healbane is the only item, so n≤3 → no fake %ile.
+    const heroDayN = heroes.entities.filter((row) => {
+      const cell = row.cells.find((entry) => entry.patchId === '2026-11-04')
+      return (cell?.counts.buff ?? 0) + (cell?.counts.nerf ?? 0) > 0
+    }).length
+    expect(heroDayN).toBe(7)
+    expect(heroDayN).toBeGreaterThan(3)
+    expect(babaDay?.extentPercentile).not.toBeNull()
+    expect(apolloDay?.extentPercentile).not.toBeNull()
+    expect(healbaneDay?.extentPercentile).toBeNull()
+    expect(healbaneDay?.nerfRank?.smallN).toBe(true)
+
+    const babaDetail = buildEntityDetail(patches, 'hero', 'baba')
+    const apolloDetail = buildEntityDetail(patches, 'hero', 'apollo')
+    const healbaneDetail = buildEntityDetail(patches, 'item', 'healbane')
+    const babaLast = babaDetail!.series.at(-1)
+    const apolloLast = apolloDetail!.series.at(-1)
+    const healbaneLast = healbaneDetail!.series.at(-1)
+    expect(babaLast?.patchId).toBe('2026-11-04')
+    expect(apolloLast?.patchId).toBe('2026-11-04')
+    expect(healbaneLast?.patchId).toBe('2026-11-04')
+
+    expect(babaLast?.acrossNerfRank?.smallN).toBe(false)
+    expect(babaLast?.acrossNerfRank?.peerN).toBeGreaterThanOrEqual(
+      MIN_PERCENTILE_SAMPLE,
+    )
+    expect(babaLast?.acrossBuffRank).toBeNull()
+    expect(babaLast?.nerfRank?.smallN).toBe(true)
+    expect(babaLast?.nerfRank?.peerN).toBe(4)
+
+    expect(apolloLast?.acrossBuffRank?.smallN).toBe(false)
+    expect(apolloLast?.buffRank?.smallN).toBe(false)
+    expect(apolloLast?.buffRank?.peerN).toBe(5)
+
+    expect(healbaneLast?.acrossNerfRank?.smallN).toBe(false)
+    expect(healbaneLast?.nerfRank?.smallN).toBe(true)
+    expect(healbaneLast?.acrossBuffRank).toBeNull()
+
+    const babaAcross = hardestHitsFromSeries(babaDetail!.series, 'across')
+    const babaDayHits = hardestHitsFromSeries(babaDetail!.series, 'day')
+    expect(
+      babaAcross.some(
+        (hit) => hit.patchId === '2026-11-04' && hit.side === 'nerf',
+      ),
+    ).toBe(true)
+    const babaNov4Day = babaDayHits.find(
+      (hit) => hit.patchId === '2026-11-04',
+    )
+    expect(babaNov4Day?.side).toBe('nerf')
+    expect(babaNov4Day?.rank.smallN).toBe(true)
+
+    const heroCounts = buildCareerRows(heroes, { basis: 'counts', sort: 'name' })
+    const itemCounts = buildCareerRows(items, { basis: 'counts', sort: 'name' })
+    expect(heroCounts.find((row) => row.slug === 'baba')?.countsNet).toBeLessThan(
+      0,
+    )
+    expect(
+      heroCounts.find((row) => row.slug === 'apollo')?.countsNet,
+    ).toBeGreaterThan(0)
+    expect(
+      itemCounts.find((row) => row.slug === 'healbane')?.countsNet,
+    ).toBeDefined()
+  })
+})
+
 
 
