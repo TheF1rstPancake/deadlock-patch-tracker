@@ -34,6 +34,8 @@ const SEED_URLS: Record<string, string> = {
     'https://store.steampowered.com/news/app/1422450/view/698776157349216434',
   '1847920302240420':
     'https://store.steampowered.com/news/app/1422450/view/680765564125186045',
+  '1848664643339845':
+    'https://store.steampowered.com/news/app/1422450/view/680766308468391944',
 }
 
 interface SteamNewsItem {

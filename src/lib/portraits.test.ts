@@ -80,4 +80,27 @@ describe('hero portraits', () => {
       expect(existsSync(file), file).toBe(true)
     }
   })
+
+  it('vendors Nov 4 roster cards', () => {
+    const nov4 = JSON.parse(
+      readFileSync(resolve(root, 'data/patches/2026-11-04.json'), 'utf8'),
+    ) as Patch
+    expect(nov4.heroes.map((hero) => hero.name)).toEqual([
+      'Apollo',
+      'Baba',
+      'Celeste',
+      'Deadman Danny',
+      'Mo & Krill',
+      'Nurse Harrow',
+      'Rat King',
+    ])
+    for (const hero of nov4.heroes) {
+      const file = resolve(
+        root,
+        'public/heroes',
+        `${heroPortraitSlug(hero.name)}.webp`,
+      )
+      expect(existsSync(file), file).toBe(true)
+    }
+  })
 })
